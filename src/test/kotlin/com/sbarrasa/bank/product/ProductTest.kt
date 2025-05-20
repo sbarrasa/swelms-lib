@@ -30,12 +30,16 @@ class ProductTest {
     }
 
     @Test
-    fun checkingAccount() {
+    fun checkingAccountUSD() {
         val product = CheckingAccount().apply { cbu="1234"; currency = Currency.USD}
         assertFalse(product.isCreditProduct)
         assertEquals(CheckingAccount.productType, product.productType)
         assertEquals("${CheckingAccount.name} en ${Currency.USD.description}", product.description())
-
+    }
+    @Test
+    fun checkingAccountARS() {
+        val product2 = CheckingAccount().apply { cbu = "5678"; currency = Currency.ARS }
+        assertEquals(Currency.ARS, product2.currency)
     }
 
     @Test

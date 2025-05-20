@@ -1,10 +1,7 @@
 package com.sbarrasa.bank.product.factory
 
 import com.sbarrasa.bank.product.Product
-import com.sbarrasa.bank.product.types.CheckingAccount
-import com.sbarrasa.bank.product.types.CreditCard
-import com.sbarrasa.bank.product.types.DebitCard
-import com.sbarrasa.bank.product.types.SavingAccount
+import com.sbarrasa.bank.product.types.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -18,7 +15,6 @@ class ProductRegistryTest{
             .register(CheckingAccount)
             .register(CreditCard)
             .register(DebitCard)
-
     }
 
     @Test
