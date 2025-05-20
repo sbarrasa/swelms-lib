@@ -1,6 +1,7 @@
 package com.sbarrasa.bank.product
 
-import org.junit.jupiter.api.Test
+import kotlin.test.*
+
 class CurrencyTest {
     @Test
     fun asMap() {

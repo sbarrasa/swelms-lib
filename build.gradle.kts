@@ -15,8 +15,6 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.2"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
@@ -25,9 +23,6 @@ dependencies {
     implementation("com.h2database:h2:$h2Version")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"

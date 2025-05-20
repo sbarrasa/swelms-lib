@@ -1,8 +1,7 @@
 package com.sbarrasa.bank.product
 
 import com.sbarrasa.bank.product.types.*
-import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test
+import kotlin.test.*
 
 class ProductTest {
 
