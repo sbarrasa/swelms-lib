@@ -1,18 +1,22 @@
 package com.sbarrasa.util
 
 fun <T> T.validate(
-    predicate: T.() -> Boolean,
-    exception: ((T) -> Exception)? = null
+    exception: (String) -> Exception = { msg -> IllegalArgumentException(msg) },
+    message: (T) -> String = { "Invalid: $it" },
+    predicate: T.() -> Boolean
 ): Boolean {
-    val valid = predicate()
-    if(!valid && exception != null)
-        throw exception(this)
+    val valid = isValid(predicate)
+    if(!valid)
+        throw exception(message(this))
     return valid
 }
 
+fun <T> T.isValid(predicate: T.() -> Boolean): Boolean = predicate()
+
 class Validator<T>(
-    val predicate: T.() -> Boolean,
-    val exception: ((T) -> Exception)? = null
+    val exception: (String) -> Exception = { msg -> IllegalArgumentException(msg) },
+    val message: (T) -> String = { "Invalid: $it" },
+    val predicate: T.() -> Boolean
 ) {
-    fun validate(obj: T): Boolean = obj.validate(predicate, exception)
+    fun validate(obj: T): Boolean = obj.validate(exception, message, predicate)
 }
