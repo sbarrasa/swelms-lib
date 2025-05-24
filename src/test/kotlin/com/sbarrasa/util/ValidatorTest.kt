@@ -46,31 +46,21 @@ class ValidatorTest {
         val value  = "Hola"
         assertFailsWith<IllegalArgumentException> { validator.validate(value)}
     }
+
+
     @Test
-    fun validateWithException(){
+    fun validatorWithExceptionandMessage(){
 
-        val value  = "Hola"
-
-        assertFailsWith<IllegalArgumentException> {
-            value.validate({IllegalArgumentException(it)}) {
-                this.length > 5
-            }
+        val validator = Validator<String>(
+            exception = {IllegalArgumentException(it)},
+            message = {"El valor ${it} no es válido"}) {
+            this.length > 5
         }
-    }
-
-    @Test
-    fun validateWithPersonalizedExceptionandMessage(){
-
-        val value  = "Hola"
 
         val err = assertFailsWith<IllegalArgumentException> {
-            value.validate(
-                {IllegalArgumentException(it)},
-                { "El valor ${it} es inválido"} ) {
-                this.length > 5
-            }
+            validator.validate("hola")
         }
 
-        assertEquals("El valor Hola es inválido", err.message)
+        assertEquals("El valor hola no es válido", err.message)
     }
 }
