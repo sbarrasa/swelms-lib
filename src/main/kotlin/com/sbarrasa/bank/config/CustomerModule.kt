@@ -6,9 +6,9 @@ import com.sbarrasa.bank.service.CustomerService
 import io.ktor.server.routing.*
 
 object CustomerModule {
-    val repository = MemCustomerRepository()
-    val service = CustomerService(repository)
-    val routes = CustomerRoutes(service)
+    private val repository = MemCustomerRepository()
+    private val service = CustomerService(repository)
+    private val routes = CustomerRoutes(service)
 
     fun register(route: Route) {
         routes.register(route)

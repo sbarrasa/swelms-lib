@@ -7,13 +7,14 @@ import kotlin.reflect.full.*
 
 
 open class ObjectMapper<S:Any, T:Any>(initBlock: ObjectMapper<S, T>.() -> Unit = {}) {
-    init {
-        this.apply(initBlock)
-    }
 
     private val mappings = mutableListOf<Pair<KProperty1<S, Any?>, KMutableProperty1<T, Any?>>>()
 
     var ignoreSourceNulls = true
+    init {
+        this.apply(initBlock)
+    }
+
 
     @Suppress("UNCHECKED_CAST")
     fun <V> bind(pair: Pair<KProperty1<S, V>, KMutableProperty1<T, V>>) {

@@ -1,7 +1,6 @@
 package com.sbarrasa.bank.service
 
 import com.sbarrasa.bank.entities.customer.Customer
-import com.sbarrasa.bank.entities.customer.CustomerMapper
 import com.sbarrasa.bank.repository.CustomerRepository
 
 class CustomerService(private val repo: CustomerRepository) {

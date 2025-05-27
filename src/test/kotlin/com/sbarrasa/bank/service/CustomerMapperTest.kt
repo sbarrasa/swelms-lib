@@ -1,27 +1,27 @@
-package com.sbarrasa.bank.entities.customer
+package com.sbarrasa.bank.service
 
+import com.sbarrasa.bank.entities.customer.Customer
+import com.sbarrasa.bank.entities.customer.Gender
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.Month
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import kotlin.test.*
 
 class CustomerMapperTest{
-    val mapper = CustomerMapper()
 
     @Test
     fun mapAll(){
-       val customer1 = Customer(
-           name = "Sebastian",
-           lastName = "Barrasa",
-           gender = Gender.M,
-           birthDay = LocalDate(1974, Month.JUNE, 7)
-       )
+        val customer1 = Customer(
+            name = "Sebastian",
+            lastName = "Barrasa",
+            gender = Gender.M,
+            birthDay = LocalDate(1974, Month.JUNE, 7)
+        )
 
-       val customer2 = Customer()
+        val customer2 = Customer()
 
-       mapper.map(customer1, customer2)
+        CustomerMapper.map(customer1, customer2)
 
-       assertEquals("Sebastian", customer2.name)
+        assertEquals("Sebastian", customer2.name)
 
     }
 
@@ -40,7 +40,7 @@ class CustomerMapperTest{
         assertEquals("Sebastian", currentCustomer.name)
         assertEquals(Gender.F, currentCustomer.gender)
 
-        mapper.map(updateCustomer, currentCustomer)
+        CustomerMapper.map(updateCustomer, currentCustomer)
         assertEquals("Sebastian", currentCustomer.name)
         assertEquals(Gender.M, currentCustomer.gender)
 
