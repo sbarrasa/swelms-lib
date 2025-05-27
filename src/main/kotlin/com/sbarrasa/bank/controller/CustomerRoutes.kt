@@ -20,7 +20,7 @@ class CustomerRoutes(val customerService: CustomerService) {
 
             get("/{id}") {
                 val id = call.requireId()
-                call.respond(customerService.getById(id))
+                call.respond(customerService.get(id))
             }
             post {
                 val customerRequest = call.receive<Customer>()

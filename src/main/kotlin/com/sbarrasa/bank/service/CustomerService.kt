@@ -7,7 +7,7 @@ import io.ktor.server.plugins.*
 class CustomerService(private val repo: CustomerRepository) {
 
     fun update(id: Int, customer: Customer): Customer {
-      val currentCustomer = getById(id)
+      val currentCustomer = get(id)
       CustomerMapper.map(customer, currentCustomer)
       return repo.update(currentCustomer)
     }
@@ -16,7 +16,7 @@ class CustomerService(private val repo: CustomerRepository) {
         return repo.getAll()
     }
 
-    fun getById(id: Int): Customer {
+    fun get(id: Int): Customer {
         return repo.get(id)
             ?: throw NotFoundException("Id: ${id} no encontrado")
     }
@@ -26,7 +26,7 @@ class CustomerService(private val repo: CustomerRepository) {
     }
 
     fun delete(id: Int): Customer {
-        val customer = getById(id)
+        val customer = get(id)
         repo.delete(id)
         return customer
     }
