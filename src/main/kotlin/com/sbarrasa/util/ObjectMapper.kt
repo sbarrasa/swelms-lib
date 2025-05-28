@@ -20,6 +20,7 @@ open class ObjectMapper<S:Any, T:Any>(initBlock: ObjectMapper<S, T>.() -> Unit =
         bind({sourceProp.get(it)}, targetProp)
     }
 
+    @Suppress("UNCHECKED_CAST")
     fun <SVAL, TVAL> bind(getter: (S) -> SVAL, targetProp: KMutableProperty1<T, TVAL>) {
         mappings.add(getter as (S) -> Any? to targetProp as KMutableProperty1<T, Any?>)
     }
@@ -52,9 +53,9 @@ open class ObjectMapper<S:Any, T:Any>(initBlock: ObjectMapper<S, T>.() -> Unit =
     }
 
     companion object {
-        fun <U : Any> bindAll(cls: KClass<U>): ObjectMapper<U, U> {
+        fun <U : Any> bindAll(uniqueClass: KClass<U>): ObjectMapper<U, U> {
             return ObjectMapper {
-                bindAll(cls, cls)
+                bindAll(uniqueClass, uniqueClass)
             }
         }
     }
