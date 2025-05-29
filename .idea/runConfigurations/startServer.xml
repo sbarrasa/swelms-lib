@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="startServer" type="JetRunConfigurationType">
+    <option name="MAIN_CLASS_NAME" value="com.bank.MainKt" />
+    <module name="bank-kotlin.main" />
+    <option name="PROGRAM_PARAMETERS" value="-Prepository=EXPOSED" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

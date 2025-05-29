@@ -1,0 +1,18 @@
+package com.bank.modules
+
+import io.ktor.serialization.kotlinx.json.*
+import io.ktor.server.application.*
+import io.ktor.server.plugins.contentnegotiation.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
+
+fun Application.configSerialization() {
+    install(ContentNegotiation) {
+        json()
+    }
+    routing {
+        get("/json/test") {
+            call.respond(mapOf("hello" to "world"))
+        }
+    }
+}

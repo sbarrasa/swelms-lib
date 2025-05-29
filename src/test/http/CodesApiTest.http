@@ -1,0 +1,15 @@
+### Obtener géneros
+GET http://localhost:8080/codes/gender
+Accept: application/json
+
+### Obtener marcas
+GET http://localhost:8080/codes/branch
+Accept: application/json
+
+### Obtener monedas
+GET http://localhost:8080/codes/currency
+Accept: application/json
+
+### Obtener tipos de producto
+GET http://localhost:8080/codes/product_types
+Accept: application/json
