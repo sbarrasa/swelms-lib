@@ -12,23 +12,23 @@ open class MemRepository<I : Any?, T : Id<I>>(
     override fun getAll(): List<T> = items.values.toList()
 
     override fun get(id: I): T = items[id]
-        ?: throw EntityNotFoundException("Id: ${id} no encontrado")
+        ?: throw EntityNotFoundException(id = id!!)
 
-    override fun add(entity: T): T {
+    override fun add(dto: T): T {
         if (autoId)
-            entity.id = idGenerator()
+            dto.id = idGenerator()
 
-        items[entity.id] = entity
-        return entity
+        items[dto.id] = dto
+        return dto
     }
 
-    override fun update(id: I, entity: T): T {
-        items[id] = entity
-        return entity
+    override fun update(id: I, dto: T): T {
+        items[id] = dto
+        return dto
     }
 
     override fun delete(id: I): T {
         return items.remove(id)
-            ?: throw EntityNotFoundException("Id: ${id} no encontrado")
+            ?: throw EntityNotFoundException(id = id!!)
     }
 }

@@ -6,9 +6,9 @@ import com.sbarrasa.repository.IntMemRepository
 
 
 class MemCustomerRepository: CustomerRepository, IntMemRepository<Customer>(){
-    override fun update(id: Int?, entity: Customer): Customer {
+    override fun update(id: Int?, dto: Customer): Customer {
             val currentEntity = get(id)
-            CustomerMapper.map(entity, currentEntity)
+            CustomerMapper.map(dto, currentEntity)
             return super.update(id, currentEntity)
     }
 
