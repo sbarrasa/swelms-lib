@@ -31,7 +31,7 @@ internal fun Application.configSerialization() {
 
 internal fun Application.configRoutes(){
     routing {
-        CustomerRoutes(Repository.get).register(this)
+        CustomerRoutes(RepositoryFactory.create()).register(this)
         CodesRoutes.register(this)
     }
 }

@@ -1,10 +1,9 @@
 package com.bank.modules
 
-import com.bank.repository.CustomerRepository
 import com.bank.repository.ExposedCustomerRepository
 import com.bank.repository.MemCustomerRepository
 
-object Repository {
+object RepositoryFactory {
     enum class Types {
         MEM, EXPOSED
     }
@@ -13,8 +12,7 @@ object Repository {
 
     var type: Types = Types.MEM
 
-    val get: CustomerRepository
-        get() = when(type) {
+    fun create() = when(type) {
             Types.MEM -> MemCustomerRepository()
             Types.EXPOSED -> {
                 DBClient.init()
@@ -23,7 +21,10 @@ object Repository {
         }
 
 
-    fun set(typeStr: String?) {
-        type = Types.valueOf(typeStr?:"MEM")
+    fun setType(typeStr: String?) {
+        type = typeStr
+            ?.let { Types.valueOf(it)}
+            ?: Types.MEM
+
     }
 }
