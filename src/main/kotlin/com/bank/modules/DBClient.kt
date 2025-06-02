@@ -6,18 +6,17 @@ import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object DBClient {
-    fun init() {
-       Database.connect(
-            //url = "jdbc:h2:file:/develop/data/db;DB_CLOSE_DELAY=-1;",
-            url = "jdbc:h2:tcp://localhost:9092/c:/develop/data/db;DB_CLOSE_DELAY=-1;",
-            driver = "org.h2.Driver",
-            user = "root",
-            password = ""
-        )
+   fun init() {
+      Database.connect(
+         url = "jdbc:h2:tcp://localhost:9092/c:/develop/data/db;DB_CLOSE_DELAY=-1;",
+         driver = "org.h2.Driver",
+         user = "root",
+         password = ""
+      )
 
-        transaction {
-            SchemaUtils.create(CustomersTable)
-        }
-    }
+      transaction {
+         SchemaUtils.create(CustomersTable)
+      }
+   }
 }
 

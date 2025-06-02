@@ -1,5 +1,5 @@
 package com.sbarrasa.util.id
 
 interface IdDescMap {
-    fun asMap(): Map<String, String>
+   fun asMap(): Map<String, String>
 }

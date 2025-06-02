@@ -5,9 +5,9 @@ import com.bank.model.product.Product
 import com.bank.model.product.ProductHeader
 import java.time.LocalDate
 
-abstract class Card(header: ProductHeader): Product(header) {
-    var branch: Branch? = null
-    var number: String? = null
-    var expirationDate: LocalDate? = null
-    override fun fullDescription() = "${super.description} ${branch?.description}"
+abstract class Card(header: ProductHeader) : Product(header) {
+   var branch: Branch? = null
+   var number: String? = null
+   var expirationDate: LocalDate? = null
+   override fun fullDescription() = "${super.description} ${branch?.description}"
 }

@@ -1,6 +1,5 @@
 package com.sbarrasa.repository
 
-class IdRequiredException: RepositoryException {
-    constructor(message: String): super(message)
-    constructor(): super("id es requerida")
+class IdRequiredException : RepositoryException {
+   constructor() : super("id es requerida")
 }
