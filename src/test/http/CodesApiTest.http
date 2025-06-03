@@ -19,5 +19,14 @@ GET http://localhost:8080/codes/product_types
 Accept: application/json
 
 ### Obtener códigos
+GET http://localhost:8080/codes/entity_type
+Accept: application/json
+
+### Obtener códigos
+GET http://localhost:8080/codes/entity_code_map
+Accept: application/json
+
+### Obtener códigos
 GET http://localhost:8080/codes/all
 Accept: application/json
+

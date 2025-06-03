@@ -1,13 +1,8 @@
 package com.bank.routes
 
-import com.bank.model.customer.Gender
-import com.bank.model.product.Branch
-import com.bank.model.product.Currency
-import com.bank.model.product.factory.ProductTypes
-import com.bank.service.Codes
-import com.sbarrasa.util.CaseType.SNAKE
-import com.sbarrasa.util.simpleName
+import com.bank.modules.Codes
 import io.ktor.server.application.*
+import io.ktor.server.plugins.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
@@ -24,20 +19,11 @@ object CodesRoutes {
             call.respond(Codes.keys)
          }
 
-         get("/${Gender::class.simpleName(SNAKE)}") {
-            call.respond(Gender.asMap())
-         }
-
-         get("/${Branch::class.simpleName(SNAKE)}") {
-            call.respond(Branch.asMap())
-         }
-
-         get("/${Currency::class.simpleName(SNAKE)}") {
-            call.respond(Currency.asMap())
-         }
-
-         get("/${ProductTypes::class.simpleName(SNAKE)}") {
-            call.respond(ProductTypes.asMap())
+         get("/{code}") {
+            val code = call.parameters["code"]
+            Codes[code]
+               ?.let { call.respond(it) }
+               ?: throw NotFoundException("Code $code not found")
          }
       }
    }

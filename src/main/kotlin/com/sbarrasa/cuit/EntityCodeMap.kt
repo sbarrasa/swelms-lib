@@ -1,7 +1,10 @@
 package com.sbarrasa.cuit
 
+import com.sbarrasa.util.id.IdDescMap
+import kotlinx.serialization.Serializable
 
-object EntityCodeMap : Map<String, EntityCodeMap.Data> by mapOf(
+
+object EntityCodeMap : IdDescMap,  Map<String, EntityCodeMap.Data> by mapOf(
    "20" to Data(EntityType.FISICA, "Persona física (masculino)"),
    "23" to Data(EntityType.FISICA, "Persona física (prefijo alternativo por duplicación)"),
    "24" to Data(EntityType.FISICA, "Persona física (prefijo alternativo por duplicación)"),
@@ -20,8 +23,11 @@ object EntityCodeMap : Map<String, EntityCodeMap.Data> by mapOf(
       if(this[entityCode] == null)
          throw FiscalException("$entityCode es un código de entidad inválido")
    }
+   @Serializable
    data class Data(
       val entityType: EntityType,
       val description: String
    )
+   override fun asMap() = this.mapValues { it.value.description }
+
 }

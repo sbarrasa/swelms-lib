@@ -3,16 +3,16 @@ package com.sbarrasa.util
 import kotlin.reflect.KClass
 
 
-enum class CaseType {
+enum class Case {
    LOWER, UPPER, CAMEL, SNAKE, PASCAL
 }
 
-fun String.toCase(caseType: CaseType?): String = when (caseType) {
-   CaseType.LOWER -> lowercase()
-   CaseType.UPPER -> uppercase()
-   CaseType.CAMEL -> toCamelCase()
-   CaseType.SNAKE -> toSnakeCase()
-   CaseType.PASCAL -> toPascalCase()
+fun String.toCase(case: Case?): String = when (case) {
+   Case.LOWER -> lowercase()
+   Case.UPPER -> uppercase()
+   Case.CAMEL -> toCamelCase()
+   Case.SNAKE -> toSnakeCase()
+   Case.PASCAL -> toPascalCase()
    else -> this
 }
 
@@ -33,6 +33,6 @@ fun String.toSnakeCase(): String =
       .replace(Regex("([A-Z])([A-Z][a-z])"), "$1_$2")
       .lowercase()
 
-fun KClass<*>.simpleName(caseType: CaseType?): String =
-   simpleName!!.toCase(caseType)
+fun KClass<*>.simpleName(case: Case?): String =
+   simpleName!!.toCase(case)
 

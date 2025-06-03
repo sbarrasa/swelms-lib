@@ -1,6 +1,6 @@
 package com.sbarrasa.util
 
-import com.sbarrasa.util.CaseType.*
+import com.sbarrasa.util.Case.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
