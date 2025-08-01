@@ -7,13 +7,12 @@ enum class Case {
    LOWER, UPPER, CAMEL, SNAKE, PASCAL
 }
 
-fun String.toCase(case: Case?): String = when (case) {
+fun String.toCase(case: Case): String = when (case) {
    Case.LOWER -> lowercase()
    Case.UPPER -> uppercase()
    Case.CAMEL -> toCamelCase()
    Case.SNAKE -> toSnakeCase()
    Case.PASCAL -> toPascalCase()
-   else -> this
 }
 
 fun String.toCamelCase(): String =
@@ -33,6 +32,6 @@ fun String.toSnakeCase(): String =
       .replace(Regex("([A-Z])([A-Z][a-z])"), "$1_$2")
       .lowercase()
 
-fun KClass<*>.simpleName(case: Case?): String =
+fun KClass<*>.simpleName(case: Case): String =
    simpleName!!.toCase(case)
 
