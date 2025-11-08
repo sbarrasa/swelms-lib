@@ -10,7 +10,7 @@ import kotlin.test.*
 class ProductTypesTest {
    @BeforeTest
    fun init() {
-      ProductTypes
+      ProductFactory
          .register(SavingAccount)
          .register(CheckingAccount)
          .register(CreditCard)
@@ -19,13 +19,13 @@ class ProductTypesTest {
 
    @Test
    fun unknownProductType() {
-      assertFailsWith<ProductTypeNotRegistered> { ProductTypes.create<Product>("HOLA") }
+      assertFailsWith<ProductTypeNotRegistered> { ProductFactory.create<Product>("HOLA") }
    }
 
    @Test
    fun invalidCastProductType() {
       assertFailsWith<ClassCastException> {
-         val product: SavingAccount = ProductTypes.create("TC")
+         val product: SavingAccount = ProductFactory.create("TC")
          assertTrue(product.isCreditProduct)
       }
 
@@ -33,12 +33,12 @@ class ProductTypesTest {
 
    @Test
    fun createSavingAccount() {
-      val product = ProductTypes.create<SavingAccount>("CC")
+      val product = ProductFactory.create<SavingAccount>("CC")
       assertEquals("CC", product.id)
    }
 
    @Test
    fun asMap() {
-      println(ProductTypes.asMap())
+      println(ProductFactory.asMap())
    }
 }
