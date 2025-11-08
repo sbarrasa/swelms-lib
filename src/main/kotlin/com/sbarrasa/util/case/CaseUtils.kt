@@ -1,6 +1,4 @@
-package com.sbarrasa.util
-
-import kotlin.reflect.KClass
+package com.sbarrasa.util.case
 
 
 enum class Case {
@@ -32,6 +30,4 @@ fun String.toSnakeCase(): String =
       .replace(Regex("([A-Z])([A-Z][a-z])"), "$1_$2")
       .lowercase()
 
-fun KClass<*>.simpleName(case: Case): String =
-   simpleName!!.toCase(case)
 

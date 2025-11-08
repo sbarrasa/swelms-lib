@@ -6,7 +6,7 @@ import com.bank.model.product.Currency
 import com.bank.model.product.factory.ProductFactory
 import com.sbarrasa.cuit.EntityCodeMap
 import com.sbarrasa.cuit.EntityType
-import com.sbarrasa.util.Case
+import com.sbarrasa.util.case.Case
 import com.sbarrasa.util.id.CodesClassMap
 
 object Codes: CodesClassMap (

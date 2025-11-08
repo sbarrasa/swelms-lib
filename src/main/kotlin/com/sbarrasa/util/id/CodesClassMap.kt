@@ -1,7 +1,6 @@
 package com.sbarrasa.util.id
 
-import com.sbarrasa.util.Case
-import com.sbarrasa.util.simpleName
+import com.sbarrasa.util.case.*
 
 open class CodesClassMap(classes: List<IdDescMap>, keyCase: Case = Case.SNAKE)
    : Map<String, Map<String, String>> by buildMap(classes, keyCase) {
