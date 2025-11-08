@@ -1,11 +1,10 @@
 package com.bank.model.product.types
 
-import com.bank.model.product.factory.ProductRegister
+import com.bank.model.product.ProductHeader
 
 class DebitCard : Card(DebitCard) {
-   companion object : ProductRegister<DebitCard> {
+   companion object : ProductHeader {
       override var id = "TD"
       override val description = "Tarjeta de débito"
-      override val creator = ::DebitCard
    }
 }

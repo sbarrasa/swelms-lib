@@ -1,29 +1,26 @@
 package com.bank.model.product.factory
 
 import com.bank.model.product.Product
+import com.bank.model.product.ProductHeader
 import com.sbarrasa.util.id.IdDescMap
 
 
-typealias ProductCreator<T> = () -> T
-
 object ProductFactory : IdDescMap {
-   private val creators = HashMap<String, ProductCreator<Product>>()
+   private val creators = mutableMapOf<String, () -> Product>()
 
-   fun register(productRegister: ProductRegister<out Product>) =
-      register(productRegister.id, productRegister.creator)
-
-   fun <T : Product> register(productType: String, creator: ProductCreator<T>): ProductFactory {
-      creators[productType] = creator
-      return this
+   fun <T : Product> register(
+      header: ProductHeader? = null,
+      creator: () -> T
+   ) {
+      val key = header?.id ?: creator().id
+      creators[key] = creator
    }
 
    @Suppress("UNCHECKED_CAST")
-   fun <T : Product> create(productType: String): T {
-      val creator = creators[productType]
-         ?: throw ProductTypeNotRegistered(productType)
-      return creator.invoke() as T
-   }
+   fun <T : Product> create(id: String): T =
+      creators[id]?.invoke()?.let { it as T }
+         ?: throw ProductTypeNotRegistered(id)
 
-   override fun asMap() =
-      creators.mapValues { it.value().description }
+   override fun asMap(): Map<String, String> =
+      creators.map { (key, creator) -> key to creator().description }.toMap()
 }

@@ -1,6 +1,6 @@
 package com.bank.model.product.types
 
-import com.bank.model.product.factory.ProductRegister
+import com.bank.model.product.ProductHeader
 
 class CreditCard : Card(CreditCard), CreditProduct {
    override var creditLimit: Double? = null
@@ -8,9 +8,8 @@ class CreditCard : Card(CreditCard), CreditProduct {
 
    override fun fullDescription() = "${super.fullDescription()} ${tier ?: ""}".trimEnd()
 
-   companion object : ProductRegister<CreditCard> {
+   companion object : ProductHeader {
       override var id = "TC"
       override val description = "Tarjeta de crédito"
-      override val creator = ::CreditCard
    }
 }

@@ -10,11 +10,12 @@ import kotlin.test.*
 class ProductTypesTest {
    @BeforeTest
    fun init() {
-      ProductFactory
-         .register(SavingAccount)
-         .register(CheckingAccount)
-         .register(CreditCard)
-         .register(DebitCard)
+      with(ProductFactory) {
+         register { SavingAccount() }
+         register { CheckingAccount() }
+         register { CreditCard() }
+         register { DebitCard() }
+      }
    }
 
    @Test
