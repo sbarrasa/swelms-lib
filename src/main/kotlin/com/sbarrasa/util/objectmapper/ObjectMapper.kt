@@ -14,3 +14,9 @@ inline fun <reified S : Any, reified T : Any> map(source: S, target: T) {
       if (value != null) tProp.set(target, value)
    }
 }
+
+inline fun <reified S : Any, reified T : Any> S.mapTo(target: T): T {
+   map(this, target)
+   return target
+}
+

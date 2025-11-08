@@ -7,13 +7,6 @@ import com.sbarrasa.util.objectmapper.*
 class ExposedCustomerRepository :
    CustomerRepository, ExposedRepository<Customer, CustomerEntity>(
    entityClass = CustomerEntity,
-   mapToDTO = { entity ->
-      val dto = Customer()
-      map(entity, dto)
-      dto
-   },
-   mapToEntity = { dto, entity ->
-      map(dto, entity)
-      entity
-   }
+   mapToDTO = { it.mapTo(Customer()) },
+   mapToEntity = { dto, entity -> dto.mapTo(entity) }
 )
