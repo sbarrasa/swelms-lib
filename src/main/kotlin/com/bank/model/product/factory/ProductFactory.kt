@@ -2,7 +2,7 @@ package com.bank.model.product.factory
 
 import com.bank.model.product.Product
 import com.bank.model.product.ProductHeader
-import com.sbarrasa.util.id.IdDescMap
+import com.sbarrasa.id.IdDescMap
 
 
 object ProductFactory : IdDescMap {

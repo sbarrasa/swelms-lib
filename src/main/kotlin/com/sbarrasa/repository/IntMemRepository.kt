@@ -1,6 +1,6 @@
 package com.sbarrasa.repository
 
-import com.sbarrasa.util.id.Id
+import com.sbarrasa.id.Id
 
 open class IntMemRepository<T : Id<Int?>> : MemRepository<Int?, T>(
    autoId = true,

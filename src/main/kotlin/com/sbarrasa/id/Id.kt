@@ -1,4 +1,4 @@
-package com.sbarrasa.util.id
+package com.sbarrasa.id
 
 interface Id<T> {
    var id: T

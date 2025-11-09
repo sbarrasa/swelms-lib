@@ -6,16 +6,17 @@ import com.bank.model.product.Currency
 import com.bank.model.product.factory.ProductFactory
 import com.sbarrasa.cuit.EntityCodeMap
 import com.sbarrasa.cuit.EntityType
+import com.sbarrasa.id.EnumDesc
 import com.sbarrasa.util.case.Case
-import com.sbarrasa.util.id.IdDescClassMap
+import com.sbarrasa.id.IdDescClassMap
 
 object Codes: IdDescClassMap (
    keyCase = Case.SNAKE,
    ProductFactory,
-      Branch,
-      Currency,
-      Gender,
-      EntityType,
+      EnumDesc.of<EntityType>(),
+      EnumDesc.of<Branch>(),
+      EnumDesc.of<Currency>(),
+      EnumDesc.of<Gender>(),
       EntityCodeMap,
    )
 

@@ -1,4 +1,4 @@
-package com.sbarrasa.util.id
+package com.sbarrasa.id
 
 interface Desc {
    val description: String

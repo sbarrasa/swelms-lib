@@ -1,14 +1,10 @@
 package com.bank.model.product
 
-import com.sbarrasa.util.id.Desc
-import com.sbarrasa.util.id.EnumDescMap
+import com.sbarrasa.id.Desc
 
 enum class Currency(override val description: String) : Desc {
    ARS("pesos"),
    USD("dólares"),
-   EUR("euros");
+   EUR("euros")
 
-   companion object : EnumDescMap<Currency> {
-      override val values = entries
-   }
 }

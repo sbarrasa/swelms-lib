@@ -1,6 +1,6 @@
 package com.sbarrasa.repository
 
-import com.sbarrasa.util.id.Id
+import com.sbarrasa.id.Id
 
 open class MemRepository<I : Any?, T : Id<I>>(
    private val idGenerator: () -> I,

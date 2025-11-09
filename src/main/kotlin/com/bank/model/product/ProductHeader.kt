@@ -1,5 +1,5 @@
 package com.bank.model.product
 
-import com.sbarrasa.util.id.IdDesc
+import com.sbarrasa.id.IdDesc
 
 interface ProductHeader : IdDesc<String>

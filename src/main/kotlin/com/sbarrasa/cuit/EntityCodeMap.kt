@@ -1,6 +1,6 @@
 package com.sbarrasa.cuit
 
-import com.sbarrasa.util.id.IdDescMap
+import com.sbarrasa.id.IdDescMap
 import kotlinx.serialization.Serializable
 
 
