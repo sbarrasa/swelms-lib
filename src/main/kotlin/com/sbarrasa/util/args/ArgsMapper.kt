@@ -1,12 +1,19 @@
 package com.sbarrasa.util.args
 
-class ArgsMapper(
-   args: Array<String>,
-   prefix: String = DEFAULT_PREFIX,
-   separator: String = DEFAULT_SEPARATOR
-) {
+import com.sbarrasa.map.Mappeable
 
-   val asMap: Map<String, String> = args
+class ArgsMapper(
+   val args: Array<String>,
+   val prefix: String = DEFAULT_PREFIX,
+   val separator: String = DEFAULT_SEPARATOR
+) : Mappeable<String, String> {
+
+
+   val asMap = asMap()
+
+   operator fun get(key: String) = asMap[key]
+
+   override fun asMap(): Map<String, String> = args
       .mapNotNull { arg ->
          val parts = arg.split(separator, limit = 2)
          if ((parts.size == 2)
@@ -18,8 +25,6 @@ class ArgsMapper(
 
       }
       .toMap()
-
-   operator fun get(key: String) = asMap[key]
 
    companion object {
       const val DEFAULT_PREFIX = "-"
