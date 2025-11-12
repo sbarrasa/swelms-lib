@@ -3,7 +3,7 @@ GET http://localhost:8080/customers
 Accept: application/json
 
 ### Obtener customer por id
-GET http://localhost:8080/customers/9
+GET http://localhost:8080/customers/1
 Accept: application/json
 
 ### Obtener customer con id invalido
@@ -16,7 +16,7 @@ Accept: application/json
 
 
 ### Obtener entityType de un Customer
-GET http://localhost:8080/customers/9/info
+GET http://localhost:8080/customers/1/info
 Accept: application/json
 
 ### Crear un customer
