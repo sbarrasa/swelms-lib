@@ -8,6 +8,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Customer(
    override var id: Int? = null,
+   //TODO: pasar a Name()
    var name: String? = null,
    var lastName: String? = null,
    var birthDay: LocalDate? = null,

@@ -2,48 +2,37 @@ package com.sbarrasa.person
 
 import kotlinx.serialization.Serializable
 
-@Serializable
+@Serializable(with = NameAsStringSerializer::class)
 data class Name (
-   override val names: MutableList<String> = ArrayList(),
-   override val lastNames: MutableList<String> = ArrayList()
+   val nameList: MutableList<String> = mutableListOf(),
+   val lastNameList: MutableList<String> = mutableListOf()
 ): Nombrable {
 
-   constructor(names: String, lastNames: String = ""): this() {
-      this.names.addAll(split(names))
-      this.lastNames.addAll(split(lastNames))
+   constructor(names: String, lastNames: String): this() {
+      nameList.addAll(split(names))
+      lastNameList.addAll(split(lastNames))
    }
 
-   constructor(fullName: String): this() {
-      val parts = split(fullName)
-      if (parts.isNotEmpty()) {
-         lastNames.add(parts.last())
-         names.addAll(parts.dropLast(1))
-      }
-   }
+   constructor(legalName: String) : this(
+      names = legalName.substringAfter(",", "").trim(),
+      lastNames = legalName.substringBefore(",", "").trim(',')
+   )
 
-   private fun split(value: String) = value.trim().split("\\s+".toRegex())
+   private fun split(value: String) = value.trim().split("\\s+".toRegex()).filter { it.isNotBlank() }
 
-   override val firstName: String
-      get() = names.get(0)
-
-   override val lastName: String
-      get() = lastNames.joinToString(" ")
-
+   private val fullNameList get() = nameList + lastNameList
 
    val size: Int
-      get() = names.size + lastNames.size
+      get() = nameList.size + lastNameList.size
 
-   operator fun get(index: Int) = fullName().get(index-1)
+   operator fun get(index: Int) = fullNameList[index]
 
-   override fun fullName() = "${onlyNames()} ${lastNames()}"
+   fun fullNameFormat() = "$names $lastNames".trim()
+   fun legalNameFormat() = "$lastNames, $names".trim().trimEnd(',')
 
-   fun militaryName() = "$lastName, $firstName"
+   override val names get() = nameList.joinToString(" ")
+   override val lastNames get() = lastNameList.joinToString(" ")
 
-   fun lastNames() = lastNames.joinToString(" ")
+   override fun toString() =fullNameFormat()
 
-   fun onlyNames() = names.joinToString(" ")
-
-   override fun toString(): String {
-      return fullName()
-   }
 }
