@@ -20,6 +20,7 @@ fun Application.initModules(repo: CustomerRepository) {
    routing {
       CustomerRoutes(repo).register(this)
       CodesRoutes.register(this)
+      DBRoutes.register(this)
    }
    configLog()
 }

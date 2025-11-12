@@ -32,9 +32,6 @@ class CustomerRoutes(private val customerRepository: CustomerRepository) {
             call.respond(customerRepository.get(id))
          }
 
-         put("/") {
-            call.requireId()
-         }
 
          put("/{id}") {
             val id = call.requireId()
