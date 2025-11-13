@@ -24,8 +24,7 @@ POST http://localhost:8080/customers
 Content-Type: application/json
 
 {
-  "name": "CocaCola",
-  "lastName": "Argentina",
+  "legalName": "CocaCola",
   "cuit": "30525390086"
 }
 
@@ -34,8 +33,7 @@ POST http://localhost:8080/customers
 Content-Type: application/json
 
 {
-  "name": "Sebastián Gabriel",
-  "lastName": "Barrasa",
+  "legalName": "Barrasa, Sebastián Gabriel",
   "cuit": "20240614708",
   "birthDay": "1974-06-07",
   "gender": "M"

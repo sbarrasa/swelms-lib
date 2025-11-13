@@ -1,10 +1,10 @@
 package com.bank.config
 
-import com.bank.model.product.factory.ProductFactory
-import com.bank.model.product.types.CheckingAccount
-import com.bank.model.product.types.CreditCard
-import com.bank.model.product.types.DebitCard
-import com.bank.model.product.types.SavingAccount
+import com.bank.dto.product.factory.ProductFactory
+import com.bank.dto.product.types.CheckingAccount
+import com.bank.dto.product.types.CreditCard
+import com.bank.dto.product.types.DebitCard
+import com.bank.dto.product.types.SavingAccount
 
 fun ProductFactory.init() {
    register { SavingAccount() }

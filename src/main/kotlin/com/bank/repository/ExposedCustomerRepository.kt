@@ -1,6 +1,6 @@
 package com.bank.repository
 
-import com.bank.model.customer.Customer
+import com.bank.dto.customer.Customer
 import com.sbarrasa.repository.exposed.ExposedRepository
 import com.sbarrasa.util.objectcopy.*
 

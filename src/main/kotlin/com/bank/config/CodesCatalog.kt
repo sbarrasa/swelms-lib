@@ -1,9 +1,9 @@
 package com.bank.config
 
-import com.bank.model.customer.Gender
-import com.bank.model.product.Branch
-import com.bank.model.product.Currency
-import com.bank.model.product.factory.ProductFactory
+import com.bank.dto.customer.Gender
+import com.bank.dto.product.Branch
+import com.bank.dto.product.Currency
+import com.bank.dto.product.factory.ProductFactory
 import com.sbarrasa.fiscal.cuit.EntityCodes
 import com.sbarrasa.fiscal.cuit.EntityType
 import com.sbarrasa.util.map.Catalog

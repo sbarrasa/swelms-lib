@@ -1,10 +1,10 @@
 package com.bank.repository
 
 import com.bank.config.DBClient
-import java.util.logging.Logger
+import org.slf4j.LoggerFactory
 
 object RepositoryFactory {
-   private val log = Logger.getLogger(this::class.simpleName)
+   private val log = LoggerFactory.getLogger(this::class.simpleName)
 
    enum class Types {
       MEM, EXPOSED

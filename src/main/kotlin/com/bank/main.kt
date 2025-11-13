@@ -1,6 +1,6 @@
 package com.bank
 
-import com.bank.model.product.factory.ProductFactory
+import com.bank.dto.product.factory.ProductFactory
 import com.bank.repository.RepositoryFactory
 import com.bank.config.init
 import com.bank.routes.initModules

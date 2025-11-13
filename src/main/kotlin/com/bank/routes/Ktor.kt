@@ -13,6 +13,7 @@ import io.ktor.server.routing.*
 import io.ktor.server.plugins.callloging.*
 import org.slf4j.event.Level
 
+private val logger = org.slf4j.LoggerFactory.getLogger("Application")
 
 fun Application.initModules(repo: CustomerRepository) {
    configHTTP()
@@ -20,7 +21,6 @@ fun Application.initModules(repo: CustomerRepository) {
    routing {
       CustomerRoutes(repo).register(this)
       CodesRoutes.register(this)
-      DBRoutes.register(this)
    }
    configLog()
 }
@@ -52,14 +52,10 @@ internal fun Application.configHTTP() {
 
 internal inline fun <reified T : Throwable> StatusPagesConfig.handleException(status: HttpStatusCode) {
    exception<T> { call, cause ->
-      var deepestMessage: String? = null
-      var current: Throwable? = cause
-      while (current != null) {
-         if (!current.message.isNullOrBlank()) {
-            deepestMessage = current.message
-         }
-         current = current.cause
-      }
-      call.respond(status, deepestMessage ?: status.description)
+      logger.error("Error ${status.value}: ${cause.message}", cause)
+      val msg = generateSequence(cause as Throwable?) { it.cause }
+         .mapNotNull { it.message }
+         .lastOrNull() ?: status.description
+      call.respond(status, msg)
    }
 }

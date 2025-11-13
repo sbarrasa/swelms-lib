@@ -8,8 +8,7 @@ import org.jetbrains.exposed.dao.id.EntityID
 class CustomerEntity(id: EntityID<Int>) : IntEntity(id) {
    companion object : IntEntityClass<CustomerEntity>(CustomersTable)
 
-   var name by CustomersTable.firstName
-   var lastName by CustomersTable.lastName
+   var legalName by CustomersTable.legalName
 
    private var cuitStr by CustomersTable.cuit
    var cuit: Cuit
