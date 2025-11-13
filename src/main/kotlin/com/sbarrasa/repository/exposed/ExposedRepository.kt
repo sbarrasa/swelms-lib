@@ -19,7 +19,7 @@ abstract class ExposedRepository<T : Id<Int?>, E : IntEntity>(
    }
 
    override fun get(id: Int?): T = transaction {
-      val entity = findById(id)
+      val entity = find(id)
       return@transaction mapToDTO(entity)
    }
 
@@ -30,19 +30,19 @@ abstract class ExposedRepository<T : Id<Int?>, E : IntEntity>(
    }
 
    override fun update(id: Int?, dto: T): T = transaction {
-      val current = findById(id)
+      val current = find(id)
       mapToEntity(dto, current)
       return@transaction mapToDTO(current)
    }
 
    override fun delete(id: Int?): T = transaction {
-      val entity = findById(id)
+      val entity = find(id)
       val dto = mapToDTO(entity)
       entity.delete()
       return@transaction dto
    }
 
-   fun findById(id: Int?): E {
+   fun find(id: Int?): E {
       require(id!=null) { throw IdRequiredException() }
 
       return entityClass.findById(id) ?: throw EntityNotFoundException(id)

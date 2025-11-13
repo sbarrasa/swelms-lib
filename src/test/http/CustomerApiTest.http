@@ -19,7 +19,7 @@ Accept: application/json
 GET http://localhost:8080/customers/1/info
 Accept: application/json
 
-### Crear un customer
+### Crear una empresa
 POST http://localhost:8080/customers
 Content-Type: application/json
 
@@ -28,7 +28,7 @@ Content-Type: application/json
   "cuit": "30525390086"
 }
 
-### Crear otro customer
+### Crear una persona
 POST http://localhost:8080/customers
 Content-Type: application/json
 
@@ -39,6 +39,16 @@ Content-Type: application/json
   "gender": "M"
 }
 
+### Crear otra persona
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "legalName": "Perez, Maia",
+  "cuit": "20240614708",
+  "birthDay": "2001-12-19",
+  "gender": "F"
+}
 ### Actualizar un customer
 PUT http://localhost:8080/customers/9
 Content-Type: application/json
@@ -57,4 +67,4 @@ Content-Type: application/json
 
 
 ### Eliminar un customer
-DELETE http://localhost:8080/customers/8
+DELETE http://localhost:8080/customers/77

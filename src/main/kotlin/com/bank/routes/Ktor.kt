@@ -11,6 +11,7 @@ import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.plugins.callloging.*
+import kotlinx.serialization.json.Json
 import org.slf4j.event.Level
 
 private val logger = org.slf4j.LoggerFactory.getLogger("Application")
@@ -33,7 +34,11 @@ internal fun Application.configLog() {
 
 internal fun Application.configSerialization() {
    install(ContentNegotiation) {
-      json()
+      json(
+         Json {
+            explicitNulls = false
+         }
+      )
    }
    routing {
       get("/json/test") {
