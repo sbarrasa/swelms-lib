@@ -14,8 +14,8 @@ data class Name (
    }
 
    constructor(legalName: String) : this(
-      names = legalName.substringAfter(",", "").trim(),
-      lastNames = legalName.substringBefore(",", "").trim(',')
+      lastNames = legalName.substringBefore(",").trim(),
+      names = legalName.substringAfter(",", "").trim()
    )
 
    private fun split(value: String) = value.trim().split("\\s+".toRegex()).filter { it.isNotBlank() }

@@ -17,7 +17,7 @@ class NameTest {
       val name = Name("Barrasa Rabinovich, Sebastian Gabriel")
       assertEquals("Sebastian Gabriel", name.names)
       assertEquals("Barrasa Rabinovich", name.lastNames)
-      assertEquals("Barrasa Rabinovich, Sebastian Gabriel", name.legalNameFormat())
+      assertEquals("Sebastian Gabriel Barrasa Rabinovich", name.toString())
    }
 
    @Test
@@ -46,4 +46,13 @@ class NameTest {
       val name = Name("Sebastian", "Barrasa")
       assertEquals("Sebastian Barrasa", name.toString())
    }
+
+   @Test
+   fun createWithNames() {
+      val name = Name("Barrasa")
+      assertEquals("Barrasa", name.lastNames)
+      assertEquals("", name.names)
+      assertEquals("Barrasa", name.fullNameFormat())
+   }
+
 }
