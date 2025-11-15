@@ -50,11 +50,19 @@ Content-Type: application/json
   "gender": "F"
 }
 ### Actualizar un customer
-PUT http://localhost:8080/customers/9
+PUT http://localhost:8080/customers/3
 Content-Type: application/json
 
 {
   "gender": "X"
+}
+
+### Intento de actualizar un id
+PUT http://localhost:8080/customers/10
+Content-Type: application/json
+
+{
+  "id": 10
 }
 
 ### Actualizar un customer

@@ -9,10 +9,10 @@ import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.sql.transactions.transaction
 
 abstract class ExposedRepository<T : Id<Int?>, E : IntEntity>(
-   val entityClass: EntityClass<Int, E>,
-   val mapToDTO: (E) -> T,
-   val mapToEntity: (T, E) -> E
-) : Repository<Int?, T> {
+   val entityClass: EntityClass<Int, E>) : Repository<Int?, T> {
+
+   protected abstract fun mapToDTO(entity: E): T
+   protected abstract fun mapToEntity(dto: T, entity: E)
 
    override fun getAll(): List<T> = transaction {
       return@transaction entityClass.all().map { mapToDTO(it) }

@@ -7,19 +7,24 @@ import com.sbarrasa.repository.exposed.ExposedRepository
 
 object ExposedCustomerRepository :
    CustomerRepository, ExposedRepository<Customer, CustomerEntity>(
-   entityClass = CustomerEntity,
-   mapToDTO = { entity ->
-      Customer(id = entity.id.value,
+   entityClass = CustomerEntity) {
+
+   override fun mapToDTO(entity: CustomerEntity) =
+      Customer(
+         id = entity.id.value,
          legalName = Name(entity.legalName),
          cuit = Cuit(entity.cuit),
          birthDay = entity.birthDay,
-         gender = entity.gender)
-              },
-   mapToEntity = { dto, entity -> entity.apply {
+         gender = entity.gender
+      )
+
+    override fun mapToEntity(dto: Customer, entity: CustomerEntity) {
+      entity.apply {
          legalName = dto.legalName!!.legalNameFormat()
          birthDay = dto.birthDay
          gender = dto.gender
          cuit = dto.cuit!!.value
       }
+
    }
-)
+}

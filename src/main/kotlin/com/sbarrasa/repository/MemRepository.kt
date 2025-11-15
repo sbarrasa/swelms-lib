@@ -3,9 +3,10 @@ package com.sbarrasa.repository
 import com.sbarrasa.util.id.Id
 
 open class MemRepository<I : Any?, T : Id<I>>(
-   private val idGenerator: () -> I,
-   val autoId: Boolean = true
+   private val idGenerator: (() -> I)? = null,
 ) : Repository<I, T> {
+
+   val autoId: Boolean get() = idGenerator!=null
 
    protected val items = mutableMapOf<I, T>()
 
@@ -16,7 +17,7 @@ open class MemRepository<I : Any?, T : Id<I>>(
 
    override fun add(dto: T): T {
       if (autoId)
-         dto.id = idGenerator()
+         dto.id = idGenerator!!()
 
       items[dto.id] = dto
       return dto

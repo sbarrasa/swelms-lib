@@ -10,7 +10,6 @@ object RepositoryFactory {
       MEM, EXPOSED
    }
 
-
    fun get(type: Types): CustomerRepository {
       log.info("Repository type: $type")
       return when (type) {
