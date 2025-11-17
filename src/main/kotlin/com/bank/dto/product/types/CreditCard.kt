@@ -1,6 +1,6 @@
 package com.bank.dto.product.types
 
-import com.bank.dto.product.ProductHeader
+import com.bank.dto.product.ProductDescriptor
 
 class CreditCard : Card(CreditCard), CreditProduct {
    override var creditLimit: Double? = null
@@ -8,7 +8,7 @@ class CreditCard : Card(CreditCard), CreditProduct {
 
    override fun fullDescription() = "${super.fullDescription()} ${tier ?: ""}".trimEnd()
 
-   companion object : ProductHeader {
+   companion object : ProductDescriptor {
       override var id = "TC"
       override val description = "Tarjeta de crédito"
    }

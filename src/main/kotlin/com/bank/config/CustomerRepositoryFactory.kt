@@ -4,14 +4,15 @@ import com.bank.repository.CustomerRepository
 import com.bank.repository.CustomersTable
 import com.bank.repository.ExposedCustomerRepository
 import com.bank.repository.MemCustomerRepository
-import com.sbarrasa.repository.AbstractRepositoryFactory
+import com.sbarrasa.registry.Registry
 
-object CustomerRepositoryFactory: AbstractRepositoryFactory<CustomerRepository>() {
-   override fun buildRepositories() = mutableMapOf(
-      "MEM" to { MemCustomerRepository },
-      "EXPOSED" to {
+object CustomerRepositoryFactory: Registry<String, CustomerRepository>() {
+   init {
+      register("MEM") { MemCustomerRepository }
+
+      register("EXPOSED") {
          DBClient.init(CustomersTable)
          ExposedCustomerRepository
       }
-   )
+   }
 }

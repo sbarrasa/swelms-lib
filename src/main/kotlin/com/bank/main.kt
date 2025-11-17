@@ -1,22 +1,24 @@
 package com.bank
 
 import com.bank.config.CustomerRepositoryFactory
-import com.bank.dto.product.factory.ProductFactory
-import com.bank.config.init
 import com.bank.routes.initModules
-import com.sbarrasa.args.get
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import com.sbarrasa.args.*
+import org.slf4j.LoggerFactory
+
+val log = LoggerFactory.getLogger("Application")
 
 fun main(args: Array<String>) {
-   ProductFactory.init()
+   val repoSource = args["repo"]?:"MEM"
+   log.info("Repository source: $repoSource")
 
-   val repo = CustomerRepositoryFactory.get(args["repo"])
+   val customerRepo = CustomerRepositoryFactory.get(repoSource)
 
    val restServer = embeddedServer(
       factory = Netty,
       port = 8080,
-      module = { initModules(repo) })
+      module = { initModules(customerRepo) })
 
    restServer.start(wait = true)
 }
