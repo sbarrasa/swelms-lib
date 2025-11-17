@@ -1,0 +1,13 @@
+package com.bank.product.structure
+
+import kotlinx.datetime.LocalDate
+import kotlinx.serialization.Serializable
+
+@Serializable
+abstract class Card : Product() {
+   abstract val branch: Branch
+   abstract val number: String
+   abstract val expirationDate: LocalDate
+
+   override fun fullDescription() = "$description ${branch.description}"
+}

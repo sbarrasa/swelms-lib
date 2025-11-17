@@ -1,4 +1,4 @@
-package com.bank.dto.product
+package com.bank.product.structure
 
 import com.sbarrasa.id.Desc
 

@@ -1,0 +1,11 @@
+package com.bank.product.structure
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+abstract class Account: Product() {
+   abstract val cbu: String
+   abstract val currency: Currency
+
+   override fun fullDescription() = "$description en ${currency.description}"
+}
