@@ -1,27 +1,19 @@
 package com.product
 
+import com.bank.config.ProductTypes
 import com.bank.dto.product.CheckingAccount
 import com.bank.dto.product.CreditCard
-import com.bank.product.registry.ProductRegistry
+import com.sbarrasa.registry.decodeFromMap
 import com.bank.product.structure.Branch
 import com.bank.product.structure.Currency
 import com.bank.product.structure.Product
 import kotlin.test.*
 
-class ProductRegistryTest {
-   val registry = ProductRegistry()
-   init {
-
-      with(registry){
-         register(CheckingAccount::class)
-         register(CreditCard::class)
-      }
-   }
-
+class ProductTypeTest {
 
    @Test
    fun asMap() {
-      val map = registry.asMap()
+      val map = ProductTypes.asMap()
 
       assertTrue(map.containsKey("CC"))
       assertTrue(map.containsKey("TC"))
@@ -29,32 +21,22 @@ class ProductRegistryTest {
 
    @Test
    fun getDescriptor() {
-      val descriptor = registry.getDescriptor(CheckingAccount::class)
+      val descriptor = ProductTypes.getDescriptor(CheckingAccount::class)
 
-      assertEquals("CC", descriptor.id)
+      assertEquals("CC", descriptor?.id)
    }
 
    @Test
    fun createFromJsonString() {
       val jsonString = """{"id":"CC","cbu":"1234567890123456789012","currency":"ARS", "creditLimit":1000000}"""
 
-      val product = registry.createFrom(jsonString)
+      val product = ProductTypes.json.decodeFromString<Product>(jsonString)
 
       assertTrue(product is CheckingAccount)
       assertEquals("1234567890123456789012", product.cbu)
       assertEquals(Currency.ARS, product.currency)
    }
 
-   @Test
-   fun decodeWithJsonSerializer() {
-      val jsonString = """{"id":"CC","cbu":"1234567890123456789012","currency":"ARS", "creditLimit":1000000}"""
-
-      val product = registry.json.decodeFromString<Product>(jsonString)
-
-      assertTrue(product is CheckingAccount)
-      assertEquals("1234567890123456789012", product.cbu)
-      assertEquals(Currency.ARS, product.currency)
-   }
 
    @Test
    fun createFromMap() {
@@ -67,7 +49,7 @@ class ProductRegistryTest {
          "tier" to "Black"
       )
 
-      val product = registry.createFrom(map)
+      val product = ProductTypes.json.decodeFromMap<Product>(map)
 
       assertTrue(product is CreditCard)
       assertEquals(Branch.VISA, product.branch)

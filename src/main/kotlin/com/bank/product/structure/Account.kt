@@ -7,5 +7,5 @@ abstract class Account: Product() {
    abstract val cbu: String
    abstract val currency: Currency
 
-   override fun fullDescription() = "${type.description} en ${currency.description}"
+   override fun fullDescription() = "${descriptor.description} en ${currency.description}"
 }

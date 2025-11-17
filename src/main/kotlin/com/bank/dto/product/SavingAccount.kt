@@ -12,7 +12,7 @@ data class SavingAccount(
    override val cbu: String,
    override val currency: Currency
 ) : Account() {
-   override val type: ProductDescriptor
+   override val descriptor: ProductDescriptor
       get() = Companion
 
    companion object: ProductDescriptor {

@@ -17,7 +17,7 @@ data class CreditCard(
    override var creditLimit: Double,
    val tier: String
 ) : Card(), CreditProduct {
-   override val type: ProductDescriptor
+   override val descriptor: ProductDescriptor
       get() = Companion
 
    companion object: ProductDescriptor {

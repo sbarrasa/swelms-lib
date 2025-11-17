@@ -14,7 +14,7 @@ data class DebitCard(
    override val number: String,
    override val expirationDate: LocalDate
 ) : Card() {
-   override val type: ProductDescriptor
+   override val descriptor: ProductDescriptor
       get() = Companion
 
    companion object: ProductDescriptor {

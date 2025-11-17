@@ -16,7 +16,7 @@ class CreditCardTest {
          tier = "Gold"
       )
 
-      assertEquals(CreditCard.id, product.type.id)
+      assertEquals(CreditCard.id, product.descriptor.id)
 
    }
 }
