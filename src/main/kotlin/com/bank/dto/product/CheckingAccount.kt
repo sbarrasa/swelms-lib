@@ -8,16 +8,16 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-@SerialName("CC")
+@SerialName(CheckingAccount.type)
 data class CheckingAccount(
    override val cbu: String,
    override val currency: Currency,
    override val creditLimit: Double
 ) : Account(), CreditProduct {
-   override val descriptor: ProductDescriptor
-      get() = Companion
+
    companion object: ProductDescriptor {
-      override var id = "CC"
+      const val type = "CC"
+      override var id = type
       override val description = "Cuenta corriente"
    }
 }

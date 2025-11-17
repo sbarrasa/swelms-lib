@@ -9,7 +9,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-@SerialName("TC")
+@SerialName(CreditCard.type)
 data class CreditCard(
    override val branch: Branch,
    override val number: String,
@@ -17,10 +17,10 @@ data class CreditCard(
    override var creditLimit: Double,
    val tier: String
 ) : Card(), CreditProduct {
-   override val descriptor: ProductDescriptor
-      get() = Companion
+
    companion object: ProductDescriptor {
-      override var id = "TC"
+      const val type = "TC"
+      override var id = type
       override val description = "Tarjeta de crédito"
    }
 

@@ -11,24 +11,23 @@ import kotlinx.serialization.serializer
 import kotlin.reflect.KClass
 import kotlin.reflect.full.companionObjectInstance
 
-typealias ProductClass = KClass<out Product>
-typealias ProductSerializer = KSerializer<out Product>
 
+//TODO: generalizar comom un caso de repositorio
 open class ProductRegistry: Mappeable<String, String> {
-   private val classes = mutableMapOf<ProductClass, ProductSerializer>()
+   private val classes = mutableMapOf<KClass<out Product>, KSerializer<out Product>>()
 
    @OptIn(InternalSerializationApi::class)
-   fun register(productClass: ProductClass) {
-      classes[productClass] =  productClass.serializer()
+   fun register(clazz: KClass<out Product>) {
+      classes[clazz] =  clazz.serializer()
    }
 
    val json: Json by lazy {
       Json {
          serializersModule = SerializersModule {
             polymorphic(Product::class) {
-               classes.forEach { (productClass, serializer) ->
+               classes.forEach { (clazz, serializer) ->
                   @Suppress("UNCHECKED_CAST")
-                  subclass(productClass as KClass<Product>, serializer as KSerializer<Product>)
+                  subclass(clazz as KClass<Product>, serializer as KSerializer<Product>)
                }
             }
          }
@@ -38,7 +37,7 @@ open class ProductRegistry: Mappeable<String, String> {
    }
 
 
-   fun getDescriptor(productClass: ProductClass) = productClass.companionObjectInstance as ProductDescriptor
+   fun getDescriptor(clazz: KClass<out Product>) = clazz.companionObjectInstance as ProductDescriptor
 
    fun createFrom(jsonString: String): Product =
       json.decodeFromString(jsonString)
@@ -48,8 +47,8 @@ open class ProductRegistry: Mappeable<String, String> {
       return json.decodeFromJsonElement(jsonObject)
    }
 
-   override fun asMap() = classes.keys.associate { productClass ->
-      val descriptor = getDescriptor(productClass)
+   override fun asMap() = classes.keys.associate { clazz ->
+      val descriptor = getDescriptor(clazz)
       descriptor.id to descriptor.description
    }
 }

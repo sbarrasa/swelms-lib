@@ -3,6 +3,7 @@ package com.bank.dto.product
 import com.bank.product.registry.ProductRegistry
 import com.bank.product.structure.Branch
 import com.bank.product.structure.Currency
+import com.bank.product.structure.Product
 import kotlin.test.*
 
 class ProductRegistryTest {
@@ -36,6 +37,17 @@ class ProductRegistryTest {
       val jsonString = """{"id":"CC","cbu":"1234567890123456789012","currency":"ARS", "creditLimit":1000000}"""
 
       val product = registry.createFrom(jsonString)
+
+      assertTrue(product is CheckingAccount)
+      assertEquals("1234567890123456789012", product.cbu)
+      assertEquals(Currency.ARS, product.currency)
+   }
+
+   @Test
+   fun decodeWithJsonSerializer() {
+      val jsonString = """{"id":"CC","cbu":"1234567890123456789012","currency":"ARS", "creditLimit":1000000}"""
+
+      val product = registry.json.decodeFromString<Product>(jsonString)
 
       assertTrue(product is CheckingAccount)
       assertEquals("1234567890123456789012", product.cbu)

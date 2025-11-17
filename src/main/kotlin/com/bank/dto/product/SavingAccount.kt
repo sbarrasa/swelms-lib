@@ -7,16 +7,15 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-@SerialName("CA")
+@SerialName(SavingAccount.type)
 data class SavingAccount(
    override val cbu: String,
    override val currency: Currency
 ) : Account() {
-   override val descriptor: ProductDescriptor
-      get() = Companion
 
    companion object: ProductDescriptor {
-      override var id = "CA"
+      const val type = "CA"
+      override var id = type
       override val description = "Caja de ahorro"
    }
 }
