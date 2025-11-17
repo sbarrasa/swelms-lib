@@ -1,12 +1,12 @@
-package com.bank.config
+package com.bank.services
 
-import com.bank.dto.product.CheckingAccount
-import com.bank.dto.product.CreditCard
-import com.bank.dto.product.DebitCard
-import com.bank.dto.product.SavingAccount
+import com.bank.products.CheckingAccount
+import com.bank.products.CreditCard
+import com.bank.products.DebitCard
+import com.bank.products.SavingAccount
 import com.sbarrasa.registry.PolymorphicJsonRegistry
-import com.bank.product.structure.Product
-import com.bank.product.structure.ProductDescriptor
+import com.bank.products.structure.Product
+import com.bank.products.structure.ProductDescriptor
 import com.sbarrasa.id.map.Mappeable
 import kotlin.reflect.KClass
 import kotlin.reflect.full.companionObjectInstance

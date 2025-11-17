@@ -1,4 +1,4 @@
-package com.bank.config
+package com.bank.services
 
 import com.bank.repository.customer.CustomerRepository
 import com.bank.repository.customer.CustomersTable

@@ -1,4 +1,4 @@
-package com.bank.config
+package com.bank.services
 
 import kotlin.test.*
 

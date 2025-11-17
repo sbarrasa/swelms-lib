@@ -1,6 +1,6 @@
 package com.bank.routes
 
-import com.bank.config.CodesCatalog
+import com.bank.services.CodesCatalog
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*
 import io.ktor.server.response.*

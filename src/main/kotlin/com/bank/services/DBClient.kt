@@ -1,4 +1,4 @@
-package com.bank.config
+package com.bank.services
 
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils

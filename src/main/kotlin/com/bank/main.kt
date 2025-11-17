@@ -1,6 +1,6 @@
 package com.bank
 
-import com.bank.config.CustomerRepositoryFactory
+import com.bank.services.CustomerRepositoryFactory
 import com.bank.routes.initModules
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*

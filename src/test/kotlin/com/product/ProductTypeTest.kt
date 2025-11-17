@@ -1,12 +1,12 @@
 package com.product
 
-import com.bank.config.ProductTypes
-import com.bank.dto.product.CheckingAccount
-import com.bank.dto.product.CreditCard
+import com.bank.services.ProductTypes
+import com.bank.products.CheckingAccount
+import com.bank.products.CreditCard
 import com.sbarrasa.registry.decodeFromMap
-import com.bank.product.structure.Branch
-import com.bank.product.structure.Currency
-import com.bank.product.structure.Product
+import com.bank.products.structure.Branch
+import com.bank.products.structure.Currency
+import com.bank.products.structure.Product
 import kotlin.test.*
 
 class ProductTypeTest {
