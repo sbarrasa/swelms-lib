@@ -1,6 +1,7 @@
 package com.bank.products
 
-import com.bank.products.structure.Branch
+import com.bank.dto.products.CreditCard
+import com.bank.dto.products.structure.Branch
 import kotlinx.datetime.LocalDate
 import kotlin.test.Test
 import kotlin.test.assertEquals

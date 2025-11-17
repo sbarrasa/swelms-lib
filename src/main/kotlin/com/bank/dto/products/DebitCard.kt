@@ -1,8 +1,8 @@
-package com.bank.products
+package com.bank.dto.products
 
-import com.bank.products.structure.Branch
-import com.bank.products.structure.Card
-import com.bank.products.structure.ProductDescriptor
+import com.bank.dto.products.structure.Branch
+import com.bank.dto.products.structure.Card
+import com.bank.dto.products.structure.ProductDescriptor
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

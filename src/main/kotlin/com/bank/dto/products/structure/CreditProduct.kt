@@ -1,4 +1,4 @@
-package com.bank.products.structure
+package com.bank.dto.products.structure
 
 interface CreditProduct {
    val creditLimit: Double

@@ -1,4 +1,4 @@
-package com.bank.products.structure
+package com.bank.dto.products.structure
 
 import kotlinx.serialization.Serializable
 

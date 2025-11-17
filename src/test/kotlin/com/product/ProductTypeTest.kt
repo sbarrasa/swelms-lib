@@ -1,12 +1,12 @@
 package com.product
 
 import com.bank.services.ProductTypes
-import com.bank.products.CheckingAccount
-import com.bank.products.CreditCard
+import com.bank.dto.products.CheckingAccount
+import com.bank.dto.products.CreditCard
 import com.sbarrasa.registry.decodeFromMap
-import com.bank.products.structure.Branch
-import com.bank.products.structure.Currency
-import com.bank.products.structure.Product
+import com.bank.dto.products.structure.Branch
+import com.bank.dto.products.structure.Currency
+import com.bank.dto.products.structure.Product
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.MissingFieldException
 import kotlin.test.*
