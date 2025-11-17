@@ -12,12 +12,16 @@ data class SavingAccount(
    override val cbu: String,
    override val currency: Currency
 ) : Account() {
-   override val descriptor: ProductDescriptor
-      get() = Companion
-
    companion object: ProductDescriptor {
       const val TYPE = "CA"
-      override val id = TYPE
+      override val id get() = TYPE
       override val description = "Caja de ahorro"
    }
+
+   override val id: String
+      get() = cbu
+
+   override val description: String
+      get() = "${Companion.description} en ${currency.description}"
+
 }

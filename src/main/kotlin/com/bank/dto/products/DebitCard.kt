@@ -14,12 +14,17 @@ data class DebitCard(
    override val number: String,
    override val expirationDate: LocalDate
 ) : Card() {
-   override val descriptor: ProductDescriptor
-      get() = Companion
 
    companion object: ProductDescriptor {
       const val TYPE = "TD"
-      override val id = TYPE
+      override val id get() = TYPE
       override val description = "Tarjeta de débito"
    }
+
+   override val id: String
+      get() = number
+
+   override val description: String
+      get() =  "${Companion.description} ${branch.description}"
+
 }

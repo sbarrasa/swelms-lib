@@ -1,6 +1,5 @@
-package com.product
+package com.bank.services
 
-import com.bank.services.ProductTypes
 import com.bank.dto.products.CheckingAccount
 import com.bank.dto.products.CreditCard
 import com.sbarrasa.registry.decodeFromMap

@@ -8,6 +8,4 @@ abstract class Card : Product() {
    abstract val branch: Branch
    abstract val number: String
    abstract val expirationDate: LocalDate
-
-   override fun fullDescription() = "${descriptor.description} ${branch.description}"
 }
