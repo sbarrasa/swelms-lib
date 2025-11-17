@@ -7,6 +7,8 @@ import com.sbarrasa.registry.decodeFromMap
 import com.bank.products.structure.Branch
 import com.bank.products.structure.Currency
 import com.bank.products.structure.Product
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.MissingFieldException
 import kotlin.test.*
 
 class ProductTypeTest {
@@ -25,6 +27,7 @@ class ProductTypeTest {
 
       assertEquals("CC", descriptor?.id)
    }
+
 
    @Test
    fun createFromJsonString() {
@@ -57,5 +60,17 @@ class ProductTypeTest {
 
    }
 
+   @ExperimentalSerializationApi
+   @Test
+   fun createFromMapWithInvalidaData() {
+      val map = mapOf(
+         "id" to "TC",
+      )
 
+      val e = assertFailsWith<MissingFieldException> { ProductTypes.json.decodeFromMap<Product>(map) }
+      assertContains(e.message?:"","branch")
+
+
+   }
 }
+

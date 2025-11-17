@@ -35,6 +35,7 @@ open class PolymorphicJsonRegistry<B : Any>(private val base: KClass<B>) {
       }
    }
 
+
 }
 
 inline fun <reified T> Json.decodeFromMap(map: Map<String, Any>): T {
