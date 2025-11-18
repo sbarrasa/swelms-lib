@@ -1,7 +1,7 @@
 package com.bank.repository.customer
 
 import com.bank.model.customer.Customer
-import com.sbarrasa.fiscal.cuit.Cuit
+import com.sbarrasa.legal.cuit.Cuit
 import com.sbarrasa.person.Name
 import com.sbarrasa.repository.exposed.ExposedRepository
 

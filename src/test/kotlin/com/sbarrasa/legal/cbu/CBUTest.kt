@@ -1,9 +1,9 @@
-package com.sbarrasa.fiscal.cbu
+package com.sbarrasa.legal.cbu
 
-import com.sbarrasa.fiscal.FiscalException
+import com.sbarrasa.legal.LegalException
 import kotlin.test.*
 
-class CBUValidatorTest {
+class CBUTest {
 
    @Test
    fun validCBU() {
@@ -15,13 +15,13 @@ class CBUValidatorTest {
 
    @Test
    fun invalidLength() {
-      val e = assertFailsWith<FiscalException> { CBU("011062713006270145810") }
+      val e = assertFailsWith<LegalException> { CBU("011062713006270145810") }
       assertContains(e.message ?: "", CBU.msg.LENGTH)
    }
 
    @Test
    fun nonDigitCharacters() {
-      val e = assertFailsWith<FiscalException> { CBU("0110627A30062701458101") }
+      val e = assertFailsWith<LegalException> { CBU("0110627A30062701458101") }
       assertContains(e.message ?: "", CBU.msg.DIGITS)
    }
 
@@ -29,14 +29,14 @@ class CBUValidatorTest {
    fun invalidEntityBranchDigit() {
       // Modifica el dígito verificador de entidad/sucursal
       val cbuString = "0110627131062701458101"
-      assertFailsWith<FiscalException> { CBU(cbuString) }
+      assertFailsWith<LegalException> { CBU(cbuString) }
    }
 
    @Test
    fun invalidAccountDigit() {
       // Modifica el dígito verificador de cuenta
       val cbuString = "0110627130062701458102"
-      assertFailsWith<FiscalException> { CBU(cbuString) }
+      assertFailsWith<LegalException> { CBU(cbuString) }
    }
 
    @Test
@@ -47,13 +47,13 @@ class CBUValidatorTest {
 
    @Test
    fun branchCheckDigitOk() {
-      val cbu = CBU("2850590940090418139121")
-      assertEquals("0", cbu.branchCheckDigit)
+      val cbu = CBU("2850590940090418135201")
+      assertEquals("9", cbu.branchCheckDigit)
    }
 
    @Test
    fun accountCheckDigitOk() {
-      val cbu = CBU("2850590940090418139121")
-      assertEquals("1", cbu.accountCheckDigit)
+      val cbu = CBU("0110001300000000000000")
+      assertEquals("0", cbu.accountCheckDigit)
    }
 }

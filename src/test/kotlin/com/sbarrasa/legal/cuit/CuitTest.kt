@@ -1,8 +1,8 @@
-package com.sbarrasa.fiscal.cuit
+package com.sbarrasa.legal.cuit
 
-import com.sbarrasa.fiscal.CheckDigitValidator
+import com.sbarrasa.legal.CheckDigitValidator
 import kotlin.test.*
-import com.sbarrasa.fiscal.FiscalException
+import com.sbarrasa.legal.LegalException
 
 
 class CuitTest {
@@ -17,32 +17,32 @@ class CuitTest {
 
    @Test
    fun invalidLength() {
-      val e = assertFailsWith<FiscalException> { Cuit("2032964233") }
+      val e = assertFailsWith<LegalException> { Cuit("2032964233") }
       assertContains(e.message ?: "", Cuit.msg.LENGTH)
    }
 
    @Test
    fun nonDigitCharacters() {
-      val e = assertFailsWith<FiscalException> { Cuit("20329642A30") }
+      val e = assertFailsWith<LegalException> { Cuit("20329642A30") }
       assertContains(e.message ?: "", Cuit.msg.DIGITS)
    }
 
    @Test
    fun invalidEntityCode() {
-      val e = assertFailsWith<FiscalException> { Cuit("99329642330") }
+      val e = assertFailsWith<LegalException> { Cuit("99329642330") }
       assertContains(e.message ?: "", Cuit.msg.ENTITY_CODE)
    }
 
    @Test
    fun invalidCheckDigit() {
-      val e = assertFailsWith<FiscalException> { Cuit("20329642331") }
+      val e = assertFailsWith<LegalException> { Cuit("20329642331") }
       assertContains(e.message ?: "", CheckDigitValidator.msg.INVALID_CHECK_DIGIT)
    }
 
    @Test
    fun validEntityTypeProperty() {
       val cuit = Cuit("20329642330")
-      assertNotNull(cuit.entityType)
+      assertNotNull(cuit.legalEntity)
    }
 
    @Test

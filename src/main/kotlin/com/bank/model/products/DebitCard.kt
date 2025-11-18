@@ -1,6 +1,6 @@
 package com.bank.model.products
 
-import com.bank.model.products.structure.Branch
+import com.bank.model.products.structure.CardBranch
 import com.bank.model.products.structure.Card
 import com.bank.model.products.structure.ProductDescriptor
 import kotlinx.datetime.LocalDate
@@ -10,7 +10,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 @SerialName(DebitCard.TYPE)
 data class DebitCard(
-   override val branch: Branch,
+   override val branch: CardBranch,
    override val number: String,
    override val expirationDate: LocalDate
 ) : Card() {

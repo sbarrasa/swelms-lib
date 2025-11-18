@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 abstract class Card : Product() {
-   abstract val branch: Branch
+   abstract val branch: CardBranch
    abstract val number: String
    abstract val expirationDate: LocalDate
 

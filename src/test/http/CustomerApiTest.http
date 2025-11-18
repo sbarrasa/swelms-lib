@@ -45,7 +45,7 @@ Content-Type: application/json
 
 {
   "legalName": "Perez, Maia",
-  "cuit": "20240614708",
+  "cuit": "23234567119",
   "birthDay": "2001-12-19",
   "gender": "F"
 }

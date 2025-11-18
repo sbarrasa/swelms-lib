@@ -1,7 +1,7 @@
-package com.sbarrasa.fiscal.cuit
+package com.sbarrasa.legal.cuit
 
-import com.sbarrasa.fiscal.CheckDigitValidator
-import com.sbarrasa.fiscal.FiscalException
+import com.sbarrasa.legal.CheckDigitValidator
+import com.sbarrasa.legal.LegalException
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -12,7 +12,7 @@ value class Cuit(val value: String) {
    val document: String get() = value.substring(2, 10)
    val check: String get() = value.substring(10, 11)
 
-   val entityType: EntityType? get() = EntityCodes[entityCode]?.entityType
+   val legalEntity: LegalEntity? get() = CuitEntityCodes[entityCode]?.legalEntity
 
    init {
       validateLength()
@@ -22,15 +22,15 @@ value class Cuit(val value: String) {
    }
 
    private fun validateLength() {
-      if (value.length != SIZE) throw FiscalException(msg.LENGTH)
+      if (value.length != SIZE) throw LegalException(msg.LENGTH)
    }
 
    private fun validateDigits() {
-      if (!value.all { it.isDigit() }) throw FiscalException(msg.DIGITS)
+      if (!value.all { it.isDigit() }) throw LegalException(msg.DIGITS)
    }
 
    private fun validateEntityCode() {
-      if (!EntityCodes.contains(entityCode)) throw FiscalException(msg.ENTITY_CODE)
+      if (!CuitEntityCodes.contains(entityCode)) throw LegalException(msg.ENTITY_CODE)
    }
 
    private fun validateCheckDigit() {

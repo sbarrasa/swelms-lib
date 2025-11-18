@@ -1,7 +1,7 @@
-package com.sbarrasa.fiscal.cbu
+package com.sbarrasa.legal.cbu
 
-import com.sbarrasa.fiscal.CheckDigitValidator
-import com.sbarrasa.fiscal.FiscalException
+import com.sbarrasa.legal.CheckDigitValidator
+import com.sbarrasa.legal.LegalException
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -22,11 +22,11 @@ value class CBU(val value: String) {
    }
 
    private fun validateLength() {
-      if (value.length != SIZE) throw FiscalException(msg.LENGTH)
+      if (value.length != SIZE) throw LegalException(msg.LENGTH)
    }
 
    private fun validateDigits() {
-      if (!value.all { it.isDigit() }) throw FiscalException(msg.DIGITS)
+      if (!value.all { it.isDigit() }) throw LegalException(msg.DIGITS)
    }
 
    private fun validateEntityBranchDigit() {

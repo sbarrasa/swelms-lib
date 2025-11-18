@@ -1,4 +1,4 @@
-package com.sbarrasa.fiscal
+package com.sbarrasa.legal
 
 class CheckDigitValidator(
    val name: String = "",
@@ -12,7 +12,7 @@ class CheckDigitValidator(
 
    fun validate(digits: List<Int>, vd: Int) {
       val expected = compute(digits)
-      if(expected != vd) throw FiscalException("${msg.INVALID_CHECK_DIGIT} ($name)")
+      if(expected != vd) throw LegalException("${msg.INVALID_CHECK_DIGIT} ($name)")
    }
 
    object msg {

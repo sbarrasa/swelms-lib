@@ -1,6 +1,6 @@
 package com.bank.model.customer
 
-import com.sbarrasa.fiscal.cuit.Cuit
+import com.sbarrasa.legal.cuit.Cuit
 import com.sbarrasa.person.Name
 import com.sbarrasa.id.Id
 import kotlinx.datetime.LocalDate
