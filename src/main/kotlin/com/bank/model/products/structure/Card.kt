@@ -1,4 +1,4 @@
-package com.bank.dto.products.structure
+package com.bank.model.products.structure
 
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable

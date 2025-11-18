@@ -1,6 +1,6 @@
 package com.bank.repository.customer
 
-import com.bank.dto.customer.Customer
+import com.bank.model.customer.Customer
 import com.sbarrasa.repository.Repository
 
 interface CustomerRepository : Repository<Int, Customer>

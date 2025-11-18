@@ -1,8 +1,7 @@
-package com.bank.dto.customer
+package com.bank.model.customer
 
 import com.sbarrasa.fiscal.cuit.Cuit
 import com.sbarrasa.person.Name
-import com.sbarrasa.person.Nombrable
 import com.sbarrasa.id.Id
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
@@ -14,4 +13,4 @@ data class Customer(
    var birthDay: LocalDate? = null,
    var gender: Gender? = null,
    var cuit: Cuit? = null)
-: Id<Int?>, Nombrable by legalName?: Name()
+: Id<Int?>

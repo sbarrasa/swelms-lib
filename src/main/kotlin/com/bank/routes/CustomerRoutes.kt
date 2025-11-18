@@ -1,40 +1,38 @@
 package com.bank.routes
 
-import com.bank.dto.customer.Customer
-import com.bank.dto.customer.CustomerInfo
+import com.bank.model.customer.Customer
+import com.bank.model.customer.CustomerInfo
 import com.bank.repository.customer.CustomerRepository
 import io.ktor.server.application.*
-import io.ktor.server.plugins.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 class CustomerRoutes(private val customerRepository: CustomerRepository) {
-   fun register(parent: Route): Route {
-      return parent.route("/customers") {
+   fun register(parent: Route) = parent.route("/customers") {
          get {
             call.respond(customerRepository.getAll())
          }
 
          get("/") {
-            call.requireId()
+            call.getValidCustomerId()
          }
 
          get("/{id}/info") {
-            val id = call.requireId()
+            val id = call.getValidCustomerId()
             val customer = customerRepository.get(id)
             val customerInfo = CustomerInfo(customer)
             call.respond(customerInfo)
          }
 
          get("/{id}") {
-            val id = call.requireId()
+            val id = call.getValidCustomerId()
             call.respond(customerRepository.get(id))
          }
 
 
          put("/{id}") {
-            val id = call.requireId()
+            val id = call.getValidCustomerId()
             val customerRequest = call.receive<Customer>()
             call.respond(customerRepository.update(id, customerRequest))
          }
@@ -46,20 +44,14 @@ class CustomerRoutes(private val customerRepository: CustomerRepository) {
          }
 
          delete("/") {
-            call.requireId()
+            call.getValidCustomerId()
          }
 
          delete("/{id}") {
-            val id = call.requireId()
+            val id = call.getValidCustomerId()
             call.respond(customerRepository.delete(id))
          }
       }
    }
 
-   fun ApplicationCall.requireId(): Int {
-      val idParam = parameters["id"] ?: throw BadRequestException("Debe especificar el id")
-      val id = idParam.toIntOrNull() ?: throw BadRequestException("id: $idParam, inválido")
-      return id
-   }
 
-}

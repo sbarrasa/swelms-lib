@@ -1,9 +1,9 @@
-package com.bank.dto.products
+package com.bank.model.products
 
-import com.bank.dto.products.structure.Account
-import com.bank.dto.products.structure.CreditProduct
-import com.bank.dto.products.structure.Currency
-import com.bank.dto.products.structure.ProductDescriptor
+import com.bank.model.products.structure.Account
+import com.bank.model.products.structure.CreditProduct
+import com.bank.model.products.structure.Currency
+import com.bank.model.products.structure.ProductDescriptor
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

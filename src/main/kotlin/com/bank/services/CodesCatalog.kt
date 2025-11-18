@@ -1,8 +1,8 @@
 package com.bank.services
 
-import com.bank.dto.customer.Gender
-import com.bank.dto.products.structure.Branch
-import com.bank.dto.products.structure.Currency
+import com.bank.model.customer.Gender
+import com.bank.model.products.structure.Branch
+import com.bank.model.products.structure.Currency
 import com.sbarrasa.fiscal.cuit.EntityCodes
 import com.sbarrasa.fiscal.cuit.EntityType
 import com.sbarrasa.id.map.Catalog

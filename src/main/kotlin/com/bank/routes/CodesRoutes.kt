@@ -7,8 +7,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 object CodesRoutes {
-   fun register(parent: Route) {
-
+   fun register(parent: Route) =
       parent.route("/codes") {
          get("/all") {
             call.respond(CodesCatalog)
@@ -25,4 +24,3 @@ object CodesRoutes {
          }
       }
    }
-}

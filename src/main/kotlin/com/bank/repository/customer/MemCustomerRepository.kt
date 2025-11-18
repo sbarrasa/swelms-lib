@@ -1,6 +1,6 @@
 package com.bank.repository.customer
 
-import com.bank.dto.customer.Customer
+import com.bank.model.customer.Customer
 import com.sbarrasa.id.generators.IntIdGen
 import com.sbarrasa.objectcopy.copyTo
 import com.sbarrasa.repository.MemRepository

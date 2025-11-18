@@ -1,5 +1,6 @@
 package com.sbarrasa.registry
 
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.*
@@ -8,7 +9,7 @@ import kotlinx.serialization.serializer
 import kotlin.reflect.KClass
 
 
-open class PolymorphicJsonRegistry<B : Any>(private val base: KClass<B>) {
+open class PolymorphicJsonRegistry<B : Any>(private val base: KClass<B>, val discriminator: String = "type") {
 
    val classes = mutableMapOf<KClass<out B>, KSerializer<out B>>()
 
@@ -17,6 +18,7 @@ open class PolymorphicJsonRegistry<B : Any>(private val base: KClass<B>) {
       classes[clazz] = clazz.serializer()
    }
 
+   @OptIn(ExperimentalSerializationApi::class)
    val json by lazy {
       Json {
          serializersModule = SerializersModule {
@@ -30,8 +32,10 @@ open class PolymorphicJsonRegistry<B : Any>(private val base: KClass<B>) {
                }
             }
          }
-         classDiscriminator = "id"
+         classDiscriminator = discriminator
          ignoreUnknownKeys = true
+         explicitNulls = false
+
       }
    }
 

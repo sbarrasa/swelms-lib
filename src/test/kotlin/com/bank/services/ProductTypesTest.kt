@@ -1,16 +1,16 @@
 package com.bank.services
 
-import com.bank.dto.products.CheckingAccount
-import com.bank.dto.products.CreditCard
+import com.bank.model.products.CheckingAccount
+import com.bank.model.products.CreditCard
 import com.sbarrasa.registry.decodeFromMap
-import com.bank.dto.products.structure.Branch
-import com.bank.dto.products.structure.Currency
-import com.bank.dto.products.structure.Product
+import com.bank.model.products.structure.Branch
+import com.bank.model.products.structure.Currency
+import com.bank.model.products.structure.Product
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.MissingFieldException
 import kotlin.test.*
 
-class ProductTypeTest {
+class ProductTypesTest {
 
    @Test
    fun asMap() {
@@ -30,7 +30,14 @@ class ProductTypeTest {
 
    @Test
    fun createFromJsonString() {
-      val jsonString = """{"id":"CC","cbu":"1234567890123456789012","currency":"ARS", "creditLimit":1000000}"""
+     val jsonString = """
+         {
+           "id":"CC",
+           "cbu":"1234567890123456789012",
+           "currency":"ARS", 
+           "creditLimit":1000000
+          }
+          """.trimIndent()
 
       val product = ProductTypes.json.decodeFromString<Product>(jsonString)
 

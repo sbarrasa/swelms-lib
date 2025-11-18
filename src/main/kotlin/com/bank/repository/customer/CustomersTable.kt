@@ -1,6 +1,6 @@
 package com.bank.repository.customer
 
-import com.bank.dto.customer.Gender
+import com.bank.model.customer.Gender
 import org.jetbrains.exposed.dao.id.IntIdTable
 import org.jetbrains.exposed.sql.kotlin.datetime.date
 

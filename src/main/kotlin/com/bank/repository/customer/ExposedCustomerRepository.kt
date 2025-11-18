@@ -1,6 +1,6 @@
 package com.bank.repository.customer
 
-import com.bank.dto.customer.Customer
+import com.bank.model.customer.Customer
 import com.sbarrasa.fiscal.cuit.Cuit
 import com.sbarrasa.person.Name
 import com.sbarrasa.repository.exposed.ExposedRepository

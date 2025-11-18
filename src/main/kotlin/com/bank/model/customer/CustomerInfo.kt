@@ -1,4 +1,4 @@
-package com.bank.dto.customer
+package com.bank.model.customer
 
 import kotlinx.serialization.Serializable
 
