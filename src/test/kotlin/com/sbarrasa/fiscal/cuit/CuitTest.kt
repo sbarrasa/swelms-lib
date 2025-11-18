@@ -1,66 +1,53 @@
 package com.sbarrasa.fiscal.cuit
 
+import com.sbarrasa.fiscal.CheckDigitValidator
+import kotlin.test.*
 import com.sbarrasa.fiscal.FiscalException
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
+
 
 class CuitTest {
 
    @Test
-   fun validString() {
+   fun validCuit() {
       val cuit = Cuit("20240614708")
       assertEquals("20", cuit.entityCode)
       assertEquals("24061470", cuit.document)
-      assertEquals("8", cuit.vd)
-      assertEquals("20240614708", cuit.toString())
+      assertEquals("8", cuit.check)
    }
 
    @Test
-   fun invalidString() {
-      assertFailsWith<FiscalException> {
-         Cuit("123456789")
-      }
+   fun invalidLength() {
+      val e = assertFailsWith<FiscalException> { Cuit("2032964233") }
+      assertContains(e.message ?: "", Cuit.msg.LENGTH)
    }
 
    @Test
-   fun validOf() {
-      val cuit = Cuit.of("20", "24061470", "8")
-      assertEquals("20240614708", cuit.value)
+   fun nonDigitCharacters() {
+      val e = assertFailsWith<FiscalException> { Cuit("20329642A30") }
+      assertContains(e.message ?: "", Cuit.msg.DIGITS)
    }
 
    @Test
-   fun invalidOf() {
-      assertFailsWith<FiscalException> {
-         Cuit.of("20", "2024061470", "1")
-      }
+   fun invalidEntityCode() {
+      val e = assertFailsWith<FiscalException> { Cuit("99329642330") }
+      assertContains(e.message ?: "", Cuit.msg.ENTITY_CODE)
    }
 
    @Test
-   fun padding() {
-      val cuit = Cuit.of("20", "123456", "1")
-      assertEquals("20001234561", cuit.value)
+   fun invalidCheckDigit() {
+      val e = assertFailsWith<FiscalException> { Cuit("20329642331") }
+      assertContains(e.message ?: "", CheckDigitValidator.msg.INVALID_CHECK_DIGIT)
    }
 
    @Test
-   fun nonNumeric() {
-      assertFailsWith<FiscalException> {
-         Cuit.of("2A", "32964B33", "C")
-      }
+   fun validEntityTypeProperty() {
+      val cuit = Cuit("20329642330")
+      assertNotNull(cuit.entityType)
    }
 
    @Test
-   fun entityType() {
+   fun toStringTest() {
       val cuit = Cuit("20240614708")
-      assertEquals(cuit.entityType, EntityType.FISICA)
+      assertEquals("20240614708", "$cuit")
    }
-
-   @Test
-   fun entityCodeFail() {
-      assertFailsWith<FiscalException> {
-         Cuit.of("10", "24061470", "8")
-      }
-   }
-
-
 }
