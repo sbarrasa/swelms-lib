@@ -14,14 +14,7 @@ object CuitEntityCodes : Map<String, CuitEntityCodes.Info> by mapOf(
    "34" to Info(LegalEntity.JURIDICA, "Persona jurídica (empresa o sociedad)")
 ) {
 
-   fun validate(entityCode: String?){
-      if(entityCode == null)
-         throw LegalException("debe especificar un código de entidad")
-
-      if(this[entityCode] == null)
-         throw LegalException("$entityCode no es un código de entidad válido")
-   }
-   class Info(
+    class Info(
       val legalEntity: LegalEntity,
       val description: String
    )
