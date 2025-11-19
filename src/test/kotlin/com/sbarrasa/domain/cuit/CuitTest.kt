@@ -1,6 +1,5 @@
-package com.sbarrasa.dommain.cuit
+package com.sbarrasa.domain.cuit
 
-import com.sbarrasa.domain.cuit.Cuit
 import com.sbarrasa.domain.validator.CheckDigitValidator
 import kotlin.test.*
 import com.sbarrasa.domain.LegalIdException

@@ -1,7 +1,5 @@
-package com.sbarrasa.dommain.card
+package com.sbarrasa.domain.card
 
-import com.sbarrasa.domain.card.CardBrand
-import com.sbarrasa.domain.card.CardNumber
 import com.sbarrasa.domain.LegalIdException
 import kotlin.test.Test
 import kotlin.test.assertContains

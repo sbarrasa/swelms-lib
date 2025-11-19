@@ -1,7 +1,5 @@
-package com.sbarrasa.dommain.card
+package com.sbarrasa.domain.card
 
-import com.sbarrasa.domain.card.BinTable
-import com.sbarrasa.domain.card.CardBrand
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull

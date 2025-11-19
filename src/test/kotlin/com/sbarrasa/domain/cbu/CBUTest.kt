@@ -1,6 +1,5 @@
-package com.sbarrasa.dommain.cbu
+package com.sbarrasa.domain.cbu
 
-import com.sbarrasa.domain.cbu.CBU
 import com.sbarrasa.domain.LegalIdException
 import kotlin.test.*
 
