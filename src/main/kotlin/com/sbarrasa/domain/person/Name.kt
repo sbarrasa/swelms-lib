@@ -1,6 +1,6 @@
 package com.sbarrasa.domain.person
 
-interface Names  {
+interface Name  {
    val text: String
    val list: List<String> get() = text.split(" ")
    operator fun get(index: Int) = list[index-1]

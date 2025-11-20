@@ -54,7 +54,7 @@ class NameUtilsTest {
    @Test
    fun simpleFullNameWorks() {
       val fullName = "Garcia, Jose Maria"
-      val parts = NameUtils.simpleFullName(fullName)
+      val parts = SimpleFullName.create(fullName)
       assertEquals("Jose Maria", parts.givenNames.text)
       assertEquals("Garcia", parts.lastNames.text)
    }
@@ -74,14 +74,14 @@ class NameUtilsTest {
 
    @Test
    fun validateFullNameValid() {
-      NameUtils.validate("Garcia, José María", isLegalName = true)
-      NameUtils.validate("D'Alezandr, Łukasz", isLegalName = true)
+      NameUtils.validate("Garcia, José María", isFullName = true)
+      NameUtils.validate("D'Alezandr, Łukasz", isFullName = true)
    }
 
    @Test
    fun validateFullNameInvalidFormat() {
-      assertFailsWith<IllegalArgumentException> { NameUtils.validate("SoloNombre", isLegalName = true) }
-      assertFailsWith<IllegalArgumentException> { NameUtils.validate("Apellido1, Apellido2, Nombre", isLegalName = true) }
+      assertFailsWith<IllegalArgumentException> { NameUtils.validate("SoloNombre", isFullName = true) }
+      assertFailsWith<IllegalArgumentException> { NameUtils.validate("Apellido1, Apellido2, Nombre", isFullName = true) }
    }
 
 

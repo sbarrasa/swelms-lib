@@ -6,20 +6,20 @@ class FullNameTest {
 
    @Test
    fun fullNameParts() {
-      val legalName = LegalName("Garcia, Jose Maria")
-      assertEquals("Jose Maria", legalName.givenNames.text)
-      assertEquals("Garcia", legalName.lastNames.text)
-      assertEquals(listOf("Jose", "Maria", "Garcia"), legalName.list)
+      val fullName = FullName("Garcia, Jose Maria")
+      assertEquals("Jose Maria", fullName.givenNames.text)
+      assertEquals("Garcia", fullName.lastNames.text)
+      assertEquals(listOf("Jose", "Maria", "Garcia"), fullName.list)
    }
 
 
    @Test
    fun fullNameInvalidFormat() {
       assertFailsWith<IllegalArgumentException> {
-         LegalName("SoloNombre")
+         FullName("SoloNombre")
       }
       assertFailsWith<IllegalArgumentException> {
-         LegalName("Apellido1, Apellido2, Nombre")
+         FullName("Apellido1, Apellido2, Nombre")
       }
    }
 }

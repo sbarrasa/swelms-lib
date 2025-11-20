@@ -10,11 +10,11 @@ object NameUtils {
          .replace(Regex("\\s+"), " ")
    }
 
-   fun validate(text: String, isLegalName: Boolean = false){
-      if(isLegalName){
+   fun validate(text: String, isFullName: Boolean = false){
+      if(isFullName){
          val parts = split(text)
-         validate(parts[0].trim(), isLegalName = false)
-         validate(parts[1].trim(), isLegalName = false)
+         validate(parts[0].trim(), isFullName = false)
+         validate(parts[1].trim(), isFullName = false)
       } else {
          require(isValid(text)) { Texts.INVALID_FORMAT }
       }
@@ -29,15 +29,7 @@ object NameUtils {
       if (parts.size != 2) throw IllegalArgumentException(Texts.INVALID_FORMAT)
       return parts
    }
-   fun simpleFullName(fullNameText: String): FullNameInterface {
-      val parts = split(fullNameText)
-      return object: FullNameInterface {
-         override val givenNames: NamePart
-            get() = NamePart(parts[1].trim())
-         override val lastNames: NamePart
-            get() = NamePart(parts[0].trim())
-      }
-   }
+
 
    object Texts {
       var INVALID_FORMAT = "Los nombres no pueden incluir caracteres especiales"

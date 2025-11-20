@@ -4,15 +4,18 @@ import kotlinx.serialization.Serializable
 
 @JvmInline
 @Serializable
-value class LegalName(override val text: String) : Names, FullNameInterface  {
+value class FullName(override val text: String) : Name, SimpleFullName  {
    init {
-      NameUtils.validate(text, isLegalName=true)
+      NameUtils.validate(text, isFullName=true)
    }
 
-   private val parts get() = NameUtils.simpleFullName(text)
+   private val parts get() = SimpleFullName.create(text)
 
    override val lastNames get() = parts.lastNames
    override val givenNames get() = parts.givenNames
 
    override val list: List<String> get() = givenNames.list + lastNames.list
+
+
+
 }

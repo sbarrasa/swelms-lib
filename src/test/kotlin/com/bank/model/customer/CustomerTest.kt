@@ -1,6 +1,7 @@
 package com.bank.model.customer
 
-import com.sbarrasa.domain.person.LegalName
+import com.sbarrasa.domain.cuit.Cuit
+import com.sbarrasa.domain.person.FullName
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.Month
 import kotlinx.serialization.json.Json
@@ -10,20 +11,20 @@ import kotlin.test.assertEquals
 class CustomerTest {
 
    val customer1 = Customer(
-      id = 1,
-      legalName = LegalName("Barrasa, Sebastián Gabriel"),
+      fullName = FullName("Barrasa, Sebastián Gabriel"),
       birthDay = LocalDate(1974, Month.JUNE, 7),
-      gender = Gender.M
+      gender = Gender.M,
+      cuit = Cuit("20240614708")
    )
 
    @Test
    fun jsonDeserializationTest() {
       val json = """
         {
-            "id": 1,
-            "legalName": "Barrasa, Sebastián Gabriel",
+            "fullName": "Barrasa, Sebastián Gabriel",
             "birthDay": "1974-06-07",
-            "gender": "M"
+            "gender": "M",
+            "cuit": "20240614708"
         }
       """
       val customer = Json.decodeFromString<Customer>(json)
