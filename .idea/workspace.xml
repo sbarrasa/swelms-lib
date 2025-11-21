@@ -4,42 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a71e2d1-288d-4d4b-b743-95cb6fccb520" name="Changes" comment="gradle wrapper y optimización de  gradle">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/collections/Catalog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/collections/ClassHierarchy.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/collections/Iterable.associate.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/collections/StringMap.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Customer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Customer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Gender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Gender.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditCardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditCardProduct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/DebitCardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/DebitCardProduct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Account.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/CardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/CardProduct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Currency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Currency.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Product.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/ProductDescriptor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/ProductDescriptor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/routes/Ktor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/routes/Ktor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CodesCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CodesCatalog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/ProductTypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/ProductTypes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/args/ArgsMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/args/ArgsMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/args/Array.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/id/Desc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/id/EnumDescMappeable.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/id/IdDesc.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/id/map/Catalog.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/id/map/Mappeable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/collections/Mappeable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/reflection/ClassHierarchy.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/serialization/json/decodeFromMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/serialization/decodeFromMap.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/serialization/modules/polymorphic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/serialization/polymorphic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/card/CardBrand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/card/CardBrand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cuit/Cuit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cuit/Cuit.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cuit/CuitEntityCodes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cuit/CuitEntityCodes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/CodesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/CodesCatalogTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProductTypesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProductTypesTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/common/id/EnumDescMapTest.kt" beforeDir="false" />
+    <list default="true" id="0a71e2d1-288d-4d4b-b743-95cb6fccb520" name="Changes" comment="refactor y simplificacion&#10;extensión y remodelado de catalog&#10;funcines de extensión para mapeos">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/MemRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/MemRepository.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +195,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763693816124</updated>
       <workItem from="1763693817838" duration="95000" />
-      <workItem from="1763693978274" duration="14925000" />
+      <workItem from="1763693978274" duration="15285000" />
     </task>
     <task id="LOCAL-00001" summary="gradle wrapper y optimización de  gradle">
       <option name="closed" value="true" />
@@ -247,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763694919887</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor y simplificacion&#10;extensión y remodelado de catalog&#10;funcines de extensión para mapeos">
+      <option name="closed" value="true" />
+      <created>1763710068477</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763710068477</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +229,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gradle wrapper y optimización de  gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="gradle wrapper y optimización de  gradle" />
+    <MESSAGE value="refactor y simplificacion&#10;extensión y remodelado de catalog&#10;funcines de extensión para mapeos" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor y simplificacion&#10;extensión y remodelado de catalog&#10;funcines de extensión para mapeos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,7 +3,7 @@ package com.sbarrasa.repository
 import com.sbarrasa.common.id.Id
 import com.sbarrasa.common.id.generators.IdGen
 
-
+//TODO: que la clave no sea por interface sino por función
 open class MemRepository<I : Any, T : Id<I?>>(
    private val idGenerator: IdGen<I>? = null
 ) : Repository<I, T> {
