@@ -2,14 +2,14 @@ package com.sbarrasa.domain.person
 
 import com.sbarrasa.domain.person.NameUtils.split
 
-interface SimpleFullName {
+interface BasicFullName {
    val givenNames: NamePart
    val lastNames: NamePart
 
    companion object{
-      fun create(fullNameText: String): SimpleFullName {
+      fun create(fullNameText: String): BasicFullName {
          val parts = split(fullNameText)
-         return object: SimpleFullName {
+         return object: BasicFullName {
             override val givenNames: NamePart
                get() = NamePart(parts[1].trim())
             override val lastNames: NamePart

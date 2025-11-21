@@ -54,7 +54,7 @@ class NameUtilsTest {
    @Test
    fun simpleFullNameWorks() {
       val fullName = "Garcia, Jose Maria"
-      val parts = SimpleFullName.create(fullName)
+      val parts = BasicFullName.create(fullName)
       assertEquals("Jose Maria", parts.givenNames.text)
       assertEquals("Garcia", parts.lastNames.text)
    }
