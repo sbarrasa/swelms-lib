@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cuit/CuitIntl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/startServer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/startServer.xml" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Locale">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocalConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocalConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/regional/ar/LocalConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/regional/us/LocalConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/Locale.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/system/SysProp.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CodesCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CodesCatalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/args/ArgsMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/system/ArgsMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/EntityNotFoundException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/EntityNotFoundException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/IdRequiredException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/MemRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/MemRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/exposed/ExposedRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/exposed/ExposedRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/common/args/ArgsMapperTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/common/system/ArgsMapperTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cuit/CuitIntl.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +31,15 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,10 +64,16 @@
       </list>
     </option>
   </component>
+  <component name="HttpClientOnboardingState"><![CDATA[{
+  "isOnboardingCommentShown": true
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -60,9 +85,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build bank-kotlin.executor": "Run",
     "Gradle.Tests in 'bank-kotlin.test'.executor": "Run",
     "Gradle.bank-kotlin [:com.bank.MainKt.main()].executor": "Run",
     "Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor": "Run",
+    "HTTP Request.All in CodesApiTest.executor": "Run",
+    "HTTP Request.CodesApiTest | Obtener códigos.executor": "Run",
+    "HTTP Request.CodesApiTest | Obtener géneros.executor": "Run",
+    "HTTP Request.CodesApiTest | Obtener todos los códigos.executor": "Run",
+    "HTTP Request.CustomerApiTest | Crear una empresa.executor": "Run",
+    "HTTP Request.CustomerApiTest | Crear una persona.executor": "Run",
+    "HTTP Request.CustomerApiTest | Listar todos los customers.executor": "Run",
+    "HTTP Request.CustomerApiTest | Obtener customer con id invalido.executor": "Run",
+    "HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor": "Run",
+    "HTTP Request.CustomerApiTest | Obtener customer por id.executor": "Run",
+    "Ktor.MainKt.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -77,6 +114,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "inlay.hints",
     "to.speed.mode.migration.done": "true"
   },
   "keyToStringList": {
@@ -91,8 +129,21 @@
         <option value="Application" />
       </set>
     </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <map>
+              <entry key="CustomerApiTest | Crear una empresa" value="STOPPED" />
+              <entry key="CustomerApiTest | Listar todos los customers" value="STOPPED" />
+              <entry key="CustomerApiTest | Obtener customer por id" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.CustomerApiTest | Obtener customer por id">
+  <component name="RunManager" selected="Ktor.MainKt">
     <configuration name="ServerExposed" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -111,35 +162,75 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <envs>
         <env name="repo" value="MEM" />
+        <env name="lang" value="en" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.bank.MainKt" />
       <module name="bank-kotlin.main" />
+      <option name="PROGRAM_PARAMETERS" value="-repo=MEM -lang=en" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerApiTest | Crear una empresa" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Crear una empresa" index="6" runType="Run single request">
+    <configuration name="Tests in 'bank-kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CustomerApiTest | Crear una persona" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Crear una persona" index="7" runType="Run single request">
+    <configuration name="CustomerApiTest | Crear una empresa" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Crear una empresa" index="6" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="CustomerApiTest | Listar todos los customers" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Listar todos los customers" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="CustomerApiTest | Obtener customer con id nulo" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Obtener customer con id nulo" index="4" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="CustomerApiTest | Obtener customer por id" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Obtener customer por id" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="MainKt" type="KtorApplicationConfigurationType" factoryName="Ktor" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bank.MainKt" />
+      <module name="bank-kotlin.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="alternativeJrePath" />
+      <option name="alternativeJrePathEnabled" value="false" />
+      <option name="includeProvidedScope" value="false" />
+      <option name="mainClass" value="com.bank.MainKt" />
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" />
+      <option name="shortenCommandLine" />
+      <option name="vmParameters" />
+      <option name="workingDirectory" value="C:\develop\bank-kotlin" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Ktor.MainKt" />
+        <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
         <item itemvalue="HTTP Request.CustomerApiTest | Obtener customer por id" />
         <item itemvalue="HTTP Request.CustomerApiTest | Listar todos los customers" />
         <item itemvalue="HTTP Request.CustomerApiTest | Crear una empresa" />
-        <item itemvalue="HTTP Request.CustomerApiTest | Crear una persona" />
-        <item itemvalue="HTTP Request.CustomerApiTest | Obtener customer con id nulo" />
       </list>
     </recent_temporary>
   </component>
@@ -159,11 +250,26 @@
       <option name="presentableId" value="Default" />
       <updated>1748012658067</updated>
       <workItem from="1763775595763" duration="711000" />
-      <workItem from="1763776424574" duration="610000" />
+      <workItem from="1763776424574" duration="16485000" />
     </task>
+    <task id="LOCAL-00001" summary="Idea settings">
+      <option name="closed" value="true" />
+      <created>1763777310309</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763777310309</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="memrepo" />
+    <MESSAGE value="Idea settings" />
+    <MESSAGE value="Locale" />
+    <option name="LAST_COMMIT_MESSAGE" value="Locale" />
   </component>
 </project>

@@ -42,6 +42,6 @@ abstract class ExposedRepository<T : Id<Int?>, E : IntEntity>(
    }
 
    fun find(id: Int): E {
-      return entityClass.findById(id) ?: throw EntityNotFoundException(id)
+      return entityClass.findById(id) ?: throw EntityNotFoundException()
    }
 }

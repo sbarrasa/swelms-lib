@@ -1,4 +1,4 @@
-package com.sbarrasa.common.args
+package com.sbarrasa.common.system
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

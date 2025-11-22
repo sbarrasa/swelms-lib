@@ -2,26 +2,32 @@ package com.bank
 
 import com.bank.services.CustomerRepositoryFactory
 import com.bank.routes.initModules
+import com.sbarrasa.common.locale.Locale
+import com.sbarrasa.common.system.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import com.sbarrasa.common.args.get
 import org.slf4j.LoggerFactory
 
 val log = LoggerFactory.getLogger("Application")
 
 fun main(args: Array<String>) {
-   val repoSource = args["repo"]?:"MEM"
-   log.info("Repository source: $repoSource")
+   val repo = SysProp["repo"]?:"MEM"
+   log.info("Repository: $repo")
+   val customerRepo = CustomerRepositoryFactory[repo]
 
-   val customerRepo = CustomerRepositoryFactory.get(repoSource)
+   Locale
+      .apply {rootPackage = "com.bank.locale"
+              lang = SysProp["lang"] ?: "es" }
+      .also {log.info("Language: ${it.lang}") }
+      .load()
 
-   val restServer = embeddedServer(
+   embeddedServer(
       factory = Netty,
       port = 8080,
       module = { initModules(customerRepo) })
-
-   restServer.start(wait = true)
+      .start(wait = true)
 }
+
 
 
 

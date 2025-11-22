@@ -13,7 +13,7 @@ open class MemRepository<I : Any, T : Id<I?>>(
    override fun getAll(): List<T> = items.values.toList()
 
    override fun get(id: I): T = items[id]
-      ?: throw EntityNotFoundException(id = id)
+      ?: throw EntityNotFoundException()
 
    override fun add(dto: T): T {
       var id = dto.id
@@ -31,6 +31,6 @@ open class MemRepository<I : Any, T : Id<I?>>(
 
    override fun delete(id: I): T {
       return items.remove(id)
-         ?: throw EntityNotFoundException(id = id)
+         ?: throw EntityNotFoundException()
    }
 }
