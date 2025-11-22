@@ -3,7 +3,7 @@ package com.sbarrasa.domain.cuit
 import com.sbarrasa.domain.validator.CheckDigitValidator
 
 
-object CuitCheckDigitValidator : CheckDigitValidator(Cuit.Texts.CUIT_CUIL) {
+object CuitCheckDigitValidator : CheckDigitValidator(Cuit.texts["CUIT_CUIL"]) {
    private val weights = listOf(5, 4, 3, 2, 7, 6, 5, 4, 3, 2)
 
    override fun compute(digits: List<Int>): Int {

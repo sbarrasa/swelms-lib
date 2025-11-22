@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
 
    Locale
       .apply {rootPackage = "com.bank.locale"
-              lang = SysProp["lang"] ?: "es" }
+              lang = SysProp["lang"] }
       .also {log.info("Language: ${it.lang}") }
       .load()
 

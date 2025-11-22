@@ -2,7 +2,7 @@ package com.sbarrasa.domain.cbu
 
 import com.sbarrasa.domain.validator.CheckDigitValidator
 
-object BranchValidator : CheckDigitValidator(CBU.Texts.BRANCH) {
+object BranchValidator : CheckDigitValidator(CBU.texts["BRANCH"]) {
    private val weights = listOf(7, 1, 3, 9, 7, 1, 3)
 
    override fun compute(digits: List<Int>): Int {

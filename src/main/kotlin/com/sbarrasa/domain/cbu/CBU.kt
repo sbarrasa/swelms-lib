@@ -1,5 +1,6 @@
 package com.sbarrasa.domain.cbu
 
+import com.sbarrasa.common.locale.Locale
 import com.sbarrasa.domain.validator.DigitsValidator
 import com.sbarrasa.domain.validator.LengthValidator
 import kotlinx.serialization.Serializable
@@ -14,6 +15,7 @@ value class CBU(val value: String) {
    val branchCheckDigit get() = value.substring(7, 8)
    val accountCheckDigit get() = value.substring(21, 22)
 
+
    init {
       validateLength()
       validateDigits()
@@ -22,11 +24,11 @@ value class CBU(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(Texts.INVALID_LENGTH, SIZE).validate(value)
+      LengthValidator(texts["INVALID_LENGTH"], SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(Texts.ONLY_DIGITS).validate(value)
+      DigitsValidator(texts["ONLY_DIGITS"]).validate(value)
    }
 
    private fun validateEntityBranchDigit() {
@@ -41,15 +43,10 @@ value class CBU(val value: String) {
       AccountValidator.validate(digits, vd)
    }
 
-   object Texts {
-      var BRANCH = "Entidad/sucursal"
-      var ACCOUNT = "Número de cuenta"
-      var INVALID_LENGTH = "CBU debe tener 22 dígitos"
-      var ONLY_DIGITS = "CBU solo puede contener números"
-   }
-
    companion object {
       var SIZE = 22
+      val texts get() = Locale.texts(CBU::class)
+
    }
 
    override fun toString(): String = value

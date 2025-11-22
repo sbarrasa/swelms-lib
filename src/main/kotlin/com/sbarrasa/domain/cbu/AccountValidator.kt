@@ -3,7 +3,7 @@ package com.sbarrasa.domain.cbu
 import com.sbarrasa.domain.validator.CheckDigitValidator
 
 
-object AccountValidator : CheckDigitValidator(CBU.Texts.ACCOUNT) {
+object AccountValidator : CheckDigitValidator(CBU.texts["ACCOUNT"]) {
    private val weights = listOf(3, 9, 7, 1, 3, 9, 7, 1, 3, 9, 7, 1, 3)
 
    override fun compute(digits: List<Int>): Int {

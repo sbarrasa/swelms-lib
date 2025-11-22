@@ -1,13 +1,19 @@
 package com.sbarrasa.common.locale
 
+import com.sbarrasa.common.collections.FallbackStringMap
+import com.sbarrasa.common.collections.StringMap
+import kotlin.reflect.KClass
+
 object Locale {
-   var rootPackage = "locale"
-   var lang: String = "es"
-   var config: String = "ar"
+   private val textsByClass = mutableMapOf<KClass<*>, StringMap>()
+
+   var rootPackage: String = "locale"
+   var lang: String? = null
+   var regional: String? = null
 
    fun load() {
-      loadModule("$rootPackage.lang.$lang.LocalConfig")
-      loadModule("$rootPackage.regional.$config.LocalConfig")
+      lang?.let { loadModule("$rootPackage.lang.$it.LocaleConfig") }
+      regional?.let { loadModule("$rootPackage.regional.$it.LocaleConfig") }
    }
 
    private fun loadModule(fullNameClass: String) {
@@ -15,4 +21,12 @@ object Locale {
    }
 
 
+   fun register(k: KClass<*>, block: (MutableMap<String, String>) -> Unit) {
+      val map = mutableMapOf<String, String>()
+      block(map)
+      textsByClass[k] = map
+   }
+
+   fun texts(k: KClass<*>): FallbackStringMap =
+      FallbackStringMap(textsByClass[k] ?: emptyMap())
 }

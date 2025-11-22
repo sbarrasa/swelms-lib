@@ -18,25 +18,25 @@ class CuitTest {
    @Test
    fun invalidLength() {
       val e = assertFailsWith<ValidatorException> { Cuit("2032964233") }
-      assertContains(e.message ?: "", Cuit.Texts.INVALID_LENGTH)
+      assertContains(e.message ?: "", Cuit.texts["INVALID_LENGTH"])
    }
 
    @Test
    fun nonDigitCharacters() {
       val e = assertFailsWith<ValidatorException> { Cuit("20329642A30") }
-      assertContains(e.message ?: "", Cuit.Texts.ONLY_DIGITS)
+      assertContains(e.message ?: "", Cuit.texts["ONLY_DIGITS"])
    }
 
    @Test
    fun invalidEntityCode() {
       val e = assertFailsWith<ValidatorException> { Cuit("99329642330") }
-      assertContains(e.message ?: "", Cuit.Texts.INVALID_ENTITY_CODE)
+      assertContains(e.message ?: "", Cuit.texts["INVALID_ENTITY_CODE"])
    }
 
    @Test
    fun invalidCheckDigit() {
       val e = assertFailsWith<ValidatorException> { Cuit("20329642331") }
-      assertContains(e.message ?: "", CheckDigitValidator.Texts.INVALID_CHECK_DIGIT)
+      assertContains(e.message ?: "", CheckDigitValidator.texts["INVALID_CHECK_DIGIT"])
    }
 
    @Test

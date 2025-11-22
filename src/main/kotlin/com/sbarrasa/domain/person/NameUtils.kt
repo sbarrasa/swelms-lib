@@ -1,8 +1,11 @@
 package com.sbarrasa.domain.person
 
+import com.sbarrasa.common.locale.Locale
+
 object NameUtils {
 
    val validChars =  Regex("[^\\p{L}' ]")
+   val texts get() = Locale.texts(NameUtils::class)
 
    fun clean(text: String): String {
       return text.replace(validChars, "")
@@ -16,7 +19,7 @@ object NameUtils {
          validate(parts[0].trim(), isFullName = false)
          validate(parts[1].trim(), isFullName = false)
       } else {
-         require(isValid(text)) { Texts.INVALID_FORMAT }
+         require(isValid(text)) { texts["INVALID_FORMAT"] }
       }
    }
 
@@ -26,12 +29,8 @@ object NameUtils {
 
    fun split(fullNameText: String): List<String> {
       val parts = fullNameText.split(",")
-      if (parts.size != 2) throw IllegalArgumentException(Texts.INVALID_FORMAT)
+      if (parts.size != 2) throw IllegalArgumentException(texts["INVALID_FORMAT"])
       return parts
    }
 
-
-   object Texts {
-      var INVALID_FORMAT = "Los nombres no pueden incluir caracteres especiales"
-   }
 }

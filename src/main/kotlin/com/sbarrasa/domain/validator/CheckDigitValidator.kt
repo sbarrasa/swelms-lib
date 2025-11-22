@@ -1,9 +1,11 @@
 package com.sbarrasa.domain.validator
 
+import com.sbarrasa.common.locale.Locale
+
 abstract class CheckDigitValidator(val msg: String?=null) {
 
    abstract fun compute(digits: List<Int>): Int
-   
+
    fun compute(digits: String): Int {
       return compute(digits.map { it.digitToInt() })
    }
@@ -21,10 +23,11 @@ abstract class CheckDigitValidator(val msg: String?=null) {
 
    fun validate(digits: List<Int>, vd: Int) {
       val expected = compute(digits)
-      if (expected != vd) throw ValidatorException("${Texts.INVALID_CHECK_DIGIT}: $msg")
+      if (expected != vd) throw ValidatorException("${texts["INVALID_CHECK_DIGIT"]}: $msg")
    }
 
-   object Texts {
-      var INVALID_CHECK_DIGIT = "Dígito verificador inválido para"
+   companion object {
+      val texts = Locale.texts(CheckDigitValidator::class)
    }
+
 }
