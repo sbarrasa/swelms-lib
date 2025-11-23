@@ -1,7 +1,7 @@
 package com.bank
 
 import com.bank.services.CustomerRepositoryFactory
-import com.bank.routes.initModules
+import com.bank.ktor.module
 import com.sbarrasa.common.locale.Locale
 import com.sbarrasa.common.system.*
 import io.ktor.server.engine.*
@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
    embeddedServer(
       factory = Netty,
       port = 8080,
-      module = { initModules(customerRepo) })
+      module = { module(customerRepo) })
       .start(wait = true)
 }
 

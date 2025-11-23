@@ -1,15 +1,17 @@
-package com.bank.routes
+package com.bank.ktor
 
 import com.bank.model.customer.Customer
 import com.bank.model.customer.CustomerInfo
-import com.bank.repository.customer.CustomerRepository
+import com.bank.database.customer.CustomerRepository
 import io.ktor.server.application.*
+import io.ktor.server.plugins.BadRequestException
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-class CustomerRoutes(private val customerRepository: CustomerRepository) {
-   fun register(parent: Route) = parent.route("/customers") {
+fun Application.customerRoutes(customerRepository: CustomerRepository) {
+   routing {
+      route("/customers") {
          get {
             call.respond(customerRepository.getAll())
          }
@@ -53,5 +55,11 @@ class CustomerRoutes(private val customerRepository: CustomerRepository) {
          }
       }
    }
+}
 
 
+internal fun ApplicationCall.getValidCustomerId(): Int {
+   val idParam = parameters["id"] ?: throw BadRequestException("Debe especificar el id")
+   val id = idParam.toIntOrNull() ?: throw BadRequestException("id: $idParam, inválido")
+   return id
+}

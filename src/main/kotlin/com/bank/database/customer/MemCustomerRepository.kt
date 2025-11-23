@@ -1,4 +1,4 @@
-package com.bank.repository.customer
+package com.bank.database.customer
 
 import com.bank.model.customer.Customer
 import com.sbarrasa.common.id.generators.IntIdGen

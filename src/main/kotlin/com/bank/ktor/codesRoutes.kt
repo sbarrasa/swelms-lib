@@ -1,4 +1,4 @@
-package com.bank.routes
+package com.bank.ktor
 
 import com.bank.services.CodesCatalog
 import io.ktor.server.application.*
@@ -6,9 +6,9 @@ import io.ktor.server.plugins.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-object CodesRoutes {
-   fun register(parent: Route) =
-      parent.route("/codes") {
+fun Application.codesRoutes() {
+   routing {
+      route("/codes") {
          get("/all") {
             call.respond(CodesCatalog)
          }
@@ -24,3 +24,5 @@ object CodesRoutes {
          }
       }
    }
+}
+
