@@ -4,31 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="exposed Databasedriver cargado desde application.conf">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/CustomerEntity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/CustomerProductsTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/CustomerProductsTable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/CustomerRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/CustomersTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/CustomersTable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/ExposedCustomerRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/MemCustomerRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configStatusPages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configStatusPages.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="exposed CustomerService.kt rempaza Exposedrepository&#10;se elimina el framework Repository se  simplifica con exposed DSL">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/codesRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/codesRoutes.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Customer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Customer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/id/Id.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/NameUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/NameUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/EntityNotFoundException.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/MemRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/Repository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/RepositoryException.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/exposed/ExposedRepository.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cuit/CuitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cuit/CuitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CodesCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/system/SysProp.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/CodesCatalogTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/CodesCatalogTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/common/objectcopy/ObjectMapperTest.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +86,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -266,7 +248,7 @@
       <updated>1748012658067</updated>
       <workItem from="1763775595763" duration="711000" />
       <workItem from="1763776424574" duration="26727000" />
-      <workItem from="1763931997547" duration="8392000" />
+      <workItem from="1763931997547" duration="9102000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -340,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763935868082</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="exposed CustomerService.kt rempaza Exposedrepository&#10;se elimina el framework Repository se  simplifica con exposed DSL">
+      <option name="closed" value="true" />
+      <created>1763941033244</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1763941033244</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +344,8 @@
     <MESSAGE value="Locale framework extension funcion" />
     <MESSAGE value="Ktor simplificacions de modulos" />
     <MESSAGE value="exposed Databasedriver cargado desde application.conf" />
-    <option name="LAST_COMMIT_MESSAGE" value="exposed Databasedriver cargado desde application.conf" />
+    <MESSAGE value="exposed CustomerService.kt rempaza Exposedrepository&#10;se elimina el framework Repository se  simplifica con exposed DSL" />
+    <option name="LAST_COMMIT_MESSAGE" value="exposed CustomerService.kt rempaza Exposedrepository&#10;se elimina el framework Repository se  simplifica con exposed DSL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
