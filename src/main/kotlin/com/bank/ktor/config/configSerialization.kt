@@ -1,4 +1,4 @@
-package com.bank.application
+package com.bank.ktor.config
 
 import com.bank.services.ProductTypes
 import com.sbarrasa.common.serialization.polymorphic

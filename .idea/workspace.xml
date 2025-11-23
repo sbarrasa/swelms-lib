@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Ktor simplificacions de modulos">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configDatabase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/codesRoutes.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/configLog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configLog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/configSerialization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configSerialization.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/configStatusPages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configStatusPages.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/customerProductsRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/customerProductsRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/customerRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/customerRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/module.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/module.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="exposed Databasedriver cargado desde application.conf">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/codesRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/codesRoutes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configLog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configSerialization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configSerialization.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configStatusPages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configStatusPages.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/customerProductsRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerProductsRoutes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/customerRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerRoutes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/module.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerRepositoryFactory.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/DBClient.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/common/validator/LuhnValidatorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/validator/LuhnValidatorTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +148,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\develop\bank-kotlin\src\main\resources" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\develop\bank-kotlin\src\main\kotlin\com\bank\ktor\" />
+    </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.bank.config" />
       <recent name="com.bank.routes" />
       <recent name="com.bank" />
     </key>
@@ -167,6 +170,8 @@
             <map>
               <entry key="CustomerApiTest | Crear una empresa" value="STOPPED" />
               <entry key="CustomerApiTest | Listar todos los customers" value="STOPPED" />
+              <entry key="CustomerApiTest | Obtener customer con id invalido" value="STOPPED" />
+              <entry key="CustomerApiTest | Obtener customer con id nulo" value="STOPPED" />
               <entry key="CustomerApiTest | Obtener customer por id" value="STOPPED" />
             </map>
           </value>
@@ -229,7 +234,7 @@
       <updated>1748012658067</updated>
       <workItem from="1763775595763" duration="711000" />
       <workItem from="1763776424574" duration="26727000" />
-      <workItem from="1763931997547" duration="2078000" />
+      <workItem from="1763931997547" duration="3178000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -279,7 +284,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763930093442</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="exposed Databasedriver cargado desde application.conf">
+      <option name="closed" value="true" />
+      <created>1763934617824</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763934617824</updated>
+    </task>
+    <task id="LOCAL-00008" summary="exposed Databasedriver cargado desde application.conf">
+      <option name="closed" value="true" />
+      <created>1763934630347</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763934630347</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +313,8 @@
     <MESSAGE value="Locale framework" />
     <MESSAGE value="Locale framework extension funcion" />
     <MESSAGE value="Ktor simplificacions de modulos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ktor simplificacions de modulos" />
+    <MESSAGE value="exposed Databasedriver cargado desde application.conf" />
+    <option name="LAST_COMMIT_MESSAGE" value="exposed Databasedriver cargado desde application.conf" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

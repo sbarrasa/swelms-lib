@@ -1,10 +1,11 @@
-package com.bank.application
+package com.bank.ktor.routes
 
 import com.bank.services.CodesCatalog
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import kotlin.collections.get
 
 fun Application.codesRoutes() {
    routing {

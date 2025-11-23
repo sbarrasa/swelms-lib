@@ -1,6 +1,5 @@
-package com.sbarrasa.common.validator
+package com.sbarrasa.domain.validator
 
-import com.sbarrasa.domain.validator.LuhnValidator
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

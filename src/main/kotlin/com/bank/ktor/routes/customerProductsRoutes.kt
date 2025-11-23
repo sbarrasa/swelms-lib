@@ -1,4 +1,4 @@
-package com.bank.application
+package com.bank.ktor.routes
 
 import com.bank.model.customer.CustomerProducts
 import io.ktor.server.application.*

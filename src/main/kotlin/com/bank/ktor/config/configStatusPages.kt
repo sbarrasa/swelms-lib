@@ -1,4 +1,4 @@
-package com.bank.application
+package com.bank.ktor.config
 
 import com.sbarrasa.repository.EntityNotFoundException
 import io.ktor.http.HttpStatusCode
@@ -9,6 +9,9 @@ import io.ktor.server.plugins.ContentTransformationException
 import io.ktor.server.plugins.statuspages.StatusPages
 import io.ktor.server.plugins.statuspages.StatusPagesConfig
 import io.ktor.server.response.respond
+import org.slf4j.LoggerFactory
+
+val logger = LoggerFactory.getLogger("HTTPRequest")
 
 internal fun Application.configStatusPages() {
    install(StatusPages) {
