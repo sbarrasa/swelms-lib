@@ -1,15 +1,16 @@
-package com.bank.ktor
+package com.bank.application
 
 import com.bank.model.customer.Customer
 import com.bank.model.customer.CustomerInfo
-import com.bank.database.customer.CustomerRepository
+import com.bank.database.customer.ExposedCustomerRepository
 import io.ktor.server.application.*
 import io.ktor.server.plugins.BadRequestException
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Application.customerRoutes(customerRepository: CustomerRepository) {
+fun Application.customerRoutes() {
+   val customerRepository = ExposedCustomerRepository
    routing {
       route("/customers") {
          get {

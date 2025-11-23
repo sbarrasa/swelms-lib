@@ -1,4 +1,4 @@
-package com.bank.ktor
+package com.bank.application
 
 import com.sbarrasa.repository.EntityNotFoundException
 import io.ktor.http.HttpStatusCode

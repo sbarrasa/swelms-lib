@@ -1,4 +1,4 @@
-package com.bank.ktor
+package com.bank.application
 
 import io.ktor.server.application.Application
 import io.ktor.server.application.install

@@ -1,14 +1,14 @@
-package com.bank.ktor
+package com.bank.application
 
-import com.bank.database.customer.CustomerRepository
 import io.ktor.server.application.*
 
 val logger = org.slf4j.LoggerFactory.getLogger("Application")
 
-fun Application.module(repo: CustomerRepository) {
+fun Application.module() {
    configStatusPages()
    configSerialization()
-   customerRoutes(repo)
+   configDatabase()
+   customerRoutes()
    codesRoutes()
    customerProductsRoutes()
    configLog()

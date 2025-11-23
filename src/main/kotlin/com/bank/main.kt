@@ -1,9 +1,10 @@
 package com.bank
 
-import com.bank.services.CustomerRepositoryFactory
-import com.bank.ktor.module
+import com.bank.application.module
 import com.sbarrasa.common.locale.Locale
 import com.sbarrasa.common.system.*
+import com.typesafe.config.ConfigFactory
+import io.ktor.server.config.HoconApplicationConfig
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import org.slf4j.LoggerFactory
@@ -11,9 +12,15 @@ import org.slf4j.LoggerFactory
 val log = LoggerFactory.getLogger("Application")
 
 fun main(args: Array<String>) {
-   val repo = SysProp["repo"]?:"MEM"
-   log.info("Repository: $repo")
-   val customerRepo = CustomerRepositoryFactory[repo]
+   val env = applicationEngineEnvironment {
+      config = HoconApplicationConfig(ConfigFactory.load("application.conf"))
+      module {
+         module()
+      }
+      connector {
+         port = 8080
+      }
+   }
 
    Locale
       .apply {rootPackage = "com.bank.locale"
@@ -21,11 +28,8 @@ fun main(args: Array<String>) {
       .also {log.info("Language: ${it.lang}") }
       .load()
 
-   embeddedServer(
-      factory = Netty,
-      port = 8080,
-      module = { module(customerRepo) })
-      .start(wait = true)
+   embeddedServer(Netty, env).start(wait = true)
+
 }
 
 

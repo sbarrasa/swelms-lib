@@ -1,4 +1,4 @@
-package com.bank.ktor
+package com.bank.application
 
 import com.bank.model.customer.CustomerProducts
 import io.ktor.server.application.*
