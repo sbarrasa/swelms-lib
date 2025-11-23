@@ -1,5 +1,6 @@
 package com.bank.locale.lang.es
 
+import com.bank.database.CustomerService
 import com.sbarrasa.common.locale.AbstractLocaleConfig
 import com.sbarrasa.domain.cuit.Cuit
 import com.sbarrasa.domain.cbu.CBU
@@ -7,7 +8,6 @@ import com.sbarrasa.domain.card.CardNumber
 import com.sbarrasa.domain.person.NameUtils
 import com.sbarrasa.domain.validator.CheckDigitValidator
 import com.sbarrasa.common.collections.Catalog
-import com.sbarrasa.repository.EntityNotFoundException
 
 object LocaleConfig : AbstractLocaleConfig() {
    override fun register() {
@@ -34,7 +34,7 @@ object LocaleConfig : AbstractLocaleConfig() {
       }
 
       NameUtils::class.register {
-         it["INVALID_FORMAT"] = "Los nombres no pueden incluir caracteres especiales"
+         it["INVALID_FORMAT"] = "Nombre inválido"
       }
 
       CheckDigitValidator::class.register {
@@ -46,8 +46,10 @@ object LocaleConfig : AbstractLocaleConfig() {
          it["EMPTY_ITERABLE"] = "No se puede inferir la clase de un iterable vacío"
       }
 
-      EntityNotFoundException::class.register {
-         it["ENTITY_NOT_FOUND"] = "Entidad no encontrada"
+      CustomerService::class.register {
+         it["CUSTOMER_NOT_FOUND"] = "Cliente no encontrado"
+         it["ID_CANT_BE_EMPTY"] = "Debe especificar un Customer.ID"
+         it["INVALID_CUSTOMER_ID"] = "Customer.ID inválido"
       }
    }
 }

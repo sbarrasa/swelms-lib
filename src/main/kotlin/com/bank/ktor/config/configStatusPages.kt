@@ -1,6 +1,5 @@
 package com.bank.ktor.config
 
-import com.sbarrasa.repository.EntityNotFoundException
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
@@ -16,7 +15,6 @@ val logger = LoggerFactory.getLogger("HTTPRequest")
 internal fun Application.configStatusPages() {
    install(StatusPages) {
       handleException<BadRequestException>(HttpStatusCode.BadRequest)
-      handleException<EntityNotFoundException>(HttpStatusCode.NotFound)
       handleException<ContentTransformationException>(HttpStatusCode.BadRequest)
    }
 }

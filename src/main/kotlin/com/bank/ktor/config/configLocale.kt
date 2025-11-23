@@ -11,6 +11,6 @@ fun Application.configLocale() {
          lang = environment.config.propertyOrNull("locale.lang")?.getString()
       }
       .load()
-   log.info("Language: ${Locale.lang}")
+
    log.info("Language: ${Locale.lang}")
 }

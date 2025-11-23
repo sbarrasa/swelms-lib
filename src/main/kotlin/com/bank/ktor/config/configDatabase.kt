@@ -1,7 +1,7 @@
 package com.bank.ktor.config
 
-import com.bank.database.customer.CustomerProductsTable
-import com.bank.database.customer.CustomersTable
+import com.bank.database.CustomerProductsTable
+import com.bank.database.CustomersTable
 import io.ktor.server.application.Application
 import io.ktor.server.application.log
 import org.jetbrains.exposed.sql.Database

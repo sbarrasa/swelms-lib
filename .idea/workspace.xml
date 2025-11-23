@@ -5,18 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="exposed Databasedriver cargado desde application.conf">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/codesRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/codesRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configLog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configSerialization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configSerialization.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/configStatusPages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configStatusPages.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/customerProductsRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerProductsRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/customerRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/application/module.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/common/validator/LuhnValidatorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/validator/LuhnValidatorTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/CustomerEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/CustomerProductsTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/CustomerProductsTable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/CustomerRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/CustomersTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/CustomersTable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/ExposedCustomerRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/customer/MemCustomerRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configStatusPages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configStatusPages.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerRoutes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Customer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Customer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/id/Id.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/NameUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/NameUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/EntityNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/MemRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/Repository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/RepositoryException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/repository/exposed/ExposedRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cuit/CuitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cuit/CuitTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,19 +118,21 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build bank-kotlin.executor": "Run",
-    "Gradle.Tests in 'bank-kotlin.test'.executor": "Coverage",
+    "Gradle.Tests in 'bank-kotlin.test'.executor": "Run",
     "Gradle.bank-kotlin [:com.bank.MainKt.main()].executor": "Run",
     "Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor": "Run",
     "HTTP Request.All in CodesApiTest.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener códigos.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener géneros.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener todos los códigos.executor": "Run",
+    "HTTP Request.CustomerApiTest | Crear otra persona.executor": "Run",
     "HTTP Request.CustomerApiTest | Crear una empresa.executor": "Run",
     "HTTP Request.CustomerApiTest | Crear una persona.executor": "Run",
     "HTTP Request.CustomerApiTest | Listar todos los customers.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener customer con id invalido.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener customer por id.executor": "Run",
+    "HTTP Request.CustomerApiTest | Obtener entityType de un Customer.executor": "Run",
     "Ktor.MainKt.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -168,10 +182,9 @@
         <entry key="HttpClient.HttpRequestRunConfigurationType">
           <value>
             <map>
-              <entry key="CustomerApiTest | Crear una empresa" value="STOPPED" />
+              <entry key="CustomerApiTest | Crear otra persona" value="STOPPED" />
+              <entry key="CustomerApiTest | Crear una persona" value="STOPPED" />
               <entry key="CustomerApiTest | Listar todos los customers" value="STOPPED" />
-              <entry key="CustomerApiTest | Obtener customer con id invalido" value="STOPPED" />
-              <entry key="CustomerApiTest | Obtener customer con id nulo" value="STOPPED" />
               <entry key="CustomerApiTest | Obtener customer por id" value="STOPPED" />
             </map>
           </value>
@@ -179,7 +192,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.CustomerApiTest | Obtener customer por id">
+  <component name="RunManager" selected="HTTP Request.CustomerApiTest | Listar todos los customers">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -192,16 +205,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerApiTest | Crear una empresa" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Crear una empresa" index="6" runType="Run single request">
+    <configuration name="Tests in 'bank-kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CustomerApiTest | Crear otra persona" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Crear otra persona" index="8" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="CustomerApiTest | Crear una persona" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Crear una persona" index="7" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="CustomerApiTest | Listar todos los customers" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Listar todos los customers" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="CustomerApiTest | Obtener customer con id invalido" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Obtener customer con id invalido" index="3" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="CustomerApiTest | Obtener customer con id nulo" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Obtener customer con id nulo" index="4" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="CustomerApiTest | Obtener customer por id" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Obtener customer por id" index="2" runType="Run single request">
@@ -209,11 +241,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.CustomerApiTest | Obtener customer por id" />
         <item itemvalue="HTTP Request.CustomerApiTest | Listar todos los customers" />
-        <item itemvalue="HTTP Request.CustomerApiTest | Crear una empresa" />
-        <item itemvalue="HTTP Request.CustomerApiTest | Obtener customer con id nulo" />
-        <item itemvalue="HTTP Request.CustomerApiTest | Obtener customer con id invalido" />
+        <item itemvalue="HTTP Request.CustomerApiTest | Obtener customer por id" />
+        <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
+        <item itemvalue="HTTP Request.CustomerApiTest | Crear otra persona" />
+        <item itemvalue="HTTP Request.CustomerApiTest | Crear una persona" />
       </list>
     </recent_temporary>
   </component>
@@ -234,7 +266,7 @@
       <updated>1748012658067</updated>
       <workItem from="1763775595763" duration="711000" />
       <workItem from="1763776424574" duration="26727000" />
-      <workItem from="1763931997547" duration="3178000" />
+      <workItem from="1763931997547" duration="8392000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -300,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763934630347</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="exposed Databasedriver cargado desde application.conf">
+      <option name="closed" value="true" />
+      <created>1763935868082</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763935868082</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +355,17 @@
     <MESSAGE value="Ktor simplificacions de modulos" />
     <MESSAGE value="exposed Databasedriver cargado desde application.conf" />
     <option name="LAST_COMMIT_MESSAGE" value="exposed Databasedriver cargado desde application.conf" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt</url>
+          <line>46</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

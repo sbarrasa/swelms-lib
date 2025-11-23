@@ -1,4 +1,4 @@
-package com.bank.database.customer
+package com.bank.database
 
 import com.bank.model.products.structure.Currency
 import com.sbarrasa.domain.card.CardBrand

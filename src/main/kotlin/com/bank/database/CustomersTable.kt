@@ -1,4 +1,4 @@
-package com.bank.database.customer
+package com.bank.database
 
 import com.bank.model.customer.Gender
 import org.jetbrains.exposed.dao.id.IntIdTable

@@ -29,7 +29,7 @@ object NameUtils {
 
    fun split(fullNameText: String): List<String> {
       val parts = fullNameText.split(",")
-      if (parts.size != 2) throw IllegalArgumentException(texts["INVALID_FORMAT"])
+      if (parts.size != 2) throw IllegalArgumentException("${texts["INVALID_FORMAT"]}: $fullNameText")
       return parts
    }
 

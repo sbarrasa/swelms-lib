@@ -1,8 +1,9 @@
 package com.bank.ktor.routes
 
+import com.bank.database.CustomerService
 import com.bank.model.customer.Customer
 import com.bank.model.customer.CustomerInfo
-import com.bank.database.customer.ExposedCustomerRepository
+import com.sbarrasa.common.locale.localeText
 import io.ktor.server.application.*
 import io.ktor.server.plugins.BadRequestException
 import io.ktor.server.request.*
@@ -10,11 +11,10 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Application.customerRoutes() {
-   val customerRepository = ExposedCustomerRepository
    routing {
       route("/customers") {
          get {
-            call.respond(customerRepository.getAll())
+            call.respond(CustomerService.getAll())
          }
 
          get("/") {
@@ -23,26 +23,26 @@ fun Application.customerRoutes() {
 
          get("/{id}/info") {
             val id = call.getValidCustomerId()
-            val customer = customerRepository.get(id)
+            val customer = CustomerService.get(id)
             val customerInfo = CustomerInfo(customer)
             call.respond(customerInfo)
          }
 
          get("/{id}") {
             val id = call.getValidCustomerId()
-            call.respond(customerRepository.get(id))
+            call.respond(CustomerService.get(id))
          }
 
 
          put("/{id}") {
             val id = call.getValidCustomerId()
             val customerRequest = call.receive<Customer>()
-            call.respond(customerRepository.update(id, customerRequest))
+            call.respond(CustomerService.update(id, customerRequest))
          }
 
          post {
             val customerRequest = call.receive<Customer>()
-            val customerCreate = customerRepository.add(customerRequest)
+            val customerCreate = CustomerService.add(customerRequest)
             call.respond(customerCreate)
          }
 
@@ -52,7 +52,7 @@ fun Application.customerRoutes() {
 
          delete("/{id}") {
             val id = call.getValidCustomerId()
-            call.respond(customerRepository.delete(id))
+            call.respond(CustomerService.delete(id))
          }
       }
    }
@@ -60,7 +60,7 @@ fun Application.customerRoutes() {
 
 
 internal fun ApplicationCall.getValidCustomerId(): Int {
-   val idParam = parameters["id"] ?: throw BadRequestException("Debe especificar el id")
-   val id = idParam.toIntOrNull() ?: throw BadRequestException("id: $idParam, inválido")
+   val idParam = parameters["id"] ?: throw BadRequestException(CustomerService.localeText["ID_CANT_BE_EMPTY"])
+   val id = idParam.toIntOrNull() ?: throw BadRequestException("${CustomerService.localeText["INVALID_CUSTOMER_ID"]}: $idParam")
    return id
 }
