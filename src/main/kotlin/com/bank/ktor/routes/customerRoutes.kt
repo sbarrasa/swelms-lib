@@ -33,7 +33,6 @@ fun Application.customerRoutes() {
             call.respond(CustomerService.get(id))
          }
 
-
          put("/{id}") {
             val id = call.getValidCustomerId()
             val customerRequest = call.receive<Customer>()

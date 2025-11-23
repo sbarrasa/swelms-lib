@@ -5,7 +5,7 @@ import kotlin.test.*
 class CodesCatalogTest {
    @Test
    fun getEntries() {
-      CodesCatalog.entries.forEach {
+      Codes.entries.forEach {
          println(it.key)
          it.value.forEach { println("   $it")}
       }

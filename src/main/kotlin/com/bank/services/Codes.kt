@@ -9,7 +9,7 @@ import com.sbarrasa.domain.card.CardBrand
 import com.sbarrasa.domain.cuit.Cuit
 
 
-object CodesCatalog: Catalog(Case.SNAKE) {
+object Codes: Catalog(Case.SNAKE) {
    init {
       put(Cuit.EntityType::class) {it.description}
       put(CuitEntityCodes)
