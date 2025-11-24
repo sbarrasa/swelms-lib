@@ -32,7 +32,7 @@ class CaseConversionTest {
    }
 
    @Test
-   fun testToCaseDispatcher() {
+   fun testToCaseDisPUTer() {
       val original = "CaseConversionTest"
       assertEquals("case_conversion_test", original.toCase(Case.SNAKE))
       assertEquals("caseConversionTest", "case_conversion_test".toCase(Case.CAMEL))
