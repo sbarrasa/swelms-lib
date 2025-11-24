@@ -11,7 +11,7 @@ val version = "1.0-SNAPSHOT"
 plugins {
    kotlin("jvm") version "2.2.21"
    id("io.ktor.plugin") version "2.3.11"
-   id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
+   id("org.jetbrains.kotlin.plugin.serialization") version "2.2.21"
 }
 
 repositories {
@@ -41,4 +41,9 @@ dependencies {
 
    testImplementation(kotlin("test"))
    testImplementation("io.ktor:ktor-server-test-host-jvm:${ktorVersion}")
+}
+
+kotlin {
+   compilerOptions {
+   }
 }
