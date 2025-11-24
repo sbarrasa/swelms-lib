@@ -1,5 +1,6 @@
 package com.bank.ktor.config
 
+import com.bank.model.error.ErrorDetail
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.install
@@ -16,18 +17,17 @@ internal fun Application.configStatusPages() {
    install(StatusPages) {
       handleException<BadRequestException>(HttpStatusCode.BadRequest)
       handleException<ContentTransformationException>(HttpStatusCode.BadRequest)
+      handleException<NoSuchElementException>(HttpStatusCode.NotFound)
+      handleException<Throwable>(HttpStatusCode.InternalServerError)
    }
 }
 
+
 internal inline fun <reified T : Throwable> StatusPagesConfig.handleException(status: HttpStatusCode) {
    exception<T> { call, cause ->
-      logger.error("Error ${status.value}: ${cause.message}", cause)
-      val msg = generateSequence(cause as Throwable?) { it.cause }
-         .mapNotNull { it.message }
-         .lastOrNull() ?: status.description
-      call.respond(status, mapOf(
-         "error" to T::class.simpleName,
-         "message" to msg
-      ))
+      val error = ErrorDetail(cause)
+      logger.error("$error")
+
+      call.respond(status, error)
    }
 }
