@@ -36,7 +36,14 @@ fun Application.customerRoutes() {
          put("/{id}") {
             val id = call.getValidCustomerId()
             val customerRequest = call.receive<Customer>()
-            call.respond(CustomerService.update(id, customerRequest))
+            val customerUpdated = CustomerService.update(id, customerRequest)
+            call.respond(customerUpdated)
+         }
+
+
+         post("/find") {
+            val customerRequest = call.receive<Customer>()
+            call.respond<Customer>(customerRequest)
          }
 
          post {
@@ -45,9 +52,6 @@ fun Application.customerRoutes() {
             call.respond(customerCreate)
          }
 
-         delete("/") {
-            call.getValidCustomerId()
-         }
 
          delete("/{id}") {
             val id = call.getValidCustomerId()
