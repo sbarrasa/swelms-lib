@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="locale" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="locale">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/configModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/error/ErrorDetail.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/reflection/getInternalValue.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ValueClassesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/CustomersTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/CustomersTable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configStatusPages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configStatusPages.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/customerRoutes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/CustomerInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/CustomerInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/objectcopy/copy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/reflection/copy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/common/text/case/CaseTypeTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/common/text/case/CaseTypeTest.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +47,34 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="bank-kotlin" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bank-kotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bank-kotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bank-kotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bank-kotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="distribution" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bank-kotlin" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -38,10 +85,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Object" />
-        <option value="Class" />
         <option value="Kotlin Interface" />
+        <option value="Class" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -97,6 +144,7 @@
     "Gradle.Build bank-kotlin.executor": "Run",
     "Gradle.CaseConversionTest.executor": "Run",
     "Gradle.CaseTest.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
     "Gradle.LangTest.executor": "Debug",
     "Gradle.LangTest.testLang.executor": "Run",
     "Gradle.LocaleTest (1).executor": "Run",
@@ -108,13 +156,21 @@
     "Gradle.Tests in 'com.sbarrasa'.executor": "Run",
     "Gradle.bank-kotlin [:com.bank.MainKt.main()].executor": "Debug",
     "Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor": "Run",
+    "Gradle.bank-kotlin [assemble].executor": "Run",
+    "Gradle.bank-kotlin [build].executor": "Run",
+    "Gradle.bank-kotlin [clean].executor": "Run",
     "HTTP Request.All in CodesApiTest.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener códigos.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener géneros.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener todos los códigos.executor": "Run",
+    "HTTP Request.CustomerApiTest | Actualizar un customer#1.executor": "Run",
+    "HTTP Request.CustomerApiTest | Actualizar un customer#2.executor": "Run",
+    "HTTP Request.CustomerApiTest | Buscar.executor": "Run",
     "HTTP Request.CustomerApiTest | Crear otra persona.executor": "Run",
     "HTTP Request.CustomerApiTest | Crear una empresa.executor": "Run",
     "HTTP Request.CustomerApiTest | Crear una persona.executor": "Run",
+    "HTTP Request.CustomerApiTest | Eliminar un customer.executor": "Run",
+    "HTTP Request.CustomerApiTest | Intento de actualizar un id.executor": "Run",
     "HTTP Request.CustomerApiTest | Listar todos los customers.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener customer con id invalido.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor": "Run",
@@ -160,6 +216,7 @@
       <recent name="com.bank.locale.lang.pp" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.bank.model.error" />
       <recent name="com.bank.config" />
       <recent name="com.bank.routes" />
       <recent name="com.bank" />
@@ -171,8 +228,23 @@
         <option value="Application" />
       </set>
     </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <map>
+              <entry key="CustomerApiTest | Actualizar un customer#1" value="STOPPED" />
+              <entry key="CustomerApiTest | Actualizar un customer#2" value="STOPPED" />
+              <entry key="CustomerApiTest | Crear otra persona" value="STOPPED" />
+              <entry key="CustomerApiTest | Eliminar un customer" value="STOPPED" />
+              <entry key="CustomerApiTest | Listar todos los customers" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="RunManager" selected="Gradle.LocaleTest">
+  <component name="RunManager" selected="HTTP Request.CustomerApiTest | Actualizar un customer#2">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -182,131 +254,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LangTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.bank.locale.LangTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+    <configuration name="CustomerApiTest | Actualizar un customer#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Actualizar un customer#1" index="9" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="LangTest.testLang" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.bank.locale.LangTest.testLang&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+    <configuration name="CustomerApiTest | Actualizar un customer#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Actualizar un customer#2" index="10" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="LocaleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;LocaleTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+    <configuration name="CustomerApiTest | Crear otra persona" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Crear otra persona" index="8" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="LocaleTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;LocaleTest.test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+    <configuration name="CustomerApiTest | Eliminar un customer" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Eliminar un customer" index="12" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'bank-kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+    <configuration name="CustomerApiTest | Listar todos los customers" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Listar todos los customers" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LocaleTest" />
-        <item itemvalue="Gradle.LocaleTest.test" />
-        <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
-        <item itemvalue="Gradle.LangTest" />
-        <item itemvalue="Gradle.LangTest.testLang" />
+        <item itemvalue="HTTP Request.CustomerApiTest | Listar todos los customers" />
+        <item itemvalue="HTTP Request.CustomerApiTest | Actualizar un customer#2" />
+        <item itemvalue="HTTP Request.CustomerApiTest | Actualizar un customer#1" />
+        <item itemvalue="HTTP Request.CustomerApiTest | Crear otra persona" />
+        <item itemvalue="HTTP Request.CustomerApiTest | Eliminar un customer" />
       </list>
     </recent_temporary>
   </component>
@@ -327,7 +296,8 @@
       <updated>1748012658067</updated>
       <workItem from="1763775595763" duration="711000" />
       <workItem from="1763776424574" duration="26727000" />
-      <workItem from="1763931997547" duration="37297000" />
+      <workItem from="1763931997547" duration="37392000" />
+      <workItem from="1764001548882" duration="12645000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -441,7 +411,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763971635884</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="locale">
+      <option name="closed" value="true" />
+      <created>1763971713981</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1763971713981</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,17 +437,6 @@
     <MESSAGE value="clean" />
     <MESSAGE value="locale" />
     <option name="LAST_COMMIT_MESSAGE" value="locale" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt</url>
-          <line>46</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
