@@ -1,4 +1,4 @@
-package com.sbarrasa.common.objectcopy
+package com.sbarrasa.common.reflection
 
 import kotlin.collections.iterator
 import kotlin.reflect.KMutableProperty1
@@ -13,8 +13,11 @@ inline fun <reified S : Any, reified T : Any> copy(source: S, target: T, ignoreN
    for ((name, sProp) in sProps) {
       val tProp = tProps[name] ?: continue
       val value = sProp.get(source)
-      if (!ignoreNulls or (value != null))
-         tProp.set(target, value)
+      val internalValue = getInternalValue(value)
+
+      if (ignoreNulls && internalValue == null) continue
+
+      tProp.set(target, value)
    }
 }
 
