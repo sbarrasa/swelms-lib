@@ -2,11 +2,12 @@ package com.bank.database
 
 import com.bank.model.customer.Customer
 import com.sbarrasa.domain.person.FullName
+import com.sbarrasa.common.reflection.*
+import com.sbarrasa.domain.cuit.Cuit
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.statements.UpdateBuilder
 import org.jetbrains.exposed.sql.transactions.transaction
-
 
 
 object CustomerService {
@@ -26,15 +27,20 @@ object CustomerService {
 
 
    fun add(customer: Customer): Customer = transaction {
-      val id = CustomersTable.insertAndGetId { customer.toRow(it) }.value
+      val id = CustomersTable.insert { customer.toRow(it) } get CustomersTable.id
       get(id)
    }
 
    fun update(id: Int, customer: Customer): Customer = transaction {
-      CustomersTable.update({ CustomersTable.id eq id })
-         { customer.toRow(it) }
-      get(id)
-   }
+         val currentCustomer = get(id)
+         customer.copyTo(currentCustomer)
+
+         CustomersTable.update({ CustomersTable.id eq id })
+                           { currentCustomer.toRow(it) }
+         currentCustomer
+
+      }
+
 
    fun delete(id: Int): Customer = transaction {
       val customer = get(id)
@@ -51,8 +57,9 @@ fun Customer.toRow(stmt: UpdateBuilder<*>) {
 }
 
 fun ResultRow.toCustomer() = Customer(
-      id = this[CustomersTable.id].value,
+      id = this[CustomersTable.id],
       fullName = FullName(this[CustomersTable.legalName]),
       birthDay = this[CustomersTable.birthDay],
+      cuit = Cuit(this[CustomersTable.cuit]),
       gender = this[CustomersTable.gender]
    )
