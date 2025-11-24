@@ -8,7 +8,7 @@ import kotlin.reflect.KClass
 
 open class Catalog(val case: Case?) : LinkedHashMap<String, StringMap>() {
    private fun applyCase(key: String) = case?.let { key.toCase(it) } ?: key
-   val texts get() = Locale.texts(this::class)
+   val texts get() = Locale.text(this::class)
 
    override fun put(key: String, value: StringMap): StringMap? {
       return super.put(applyCase(key), value)

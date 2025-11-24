@@ -5,7 +5,7 @@ import com.sbarrasa.common.locale.Locale
 object NameUtils {
 
    val validChars =  Regex("[^\\p{L}' ]")
-   val texts get() = Locale.texts(NameUtils::class)
+   val texts get() = Locale.text(NameUtils::class)
 
    fun clean(text: String): String {
       return text.replace(validChars, "")

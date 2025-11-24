@@ -45,7 +45,7 @@ value class CBU(val value: String) {
 
    companion object {
       var SIZE = 22
-      val texts get() = Locale.texts(CBU::class)
+      val texts get() = Locale.text(CBU::class)
 
    }
 

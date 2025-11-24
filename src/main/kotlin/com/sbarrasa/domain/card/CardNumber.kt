@@ -33,7 +33,7 @@ value class CardNumber(val value: String) {
 
    companion object{
       fun from(cardNumber: String) = CardNumber(cardNumber.filter { it.isDigit() })
-      val texts get() = Locale.texts(CardNumber::class)
+      val texts get() = Locale.text(CardNumber::class)
    }
    override fun toString(): String = value
 }

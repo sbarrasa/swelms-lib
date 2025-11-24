@@ -1,7 +1,7 @@
 package com.bank.locale.lang.en
 
 import com.bank.database.CustomerService
-import com.sbarrasa.common.locale.AbstractLocaleConfig
+import com.sbarrasa.common.locale.AbstractLangConfig
 import com.sbarrasa.domain.cuit.Cuit
 import com.sbarrasa.domain.cbu.CBU
 import com.sbarrasa.domain.card.CardNumber
@@ -10,7 +10,7 @@ import com.sbarrasa.domain.validator.CheckDigitValidator
 import com.sbarrasa.common.collections.Catalog
 
 
-object LocaleConfig : AbstractLocaleConfig() {
+object LocaleConfig : AbstractLangConfig() {
    override fun register() {
       Cuit::class.register {
          it["PERSON_DESCRIPTION"] = "individual"
@@ -51,6 +51,11 @@ object LocaleConfig : AbstractLocaleConfig() {
          it["CUSTOMER_NOT_FOUND"] = "Customer not found"
          it["ID_CANT_BE_EMPTY"] = "Customer ID cannot be empty"
          it["INVALID_CUSTOMER_ID"] = "Invalid customer ID"
+      }
+
+      Any::class.register {
+         it["TEST"] = "Test"
+         it["NOT_IMPLEMENTED"] = "Not implemented yet"
       }
 
    }

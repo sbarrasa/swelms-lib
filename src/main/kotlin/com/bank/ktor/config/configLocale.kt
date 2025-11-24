@@ -5,12 +5,11 @@ import io.ktor.server.application.Application
 import io.ktor.server.application.log
 
 fun Application.configLocale() {
-   Locale
-      .apply {
-         rootPackage = "com.bank.locale"
-         lang = environment.config.propertyOrNull("locale.lang")?.getString()
-      }
-      .load()
+   val lang = System.getenv("lang")
+      ?: environment.config.propertyOrNull("locale.lang")?.getString()
+
+   Locale.rootPackage = "com.bank.locale"
+   Locale.lang = lang
 
    log.info("Language: ${Locale.lang}")
 }

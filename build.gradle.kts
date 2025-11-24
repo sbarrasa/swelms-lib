@@ -25,9 +25,8 @@ dependencies {
    implementation("io.ktor:ktor-server-status-pages:$ktorVersion")
    implementation("io.ktor:ktor-server-openapi:$ktorVersion")
    implementation("io.ktor:ktor-server-swagger:$ktorVersion")
+   implementation("org.junit.jupiter:junit-jupiter:5.14.0")
    testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
-   testImplementation("io.ktor:ktor-server-test-host-jvm:$ktorVersion")
-   testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 
    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
    implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
@@ -40,4 +39,5 @@ dependencies {
    implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
 
    testImplementation(kotlin("test"))
+   testImplementation("io.ktor:ktor-server-test-host-jvm:${ktorVersion}")
 }

@@ -1,36 +1,35 @@
 package com.sbarrasa.common.locale
 
 import com.sbarrasa.common.collections.FallbackStringMap
-import com.sbarrasa.common.collections.StringMap
 import kotlin.reflect.KClass
 
 object Locale {
-   val textsByClass = mutableMapOf<KClass<*>, StringMap>()
-
    var rootPackage: String = "locale"
+
    var lang: String? = null
-   var regional: String? = null
+      set(value) {
+         field = value
+         currentLangConfig = value?.let { loadModule(fullNameClass("lang", it)) }
+      }
 
-   //TODO: obligar a que sea un abstract locale
-   fun load() {
-      lang?.let { loadModule("$rootPackage.lang.$it.LocaleConfig") }
-      regional?.let { loadModule("$rootPackage.regional.$it.LocaleConfig") }
+
+   private var currentLangConfig: AbstractLangConfig? = null
+
+   private fun loadModule(fullNameClass: String): AbstractLangConfig {
+      val localeConfig =  Class.forName(fullNameClass).kotlin.objectInstance as AbstractLangConfig
+      localeConfig.register()
+      return localeConfig
    }
 
-   private fun loadModule(fullNameClass: String) {
-      Class.forName(fullNameClass).kotlin.objectInstance
-   }
+   private fun fullNameClass(groupPackage: String, localePackage: String) =
+      "$rootPackage.$groupPackage.$localePackage.LocaleConfig"
+
+   fun text(k: KClass<*>): FallbackStringMap =
+      currentLangConfig?.textsByClass?.get(k)?.let { FallbackStringMap(it) }
+         ?: FallbackStringMap(emptyMap())
 
 
-   fun register(k: KClass<*>, block: (MutableMap<String, String>) -> Unit) {
-      val map = mutableMapOf<String, String>()
-      block(map)
-      textsByClass[k] = map
-   }
-
-   fun texts(k: KClass<*>): FallbackStringMap =
-      FallbackStringMap(textsByClass[k] ?: emptyMap())
 }
 
 val Any.localeText: FallbackStringMap
-   get() = Locale.texts(this::class)
+   get() = Locale.text(this::class)
