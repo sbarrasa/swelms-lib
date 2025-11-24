@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="locale">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/regional/ar/LocaleConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/regional/us/LocaleConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractLocaleConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractRegionalConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/RegionalTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractLangConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractLangConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/Locale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/card/CardNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/card/CardNumber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/AccountValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/AccountValidator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/BranchValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/BranchValidator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/CBU.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/CBU.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cuit/CuitCheckDigitValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cuit/CuitCheckDigitValidator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/FullName.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/FullName.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/NameUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/NameUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LocaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LocaleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LocaleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LangTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/card/CardNumberTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/card/CardNumberTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cbu/CBUTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cbu/CBUTest.kt" afterDir="false" />
-    </list>
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="locale" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -348,7 +327,7 @@
       <updated>1748012658067</updated>
       <workItem from="1763775595763" duration="711000" />
       <workItem from="1763776424574" duration="26727000" />
-      <workItem from="1763931997547" duration="36984000" />
+      <workItem from="1763931997547" duration="37297000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -454,7 +433,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763958881004</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="locale">
+      <option name="closed" value="true" />
+      <created>1763971635884</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1763971635884</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,11 +467,6 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt</url>
           <line>46</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/LocaleTest.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
