@@ -1,13 +1,17 @@
 import com.sbarrasa.common.locale.Locale;
-import com.sbarrasa.common.locale.LocaleKt;
-import kotlin.jvm.JvmClassMappingKt;
+import com.sbarrasa.domain.cuit.Cuit;
 import org.junit.Test;
 
-import java.util.Map;
 
 public class LocaleTest {
   @Test
   public void test(){
+    Locale.setRootPackage("com.bank.locale");
+    System.out.println(Locale.text(Cuit.class).get("INVALID_LENGTH"));
+    Locale.setLang("es");
+    System.out.println(Locale.text(Cuit.class).get("INVALID_LENGTH"));
+
+
 
   }
 }

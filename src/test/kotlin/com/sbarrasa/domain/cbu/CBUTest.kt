@@ -1,5 +1,6 @@
 package com.sbarrasa.domain.cbu
 
+import com.sbarrasa.common.locale.localeText
 import com.sbarrasa.domain.validator.ValidatorException
 import kotlin.test.*
 
@@ -16,13 +17,13 @@ class CBUTest {
    @Test
    fun invalidLength() {
       val e = assertFailsWith<ValidatorException> { CBU("011062713006270145810") }
-      assertContains(e.message ?: "", CBU.texts["INVALID_LENGTH"])
+      assertContains(e.message ?: "", CBU.localeText["INVALID_LENGTH"])
    }
 
    @Test
    fun nonDigitCharacters() {
       val e = assertFailsWith<ValidatorException> { CBU("0110627A30062701458101") }
-      assertContains(e.message ?: "", CBU.texts["ONLY_DIGITS"])
+      assertContains(e.message ?: "", CBU.localeText["ONLY_DIGITS"])
    }
 
    @Test

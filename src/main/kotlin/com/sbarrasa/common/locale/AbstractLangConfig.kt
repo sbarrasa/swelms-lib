@@ -1,12 +1,10 @@
 package com.sbarrasa.common.locale
 
-import com.sbarrasa.common.collections.StringMap
 import kotlin.reflect.KClass
 
-abstract class AbstractLangConfig {
-   val textsByClass = mutableMapOf<KClass<*>, StringMap>()
 
-   abstract fun register()
+abstract class AbstractLangConfig: AbstractLocaleConfig {
+   val textsByClass = mutableMapOf<String, Map<String, String>>()
 
    fun <T : Any> KClass<T>.register(block: (MutableMap<String, String>) -> Unit) {
       val map = mutableMapOf<String, String>()
@@ -14,8 +12,7 @@ abstract class AbstractLangConfig {
       register(this, map)
    }
 
-   fun register(k: KClass<*>, map: MutableMap<String, String>) {
-      textsByClass[k] = map
+   fun register(k: KClass<*>, map: Map<String, String>) {
+      textsByClass[Locale.keyFrom(k)] = map
    }
-
 }

@@ -1,5 +1,6 @@
 package com.sbarrasa.domain.card
 
+import com.sbarrasa.common.locale.localeText
 import com.sbarrasa.domain.validator.ValidatorException
 import kotlin.test.Test
 import kotlin.test.assertContains
@@ -36,7 +37,7 @@ class CardNumberTest {
    @Test
    fun invalidLength() {
       val e = assertFailsWith<ValidatorException> { CardNumber("123") }
-      assertContains( e.message ?: "", CardNumber.texts["INVALID_LENGTH"])
+      assertContains( e.message ?: "", CardNumber.localeText["INVALID_LENGTH"])
    }
 
    @Test

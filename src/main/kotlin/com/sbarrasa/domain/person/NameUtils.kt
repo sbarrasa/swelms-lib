@@ -1,11 +1,11 @@
 package com.sbarrasa.domain.person
 
-import com.sbarrasa.common.locale.Locale
+import com.sbarrasa.common.locale.localeText
+
 
 object NameUtils {
 
    val validChars =  Regex("[^\\p{L}' ]")
-   val texts get() = Locale.text(NameUtils::class)
 
    fun clean(text: String): String {
       return text.replace(validChars, "")
@@ -19,7 +19,7 @@ object NameUtils {
          validate(parts[0].trim(), isFullName = false)
          validate(parts[1].trim(), isFullName = false)
       } else {
-         require(isValid(text)) { texts["INVALID_FORMAT"] }
+         require(isValid(text)) { localeText["INVALID_FORMAT"] }
       }
    }
 
@@ -29,7 +29,7 @@ object NameUtils {
 
    fun split(fullNameText: String): List<String> {
       val parts = fullNameText.split(",")
-      if (parts.size != 2) throw IllegalArgumentException("${texts["INVALID_FORMAT"]}: $fullNameText")
+      if (parts.size != 2) throw IllegalArgumentException("${localeText["INVALID_FORMAT"]}: $fullNameText")
       return parts
    }
 

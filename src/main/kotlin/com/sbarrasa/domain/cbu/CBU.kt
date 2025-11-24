@@ -1,6 +1,6 @@
 package com.sbarrasa.domain.cbu
 
-import com.sbarrasa.common.locale.Locale
+import com.sbarrasa.common.locale.*
 import com.sbarrasa.domain.validator.DigitsValidator
 import com.sbarrasa.domain.validator.LengthValidator
 import kotlinx.serialization.Serializable
@@ -24,11 +24,11 @@ value class CBU(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(texts["INVALID_LENGTH"], SIZE).validate(value)
+      LengthValidator(localeText["INVALID_LENGTH"], SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(texts["ONLY_DIGITS"]).validate(value)
+      DigitsValidator(localeText["ONLY_DIGITS"]).validate(value)
    }
 
    private fun validateEntityBranchDigit() {
@@ -45,8 +45,6 @@ value class CBU(val value: String) {
 
    companion object {
       var SIZE = 22
-      val texts get() = Locale.text(CBU::class)
-
    }
 
    override fun toString(): String = value

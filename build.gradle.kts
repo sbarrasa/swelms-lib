@@ -1,14 +1,15 @@
 val exposedVersion = "0.50.1"
 val h2Version = "2.3.232"
-val kotlinVersion = "1.9.22"
+val kotlinVersion = "2.2.21"
 val logbackVersion = "1.5.19"
 val ktorVersion = "2.3.11"
 val dateTimeVersion = "0.6.2"
 val group = "com.sbarrasa"
 val version = "1.0-SNAPSHOT"
 
+
 plugins {
-   kotlin("jvm") version "1.9.22"
+   kotlin("jvm") version "2.2.21"
    id("io.ktor.plugin") version "2.3.11"
    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
 }

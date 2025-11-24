@@ -4,23 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="clean">
-      <change afterPath="$PROJECT_DIR$/src/test/java/CaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LocaleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LocaleTest.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="locale">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/regional/ar/LocaleConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/regional/us/LocaleConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractLocaleConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractRegionalConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/RegionalTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/collections/Catalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/collections/Catalog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractLocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractLangConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractLangConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/AbstractLangConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/common/locale/Locale.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/card/CardNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/card/CardNumber.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/AccountValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/AccountValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/BranchValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/BranchValidator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/CBU.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cbu/CBU.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cuit/CuitCheckDigitValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/cuit/CuitCheckDigitValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/FullName.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/FullName.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/NameUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/person/NameUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/validator/CheckDigitValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sbarrasa/domain/validator/CheckDigitValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LocaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LocaleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LocaleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LangTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/card/CardNumberTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/card/CardNumberTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cbu/CBUTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/sbarrasa/domain/cbu/CBUTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +62,7 @@
         <option value="Kotlin File" />
         <option value="Kotlin Object" />
         <option value="Class" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -113,11 +118,14 @@
     "Gradle.Build bank-kotlin.executor": "Run",
     "Gradle.CaseConversionTest.executor": "Run",
     "Gradle.CaseTest.executor": "Run",
+    "Gradle.LangTest.executor": "Debug",
+    "Gradle.LangTest.testLang.executor": "Run",
     "Gradle.LocaleTest (1).executor": "Run",
     "Gradle.LocaleTest.executor": "Debug",
     "Gradle.LocaleTest.test.executor": "Run",
     "Gradle.LocaleTest.testLang.executor": "Run",
     "Gradle.Tests in 'bank-kotlin.test'.executor": "Run",
+    "Gradle.Tests in 'com.bank.locale'.executor": "Run",
     "Gradle.Tests in 'com.sbarrasa'.executor": "Run",
     "Gradle.bank-kotlin [:com.bank.MainKt.main()].executor": "Debug",
     "Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor": "Run",
@@ -165,7 +173,11 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\develop\bank-kotlin\src\main\kotlin\com\bank\ktor\" />
     </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.sbarrasa.common.locale" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.bank.locale.regional.us" />
       <recent name="com.bank.locale.lang.pp" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
@@ -181,7 +193,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.LocaleTest (1)">
+  <component name="RunManager" selected="Gradle.LocaleTest">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -191,7 +203,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocaleTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LangTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -204,7 +216,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.bank.locale.LocaleTest&quot;" />
+            <option value="&quot;com.bank.locale.LangTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LangTest.testLang" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.bank.locale.LangTest.testLang&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -263,30 +299,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LocaleTest.testLang" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.bank.locale.LocaleTest.testLang&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="Tests in 'bank-kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -311,11 +323,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LocaleTest (1)" />
-        <item itemvalue="Gradle.LocaleTest.testLang" />
-        <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
         <item itemvalue="Gradle.LocaleTest" />
         <item itemvalue="Gradle.LocaleTest.test" />
+        <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
+        <item itemvalue="Gradle.LangTest" />
+        <item itemvalue="Gradle.LangTest.testLang" />
       </list>
     </recent_temporary>
   </component>
@@ -336,7 +348,7 @@
       <updated>1748012658067</updated>
       <workItem from="1763775595763" duration="711000" />
       <workItem from="1763776424574" duration="26727000" />
-      <workItem from="1763931997547" duration="24428000" />
+      <workItem from="1763931997547" duration="36984000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -434,7 +446,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763941510461</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="locale">
+      <option name="closed" value="true" />
+      <created>1763958881004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1763958881004</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +470,8 @@
     <MESSAGE value="exposed Databasedriver cargado desde application.conf" />
     <MESSAGE value="exposed CustomerService.kt rempaza Exposedrepository&#10;se elimina el framework Repository se  simplifica con exposed DSL" />
     <MESSAGE value="clean" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean" />
+    <MESSAGE value="locale" />
+    <option name="LAST_COMMIT_MESSAGE" value="locale" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -459,6 +480,11 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt</url>
           <line>46</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/LocaleTest.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
