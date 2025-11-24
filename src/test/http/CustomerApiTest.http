@@ -3,7 +3,7 @@ GET http://localhost:8080/customers
 Accept: application/json
 
 ### Obtener customer por id
-GET http://localhost:8080/customers/140
+GET http://localhost:8080/customers/107
 Accept: application/json
 
 ### Obtener customer con id invalido
@@ -44,17 +44,26 @@ POST http://localhost:8080/customers
 Content-Type: application/json
 
 {
-  "legalName": "Perez, Maia",
+  "fullName": "Perez, Maia",
   "cuit": "23234567119",
   "birthDay": "2001-12-19",
   "gender": "F"
 }
+
 ### Actualizar un customer
-PUT http://localhost:8080/customers/3
+PUT http://localhost:8080/customers/363
 Content-Type: application/json
 
 {
   "gender": "X"
+}
+
+### Actualizar un customer
+PUT http://localhost:8080/customers/109
+Content-Type: application/json
+
+{
+  "fullName": "Barrasa Rabinovich, Sebastián Gabriel"
 }
 
 ### Intento de actualizar un id
@@ -75,4 +84,11 @@ Content-Type: application/json
 
 
 ### Eliminar un customer
-DELETE http://localhost:8080/customers/3
+DELETE http://localhost:8080/customers/299
+
+### Buscar
+POST http://localhost:8080/customers/find
+Content-Type: application/json
+
+{
+}
