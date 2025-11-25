@@ -1,5 +1,5 @@
-import com.sbarrasa.common.locale.Locale;
-import com.sbarrasa.domain.cuit.Cuit;
+import com.swelms.common.locale.Locale;
+import com.swelms.domain.cuit.Cuit;
 import org.junit.Test;
 
 

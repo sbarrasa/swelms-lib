@@ -2,7 +2,7 @@ package com.bank.locale
 
 import com.bank.model.products.structure.Currency
 import kotlin.test.Test
-import com.sbarrasa.common.locale.*
+import com.swelms.common.locale.*
 
 class RegionalTest {
    @Test

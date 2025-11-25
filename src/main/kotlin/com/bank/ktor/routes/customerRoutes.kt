@@ -3,7 +3,7 @@ package com.bank.ktor.routes
 import com.bank.database.CustomerService
 import com.bank.model.customer.Customer
 import com.bank.model.customer.CustomerInfo
-import com.sbarrasa.common.locale.localeText
+import com.swelms.common.locale.localeText
 import io.ktor.server.application.*
 import io.ktor.server.plugins.BadRequestException
 import io.ktor.server.request.*

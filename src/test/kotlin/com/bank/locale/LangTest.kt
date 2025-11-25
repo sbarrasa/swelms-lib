@@ -1,9 +1,9 @@
 package com.bank.locale
 
-import com.sbarrasa.common.locale.*
-import com.sbarrasa.domain.cbu.CBU
-import com.sbarrasa.domain.cuit.Cuit
-import com.sbarrasa.domain.person.NameUtils
+import com.swelms.common.locale.*
+import com.swelms.domain.cbu.CBU
+import com.swelms.domain.cuit.Cuit
+import com.swelms.domain.person.NameUtils
 import kotlin.test.*
 
 class LangTest {

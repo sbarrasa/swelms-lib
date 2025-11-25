@@ -1,7 +1,7 @@
 package com.bank.locale.regional.us
 
 import com.bank.model.products.structure.Currency
-import com.sbarrasa.common.locale.AbstractRegionalConfig
+import com.swelms.common.locale.AbstractRegionalConfig
 
 object LocaleConfig: AbstractRegionalConfig() {
    override fun register() {

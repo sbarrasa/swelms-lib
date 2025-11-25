@@ -3,7 +3,7 @@ package com.bank.model.products
 import com.bank.model.products.structure.CardProduct
 import com.bank.model.products.structure.CreditProduct
 import com.bank.model.products.structure.ProductDescriptor
-import com.sbarrasa.domain.card.CardNumber
+import com.swelms.domain.card.CardNumber
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,4 +1,4 @@
-import com.sbarrasa.common.text.CaseUtilsKt;
+import com.swelms.common.text.CaseUtilsKt;
 import org.junit.Test;
 
 public class CaseTest {

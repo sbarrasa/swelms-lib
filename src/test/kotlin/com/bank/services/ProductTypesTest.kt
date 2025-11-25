@@ -2,12 +2,12 @@ package com.bank.services
 
 import com.bank.model.products.CheckingAccount
 import com.bank.model.products.CreditCardProduct
-import com.sbarrasa.common.serialization.decodeFromMap
+import com.swelms.common.serialization.decodeFromMap
 import com.bank.model.products.structure.Currency
 import com.bank.model.products.structure.Product
-import com.sbarrasa.domain.card.CardBrand
-import com.sbarrasa.common.serialization.polymorphic
-import com.sbarrasa.domain.cbu.CBU
+import com.swelms.domain.card.CardBrand
+import com.swelms.common.serialization.polymorphic
+import com.swelms.domain.cbu.CBU
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.MissingFieldException
 import kotlinx.serialization.json.Json

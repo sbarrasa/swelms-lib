@@ -1,9 +1,9 @@
 package com.bank.database
 
 import com.bank.model.customer.Customer
-import com.sbarrasa.domain.person.FullName
-import com.sbarrasa.common.reflection.*
-import com.sbarrasa.domain.cuit.Cuit
+import com.swelms.domain.person.FullName
+import com.swelms.common.reflection.*
+import com.swelms.domain.cuit.Cuit
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.statements.UpdateBuilder
@@ -33,7 +33,7 @@ object CustomerService {
 
    fun update(id: Int, customer: Customer): Customer = transaction {
          val currentCustomer = get(id)
-         customer.copyTo(currentCustomer)
+         customer.copyTo(currentCustomer, ignoreNulls = true)
 
          CustomersTable.update({ CustomersTable.id eq id })
                            { currentCustomer.toRow(it) }

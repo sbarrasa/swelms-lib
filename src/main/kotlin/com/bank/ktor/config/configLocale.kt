@@ -1,6 +1,6 @@
 package com.bank.ktor.config
 
-import com.sbarrasa.common.locale.Locale
+import com.swelms.common.locale.Locale
 import io.ktor.server.application.Application
 import io.ktor.server.application.log
 

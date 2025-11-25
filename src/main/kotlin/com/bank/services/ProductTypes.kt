@@ -6,9 +6,9 @@ import com.bank.model.products.DebitCardProduct
 import com.bank.model.products.SavingAccount
 import com.bank.model.products.structure.Product
 import com.bank.model.products.structure.ProductDescriptor
-import com.sbarrasa.common.collections.Mappeable
-import com.sbarrasa.common.collections.associateIfNotNull
-import com.sbarrasa.common.collections.ClassHierarchy
+import com.swelms.common.collections.Mappeable
+import com.swelms.common.collections.associateIfNotNull
+import com.swelms.common.collections.ClassHierarchy
 import kotlin.reflect.KClass
 import kotlin.reflect.full.companionObjectInstance
 

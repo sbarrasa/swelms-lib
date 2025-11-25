@@ -1,8 +1,8 @@
 package com.bank.database
 
 import com.bank.model.products.structure.Currency
-import com.sbarrasa.domain.card.CardBrand
-import com.sbarrasa.domain.cbu.CBU
+import com.swelms.domain.card.CardBrand
+import com.swelms.domain.cbu.CBU
 import org.jetbrains.exposed.dao.id.IntIdTable
 import org.jetbrains.exposed.sql.kotlin.datetime.date
 

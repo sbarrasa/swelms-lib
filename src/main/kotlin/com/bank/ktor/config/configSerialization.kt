@@ -1,7 +1,7 @@
 package com.bank.ktor.config
 
 import com.bank.services.ProductTypes
-import com.sbarrasa.common.serialization.polymorphic
+import com.swelms.common.serialization.polymorphic
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
 import io.ktor.server.application.call

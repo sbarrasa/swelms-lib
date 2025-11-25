@@ -4,7 +4,7 @@ val kotlinVersion = "2.2.21"
 val logbackVersion = "1.5.19"
 val ktorVersion = "2.3.11"
 val dateTimeVersion = "0.6.2"
-val group = "com.sbarrasa"
+val group = "com.swelms"
 val version = "1.0-SNAPSHOT"
 
 

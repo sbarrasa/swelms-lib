@@ -1,13 +1,13 @@
 package com.bank.locale.lang.en
 
 import com.bank.database.CustomerService
-import com.sbarrasa.common.locale.AbstractLangConfig
-import com.sbarrasa.domain.cuit.Cuit
-import com.sbarrasa.domain.cbu.CBU
-import com.sbarrasa.domain.card.CardNumber
-import com.sbarrasa.domain.person.NameUtils
-import com.sbarrasa.domain.validator.CheckDigitValidator
-import com.sbarrasa.common.collections.Catalog
+import com.swelms.common.locale.AbstractLangConfig
+import com.swelms.domain.cuit.Cuit
+import com.swelms.domain.cbu.CBU
+import com.swelms.domain.card.CardNumber
+import com.swelms.domain.person.NameUtils
+import com.swelms.domain.validator.CheckDigitValidator
+import com.swelms.common.collections.Catalog
 
 
 object LocaleConfig : AbstractLangConfig() {
