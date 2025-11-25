@@ -5,9 +5,10 @@ import com.swelms.common.locale.AbstractLangConfig
 import com.swelms.domain.cuit.Cuit
 import com.swelms.domain.cbu.CBU
 import com.swelms.domain.card.CardNumber
-import com.swelms.domain.person.NameUtils
 import com.swelms.domain.validator.CheckDigitValidator
 import com.swelms.common.collections.Catalog
+import com.swelms.domain.person.FullName
+import com.swelms.domain.person.NamePart
 
 
 object LocaleConfig : AbstractLangConfig() {
@@ -34,8 +35,12 @@ object LocaleConfig : AbstractLangConfig() {
          it["ONLY_DIGITS"] = "Card number can contain only numbers"
       }
 
-      NameUtils::class.register {
-         it["INVALID_FORMAT"] = "Invalid name"
+      NamePart::class.register {
+         it["INVALID_FORMAT"] = "Names can only contain letters, apostrophes and accents"
+      }
+
+      FullName::class.register {
+         it["INVALID_FORMAT"] = "Valid format is: 'Last Names, First Names'"
       }
 
       CheckDigitValidator::class.register {

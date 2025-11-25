@@ -1,12 +1,10 @@
 package com.swelms.domain.person
 
-import kotlinx.serialization.Serializable
 
-
-@Serializable
-@JvmInline
-value class NamePart(override val text: String) : Name {
+data class NamePart(override val text: String) : Names {
    init {
-      NameUtils.validate(text)
+      Names.validate(text)
    }
+
+   override fun toString(): String = text
 }

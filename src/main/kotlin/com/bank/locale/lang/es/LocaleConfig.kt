@@ -5,9 +5,10 @@ import com.swelms.common.locale.AbstractLangConfig
 import com.swelms.domain.cuit.Cuit
 import com.swelms.domain.cbu.CBU
 import com.swelms.domain.card.CardNumber
-import com.swelms.domain.person.NameUtils
 import com.swelms.domain.validator.CheckDigitValidator
 import com.swelms.common.collections.Catalog
+import com.swelms.domain.person.FullName
+import com.swelms.domain.person.NamePart
 
 object LocaleConfig : AbstractLangConfig() {
    override fun register() {
@@ -33,8 +34,12 @@ object LocaleConfig : AbstractLangConfig() {
          it["ONLY_DIGITS"] = "El número de tarjeta solo puede contener números"
       }
 
-      NameUtils::class.register {
-         it["INVALID_FORMAT"] = "Nombre inválido"
+      NamePart::class.register {
+         it["INVALID_FORMAT"] = "Los nombres sólo pueden incluir letras, apóstrofes y acentos"
+      }
+
+      FullName::class.register {
+         it["INVALID_FORMAT"] = "Formato valido debe ser 'Apellidos, Nombres' "
       }
 
       CheckDigitValidator::class.register {

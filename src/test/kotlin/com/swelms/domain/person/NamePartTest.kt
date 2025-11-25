@@ -22,4 +22,12 @@ class NamePartTest {
       val part = NamePart("María del Pilar")
       assertEquals(3, part.count)
    }
+
+   @Test
+   fun accessByIndex() {
+      val name = NamePart("Sebastian Gabriel")
+      assertEquals("Sebastian", name[0])
+      assertEquals("Gabriel", name[1])
+   }
+
 }

@@ -3,9 +3,10 @@ package com.bank.locale
 import com.swelms.common.locale.*
 import com.swelms.domain.cbu.CBU
 import com.swelms.domain.cuit.Cuit
-import com.swelms.domain.person.NameUtils
+import com.swelms.domain.person.FullName
 import kotlin.test.*
 
+//TODO: averiguar como hacer para testearlo separado del framework
 class LangTest {
 
    @Test
@@ -19,7 +20,7 @@ class LangTest {
          println("$it: ${Cuit::class.localeText["INVALID_LENGTH"]}")
          println("$it: ${Locale.text(CBU::class)["INVALID_LENGTH"]}")
          println("$it: ${CBU.localeText["INVALID_LENGTH"]}")
-         println("$it: ${NameUtils.localeText["INVALID_FORMAT"]}")
+         println("$it: ${FullName.localeText["INVALID_FORMAT"]}")
 
       }
 

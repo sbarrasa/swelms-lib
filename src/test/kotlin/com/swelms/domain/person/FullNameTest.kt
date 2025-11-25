@@ -1,5 +1,6 @@
 package com.swelms.domain.person
 
+import com.swelms.common.locale.localeText
 import kotlin.test.*
 
 class FullNameTest {
@@ -15,11 +16,55 @@ class FullNameTest {
 
    @Test
    fun fullNameInvalidFormat() {
-      assertFailsWith<IllegalArgumentException> {
+      val error = assertFailsWith<IllegalArgumentException> {
          FullName("SoloNombre")
       }
-      assertFailsWith<IllegalArgumentException> {
-         FullName("Apellido1, Apellido2, Nombre")
+      assertContains(error.message ?: "", localeText["INVALID_FORMAT"])
+   }
+
+   @Test
+   fun legalOrderFormatter() {
+      val fullName = FullName("Gomez García, Juan José")
+      assertEquals("Gomez García, Juan José", fullName.format(FullName.Formatter.legalOrder))
+   }
+
+   @Test
+   fun fullOrderFormatter() {
+      val fullName = FullName("Gomez García, Juan José")
+      assertEquals("Juan José Gomez García", fullName.format(FullName.Formatter.fullOrder))
+   }
+
+   @Test
+   fun first_LastsFormatter() {
+      val fullName = FullName("Gomez García, Juan José")
+      assertEquals("Juan Gomez García", fullName.format(FullName.Formatter.first_lasts))
+   }
+
+   @Test
+   fun fullNameConstructors() {
+      val fromString = FullName("Garcia, Jose Maria")
+      val fromStrings = FullName("Garcia", "Jose Maria")
+      val fromNameParts = FullName(NamePart("Garcia"), NamePart("Jose Maria"))
+
+      listOf(fromString, fromStrings, fromNameParts).forEach { fn ->
+         assertEquals("Jose Maria", fn.givenNames.text)
+         assertEquals("Garcia", fn.lastNames.text)
+         assertEquals(listOf("Jose", "Maria", "Garcia"), fn.list)
       }
    }
+
+   @Test
+   fun initialsTestFormat() {
+      val formatter: FullNameFormatter = {"${it.initials[0]}.${it.initials[1]}.${it.initials[2]}.${it.lastNames}"}
+      val fullName = FullName("Tolkien", "John Ronald Reuel")
+      assertEquals("J.R.R.Tolkien", fullName.format(formatter))
+   }
+
+   @Test
+   fun accessByIndex() {
+      val fullName = FullName("Barrasa, Sebastian Gabriel")
+      assertEquals("Sebastian", fullName[0])
+      assertEquals("Barrasa", fullName[2])
+   }
+
 }
