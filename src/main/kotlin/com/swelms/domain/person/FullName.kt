@@ -1,10 +1,8 @@
 package com.swelms.domain.person
 
-import kotlinx.serialization.Serializable
 
-@JvmInline
-@Serializable
-value class FullName(override val text: String) : Name, BasicFullName  {
+//TODO: separar componentes y agregar constructor con partes
+data class FullName(override val text: String) : Name, BasicFullName  {
    init {
       NameUtils.validate(text, isFullName=true)
    }
@@ -15,7 +13,5 @@ value class FullName(override val text: String) : Name, BasicFullName  {
    override val givenNames get() = parts.givenNames
 
    override val list: List<String> get() = givenNames.list + lastNames.list
-
-
-
 }
+

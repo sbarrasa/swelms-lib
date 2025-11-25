@@ -25,6 +25,8 @@ internal fun Application.configSerialization() {
             classDiscriminator = "type"
             ignoreUnknownKeys = true
             explicitNulls = false
+
+
          }
       )
    }

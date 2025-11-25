@@ -12,11 +12,11 @@ import io.ktor.server.application.Application
 
 fun Application.configModule() {
    configLocale()
+   configLog()
    configStatusPages()
    configSerialization()
    configDatabase()
    customerRoutes()
    codesRoutes()
    customerProductsRoutes()
-   configLog()
 }
