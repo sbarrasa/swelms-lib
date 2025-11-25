@@ -55,7 +55,7 @@ PUT http://localhost:8080/customers/363
 Content-Type: application/json
 
 {
-  "gender": "X"
+  "gender": "F"
 }
 
 ### Actualizar un customer

@@ -2,7 +2,6 @@ package com.bank.database
 
 import com.bank.model.customer.Customer
 import com.swelms.domain.person.FullName
-import com.swelms.common.reflection.*
 import com.swelms.domain.cuit.Cuit
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
@@ -33,7 +32,7 @@ object CustomerService {
 
    fun update(id: Int, customer: Customer): Customer = transaction {
          val currentCustomer = get(id)
-         customer.copyTo(currentCustomer, ignoreNulls = true)
+         customer.copyTo(currentCustomer)
 
          CustomersTable.update({ CustomersTable.id eq id })
                            { currentCustomer.toRow(it) }
@@ -48,6 +47,15 @@ object CustomerService {
       customer
    }
 }
+
+fun Customer.copyTo(target: Customer) = target.copy(
+      fullName = this.fullName ?: target.fullName,
+      birthDay = this.birthDay ?: target.birthDay,
+      cuit = this.cuit ?: target.cuit,
+      gender = this.gender ?: target.gender
+   )
+
+
 
 fun Customer.toRow(stmt: UpdateBuilder<*>) {
    stmt[CustomersTable.legalName] = fullName?.text ?: ""
