@@ -1,10 +1,5 @@
-package com.swelms.common.text.case
+package com.swelms.common.text
 
-import com.swelms.common.text.Case
-import com.swelms.common.text.toCamelCase
-import com.swelms.common.text.toCase
-import com.swelms.common.text.toPascalCase
-import com.swelms.common.text.toSnakeCase
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
