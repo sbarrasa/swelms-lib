@@ -23,11 +23,8 @@ abstract class CheckDigitValidator(val msg: String?=null) {
 
    fun validate(digits: List<Int>, vd: Int) {
       val expected = compute(digits)
-      if (expected != vd) throw ValidatorException("${texts["INVALID_CHECK_DIGIT"]}: $msg")
+      if (expected != vd) throw ValidatorException("${Locale.text(CheckDigitValidator::class, "INVALID_CHECK_DIGIT")}: $msg")
    }
 
-   companion object {
-      val texts = Locale.textsByClass(CheckDigitValidator::class)
-   }
 
 }

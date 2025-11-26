@@ -9,7 +9,7 @@ class Rating(
    private val range: IntRange = 1..10
 ) {
    fun add(value: Int) {
-      require(value in range) { localeText["OUT_OF_RANGE"](range.first, range.last) }
+      require(value in range) { localeText("OUT_OF_RANGE")(range.first, range.last) }
       sum += value
       count++
    }

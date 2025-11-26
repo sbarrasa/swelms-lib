@@ -18,15 +18,15 @@ value class CardNumber(val value: String) {
    val brand: CardBrand? get() = CardBrand.of(this)
 
    private fun validateLength() {
-      if (value.length !in BinTable.lengthRange()) throw ValidatorException(localeText["INVALID_LENGTH"])
+      if (value.length !in BinTable.lengthRange()) throw ValidatorException(localeText("INVALID_LENGTH"))
    }
 
    private fun validateDigits() {
-      DigitsValidator(localeText["ONLY_DIGITS"]).validate(value)
+      DigitsValidator(localeText("ONLY_DIGITS")).validate(value)
    }
 
    private fun validateCheckDigit() {
-      LuhnValidator(localeText["CARD_NUMBER"]).validate(value)
+      LuhnValidator(localeText("CARD_NUMBER")).validate(value)
    }
 
   

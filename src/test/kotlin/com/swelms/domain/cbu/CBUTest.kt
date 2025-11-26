@@ -18,13 +18,13 @@ class CBUTest {
    @Test
    fun invalidLength() {
       val e = assertFailsWith<ValidatorException> { CBU("011062713006270145810") }
-      assertContains(e.message ?: "", CBU.localeText["INVALID_LENGTH"])
+      assertContains(e.message ?: "", CBU.localeText("INVALID_LENGTH"))
    }
 
    @Test
    fun nonDigitCharacters() {
       val e = assertFailsWith<ValidatorException> { CBU("0110627A30062701458101") }
-      assertContains(e.message ?: "", CBU.localeText["ONLY_DIGITS"])
+      assertContains(e.message ?: "", CBU.localeText("ONLY_DIGITS"))
    }
 
    @Test

@@ -4,6 +4,7 @@ import com.swelms.domain.validator.CheckDigitValidator
 import kotlin.test.*
 import com.swelms.domain.validator.ValidatorException
 import com.swelms.common.locale.*
+import com.swelms.common.locale.localeText
 import com.swelms.domain.id.cuit.Cuit
 
 
@@ -20,25 +21,25 @@ class CuitTest {
    @Test
    fun invalidLength() {
       val e = assertFailsWith<ValidatorException> { Cuit("2032964233") }
-      assertContains(e.message ?: "", Cuit.localeText["INVALID_LENGTH"])
+      assertContains(e.message ?: "", Cuit.localeText("INVALID_LENGTH"))
    }
 
    @Test
    fun nonDigitCharacters() {
       val e = assertFailsWith<ValidatorException> { Cuit("20329642A30") }
-      assertContains(e.message ?: "", Cuit.localeText["ONLY_DIGITS"])
+      assertContains(e.message ?: "", Cuit.localeText("ONLY_DIGITS"))
    }
 
    @Test
    fun invalidEntityCode() {
       val e = assertFailsWith<ValidatorException> { Cuit("99329642330") }
-      assertContains(e.message ?: "", Cuit.localeText["INVALID_ENTITY_CODE"])
+      assertContains(e.message ?: "", Cuit.localeText("INVALID_ENTITY_CODE"))
    }
 
    @Test
    fun invalidCheckDigit() {
       val e = assertFailsWith<ValidatorException> { Cuit("20329642331") }
-      assertContains(e.message ?: "", CheckDigitValidator.localeText["INVALID_CHECK_DIGIT"])
+      assertContains(e.message ?: "", Locale.text(CheckDigitValidator::class, "INVALID_CHECK_DIGIT"))
    }
 
    @Test

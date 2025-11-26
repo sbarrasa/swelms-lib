@@ -1,6 +1,5 @@
 package com.swelms.common.locale
 
-import com.swelms.common.collections.FallbackStringMap
 import com.swelms.common.text.StringSlots
 import kotlin.reflect.KClass
 
@@ -8,6 +7,9 @@ object Locale {
 
    @JvmStatic
    var rootPackage: String = "locale"
+
+   @JvmStatic
+   var keyOnFail = true
 
    @JvmStatic
    var lang: String? = null
@@ -48,18 +50,19 @@ object Locale {
       currentRegionalConfig?.values?.get(key) as T?
 
    @JvmStatic
-   fun textsByClass(k: Class<*>): FallbackStringMap = textsByClass(k.kotlin)
+   @JvmOverloads
+   fun text(k: Class<*> = Object::class.java, key: String, keyOnFail: Boolean  = Locale.keyOnFail) = text(k.kotlin, key, keyOnFail)
 
-   fun textsByClass(k: KClass<*>): FallbackStringMap {
-      val key = cleanKey(k)
-      val value = currentLangConfig?.textsByClass?.get(key)
-      if(value == null) {
-         if (k != Any::class) return textsByClass(Any::class)
-         return FallbackStringMap(emptyMap())
-      }
-
-      return FallbackStringMap(value)
+   fun text(k: KClass<*> = Any::class, key: String, keyOnFail: Boolean  = Locale.keyOnFail): String {
+      val cleanK = cleanKey(k)
+      val map = currentLangConfig?.textsByClass?.get(cleanK) ?: emptyMap()
+      val value = map[key]
+      if(value != null) return value
+      if(k != Any::class) return text(Any::class, key, keyOnFail)
+      if(keyOnFail) return key
+      throw LocaleException(text(Locale::class, "NO_TEXT_FOUND", true)(key))
    }
+
 
    internal fun cleanKey(k: KClass<*>): String {
       val q = k.qualifiedName ?: k.toString()
@@ -69,10 +72,8 @@ object Locale {
 
 }
 
-val Any.localeText: FallbackStringMap
-   get() = Locale.textsByClass(this::class)
 
-val <T: Any> KClass<T>.localeText: FallbackStringMap
-   get() = Locale.textsByClass(this)
+fun Any.localeText(key: String) = Locale.text(this::class, key)
+
 
 operator fun String.invoke(vararg values: Any): String = StringSlots(this).replace(values = values)

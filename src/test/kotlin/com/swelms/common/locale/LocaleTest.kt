@@ -4,7 +4,7 @@ import kotlin.test.*
 import java.time.format.DateTimeFormatter
 import java.time.LocalDate
 
-class LocaleFullTest {
+class LocaleTest {
    init{
       Locale.rootPackage = "com.swelms.common.locale"
       Locale.lang = "es"
@@ -13,12 +13,12 @@ class LocaleFullTest {
 
    @Test
    fun testLangText() {
-      assertEquals("Prueba", localeText["TEST"])
+      assertEquals("Prueba", localeText("TEST"))
    }
 
    @Test
    fun testLangTextWithParams() {
-      assertEquals("El valor debe estar entre 1 y 10", localeText["OUT_OF_RANGE"](1,10))
+      assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class, "OUT_OF_RANGE")(1,10))
    }
 
    @Test
@@ -27,4 +27,16 @@ class LocaleFullTest {
       val formatted = formatter?.format(LocalDate.of(2025,11,25))
       assertEquals("25/11/2025", formatted)
    }
+
+   @Test
+   fun testNoValue() {
+      assertEquals("NO_VALUE", Locale.text(IntRange::class, "NO_VALUE"))
+   }
+
+   @Test
+   fun testFail() {
+      val e = assertFailsWith<LocaleException>{  Locale.text(IntRange::class, "clave inexistente", false)}
+      assertEquals("NO_TEXT_FOUND", e.message)
+   }
+
 }

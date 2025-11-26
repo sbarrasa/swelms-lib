@@ -15,11 +15,11 @@ class LangTest {
       val langs = listOf("en", "es", null)
       langs.forEach {
          Locale.lang = it
-         println("$it: ${localeText["NOT_IMPLEMENTED"]}")
-         println("$it: ${Cuit::class.localeText["INVALID_LENGTH"]}")
-         println("$it: ${Locale.textsByClass(CBU::class)["INVALID_LENGTH"]}")
-         println("$it: ${CBU.localeText["INVALID_LENGTH"]}")
-         println("$it: ${FullName.localeText["INVALID_FORMAT"]}")
+         println("$it: ${localeText("NOT_IMPLEMENTED")}")
+         println("$it: ${Cuit::class.localeText("INVALID_LENGTH")}")
+         println("$it: ${Locale.text(CBU::class, "INVALID_LENGTH")}")
+         println("$it: ${CBU.localeText("INVALID_LENGTH")}")
+         println("$it: ${FullName.localeText("INVALID_FORMAT")}")
 
       }
 

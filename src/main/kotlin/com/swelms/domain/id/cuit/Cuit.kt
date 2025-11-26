@@ -24,15 +24,15 @@ value class Cuit(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(localeText["INVALID_LENGTH, SIZE"], SIZE).validate(value)
+      LengthValidator(localeText("INVALID_LENGTH, SIZE"), SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(localeText["ONLY_DIGITS"]).validate(value)
+      DigitsValidator(localeText("ONLY_DIGITS")).validate(value)
    }
 
    private fun validateEntityCode() {
-      if (!CuitEntityCodes.contains(entityCode)) throw ValidatorException(localeText["INVALID_ENTITY_CODE"])
+      if (!CuitEntityCodes.contains(entityCode)) throw ValidatorException(localeText("INVALID_ENTITY_CODE"))
    }
 
    private fun validateCheckDigit() {
@@ -47,8 +47,8 @@ value class Cuit(val value: String) {
    override fun toString(): String = value
 
    enum class EntityType(val description: String) {
-      PERSON(localeText["PERSON_DESCRIPTION"]),
-      COMPANY(localeText["COMPANY_DESCRIPTION"]);
+      PERSON(localeText("PERSON_DESCRIPTION")),
+      COMPANY(localeText("COMPANY_DESCRIPTION"));
    }
 
 

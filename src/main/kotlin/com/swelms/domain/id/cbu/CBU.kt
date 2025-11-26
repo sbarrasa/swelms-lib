@@ -24,11 +24,11 @@ value class CBU(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(localeText["INVALID_LENGTH"], SIZE).validate(value)
+      LengthValidator(localeText("INVALID_LENGTH"), SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(localeText["ONLY_DIGITS"]).validate(value)
+      DigitsValidator(localeText("ONLY_DIGITS")).validate(value)
    }
 
    private fun validateEntityBranchDigit() {

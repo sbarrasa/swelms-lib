@@ -3,7 +3,7 @@ package com.swelms.domain.id.cbu
 import com.swelms.common.locale.Locale
 import com.swelms.domain.validator.CheckDigitValidator
 
-object BranchValidator : CheckDigitValidator(Locale.textsByClass(CBU::class)["BRANCH"]) {
+object BranchValidator : CheckDigitValidator(Locale.text(CBU::class, "BRANCH")) {
    private val weights = listOf(7, 1, 3, 9, 7, 1, 3)
 
    override fun compute(digits: List<Int>): Int {

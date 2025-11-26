@@ -34,7 +34,7 @@ data class FullName(val lastNames: NamePart, val givenNames: NamePart): Names {
 
       private fun split(fullNameText: String): List<String> {
          val parts = fullNameText.split(",")
-         require(parts.size == 2) {"${localeText["INVALID_FORMAT"]}: $fullNameText"}
+         require(parts.size == 2) {"${localeText("INVALID_FORMAT")}: $fullNameText"}
          return parts.map { it.trim() }
       }
    }

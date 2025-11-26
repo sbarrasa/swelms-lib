@@ -63,7 +63,7 @@ fun Application.customerRoutes() {
 
 
 internal fun ApplicationCall.getValidCustomerId(): Int {
-   val idParam = parameters["id"] ?: throw BadRequestException(CustomerService.localeText["ID_CANT_BE_EMPTY"])
-   val id = idParam.toIntOrNull() ?: throw BadRequestException("${CustomerService.localeText["INVALID_CUSTOMER_ID"]}: $idParam")
+   val idParam = parameters["id"] ?: throw BadRequestException(CustomerService.localeText("ID_CANT_BE_EMPTY"))
+   val id = idParam.toIntOrNull() ?: throw BadRequestException("${CustomerService.localeText("INVALID_CUSTOMER_ID")}: $idParam")
    return id
 }
