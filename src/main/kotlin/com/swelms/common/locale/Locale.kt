@@ -1,6 +1,8 @@
 package com.swelms.common.locale
 
 import com.swelms.common.collections.FallbackStringMap
+import com.swelms.common.text.StringSlots
+import com.swelms.common.text.invoke
 import kotlin.reflect.KClass
 
 object Locale {
@@ -40,7 +42,7 @@ object Locale {
       "$rootPackage.$groupPackage.$localePackage.LocaleConfig"
 
    @JvmStatic
-   fun text(k: Class<*>): FallbackStringMap = text(k.kotlin)
+   fun textsByClass(k: Class<*>): FallbackStringMap = text(k.kotlin)
 
    @JvmStatic
    fun text(k: KClass<*>): FallbackStringMap {
@@ -72,3 +74,5 @@ val Any.localeText: FallbackStringMap
 
 val <T: Any> KClass<T>.localeText: FallbackStringMap
    get() = Locale.text(this)
+
+operator fun String.invoke(vararg values: Any): String = StringSlots(this).replace(values = values)

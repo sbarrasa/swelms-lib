@@ -12,6 +12,13 @@ import com.swelms.domain.person.NamePart
 
 object LocaleConfig : AbstractLangConfig() {
    override fun register() {
+      Any::class.register {
+         it["NO_CLASS_NAME"] = "La clase debe tener un nombre simple"
+         it["TEST"] = "Prueba"
+         it["NOT_IMPLEMENTED"] = "Aún no está implementado"
+         it["OUT_OF_RANGE"] = "El valor debe estar entre {1} y {2}"
+      }
+
       Cuit::class.register {
          it["PERSON_DESCRIPTION"] = "persona física"
          it["COMPANY_DESCRIPTION"] = "persona jurídica"
@@ -55,11 +62,6 @@ object LocaleConfig : AbstractLangConfig() {
          it["CUSTOMER_NOT_FOUND"] = "Cliente no encontrado"
          it["ID_CANT_BE_EMPTY"] = "Debe especificar un Customer.ID"
          it["INVALID_CUSTOMER_ID"] = "Customer.ID inválido"
-      }
-
-      Any::class.register {
-         it["TEST"] = "Prueba"
-         it["NOT_IMPLEMENTED"] = "No implementado"
       }
 
    }

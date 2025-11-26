@@ -7,9 +7,9 @@ public class LocaleTest {
   @Test
   public void test(){
     Locale.setRootPackage("com.bank.locale");
-    System.out.println(Locale.text(Cuit.class).get("INVALID_LENGTH"));
-    Locale.setLang("regional");
-    System.out.println(Locale.text(Cuit.class).get("INVALID_LENGTH"));
+    System.out.println(Locale.textsByClass(Cuit.class).get("INVALID_LENGTH"));
+    Locale.setLang("es");
+    System.out.println(Locale.textsByClass(Cuit.class).get("INVALID_LENGTH"));
 
 
 

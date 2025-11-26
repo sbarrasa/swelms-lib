@@ -13,6 +13,13 @@ import com.swelms.domain.person.NamePart
 
 object LocaleConfig : AbstractLangConfig() {
    override fun register() {
+      Any::class.register {
+         it["NO_CLASS_NAME"] = "Class must have simple name"
+         it["TEST"] = "Test"
+         it["NOT_IMPLEMENTED"] = "Not implemented yet"
+         it["OUT_OF_RANGE"] = "The value must be between {1} and {2}"
+      }
+
       Cuit::class.register {
          it["PERSON_DESCRIPTION"] = "individual"
          it["COMPANY_DESCRIPTION"] = "company"
@@ -48,7 +55,6 @@ object LocaleConfig : AbstractLangConfig() {
       }
 
       Catalog::class.register {
-         it["NO_CLASS_NAME"] = "Class must have simple name"
          it["EMPTY_ITERABLE"] = "Cannot infer class from empty iterable"
       }
 
@@ -58,10 +64,6 @@ object LocaleConfig : AbstractLangConfig() {
          it["INVALID_CUSTOMER_ID"] = "Invalid customer ID"
       }
 
-      Any::class.register {
-         it["TEST"] = "Test"
-         it["NOT_IMPLEMENTED"] = "Not implemented yet"
-      }
 
    }
 }

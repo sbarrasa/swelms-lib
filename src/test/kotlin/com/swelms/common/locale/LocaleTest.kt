@@ -14,9 +14,12 @@ class LocaleFullTest {
 
    @Test
    fun testLangText() {
-      assertEquals("Inicio", localeText["INIT"])
-      assertEquals("Fin", localeText["END"])
+      assertEquals("Prueba", localeText["TEST"])
+   }
 
+   @Test
+   fun testLangTextWithParams() {
+      assertEquals("El valor debe estar entre 1 y 10", localeText["OUT_OF_RANGE"](1,10))
    }
 
    @Test
