@@ -13,6 +13,6 @@ abstract class AbstractLangConfig: AbstractLocaleConfig {
    }
 
    fun register(k: KClass<*>, map: Map<String, String>) {
-      textsByClass[Locale.keyFrom(k)] = map
+      textsByClass[Locale.cleanKey(k)] = map
    }
 }

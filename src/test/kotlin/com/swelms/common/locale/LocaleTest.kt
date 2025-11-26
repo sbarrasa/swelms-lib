@@ -1,6 +1,5 @@
 package com.swelms.common.locale
 
-import com.swelms.common.locale.lang.es.LocaleConfig
 import kotlin.test.*
 import java.time.format.DateTimeFormatter
 import java.time.LocalDate
@@ -8,9 +7,9 @@ import java.time.LocalDate
 class LocaleFullTest {
    init{
       Locale.rootPackage = "com.swelms.common.locale"
-      Locale.currentLangConfig = Locale.load(LocaleConfig) as AbstractLangConfig
-      Locale.currentRegionalConfig = Locale.load(com.swelms.common.locale.regional.ar.LocaleConfig) as AbstractRegionalConfig
- }
+      Locale.lang = "es"
+      Locale.regional = "ar"
+   }
 
    @Test
    fun testLangText() {

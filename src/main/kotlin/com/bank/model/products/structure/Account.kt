@@ -1,6 +1,6 @@
 package com.bank.model.products.structure
 
-import com.swelms.domain.cbu.CBU
+import com.swelms.domain.id.cbu.CBU
 import kotlinx.serialization.Serializable
 
 @Serializable

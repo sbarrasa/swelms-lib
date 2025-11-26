@@ -1,4 +1,4 @@
-package com.swelms.domain.card
+package com.swelms.domain.id.card
 
 enum class CardBrand(val description: String) {
    VISA("VISA") ,

@@ -1,4 +1,4 @@
-package com.swelms.domain.cuit
+package com.swelms.domain.id.cuit
 
 import com.swelms.common.locale.*
 import com.swelms.domain.validator.ValidatorException

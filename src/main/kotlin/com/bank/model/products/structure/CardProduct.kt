@@ -1,6 +1,6 @@
 package com.bank.model.products.structure
 
-import com.swelms.domain.card.CardNumber
+import com.swelms.domain.id.card.CardNumber
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
 

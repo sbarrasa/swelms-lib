@@ -2,9 +2,9 @@ package com.bank.locale.lang.es
 
 import com.bank.database.CustomerService
 import com.swelms.common.locale.AbstractLangConfig
-import com.swelms.domain.cuit.Cuit
-import com.swelms.domain.cbu.CBU
-import com.swelms.domain.card.CardNumber
+import com.swelms.domain.id.cuit.Cuit
+import com.swelms.domain.id.cbu.CBU
+import com.swelms.domain.id.card.CardNumber
 import com.swelms.domain.validator.CheckDigitValidator
 import com.swelms.common.collections.Catalog
 import com.swelms.domain.person.FullName

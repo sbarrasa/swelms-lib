@@ -27,7 +27,7 @@ abstract class CheckDigitValidator(val msg: String?=null) {
    }
 
    companion object {
-      val texts = Locale.text(CheckDigitValidator::class)
+      val texts = Locale.textsByClass(CheckDigitValidator::class)
    }
 
 }

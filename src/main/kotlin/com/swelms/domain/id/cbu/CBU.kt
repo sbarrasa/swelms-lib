@@ -1,4 +1,4 @@
-package com.swelms.domain.cbu
+package com.swelms.domain.id.cbu
 
 import com.swelms.common.locale.*
 import com.swelms.domain.validator.DigitsValidator

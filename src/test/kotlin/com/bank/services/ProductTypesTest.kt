@@ -5,9 +5,9 @@ import com.bank.model.products.CreditCardProduct
 import com.swelms.common.serialization.decodeFromMap
 import com.bank.model.products.structure.Currency
 import com.bank.model.products.structure.Product
-import com.swelms.domain.card.CardBrand
+import com.swelms.domain.id.card.CardBrand
 import com.swelms.common.serialization.polymorphic
-import com.swelms.domain.cbu.CBU
+import com.swelms.domain.id.cbu.CBU
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.MissingFieldException
 import kotlinx.serialization.json.Json

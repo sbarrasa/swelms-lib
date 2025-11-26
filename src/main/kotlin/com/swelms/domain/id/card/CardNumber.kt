@@ -1,4 +1,4 @@
-package com.swelms.domain.card
+package com.swelms.domain.id.card
 
 import com.swelms.common.locale.localeText
 import com.swelms.domain.validator.DigitsValidator

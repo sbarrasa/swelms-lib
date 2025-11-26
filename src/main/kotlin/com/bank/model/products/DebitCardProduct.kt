@@ -2,7 +2,7 @@ package com.bank.model.products
 
 import com.bank.model.products.structure.CardProduct
 import com.bank.model.products.structure.ProductDescriptor
-import com.swelms.domain.card.CardNumber
+import com.swelms.domain.id.card.CardNumber
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

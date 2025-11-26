@@ -1,4 +1,4 @@
-package com.swelms.domain.card
+package com.swelms.domain.id.card
 
 object BinTable{
    val bins = listOf(

@@ -4,6 +4,7 @@ import com.swelms.domain.validator.CheckDigitValidator
 import kotlin.test.*
 import com.swelms.domain.validator.ValidatorException
 import com.swelms.common.locale.*
+import com.swelms.domain.id.cuit.Cuit
 
 
 class CuitTest {

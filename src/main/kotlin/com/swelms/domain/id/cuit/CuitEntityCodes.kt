@@ -1,4 +1,4 @@
-package com.swelms.domain.cuit
+package com.swelms.domain.id.cuit
 
 object CuitEntityCodes : Map<String, CuitEntityCodes.Info> by mapOf(
    "20" to Info(Cuit.EntityType.PERSON, "Persona física (masculino)"),

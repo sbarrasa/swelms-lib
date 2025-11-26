@@ -2,11 +2,11 @@ package com.bank.services
 
 import com.bank.model.customer.Gender
 import com.bank.model.products.structure.Currency
-import com.swelms.domain.cuit.CuitEntityCodes
+import com.swelms.domain.id.cuit.CuitEntityCodes
 import com.swelms.common.collections.Catalog
 import com.swelms.common.text.Case
-import com.swelms.domain.card.CardBrand
-import com.swelms.domain.cuit.Cuit
+import com.swelms.domain.id.card.CardBrand
+import com.swelms.domain.id.cuit.Cuit
 
 
 object Codes: Catalog(Case.SNAKE) {

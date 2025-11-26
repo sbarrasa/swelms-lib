@@ -1,5 +1,5 @@
 import com.swelms.common.locale.Locale;
-import com.swelms.domain.cuit.Cuit;
+import com.swelms.domain.id.cuit.Cuit;
 import org.junit.Test;
 
 
@@ -10,8 +10,5 @@ public class LocaleTest {
     System.out.println(Locale.textsByClass(Cuit.class).get("INVALID_LENGTH"));
     Locale.setLang("es");
     System.out.println(Locale.textsByClass(Cuit.class).get("INVALID_LENGTH"));
-
-
-
   }
 }

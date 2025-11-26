@@ -2,7 +2,6 @@ package com.swelms.common.locale
 
 import com.swelms.common.collections.FallbackStringMap
 import com.swelms.common.text.StringSlots
-import com.swelms.common.text.invoke
 import kotlin.reflect.KClass
 
 object Locale {
@@ -29,9 +28,11 @@ object Locale {
    internal var currentRegionalConfig: AbstractRegionalConfig? = null
 
    private fun load(fullNameClass: String):AbstractLocaleConfig{
-      val localeConfig =  Class.forName(fullNameClass).kotlin.objectInstance as AbstractLocaleConfig
+      val clazz =  Class.forName(fullNameClass, false, this.javaClass.classLoader )
+      val localeConfig = clazz.kotlin.objectInstance as AbstractLocaleConfig
       return load(localeConfig)
    }
+
 
    internal fun load(localeConfig: AbstractLocaleConfig):AbstractLocaleConfig{
       localeConfig.register()
@@ -41,38 +42,37 @@ object Locale {
    private fun fullNameClass(groupPackage: String, localePackage: String) =
       "$rootPackage.$groupPackage.$localePackage.LocaleConfig"
 
+   @Suppress("UNCHECKED_CAST")
    @JvmStatic
-   fun textsByClass(k: Class<*>): FallbackStringMap = text(k.kotlin)
+   fun <T> valueOf(key: String): T? =
+      currentRegionalConfig?.values?.get(key) as T?
 
    @JvmStatic
-   fun text(k: KClass<*>): FallbackStringMap {
-      val key = keyFrom(k)
+   fun textsByClass(k: Class<*>): FallbackStringMap = textsByClass(k.kotlin)
+
+   fun textsByClass(k: KClass<*>): FallbackStringMap {
+      val key = cleanKey(k)
       val value = currentLangConfig?.textsByClass?.get(key)
       if(value == null) {
-         if (k != Any::class) return text(Any::class)
+         if (k != Any::class) return textsByClass(Any::class)
          return FallbackStringMap(emptyMap())
       }
 
       return FallbackStringMap(value)
    }
 
-   @JvmStatic
-   fun keyFrom(k: KClass<*>): String {
+   internal fun cleanKey(k: KClass<*>): String {
       val q = k.qualifiedName ?: k.toString()
       return q.replace(".Companion", "")
    }
 
-   @Suppress("UNCHECKED_CAST")
-   @JvmStatic
-   fun <T> valueOf(key: String): T? =
-      currentRegionalConfig?.values?.get(key) as T?
 
 }
 
 val Any.localeText: FallbackStringMap
-   get() = Locale.text(this::class)
+   get() = Locale.textsByClass(this::class)
 
 val <T: Any> KClass<T>.localeText: FallbackStringMap
-   get() = Locale.text(this)
+   get() = Locale.textsByClass(this)
 
 operator fun String.invoke(vararg values: Any): String = StringSlots(this).replace(values = values)
