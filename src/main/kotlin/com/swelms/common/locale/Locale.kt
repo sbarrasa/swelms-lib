@@ -23,11 +23,15 @@ object Locale {
       }
 
 
-   private var currentLangConfig: AbstractLangConfig? = null
-   private var currentRegionalConfig: AbstractRegionalConfig? = null
+   internal var currentLangConfig: AbstractLangConfig? = null
+   internal var currentRegionalConfig: AbstractRegionalConfig? = null
 
    private fun load(fullNameClass: String):AbstractLocaleConfig{
       val localeConfig =  Class.forName(fullNameClass).kotlin.objectInstance as AbstractLocaleConfig
+      return load(localeConfig)
+   }
+
+   internal fun load(localeConfig: AbstractLocaleConfig):AbstractLocaleConfig{
       localeConfig.register()
       return localeConfig
    }
@@ -58,7 +62,7 @@ object Locale {
 
    @Suppress("UNCHECKED_CAST")
    @JvmStatic
-   fun <T> config(key: String): Any? =
+   fun <T> valueOf(key: String): T? =
       currentRegionalConfig?.values?.get(key) as T?
 
 }

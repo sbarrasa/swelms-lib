@@ -12,8 +12,8 @@ class RegionalTest {
       val regionals = listOf("ar", "us", null)
       regionals.forEach {
          Locale.regional = it
-         val currency = Locale.config<Currency>("CURRENCY")
-         val dateFormat = Locale.config<String>("DATE_FORMAT")
+         val currency = Locale.valueOf<Currency>("CURRENCY")
+         val dateFormat = Locale.valueOf<String>("DATE_FORMAT")
 
          println(it)
          println("Currency: $currency")

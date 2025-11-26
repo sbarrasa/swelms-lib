@@ -6,14 +6,13 @@ import com.swelms.domain.cuit.Cuit
 import com.swelms.domain.person.FullName
 import kotlin.test.*
 
-//TODO: averiguar como hacer para testearlo separado del framework
 class LangTest {
 
    @Test
    fun testLang() {
       Locale.rootPackage = "com.bank.locale"
 
-      val langs = listOf("en", "es", null)
+      val langs = listOf("en", "regional", null)
       langs.forEach {
          Locale.lang = it
          println("$it: ${localeText["NOT_IMPLEMENTED"]}")
