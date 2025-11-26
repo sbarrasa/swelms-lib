@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Names framework refactor">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/lang/es/LocaleConfig.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="LocaleTest">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/StringPlaceHolders.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/rate/Rating.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/rate/RatingTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LocaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LocaleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LangTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LangTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/RegionalTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/RegionalTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/lang/es/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/lang/es/LocaleConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/text/case/CaseTypeTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/text/CaseTypeTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +79,9 @@
       <list>
         <option value="Class" />
         <option value="Kotlin File" />
-        <option value="Kotlin JUnit5 Test Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin JUnit5 Test Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -147,6 +150,9 @@
     "Gradle.LocaleTest.executor": "Debug",
     "Gradle.LocaleTest.test.executor": "Run",
     "Gradle.LocaleTest.testLang.executor": "Run",
+    "Gradle.RatingTest.average2.executor": "Run",
+    "Gradle.RatingTest.executor": "Run",
+    "Gradle.RatingTest.invalidRange.executor": "Run",
     "Gradle.SingleValueSerializerTest.executor": "Run",
     "Gradle.SingleValueTests.SingleValueType.executor": "Run",
     "Gradle.SingleValueTests.executor": "Run",
@@ -194,7 +200,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/develop/bank-kotlin/src/test/kotlin/com/swelms/common/singlevalue",
+    "last_directory_selection": "C:/develop/bank-kotlin/src/main/kotlin/com/swelms/common/text",
     "last_opened_file_path": "C:/develop/bank-kotlin/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -222,6 +228,7 @@
       <recent name="com.sbarrasa.common.locale" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.swelms.domain.rate" />
       <recent name="com.swelms.common.singlevalue" />
       <recent name="com.swelms.common.reflection" />
     </key>
@@ -231,11 +238,11 @@
       <recent name="com.bank.locale.lang.pp" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.swelms.common.text.case" />
       <recent name="com.swelms.common.singlevalue" />
       <recent name="com.bank.model.error" />
       <recent name="com.bank.config" />
       <recent name="com.bank.routes" />
-      <recent name="com.bank" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -250,7 +257,6 @@
           <value>
             <map>
               <entry key="CustomerApiTest | Crear una persona" value="STOPPED" />
-              <entry key="CustomerApiTest | Listar todos los customers" value="STOPPED" />
             </map>
           </value>
         </entry>
@@ -266,30 +272,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="FullNameTest.initialsTestFormat" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.swelms.domain.person.FullNameTest.initialsTestFormat&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
     </configuration>
     <configuration name="LocaleFullTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -315,7 +297,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'com.swelms.domain.person'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RatingTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -328,7 +310,55 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.domain.person.*&quot;" />
+            <option value="&quot;com.swelms.domain.rate.RatingTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="RatingTest.average2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.swelms.domain.rate.RatingTest.average2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="RatingTest.invalidRange" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.swelms.domain.rate.RatingTest.invalidRange&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -342,16 +372,13 @@
     <configuration name="CustomerApiTest | Crear una persona" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Crear una persona" index="7" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="CustomerApiTest | Listar todos los customers" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" executionIdentifier="Listar todos los customers" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.LocaleFullTest" />
+        <item itemvalue="Gradle.RatingTest.invalidRange" />
+        <item itemvalue="Gradle.RatingTest" />
+        <item itemvalue="Gradle.RatingTest.average2" />
         <item itemvalue="HTTP Request.CustomerApiTest | Crear una persona" />
-        <item itemvalue="HTTP Request.CustomerApiTest | Listar todos los customers" />
-        <item itemvalue="Gradle.Tests in 'com.swelms.domain.person'" />
-        <item itemvalue="Gradle.FullNameTest.initialsTestFormat" />
       </list>
     </recent_temporary>
   </component>
@@ -376,7 +403,9 @@
       <workItem from="1764001548882" duration="12994000" />
       <workItem from="1764034776151" duration="21867000" />
       <workItem from="1764057952932" duration="534000" />
-      <workItem from="1764084642933" duration="23813000" />
+      <workItem from="1764084642933" duration="24434000" />
+      <workItem from="1764160931727" duration="1117000" />
+      <workItem from="1764164469560" duration="3339000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -634,14 +663,29 @@
       <option name="project" value="LOCAL" />
       <updated>1764106579854</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="LocaleTest">
+      <option name="closed" value="true" />
+      <created>1764117541821</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1764117541821</updated>
+    </task>
+    <task id="LOCAL-00034" summary="LocaleTest">
+      <option name="closed" value="true" />
+      <created>1764117551753</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1764117551753</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Locale" />
     <MESSAGE value="Locale framework" />
     <MESSAGE value="Locale framework extension funcion" />
     <MESSAGE value="Ktor simplificacions de modulos" />
@@ -666,7 +710,8 @@
     <MESSAGE value="FullNameSerializer.kt" />
     <MESSAGE value="FullNameSerializer.kt&#10;elimimnacion de copyTo&#10;eliminacion de SingleValue" />
     <MESSAGE value="Names framework refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Names framework refactor" />
+    <MESSAGE value="LocaleTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="LocaleTest" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
