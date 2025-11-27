@@ -1,6 +1,10 @@
 package com.bank
 
 import com.bank.ktor.configModule
+import com.swelms.common.locale.Locale
+import com.swelms.common.locale.localeText
+import com.swelms.common.locale.printAll
+import com.swelms.domain.id.cuit.Cuit
 import com.typesafe.config.ConfigFactory
 import io.ktor.server.config.HoconApplicationConfig
 import io.ktor.server.engine.*
@@ -18,9 +22,15 @@ fun main(args: Array<String>) {
       }
    }
 
+   configLocale()
+   println(Cuit("20240614708").localeText("INVALID_LENGTH"))
+   println(Cuit.EntityType.PERSON.description)
+
+
    embeddedServer(Netty, env).start(wait = true)
 
 }
+
 
 
 

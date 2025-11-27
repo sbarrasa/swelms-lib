@@ -1,15 +1,12 @@
-package com.bank.ktor.config
+package com.bank
 
 import com.swelms.common.locale.Locale
 import io.ktor.server.application.Application
 import io.ktor.server.application.log
 
-fun Application.configLocale() {
+fun configLocale() {
    val lang = System.getenv("lang")
-      ?: environment.config.propertyOrNull("locale.lang")?.getString()
-
    Locale.rootPackage = "com.bank.locale"
    Locale.lang = lang
-
-   log.info("Language: ${Locale.lang}")
+   println("lang=$Locale.lang")
 }

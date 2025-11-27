@@ -46,9 +46,12 @@ value class Cuit(val value: String) {
    fun formated() = "$entityCode-$document-$check"
    override fun toString(): String = value
 
-   enum class EntityType(val description: String) {
-      PERSON(localeText("PERSON_DESCRIPTION")),
-      COMPANY(localeText("COMPANY_DESCRIPTION"));
+   enum class EntityType {
+      PERSON,
+      COMPANY;
+
+      val description: String
+         get() = Locale.text(this::class, name + "_DESCRIPTION")
    }
 
 

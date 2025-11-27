@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="EnumMap.kt">
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Caseutils &#10;EnumMap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configLocale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/configLocale.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/configModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/configModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/CaseUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/CaseUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/text/CaseTypeTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/text/CaseTypeTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +176,7 @@
     "Gradle.bank-kotlin [clean].executor": "Run",
     "HTTP Request.All in CodesApiTest.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener códigos.executor": "Run",
+    "HTTP Request.CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener géneros.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener todos los códigos.executor": "Run",
     "HTTP Request.CustomerApiTest | Actualizar un customer#1.executor": "Run",
@@ -195,9 +192,10 @@
     "HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener customer por id.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener entityType de un Customer.executor": "Run",
-    "Ktor.MainKt.executor": "Debug",
+    "Ktor.MainKt.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -248,11 +246,11 @@
       <recent name="com.bank.locale.lang.pp" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.bank" />
       <recent name="com.swelms.common.text.case" />
       <recent name="com.swelms.common.singlevalue" />
       <recent name="com.bank.model.error" />
       <recent name="com.bank.config" />
-      <recent name="com.bank.routes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -266,6 +264,7 @@
         <entry key="HttpClient.HttpRequestRunConfigurationType">
           <value>
             <map>
+              <entry key="CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits" value="STOPPED" />
               <entry key="CodesApiTest | Obtener todos los códigos" value="STOPPED" />
             </map>
           </value>
@@ -273,39 +272,18 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.CustomerTest.cuitEntityType">
+  <component name="RunManager" selected="Ktor.MainKt">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <envs>
+        <env name="lang" value="es" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="com.bank.MainKt" />
       <module name="bank-kotlin.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="CaseConversionTest.sampleCase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.swelms.common.text.CaseConversionTest.sampleCase&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
     </configuration>
     <configuration name="CustomerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -355,10 +333,16 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CodesApiTest.http" executionIdentifier="Obtener descripcion de los codigos de entidad de los cuits" index="7" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="CodesApiTest | Obtener todos los códigos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CodesApiTest.http" executionIdentifier="Obtener todos los códigos" index="8" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="MainKt" type="KtorApplicationConfigurationType" factoryName="Ktor" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="lang" value="es" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="com.bank.MainKt" />
       <module name="bank-kotlin.main" />
       <extension name="coverage">
@@ -372,7 +356,7 @@
       <option name="includeProvidedScope" value="false" />
       <option name="mainClass" value="com.bank.MainKt" />
       <option name="passParentEnvs" value="true" />
-      <option name="programParameters" />
+      <option name="programParameters" value="" />
       <option name="shortenCommandLine" />
       <option name="vmParameters" />
       <option name="workingDirectory" value="C:\develop\bank-kotlin" />
@@ -380,13 +364,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.BankServer" />
+      <item itemvalue="Application.H2 Server" />
+      <item itemvalue="Gradle.CustomerTest" />
+      <item itemvalue="Gradle.CustomerTest.cuitEntityType" />
+      <item itemvalue="HTTP Request.CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits" />
+      <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
+      <item itemvalue="Kotlin.startServer" />
+      <item itemvalue="Ktor.MainKt" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CustomerTest.cuitEntityType" />
-        <item itemvalue="Gradle.CustomerTest" />
         <item itemvalue="Ktor.MainKt" />
         <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
-        <item itemvalue="Gradle.CaseConversionTest.sampleCase" />
+        <item itemvalue="HTTP Request.CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits" />
+        <item itemvalue="Gradle.CustomerTest.cuitEntityType" />
+        <item itemvalue="Gradle.CustomerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -414,7 +408,9 @@
       <workItem from="1764084642933" duration="24434000" />
       <workItem from="1764160931727" duration="1117000" />
       <workItem from="1764164469560" duration="18958000" />
-      <workItem from="1764202501230" duration="19622000" />
+      <workItem from="1764202501230" duration="19696000" />
+      <workItem from="1764260121287" duration="4433000" />
+      <workItem from="1764275638865" duration="3125000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -768,14 +764,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764215003640</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Caseutils &#10;EnumMap">
+      <option name="closed" value="true" />
+      <created>1764222419337</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1764222419337</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="build kotlin 2.2" />
     <MESSAGE value="conf database h2" />
     <MESSAGE value="java tests" />
     <MESSAGE value="configModules" />
@@ -800,7 +803,19 @@
     <MESSAGE value="fix Locale" />
     <MESSAGE value="optimizaciones para Locale" />
     <MESSAGE value="EnumMap.kt" />
-    <option name="LAST_COMMIT_MESSAGE" value="EnumMap.kt" />
+    <MESSAGE value="Caseutils &#10;EnumMap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Caseutils &#10;EnumMap" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/bank/main.kt</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
