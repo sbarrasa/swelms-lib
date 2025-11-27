@@ -25,15 +25,5 @@ open class Catalog(val case: Case?) : LinkedHashMap<String, StringMap>() {
 
    fun put(map: EnumMap<*,*>) = put(map.enumClass, map)
 
-
-   fun <E : Any> put(elements: Iterable<E>, mapper: (E) -> Pair<String,String>): StringMap? {
-      require(elements.any()) { localeText("EMPTY_ITERABLE") }
-      val clazz = elements.first()::class
-      val map = elements.associate { mapper(it) }
-      return put(clazz, map)
-   }
-
-
-
 }
 
