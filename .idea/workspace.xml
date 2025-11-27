@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="optimizaciones para Locale">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="EnumMap.kt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/CaseUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/CaseUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/text/CaseTypeTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/text/CaseTypeTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,8 +137,11 @@
   "keyToString": {
     "Gradle.Build bank-kotlin.executor": "Run",
     "Gradle.CaseConversionTest.executor": "Run",
+    "Gradle.CaseConversionTest.sampleCase.executor": "Run",
     "Gradle.CaseTest.executor": "Run",
     "Gradle.CopyTest.executor": "Run",
+    "Gradle.CustomerTest.cuitEntityType.executor": "Run",
+    "Gradle.CustomerTest.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.FullNameSerializationTest.executor": "Run",
     "Gradle.FullNameTest.executor": "Run",
@@ -185,7 +195,7 @@
     "HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener customer por id.executor": "Run",
     "HTTP Request.CustomerApiTest | Obtener entityType de un Customer.executor": "Run",
-    "Ktor.MainKt.executor": "Run",
+    "Ktor.MainKt.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -263,7 +273,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.CodesApiTest | Obtener todos los códigos">
+  <component name="RunManager" selected="Gradle.CustomerTest.cuitEntityType">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -273,7 +283,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocaleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CaseConversionTest.sampleCase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -286,7 +296,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.common.locale.LocaleTest&quot;" />
+            <option value="&quot;com.swelms.common.text.CaseConversionTest.sampleCase&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -297,7 +307,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LocaleTest.showAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CustomerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -310,7 +320,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.common.locale.LocaleTest.showAll&quot;" />
+            <option value="&quot;com.bank.model.customer.CustomerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -321,7 +331,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'bank-kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CustomerTest.cuitEntityType" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -333,6 +343,8 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.bank.model.customer.CustomerTest.cuitEntityType&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -370,11 +382,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
+        <item itemvalue="Gradle.CustomerTest.cuitEntityType" />
+        <item itemvalue="Gradle.CustomerTest" />
         <item itemvalue="Ktor.MainKt" />
-        <item itemvalue="Gradle.LocaleTest.showAll" />
-        <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
-        <item itemvalue="Gradle.LocaleTest" />
+        <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
+        <item itemvalue="Gradle.CaseConversionTest.sampleCase" />
       </list>
     </recent_temporary>
   </component>
@@ -402,7 +414,7 @@
       <workItem from="1764084642933" duration="24434000" />
       <workItem from="1764160931727" duration="1117000" />
       <workItem from="1764164469560" duration="18958000" />
-      <workItem from="1764202501230" duration="12063000" />
+      <workItem from="1764202501230" duration="19622000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -740,14 +752,29 @@
       <option name="project" value="LOCAL" />
       <updated>1764211408935</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="EnumMap.kt">
+      <option name="closed" value="true" />
+      <created>1764214963631</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1764214963631</updated>
+    </task>
+    <task id="LOCAL-00044" summary="EnumMap.kt">
+      <option name="closed" value="true" />
+      <created>1764215003640</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1764215003640</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="actualizacioines de utilitarios de reflection para value clases" />
     <MESSAGE value="build kotlin 2.2" />
     <MESSAGE value="conf database h2" />
     <MESSAGE value="java tests" />
@@ -772,7 +799,8 @@
     <MESSAGE value="fix Locale para que devuelva de Any o la key o fail" />
     <MESSAGE value="fix Locale" />
     <MESSAGE value="optimizaciones para Locale" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimizaciones para Locale" />
+    <MESSAGE value="EnumMap.kt" />
+    <option name="LAST_COMMIT_MESSAGE" value="EnumMap.kt" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

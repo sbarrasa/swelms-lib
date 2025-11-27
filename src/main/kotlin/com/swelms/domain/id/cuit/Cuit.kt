@@ -14,7 +14,7 @@ value class Cuit(val value: String) {
    val document: String get() = value.substring(2, 10)
    val check: Char get() = value.substring(10, 11)[0]
 
-   val entityType: EntityType? get() = CuitEntityCodes[entityCode]?.entityType
+   val entityType: EntityType get() = CuitEntityCodes[entityCode]!!.entityType
 
    init {
       validateLength()

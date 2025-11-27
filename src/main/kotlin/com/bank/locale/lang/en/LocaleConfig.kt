@@ -20,9 +20,12 @@ object LocaleConfig : AbstractLangConfig() {
          it["OUT_OF_RANGE"] = "The value must be between {1} and {2}"
       }
 
-      texts<Cuit> {
+      texts<Cuit.EntityType> {
          it["PERSON_DESCRIPTION"] = "individual"
          it["COMPANY_DESCRIPTION"] = "company"
+      }
+
+      texts<Cuit> {
          it["CUIT_CUIL"] = "CUIT/CUIL"
          it["INVALID_LENGTH"] = "CUIT must have 11 numeric digits"
          it["ONLY_DIGITS"] = "CUIT can contain only numbers"

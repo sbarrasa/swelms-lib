@@ -7,17 +7,17 @@ class CaseConversionTest {
 
    @Test
    fun testToSnakeCase() {
-      assertEquals("case_conversion_test", "CaseConversionTest".toSnakeCase())
+      assertEquals("case_conversion_test", "CaseConversionTest".snakeCase())
    }
 
    @Test
    fun testToCamelCase() {
-      assertEquals("caseConversionTest", "case_conversion_test".toCamelCase())
+      assertEquals("caseConversionTest", "case_conversion_test".camelCase())
    }
 
    @Test
    fun testToPascalCase() {
-      assertEquals("CaseConversionTest", "case_conversion_test".toPascalCase())
+      assertEquals("CaseConversionTest", "case_conversion_test".pascalCase())
    }
 
    @Test
@@ -30,10 +30,28 @@ class CaseConversionTest {
    fun testToCaseDisPUTer() {
       val original = "CaseConversionTest"
       assertEquals("case_conversion_test", original.toCase(Case.SNAKE))
-      assertEquals("caseConversionTest", "case_conversion_test".toCase(Case.CAMEL))
-      assertEquals("CaseConversionTest", "case_conversion_test".toCase(Case.PASCAL))
+      assertEquals("CASE_CONVERSION_TEST", original.toCase(Case.UPPER_SNAKE))
       assertEquals("caseconversiontest", original.toCase(Case.LOWER))
       assertEquals("CASECONVERSIONTEST", original.toCase(Case.UPPER))
+   }
+
+   @Test
+   fun testFromSnake() {
+      val original = "case_conversion_test"
+      assertEquals("caseConversionTest", original.toCase(Case.CAMEL))
+      assertEquals("CaseConversionTest", original.toCase(Case.PASCAL))
+      assertEquals("case_conversion_test", original.toCase(Case.LOWER))
+      assertEquals("CASE_CONVERSION_TEST", original.toCase(Case.UPPER_SNAKE))
+   }
+
+   @Test
+   fun sampleCase() {
+      assertEquals("SAMPLE MODEL", Case.UPPER.sample)
+      assertEquals("sample model", Case.LOWER.sample)
+      assertEquals("sampleModel", Case.CAMEL.sample)
+      assertEquals("SampleModel", Case.PASCAL.sample)
+      assertEquals("sample_model", Case.SNAKE.sample)
+      assertEquals("SAMPLE_MODEL", Case.UPPER_SNAKE.sample)
    }
 
 

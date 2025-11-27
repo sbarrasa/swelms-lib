@@ -8,9 +8,7 @@ open class Catalog(val case: Case?) : LinkedHashMap<String, StringMap>() {
 
    private fun applyCase(key: String) = case?.let { key.toCase(it) } ?: key
 
-   override fun put(key: String, value: StringMap): StringMap? {
-      return super.put(applyCase(key), value)
-   }
+   override fun put(key: String, value: StringMap) = super.put(applyCase(key), value)
 
    fun put(clazz: KClass<*>, map:Map<*, *>): StringMap? {
       val className = clazz.simpleName
@@ -20,8 +18,7 @@ open class Catalog(val case: Case?) : LinkedHashMap<String, StringMap>() {
 
    fun put(map: Map<*, *>): StringMap? = put(map::class, map)
 
-   fun put(mappeable: Mappeable<*, *>): StringMap?
-      = put(mappeable::class, mappeable.asMap())
+   fun put(mappeable: Mappeable<*, *>) = put(mappeable::class, mappeable.asMap())
 
    fun put(map: EnumMap<*,*>) = put(map.enumClass, map)
 

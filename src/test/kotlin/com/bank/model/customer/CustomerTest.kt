@@ -35,4 +35,10 @@ class CustomerTest {
       assertEquals(Month.JUNE, customer1.birthDay!!.month)
    }
 
+   @Test
+   fun cuitEntityType(){
+      val cuit = Cuit("20240614708")
+      assertEquals("puto", cuit.entityType.description)
+   }
+
 }

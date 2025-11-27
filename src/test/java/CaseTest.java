@@ -5,7 +5,7 @@ public class CaseTest {
 
   @Test
   public void test() {
-    var snake = CaseUtilsKt.toSnakeCase("Hola Mundo");
+    var snake = CaseUtilsKt.snakeCase("Hola Mundo");
 
     System.out.println(snake);
   }
