@@ -4,9 +4,8 @@ import com.swelms.common.locale.localeText
 import com.swelms.common.text.Case
 import com.swelms.common.text.toCase
 import kotlin.reflect.KClass
-
-
 open class Catalog(val case: Case?) : LinkedHashMap<String, StringMap>() {
+
    private fun applyCase(key: String) = case?.let { key.toCase(it) } ?: key
 
    override fun put(key: String, value: StringMap): StringMap? {
@@ -24,11 +23,7 @@ open class Catalog(val case: Case?) : LinkedHashMap<String, StringMap>() {
    fun put(mappeable: Mappeable<*, *>): StringMap?
       = put(mappeable::class, mappeable.asMap())
 
-   fun <E> put(enumClass: KClass<E>, mapper: (E) -> String): StringMap?
-         where E : Enum<E> {
-      val map = enumClass.java.enumConstants.associate { it.name to mapper(it) }
-      return put(enumClass, map)
-   }
+   fun put(map: EnumMap<*,*>) = put(map.enumClass, map)
 
 
    fun <E : Any> put(elements: Iterable<E>, mapper: (E) -> Pair<String,String>): StringMap? {
