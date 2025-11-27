@@ -26,8 +26,10 @@ object Locale {
       }
 
 
-   internal var currentLangConfig: AbstractLangConfig? = null
-   internal var currentRegionalConfig: AbstractRegionalConfig? = null
+   var currentLangConfig: AbstractLangConfig? = null
+
+   var currentRegionalConfig: AbstractRegionalConfig? = null
+
 
    private fun load(fullNameClass: String):AbstractLocaleConfig{
       val clazz =  Class.forName(fullNameClass, false, this.javaClass.classLoader )
@@ -54,26 +56,27 @@ object Locale {
    fun text(k: Class<*> = Object::class.java, key: String, keyOnFail: Boolean  = Locale.keyOnFail) = text(k.kotlin, key, keyOnFail)
 
    fun text(k: KClass<*> = Any::class, key: String, keyOnFail: Boolean  = Locale.keyOnFail): String {
-      val cleanK = cleanKey(k)
-      val map = currentLangConfig?.textsByClass?.get(cleanK) ?: emptyMap()
-      val value = map[key]
+      val map = currentLangConfig?.getTexts(k)
+      val value = if(map!=null) map[key] else null
       if(value != null) return value
       if(k != Any::class) return text(Any::class, key, keyOnFail)
       if(keyOnFail) return key
       throw LocaleException(text(Locale::class, "NO_TEXT_FOUND", true)(key))
    }
 
-
-   internal fun cleanKey(k: KClass<*>): String {
-      val q = k.qualifiedName ?: k.toString()
-      return q.replace(".Companion", "")
-   }
-
-
 }
 
 
 fun Any.localeText(key: String) = Locale.text(this::class, key)
 
-
 operator fun String.invoke(vararg values: Any): String = StringSlots(this).replace(values = values)
+
+fun Locale.printAll(){
+   Locale.currentLangConfig?.classTextsMap?.forEach { (clazz, map) ->
+      println(clazz)
+      map.forEach { (key, text) ->
+         println("   $key = $text")
+      }
+
+   }
+}

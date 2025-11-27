@@ -2,13 +2,17 @@ import com.swelms.common.locale.Locale;
 import com.swelms.domain.id.cuit.Cuit;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 
 public class LocaleTest {
+
   @Test
   public void test(){
     Locale.setRootPackage("com.bank.locale");
-    System.out.println(Locale.text(Cuit.class, "INVALID_LENGTH"));
+    assertEquals("TEST", Locale.text(Cuit.class, "TEST"));
     Locale.setLang("es");
-    System.out.println(Locale.text(Cuit.class, "INVALID_LENGTH"));
+    assertEquals("Prueba", Locale.text(Cuit.class, "TEST"));
+
   }
 }

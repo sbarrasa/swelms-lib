@@ -12,14 +12,14 @@ import com.swelms.domain.person.NamePart
 
 object LocaleConfig : AbstractLangConfig() {
    override fun register() {
-      Any::class.register {
+      defaults {
          it["NO_CLASS_NAME"] = "La clase debe tener un nombre simple"
          it["TEST"] = "Prueba"
          it["NOT_IMPLEMENTED"] = "Aún no está implementado"
          it["OUT_OF_RANGE"] = "El valor debe estar entre {1} y {2}"
       }
 
-      Cuit::class.register {
+      texts<Cuit> {
          it["PERSON_DESCRIPTION"] = "persona física"
          it["COMPANY_DESCRIPTION"] = "persona jurídica"
          it["CUIT_CUIL"] = "CUIT/CUIL"
@@ -28,37 +28,37 @@ object LocaleConfig : AbstractLangConfig() {
          it["INVALID_ENTITY_CODE"] = "Código de entidad inválido"
       }
 
-      CBU::class.register {
+      texts<CBU> {
          it["BRANCH"] = "Entidad/sucursal"
          it["ACCOUNT"] = "Número de cuenta"
          it["INVALID_LENGTH"] = "CBU debe tener 22 dígitos"
          it["ONLY_DIGITS"] = "CBU solo puede contener números"
       }
 
-      CardNumber::class.register {
+      texts<CardNumber> {
          it["CARD_NUMBER"] = "Número de tarjeta"
          it["INVALID_LENGTH"] = "Longitud del número de tarjeta inválida"
          it["ONLY_DIGITS"] = "El número de tarjeta solo puede contener números"
       }
 
-      NamePart::class.register {
+      texts<NamePart> {
          it["INVALID_FORMAT"] = "Los nombres sólo pueden incluir letras, apóstrofes y acentos"
       }
 
-      FullName::class.register {
+      texts<FullName> {
          it["INVALID_FORMAT"] = "Formato valido debe ser 'Apellidos, Nombres' "
       }
 
-      CheckDigitValidator::class.register {
+      texts<CheckDigitValidator> {
          it["INVALID_CHECK_DIGIT"] = "Dígito verificador inválido para"
       }
 
-      Catalog::class.register {
+      texts<Catalog> {
          it["NO_CLASS_NAME"] = "La clase debe tener nombre simple"
          it["EMPTY_ITERABLE"] = "No se puede inferir la clase de un iterable vacío"
       }
 
-      CustomerService::class.register {
+      texts<CustomerService> {
          it["CUSTOMER_NOT_FOUND"] = "Cliente no encontrado"
          it["ID_CANT_BE_EMPTY"] = "Debe especificar un Customer.ID"
          it["INVALID_CUSTOMER_ID"] = "Customer.ID inválido"

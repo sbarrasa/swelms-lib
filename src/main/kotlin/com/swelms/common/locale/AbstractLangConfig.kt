@@ -4,15 +4,31 @@ import kotlin.reflect.KClass
 
 
 abstract class AbstractLangConfig: AbstractLocaleConfig {
-   val textsByClass = mutableMapOf<String, Map<String, String>>()
+   val classTextsMap = mutableMapOf<String, MutableMap<String, String>>()
 
-   fun <T : Any> KClass<T>.register(block: (MutableMap<String, String>) -> Unit) {
-      val map = mutableMapOf<String, String>()
+   private fun qualifiedName(k: KClass<*>): String {
+      val q = k.qualifiedName ?: k.toString()
+      return q.replace(".Companion", "")
+   }
+
+   private fun getTextsForUpdate(k: KClass<*>): MutableMap<String, String> {
+      return classTextsMap.getOrPut(qualifiedName(k)) { mutableMapOf() }
+   }
+
+   fun getTexts(k: KClass<*>): Map<String, String>? = classTextsMap[qualifiedName(k)]
+
+   fun texts(k: KClass<*>, block: (MutableMap<String, String>) -> Unit) {
+      val map = getTextsForUpdate(k)
       block(map)
-      register(this, map)
    }
 
-   fun register(k: KClass<*>, map: Map<String, String>) {
-      textsByClass[Locale.cleanKey(k)] = map
+   inline fun <reified T : Any> texts(noinline block: (MutableMap<String, String>) -> Unit) {
+      texts(T::class, block)
    }
+
+   fun defaults(block: (MutableMap<String, String>) -> Unit) {
+      val map = getTextsForUpdate(Any::class)
+      block(map)
+   }
+
 }

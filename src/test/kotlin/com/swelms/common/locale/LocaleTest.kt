@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter
 import java.time.LocalDate
 
 class LocaleTest {
-   init{
+   init {
       Locale.rootPackage = "com.swelms.common.locale"
       Locale.lang = "es"
       Locale.regional = "ar"
@@ -18,13 +18,13 @@ class LocaleTest {
 
    @Test
    fun testLangTextWithParams() {
-      assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class, "OUT_OF_RANGE")(1,10))
+      assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class, "OUT_OF_RANGE")(1, 10))
    }
 
    @Test
    fun testRegionalValue() {
       val formatter = Locale.valueOf<DateTimeFormatter>("DATE_FORMATTER")
-      val formatted = formatter?.format(LocalDate.of(2025,11,25))
+      val formatted = formatter?.format(LocalDate.of(2025, 11, 25))
       assertEquals("25/11/2025", formatted)
    }
 
@@ -35,8 +35,26 @@ class LocaleTest {
 
    @Test
    fun testFail() {
-      val e = assertFailsWith<LocaleException>{  Locale.text(IntRange::class, "clave inexistente", false)}
+      val e = assertFailsWith<LocaleException> { Locale.text(IntRange::class, "clave inexistente", false) }
       assertEquals("NO_TEXT_FOUND", e.message)
    }
 
+   @Test
+   fun testNolang() {
+      Locale.lang = null
+
+      assertEquals("TEST", localeText("TEST"))
+   }
+
+   @Test
+   fun registerOnTheFly() {
+      Locale.currentLangConfig?.texts(Any::class) { it["MANUAL_TEST"] = "prueba manual" }
+      assertEquals("prueba manual", localeText("MANUAL_TEST"))
+   }
+
+   @Test
+   fun showAll() {
+      Locale.printAll()
+   }
 }
+
