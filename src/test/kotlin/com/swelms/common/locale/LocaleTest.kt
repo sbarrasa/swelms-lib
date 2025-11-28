@@ -7,7 +7,7 @@ import kotlin.test.*
 
 class LocaleTest {
    init {
-      Locale.registerConfigs(LocaleConfig_ar, LocaleConfig_es)
+      Locale.registerConfigs(LocaleConfig_ar, LocaleConfig_es, LocaleConfig_en)
       Locale.lang = "es"
       Locale.regional = "ar"
    }
@@ -19,7 +19,7 @@ class LocaleTest {
 
    @Test
    fun testLangTextWithParams() {
-      assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class, "OUT_OF_RANGE")(1, 10))
+      assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class, "OUT_OF_RANGE").replaceSlots(1, 10))
    }
 
    @OptIn(FormatStringsInDatetimeFormats::class)
@@ -38,8 +38,8 @@ class LocaleTest {
 
    @Test
    fun testFail() {
-      val e = assertFailsWith<LocaleException> { Locale.text(IntRange::class, "clave inexistente", false) }
-      assertEquals("NO_TEXT_FOUND", e.message)
+      val e = assertFailsWith<LocaleException> { Locale.text(IntRange::class, "key", false) }
+      assertEquals("NO_TEXT_FOUND key", e.message)
    }
 
    @Test
@@ -60,7 +60,7 @@ class LocaleTest {
    @Test
    fun invalidValueClass(){
       assertFailsWith<ClassCastException>{
-         val currency = Locale.value<Int>("CURRENCY")
+         Locale.value<Int>("CURRENCY").toString()
       }
    }
 

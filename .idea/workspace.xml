@@ -4,31 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Fixes de uso de Locale.kt">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_ar.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_es.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_us.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleConfig_es.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Carga Gender locale">
       <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/text/StringSlotsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/configLocale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/configLocale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/en/LocaleConfig.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang/es/LocaleConfig.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/regional/ar/LocaleConfig.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/regional/us/LocaleConfig.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Gender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Gender.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractLangConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractLangConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractLocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractLocaleConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractRegionalConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractRegionalConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/StringSlot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/StringSlot.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LocaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LocaleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LangTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/RegionalTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/rate/Rating.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/rate/Rating.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/lang/es/LocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleConfig_en.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/regional/ar/LocaleConfig.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +163,7 @@
     "Gradle.SingleValueSerializerTest.executor": "Run",
     "Gradle.SingleValueTests.SingleValueType.executor": "Run",
     "Gradle.SingleValueTests.executor": "Run",
+    "Gradle.StringSlotsTest.executor": "Run",
     "Gradle.Tests in 'bank-kotlin.test'.executor": "Run",
     "Gradle.Tests in 'com.bank.locale'.executor": "Run",
     "Gradle.Tests in 'com.sbarrasa'.executor": "Run",
@@ -279,19 +264,8 @@
         <option value="Application" />
       </set>
     </option>
-    <option name="configurationStatuses">
-      <map>
-        <entry key="HttpClient.HttpRequestRunConfigurationType">
-          <value>
-            <map>
-              <entry key="CodesApiTest | Obtener todos los códigos" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
-  <component name="RunManager" selected="Gradle.LocaleTest.invalidValueClass">
+  <component name="RunManager" selected="Gradle.LocaleTest">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -376,33 +350,51 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CodesApiTest | Obtener todos los códigos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CodesApiTest.http" executionIdentifier="Obtener todos los códigos" index="8" runType="Run single request">
+    <configuration name="StringSlotsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.swelms.common.text.StringSlotsTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MainKt" type="KtorApplicationConfigurationType" factoryName="Ktor" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="lang" value="es" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.bank.MainKt" />
-      <module name="bank-kotlin.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bank.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="alternativeJrePath" />
-      <option name="alternativeJrePathEnabled" value="false" />
-      <option name="includeProvidedScope" value="false" />
-      <option name="mainClass" value="com.bank.MainKt" />
-      <option name="passParentEnvs" value="true" />
-      <option name="programParameters" />
-      <option name="shortenCommandLine" />
-      <option name="vmParameters" />
-      <option name="workingDirectory" value="C:\develop\bank-kotlin" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="Tests in 'bank-kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.BankServer" />
@@ -410,17 +402,17 @@
       <item itemvalue="Gradle.LocaleTest" />
       <item itemvalue="Gradle.LocaleTest (1)" />
       <item itemvalue="Gradle.LocaleTest.invalidValueClass" />
-      <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
+      <item itemvalue="Gradle.StringSlotsTest" />
+      <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
       <item itemvalue="Kotlin.startServer" />
-      <item itemvalue="Ktor.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LocaleTest.invalidValueClass" />
-        <item itemvalue="Gradle.LocaleTest (1)" />
         <item itemvalue="Gradle.LocaleTest" />
-        <item itemvalue="Ktor.MainKt" />
-        <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
+        <item itemvalue="Gradle.LocaleTest.invalidValueClass" />
+        <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
+        <item itemvalue="Gradle.StringSlotsTest" />
+        <item itemvalue="Gradle.LocaleTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -451,7 +443,7 @@
       <workItem from="1764202501230" duration="19696000" />
       <workItem from="1764260121287" duration="4433000" />
       <workItem from="1764275638865" duration="3539000" />
-      <workItem from="1764279281422" duration="15525000" />
+      <workItem from="1764279281422" duration="17724000" />
     </task>
     <task id="LOCAL-00001" summary="Idea settings">
       <option name="closed" value="true" />
@@ -829,15 +821,29 @@
       <option name="project" value="LOCAL" />
       <updated>1764298029103</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="mejoras en carga de clases de confog para Locale">
+      <option name="closed" value="true" />
+      <created>1764314059761</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1764314059761</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Carga Gender locale">
+      <option name="closed" value="true" />
+      <created>1764314093211</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1764314093211</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="java tests" />
-    <MESSAGE value="configModules" />
     <MESSAGE value="custome status pages" />
     <MESSAGE value="customer api tests" />
     <MESSAGE value="error in status pages" />
@@ -861,7 +867,9 @@
     <MESSAGE value="EnumMap.kt" />
     <MESSAGE value="Caseutils &#10;EnumMap" />
     <MESSAGE value="Fixes de uso de Locale.kt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes de uso de Locale.kt" />
+    <MESSAGE value="mejoras en carga de clases de confog para Locale" />
+    <MESSAGE value="Carga Gender locale" />
+    <option name="LAST_COMMIT_MESSAGE" value="Carga Gender locale" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

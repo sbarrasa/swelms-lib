@@ -15,7 +15,7 @@ object LocaleConfig_en : AbstractLangConfig() {
    override val key: String = "en"
 
    override fun onLoad() {
-      forClass<Any> {
+      defaults {
          it["NO_CLASS_NAME"] = "Class must have simple name"
          it["TEST"] = "Test"
          it["NOT_IMPLEMENTED"] = "Not implemented yet"

@@ -8,7 +8,7 @@ abstract class AbstractLangConfig: AbstractLocaleConfig() {
 
    private fun qualifiedName(k: KClass<*>): String {
       val q = k.qualifiedName ?: k.toString()
-      return q.replace(".Companion", "")
+      return q.replaceSlots(".Companion", "")
    }
 
 //TODO: implementar clave "default"
