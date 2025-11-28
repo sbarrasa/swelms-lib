@@ -5,7 +5,7 @@ import com.swelms.common.locale.AbstractRegionalConfig
 import kotlin.collections.set
 
 object LocaleConfig_us: AbstractRegionalConfig() {
-   override val key = "us"
+   override val locale_id = "us"
 
    override fun onLoad() {
       values["CURRENCY"] = Currency.USD

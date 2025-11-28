@@ -2,7 +2,7 @@ package com.swelms.common.locale
 
 
 object LocaleConfig_ar : AbstractRegionalConfig() {
-   override val key = "ar"
+   override val locale_id = "ar"
 
    override fun onLoad() {
       values["CURRENCY"] = "ARS"

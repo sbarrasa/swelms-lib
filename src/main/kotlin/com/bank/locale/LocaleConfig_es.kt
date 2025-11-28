@@ -12,7 +12,7 @@ import com.swelms.domain.person.NamePart
 import com.swelms.domain.validator.CheckDigitValidator
 
 object LocaleConfig_es : AbstractLangConfig() {
-   override val key: String = "es"
+   override val locale_id: String = "es"
 
    override fun onLoad() {
       defaults {
@@ -66,9 +66,9 @@ object LocaleConfig_es : AbstractLangConfig() {
       }
 
       forClass<Gender> {
-         it["M_DESCRIPTION"] = "Masculino"
-         it["F_DESCRIPTION"] = "Femenino"
-         it["X_DESCRIPTION"] = "Sin definición"
+         it["M"] = "Masculino"
+         it["F"] = "Femenino"
+         it["X"] = "Sin definición"
       }
 
    }

@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="StringSlot mejoras">
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Locale de domain components">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/locale/LocaleConfigTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_ar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_ar.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_es.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_es.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_us.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_us.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Gender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Gender.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractLocaleConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractLocaleConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractRegionalConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractRegionalConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/card/CardNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/card/CardNumber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cbu/CBU.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cbu/CBU.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitCheckDigitValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitCheckDigitValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleConfig_ar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleConfig_ar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleConfig_en.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleConfig_en.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleConfig_es.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleConfig_es.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +85,9 @@
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
         <option value="Kotlin File" />
-        <option value="Kotlin Class" />
         <option value="Kotlin JUnit5 Test Class" />
+        <option value="Kotlin Class" />
+        <option value="KotlinTest" />
       </list>
     </option>
   </component>
@@ -145,6 +153,10 @@
     "Gradle.FullNameTest.initialsTestFormat.executor": "Run",
     "Gradle.LangTest.executor": "Run",
     "Gradle.LangTest.testLang.executor": "Run",
+    "Gradle.LocaleConfigFullTest.executor": "Run",
+    "Gradle.LocaleConfigFullTest.testMissingRegionalKey.executor": "Run",
+    "Gradle.LocaleConfigFullTest.testNonexistentRegional.executor": "Run",
+    "Gradle.LocaleConfigFullTest.textChangeLang.executor": "Run",
     "Gradle.LocaleFullTest.executor": "Run",
     "Gradle.LocaleTest (1).executor": "Run",
     "Gradle.LocaleTest.executor": "Run",
@@ -264,7 +276,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.LocaleTest">
+  <component name="RunManager" selected="Gradle.Tests in 'bank-kotlin.test'">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -277,7 +289,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocaleTest (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LocaleConfigFullTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -290,7 +302,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;LocaleTest&quot;" />
+            <option value="&quot;com.bank.locale.LocaleConfigFullTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -301,7 +313,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LocaleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LocaleConfigFullTest.testMissingRegionalKey" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -314,7 +326,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.common.locale.LocaleTest&quot;" />
+            <option value="&quot;com.bank.locale.LocaleConfigFullTest.testMissingRegionalKey&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -325,7 +337,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LocaleTest.invalidValueClass" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LocaleConfigFullTest.testNonexistentRegional" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -338,7 +350,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.common.locale.LocaleTest.invalidValueClass&quot;" />
+            <option value="&quot;com.bank.locale.LocaleConfigFullTest.testNonexistentRegional&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -349,7 +361,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="StringSlotsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LocaleConfigFullTest.textChangeLang" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -362,7 +374,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.common.text.StringSlotsTest&quot;" />
+            <option value="&quot;com.bank.locale.LocaleConfigFullTest.textChangeLang&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -398,20 +410,20 @@
     <list>
       <item itemvalue="Application.BankServer" />
       <item itemvalue="Application.H2 Server" />
-      <item itemvalue="Gradle.LocaleTest" />
-      <item itemvalue="Gradle.LocaleTest (1)" />
-      <item itemvalue="Gradle.LocaleTest.invalidValueClass" />
-      <item itemvalue="Gradle.StringSlotsTest" />
+      <item itemvalue="Gradle.LocaleConfigFullTest" />
+      <item itemvalue="Gradle.LocaleConfigFullTest.testMissingRegionalKey" />
+      <item itemvalue="Gradle.LocaleConfigFullTest.testNonexistentRegional" />
+      <item itemvalue="Gradle.LocaleConfigFullTest.textChangeLang" />
       <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
       <item itemvalue="Kotlin.startServer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LocaleTest" />
-        <item itemvalue="Gradle.LocaleTest.invalidValueClass" />
         <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
-        <item itemvalue="Gradle.StringSlotsTest" />
-        <item itemvalue="Gradle.LocaleTest (1)" />
+        <item itemvalue="Gradle.LocaleConfigFullTest.textChangeLang" />
+        <item itemvalue="Gradle.LocaleConfigFullTest" />
+        <item itemvalue="Gradle.LocaleConfigFullTest.testMissingRegionalKey" />
+        <item itemvalue="Gradle.LocaleConfigFullTest.testNonexistentRegional" />
       </list>
     </recent_temporary>
   </component>
@@ -442,15 +454,8 @@
       <workItem from="1764202501230" duration="19696000" />
       <workItem from="1764260121287" duration="4433000" />
       <workItem from="1764275638865" duration="3539000" />
-      <workItem from="1764279281422" duration="19851000" />
-    </task>
-    <task id="LOCAL-00002" summary="Locale">
-      <option name="closed" value="true" />
-      <created>1763829733930</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1763829733930</updated>
+      <workItem from="1764279281422" duration="19909000" />
+      <workItem from="1764337367973" duration="4899000" />
     </task>
     <task id="LOCAL-00003" summary="Locale framework">
       <option name="closed" value="true" />
@@ -836,14 +841,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764316391530</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Locale de domain components">
+      <option name="closed" value="true" />
+      <created>1764318364567</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1764318364567</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="customer api tests" />
     <MESSAGE value="error in status pages" />
     <MESSAGE value="module" />
     <MESSAGE value="CustomersTable.kt mejoras" />
@@ -868,7 +880,8 @@
     <MESSAGE value="mejoras en carga de clases de confog para Locale" />
     <MESSAGE value="Carga Gender locale" />
     <MESSAGE value="StringSlot mejoras" />
-    <option name="LAST_COMMIT_MESSAGE" value="StringSlot mejoras" />
+    <MESSAGE value="Locale de domain components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Locale de domain components" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

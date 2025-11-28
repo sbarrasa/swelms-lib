@@ -43,8 +43,8 @@ object Locale {
    @JvmStatic
    fun registerConfig(cfg: AbstractLocaleConfig) {
       when (cfg) {
-         is AbstractLangConfig -> langConfigs[cfg.key] = cfg
-         is AbstractRegionalConfig -> regionalConfigs[cfg.key] = cfg
+         is AbstractLangConfig -> langConfigs[cfg.locale_id] = cfg
+         is AbstractRegionalConfig -> regionalConfigs[cfg.locale_id] = cfg
       }
    }
 

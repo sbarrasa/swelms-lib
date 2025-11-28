@@ -1,7 +1,7 @@
 package com.swelms.common.locale
 
 object LocaleConfig_es: AbstractLangConfig() {
-   override val key = "es"
+   override val locale_id = "es"
 
    override fun onLoad() {
       defaults {

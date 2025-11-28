@@ -52,7 +52,7 @@ value class Cuit(val value: String) {
       COMPANY;
 
       val description: String
-         get() = Locale.text(this::class, name + "_DESCRIPTION")
+         get() = Locale.text(this::class, name)
    }
 
 

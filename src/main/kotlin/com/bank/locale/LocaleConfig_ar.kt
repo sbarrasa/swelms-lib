@@ -4,7 +4,7 @@ import com.bank.model.products.structure.Currency
 import com.swelms.common.locale.AbstractRegionalConfig
 
 object LocaleConfig_ar: AbstractRegionalConfig() {
-   override val key = "ar"
+   override val locale_id = "ar"
 
    override fun onLoad() {
       values["CURRENCY"] = Currency.ARS
