@@ -8,6 +8,6 @@ enum class Gender() {
    X;
 
    val description: String
-      get() = Locale.text(this::class, name + "_DESCRIPTION")
+      get() = Locale.text(this::class, "${name}_DESCRIPTION")
 }
 
