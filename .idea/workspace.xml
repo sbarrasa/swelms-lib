@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Carga Gender locale">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/text/StringSlotsTest.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="StringSlot mejoras">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractLangConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/AbstractLangConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_es.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_es.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/StringSlot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/StringSlot.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/rate/Rating.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/rate/Rating.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/card/CardNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/card/CardNumber.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cbu/CBU.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cbu/CBU.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitCheckDigitValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitCheckDigitValidator.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -443,15 +442,7 @@
       <workItem from="1764202501230" duration="19696000" />
       <workItem from="1764260121287" duration="4433000" />
       <workItem from="1764275638865" duration="3539000" />
-      <workItem from="1764279281422" duration="17724000" />
-    </task>
-    <task id="LOCAL-00001" summary="Idea settings">
-      <option name="closed" value="true" />
-      <created>1763777310309</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1763777310309</updated>
+      <workItem from="1764279281422" duration="19851000" />
     </task>
     <task id="LOCAL-00002" summary="Locale">
       <option name="closed" value="true" />
@@ -837,14 +828,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764314093211</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="StringSlot mejoras">
+      <option name="closed" value="true" />
+      <created>1764316391529</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1764316391530</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="custome status pages" />
     <MESSAGE value="customer api tests" />
     <MESSAGE value="error in status pages" />
     <MESSAGE value="module" />
@@ -869,7 +867,8 @@
     <MESSAGE value="Fixes de uso de Locale.kt" />
     <MESSAGE value="mejoras en carga de clases de confog para Locale" />
     <MESSAGE value="Carga Gender locale" />
-    <option name="LAST_COMMIT_MESSAGE" value="Carga Gender locale" />
+    <MESSAGE value="StringSlot mejoras" />
+    <option name="LAST_COMMIT_MESSAGE" value="StringSlot mejoras" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

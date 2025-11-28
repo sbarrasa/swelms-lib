@@ -20,6 +20,8 @@ object LocaleConfig_en : AbstractLangConfig() {
          it["TEST"] = "Test"
          it["NOT_IMPLEMENTED"] = "Not implemented yet"
          it["OUT_OF_RANGE"] = "The value must be between {1} and {2}"
+         it["INVALID_LENGTH"] = "{0} must have {1} numeric digits"
+         it["ONLY_DIGITS"] = "{0} can contain only numbers"
       }
 
       forClass<Cuit.EntityType> {
@@ -28,23 +30,18 @@ object LocaleConfig_en : AbstractLangConfig() {
       }
 
       forClass<Cuit> {
-         it["CUIT_CUIL"] = "CUIT/CUIL"
-         it["INVALID_LENGTH"] = "CUIT must have 11 numeric digits"
-         it["ONLY_DIGITS"] = "CUIT can contain only numbers"
+         it["CUIT"] = "CUIT/CUIL"
          it["INVALID_ENTITY_CODE"] = "Invalid entity code"
       }
 
       forClass<CBU> {
+         it["CBU"] = "CBU"
          it["BRANCH"] = "Branch"
          it["ACCOUNT"] = "Account number"
-         it["INVALID_LENGTH"] = "CBU must have 22 digits"
-         it["ONLY_DIGITS"] = "CBU can contain only numbers"
       }
 
       forClass<CardNumber> {
          it["CARD_NUMBER"] = "Card number"
-         it["INVALID_LENGTH"] = "Card number length is invalid"
-         it["ONLY_DIGITS"] = "Card number can contain only numbers"
       }
 
       forClass<NamePart> {
@@ -56,11 +53,11 @@ object LocaleConfig_en : AbstractLangConfig() {
       }
 
       forClass<CheckDigitValidator> {
-         it["INVALID_CHECK_DIGIT"] = "Invalid check digit for"
+         it["INVALID_CHECK_DIGIT"] = "Invalid check digit for {0}"
       }
 
       forClass<Catalog> {
-         it["EMPTY_ITERABLE"] = "Cannot infer class from empty iterable"
+         it["NO_CLASS_NAME"] = "Class need a name"
       }
 
       forClass<CustomerService> {

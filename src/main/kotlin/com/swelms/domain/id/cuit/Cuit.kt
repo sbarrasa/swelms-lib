@@ -24,11 +24,11 @@ value class Cuit(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(localeText("INVALID_LENGTH, SIZE"), SIZE).validate(value)
+      LengthValidator(localeText("INVALID_LENGTH").replaceSlots(LOCALE_CLASS_NAME, SIZE), SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(localeText("ONLY_DIGITS")).validate(value)
+      DigitsValidator(localeText("ONLY_DIGITS").replaceSlots(LOCALE_CLASS_NAME)).validate(value)
    }
 
    private fun validateEntityCode() {
@@ -41,6 +41,7 @@ value class Cuit(val value: String) {
 
    companion object {
       const val SIZE = 11
+      val LOCALE_CLASS_NAME = Locale.text(Cuit::class, "CUIT")
    }
 
    fun formated() = "$entityCode-$document-$check"

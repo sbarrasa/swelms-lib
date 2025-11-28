@@ -1,10 +1,9 @@
 package com.swelms.domain.id.cuit
 
-import com.swelms.common.locale.Locale
 import com.swelms.domain.validator.CheckDigitValidator
 
 
-object CuitCheckDigitValidator : CheckDigitValidator(Locale.text(Cuit::class,"CUIT_CUIL")) {
+object CuitCheckDigitValidator : CheckDigitValidator(Cuit.LOCALE_CLASS_NAME) {
    private val weights = listOf(5, 4, 3, 2, 7, 6, 5, 4, 3, 2)
 
    override fun compute(digits: List<Int>): Int {

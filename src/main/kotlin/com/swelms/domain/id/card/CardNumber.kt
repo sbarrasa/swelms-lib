@@ -1,6 +1,8 @@
 package com.swelms.domain.id.card
 
+import com.swelms.common.locale.Locale
 import com.swelms.common.locale.localeText
+import com.swelms.common.locale.replaceSlots
 import com.swelms.domain.validator.DigitsValidator
 import com.swelms.domain.validator.ValidatorException
 import com.swelms.domain.validator.LuhnValidator
@@ -18,20 +20,20 @@ value class CardNumber(val value: String) {
    val brand: CardBrand? get() = CardBrand.of(this)
 
    private fun validateLength() {
-      if (value.length !in BinTable.lengthRange()) throw ValidatorException(localeText("INVALID_LENGTH"))
+      if (value.length !in BinTable.lengthRange())
+         throw ValidatorException(localeText("INVALID_LENGTH").replaceSlots(LOCALE_CLASS_NAME))
    }
 
    private fun validateDigits() {
-      DigitsValidator(localeText("ONLY_DIGITS")).validate(value)
+      DigitsValidator(localeText("ONLY_DIGITS").replaceSlots(LOCALE_CLASS_NAME)).validate(value)
    }
 
    private fun validateCheckDigit() {
-      LuhnValidator(localeText("CARD_NUMBER")).validate(value)
+      LuhnValidator(LOCALE_CLASS_NAME).validate(value)
    }
 
-  
-
    companion object{
+      val LOCALE_CLASS_NAME = Locale.text(CardNumber::class, "CARD_NUMBER")
       fun from(cardNumber: String) = CardNumber(cardNumber.filter { it.isDigit() })
    }
    override fun toString(): String = value

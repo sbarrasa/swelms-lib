@@ -82,6 +82,7 @@ object Locale {
    fun text(key: String, keyOnMissing: Boolean = !throwOnMissing)
       = text(Any::class, key, keyOnMissing)
 
+
 }
 
 fun Any.localeText(key: String) = Locale.text(this::class, key)
