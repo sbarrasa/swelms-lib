@@ -6,78 +6,86 @@ import kotlin.reflect.KClass
 object Locale {
 
    @JvmStatic
-   var rootPackage: String = "locale"
-
-   @JvmStatic
-   var keyOnFail = true
+   var throwOnMissing = false
 
    @JvmStatic
    var lang: String? = null
       set(value) {
+         langConfigs[field]?.unload()
+         if(value != null) {
+            langConfigs[value]
+               ?.load()
+               ?:throw LocaleException(text(Locale::class, "LANG_NOT_FOUND", keyOnMissing = true)(value))
+         }
          field = value
-         currentLangConfig = value?.let { load(fullNameClass("lang", it)) as AbstractLangConfig }
       }
 
    @JvmStatic
    var regional: String? = null
       set(value) {
+         regionalConfigs[field]?.unload()
+         if(value != null) {
+           regionalConfigs[value]
+              ?.load()
+              ?: throw LocaleException(text(Locale::class, "REGIONAL_NOT_FOUND", keyOnMissing = true)(value))
+         }
          field = value
-         currentRegionalConfig = value?.let { load(fullNameClass("regional", it)) as AbstractRegionalConfig }
       }
 
+   private val langConfigs: MutableMap<String, AbstractLangConfig> = mutableMapOf()
+   private val regionalConfigs: MutableMap<String, AbstractRegionalConfig> = mutableMapOf()
 
-   var currentLangConfig: AbstractLangConfig? = null
+   @JvmStatic
+   fun registerConfigs(vararg cfgs: AbstractLocaleConfig) {
+      cfgs.forEach { registerConfig(it) }
+   }
 
-   var currentRegionalConfig: AbstractRegionalConfig? = null
-
-
-   private fun load(fullNameClass: String):AbstractLocaleConfig{
-      val clazz =  Class.forName(fullNameClass, false, this.javaClass.classLoader )
-      val localeConfig = clazz.kotlin.objectInstance as AbstractLocaleConfig
-      return load(localeConfig)
+   @JvmStatic
+   fun registerConfig(cfg: AbstractLocaleConfig) {
+      when (cfg) {
+         is AbstractLangConfig -> langConfigs[cfg.key] = cfg
+         is AbstractRegionalConfig -> regionalConfigs[cfg.key] = cfg
+      }
    }
 
 
-   internal fun load(localeConfig: AbstractLocaleConfig):AbstractLocaleConfig{
-      localeConfig.register()
-      return localeConfig
+   @JvmStatic
+   fun <T> value(key: String): T {
+      return valueOrNull(key)
+         ?: throw LocaleException(text(Locale::class, "NO_VALUE_FOUND", true)(key))
    }
-
-   private fun fullNameClass(groupPackage: String, localePackage: String) =
-      "$rootPackage.$groupPackage.$localePackage.LocaleConfig"
 
    @Suppress("UNCHECKED_CAST")
    @JvmStatic
-   fun <T> valueOf(key: String): T? =
-      currentRegionalConfig?.values?.get(key) as T?
+   fun <T> valueOrNull(key: String): T? {
+      val value = regionalConfigs[regional]?.values?.get(key) as? T
+      if(value==null && throwOnMissing)
+         throw LocaleException(text(Locale::class, "NO_VALUE_FOUND", true)(key))
+
+      return value
+   }
 
    @JvmStatic
    @JvmOverloads
-   fun text(k: Class<*> = Object::class.java, key: String, keyOnFail: Boolean  = Locale.keyOnFail) = text(k.kotlin, key, keyOnFail)
+   fun text(k: Class<*> = Object::class.java, key: String, keyOnMissing: Boolean = !throwOnMissing)
+      = text(k.kotlin, key, keyOnMissing)
 
-   fun text(k: KClass<*> = Any::class, key: String, keyOnFail: Boolean  = Locale.keyOnFail): String {
-      val map = currentLangConfig?.getTexts(k)
+   fun text(klass: KClass<*> = Any::class, key: String, keyOnMissing: Boolean = !throwOnMissing): String {
+      val map = langConfigs[lang]?.texts(klass)
       val value = if(map!=null) map[key] else null
       if(value != null) return value
-      if(k != Any::class) return text(Any::class, key, keyOnFail)
-      if(keyOnFail) return key
-      throw LocaleException(text(Locale::class, "NO_TEXT_FOUND", true)(key))
+      if(klass != Any::class) return text(Any::class, key, keyOnMissing)
+      if(keyOnMissing) return key
+      throw LocaleException(text(Locale::class, "NO_TEXT_FOUND", keyOnMissing = true)(key))
    }
 
-}
+   fun text(key: String, keyOnMissing: Boolean = !throwOnMissing)
+      = text(Any::class, key, keyOnMissing)
 
+}
 
 fun Any.localeText(key: String) = Locale.text(this::class, key)
 
 operator fun String.invoke(vararg values: Any): String = StringSlots(this).replace(values = values)
 
-fun Locale.printAll(){
-   Locale.currentLangConfig?.classTextsMap?.forEach { (clazz, map) ->
-      println(clazz)
-      map.forEach { (key, text) ->
-         println("   $key = $text")
-      }
-
-   }
-}
 

@@ -1,12 +1,13 @@
 package com.swelms.common.locale
 
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.format
+import kotlinx.datetime.format.*
 import kotlin.test.*
-import java.time.format.DateTimeFormatter
-import java.time.LocalDate
 
 class LocaleTest {
    init {
-      Locale.rootPackage = "com.swelms.common.locale"
+      Locale.registerConfigs(LocaleConfig_ar, LocaleConfig_es)
       Locale.lang = "es"
       Locale.regional = "ar"
    }
@@ -21,11 +22,13 @@ class LocaleTest {
       assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class, "OUT_OF_RANGE")(1, 10))
    }
 
+   @OptIn(FormatStringsInDatetimeFormats::class)
    @Test
-   fun testRegionalValue() {
-      val formatter = Locale.valueOf<DateTimeFormatter>("DATE_FORMATTER")
-      val formatted = formatter?.format(LocalDate.of(2025, 11, 25))
-      assertEquals("25/11/2025", formatted)
+   fun testValueValue() {
+      val dateFormat = Locale.value<String>("DATE_FORMAT")
+      val formatter = LocalDate.Format { byUnicodePattern(dateFormat)}
+      val date = LocalDate(2025, 11, 25)
+      assertEquals("25/11/2025", date.format(formatter))
    }
 
    @Test
@@ -47,14 +50,23 @@ class LocaleTest {
    }
 
    @Test
-   fun registerOnTheFly() {
-      Locale.currentLangConfig?.texts(Any::class) { it["MANUAL_TEST"] = "prueba manual" }
-      assertEquals("prueba manual", localeText("MANUAL_TEST"))
+   fun changeLang() {
+      Locale.lang = "en"
+      assertEquals("Test", localeText("TEST"))
+      Locale.lang = "es"
+      assertEquals("Prueba", localeText("TEST"))
    }
 
    @Test
-   fun showAll() {
-      Locale.printAll()
+   fun invalidValueClass(){
+      assertFailsWith<ClassCastException>{
+         val currency = Locale.value<Int>("CURRENCY")
+      }
+   }
+
+   @Test
+   fun invalidLang(){
+      assertFailsWith<LocaleException>{ Locale.lang = "xx" }
    }
 }
 
