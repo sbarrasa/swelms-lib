@@ -1,6 +1,7 @@
 package com.bank.locale.lang.es
 
 import com.bank.database.CustomerService
+import com.bank.model.customer.Gender
 import com.swelms.common.locale.AbstractLangConfig
 import com.swelms.domain.id.cuit.Cuit
 import com.swelms.domain.id.cbu.CBU
@@ -64,6 +65,12 @@ object LocaleConfig : AbstractLangConfig() {
          it["CUSTOMER_NOT_FOUND"] = "Cliente no encontrado"
          it["ID_CANT_BE_EMPTY"] = "Debe especificar un Customer.ID"
          it["INVALID_CUSTOMER_ID"] = "Customer.ID inválido"
+      }
+
+      texts<Gender> {
+         it["M_DESCRIPTION"] = "Masculino"
+         it["F_DESCRIPTION"] = "Femenino"
+         it["X_DESCRIPTION"] = "Sin definición"
       }
 
    }

@@ -1,6 +1,7 @@
 package com.bank.locale.lang.en
 
 import com.bank.database.CustomerService
+import com.bank.model.customer.Gender
 import com.swelms.common.locale.AbstractLangConfig
 import com.swelms.domain.id.cuit.Cuit
 import com.swelms.domain.id.cbu.CBU
@@ -67,6 +68,11 @@ object LocaleConfig : AbstractLangConfig() {
          it["INVALID_CUSTOMER_ID"] = "Invalid customer ID"
       }
 
+      texts<Gender> {
+         it["M_DESCRIPTION"] = "Male"
+         it["F_DESCRIPTION"] = "Female"
+         it["X_DESCRIPTION"] = "Undefine"
+      }
 
    }
 }

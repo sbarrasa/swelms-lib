@@ -1,8 +1,13 @@
 package com.bank.model.customer
 
-enum class Gender(val description: String) {
-   M("masculino"),
-   F("femenino"),
-   X("indefinido");
+import com.swelms.common.locale.Locale
+
+enum class Gender() {
+   M,
+   F,
+   X;
+
+   val description: String
+      get() = Locale.text(this::class, name + "_DESCRIPTION")
 }
 
