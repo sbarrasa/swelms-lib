@@ -3,6 +3,7 @@ package com.swelms.domain.id.card
 import com.swelms.common.locale.Locale
 import com.swelms.common.locale.localeText
 import com.swelms.common.locale.replaceSlots
+import com.swelms.common.reflection.qName
 import com.swelms.domain.validator.DigitsValidator
 import com.swelms.domain.validator.ValidatorException
 import com.swelms.domain.validator.LuhnValidator
@@ -33,7 +34,7 @@ value class CardNumber(val value: String) {
    }
 
    companion object{
-      val LOCALE_CLASS_NAME = Locale.text(CardNumber::class, "CARD_NUMBER")
+      val LOCALE_CLASS_NAME = Locale.text(CardNumber::class.qName, "CARD_NUMBER")
       fun from(cardNumber: String) = CardNumber(cardNumber.filter { it.isDigit() })
    }
    override fun toString(): String = value

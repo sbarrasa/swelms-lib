@@ -1,5 +1,6 @@
 package com.swelms.domain.person
 
+import com.swelms.domain.name.NamePart
 import kotlin.test.*
 
 class NamePartTest {

@@ -5,6 +5,7 @@ import kotlin.test.*
 import com.swelms.domain.validator.ValidatorException
 import com.swelms.common.locale.*
 import com.swelms.common.locale.localeText
+import com.swelms.common.reflection.qName
 import com.swelms.domain.id.cuit.Cuit
 
 
@@ -39,7 +40,7 @@ class CuitTest {
    @Test
    fun invalidCheckDigit() {
       val e = assertFailsWith<ValidatorException> { Cuit("20329642331") }
-      assertContains(e.message ?: "", Locale.text(CheckDigitValidator::class, "INVALID_CHECK_DIGIT"))
+      assertContains(e.message ?: "", Locale.text(CheckDigitValidator::class.qName, "INVALID_CHECK_DIGIT"))
    }
 
    @Test

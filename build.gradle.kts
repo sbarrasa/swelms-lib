@@ -26,8 +26,9 @@ dependencies {
    implementation("io.ktor:ktor-server-status-pages:$ktorVersion")
    implementation("io.ktor:ktor-server-openapi:$ktorVersion")
    implementation("io.ktor:ktor-server-swagger:$ktorVersion")
-   implementation("org.junit.jupiter:junit-jupiter:5.14.0")
-   testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
+   implementation("io.ktor:ktor-server-call-logging:${ktorVersion}")
+
+   implementation("org.jetbrains.kotlinx:kotlinx-serialization-hocon:1.7.3")
 
    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
    implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
@@ -37,10 +38,11 @@ dependencies {
    implementation("com.h2database:h2:$h2Version")
    implementation("org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion")
    implementation("ch.qos.logback:logback-classic:$logbackVersion")
-   implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
 
    testImplementation(kotlin("test"))
    testImplementation("io.ktor:ktor-server-test-host-jvm:${ktorVersion}")
+   implementation("org.junit.jupiter:junit-jupiter:5.14.0")
+   testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
 }
 
 kotlin {

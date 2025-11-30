@@ -1,15 +1,19 @@
 package com.swelms.common.locale
 
+import com.swelms.common.reflection.qName
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format
 import kotlinx.datetime.format.*
 import kotlin.test.*
 
 class LocaleTest {
-   init {
-      Locale.registerConfigs(LocaleConfig_ar, LocaleConfig_es, LocaleConfig_en)
+   @BeforeTest
+   fun setuo() {
+      Locale.registerConfigs(Regional_ar, Lang_es, Lang_en)
       Locale.lang = "es"
       Locale.regional = "ar"
+      Locale.keyOnMissing = true
+      Locale.defaultOnMissing = true
    }
 
    @Test
@@ -19,7 +23,7 @@ class LocaleTest {
 
    @Test
    fun testLangTextWithParams() {
-      assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class, "OUT_OF_RANGE").replaceSlots(1, 10))
+      assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class.qName, "OUT_OF_RANGE").replaceSlots(1, 10))
    }
 
    @OptIn(FormatStringsInDatetimeFormats::class)
@@ -33,12 +37,13 @@ class LocaleTest {
 
    @Test
    fun testNoValue() {
-      assertEquals("NO_VALUE", Locale.text(IntRange::class, "NO_VALUE"))
+      assertEquals("NO_VALUE", Locale.text(IntRange::class.qName, "NO_VALUE"))
    }
 
    @Test
    fun testFail() {
-      val e = assertFailsWith<LocaleException> { Locale.text(IntRange::class, "key", false) }
+      Locale.keyOnMissing = false
+      val e = assertFailsWith<LocaleException> { Locale.text(IntRange::class.qName, "key") }
       assertEquals("NO_TEXT_FOUND key", e.message)
    }
 
@@ -47,6 +52,7 @@ class LocaleTest {
       Locale.lang = null
 
       assertEquals("TEST", localeText("TEST"))
+
    }
 
    @Test

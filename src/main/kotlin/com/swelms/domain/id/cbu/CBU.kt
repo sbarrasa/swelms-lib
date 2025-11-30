@@ -1,6 +1,7 @@
 package com.swelms.domain.id.cbu
 
 import com.swelms.common.locale.*
+import com.swelms.common.reflection.qName
 import com.swelms.domain.validator.DigitsValidator
 import com.swelms.domain.validator.LengthValidator
 import kotlinx.serialization.Serializable
@@ -45,7 +46,7 @@ value class CBU(val value: String) {
 
    companion object {
       var SIZE = 22
-      val LOCALE_CLASS_NAME = Locale.text(CBU::class, "CBU")
+      val LOCALE_CLASS_NAME = Locale.text(CBU::class.qName, "CBU")
    }
 
    override fun toString(): String = value

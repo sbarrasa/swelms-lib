@@ -1,9 +1,8 @@
-package com.swelms.domain.person
-
+package com.swelms.domain.name
 
 data class NamePart(override val text: String) : Names {
    init {
-      Names.validate(text)
+      Names.Companion.validate(text)
    }
 
    override fun toString(): String = text

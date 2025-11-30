@@ -1,4 +1,4 @@
-package com.swelms.domain.person
+package com.swelms.domain.name
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind
@@ -19,4 +19,3 @@ object NamePartSerializer : KSerializer<NamePart> {
       return NamePart(decoder.decodeString())
    }
 }
-

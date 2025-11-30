@@ -1,6 +1,7 @@
 package com.swelms.domain.id.cuit
 
 import com.swelms.common.locale.*
+import com.swelms.common.reflection.qName
 import com.swelms.domain.validator.ValidatorException
 import com.swelms.domain.validator.DigitsValidator
 import com.swelms.domain.validator.LengthValidator
@@ -41,7 +42,7 @@ value class Cuit(val value: String) {
 
    companion object {
       const val SIZE = 11
-      val LOCALE_CLASS_NAME = Locale.text(Cuit::class, "CUIT")
+      val LOCALE_CLASS_NAME = Locale.text(Cuit::class.qName, "CUIT")
    }
 
    fun formated() = "$entityCode-$document-$check"
@@ -52,7 +53,7 @@ value class Cuit(val value: String) {
       COMPANY;
 
       val description: String
-         get() = Locale.text(this::class, name)
+         get() = Locale.text(qName, name)
    }
 
 

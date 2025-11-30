@@ -1,75 +1,77 @@
 package com.bank.locale
 
 import com.bank.database.CustomerService
-import com.bank.model.customer.Gender
+import com.swelms.domain.person.Gender
 import com.swelms.common.collections.Catalog
 import com.swelms.common.locale.AbstractLangConfig
+import com.swelms.common.locale.Locale
 import com.swelms.domain.id.card.CardNumber
 import com.swelms.domain.id.cbu.CBU
 import com.swelms.domain.id.cuit.Cuit
-import com.swelms.domain.person.FullName
-import com.swelms.domain.person.NamePart
+import com.swelms.domain.name.FullName
+import com.swelms.domain.name.NamePart
 import com.swelms.domain.validator.CheckDigitValidator
+import com.swelms.common.reflection.qName
 
-object LocaleConfig_es : AbstractLangConfig() {
-   override val locale_id: String = "es"
+object LocaleConfig_es : AbstractLangConfig {
+   override val locale_id = "es"
 
-   override fun onLoad() {
-      defaults {
-         it["NO_CLASS_NAME"] = "La clase debe tener un nombre simple"
-         it["TEST"] = "Prueba"
-         it["NOT_IMPLEMENTED"] = "Aún no está implementado"
-         it["OUT_OF_RANGE"] = "El valor debe estar entre {1} y {2}"
-         it["INVALID_LENGTH"] = "{0} debe tener {1} dígitos numéricos"
-         it["ONLY_DIGITS"] = "{0} sólo puede contener dígitos numérico"
-      }
+   override val textsByModule = mapOf(
+      Locale.DEFAULT to mutableMapOf(
+         "NO_CLASS_NAME"   to "La clase debe tener un nombre simple",
+         "TEST"            to "Prueba",
+         "NOT_IMPLEMENTED" to "Aún no está implementado",
+         "OUT_OF_RANGE"    to "El valor debe estar entre {1} y {2}",
+         "INVALID_LENGTH"  to "{0} debe tener {1} dígitos numéricos",
+         "ONLY_DIGITS"     to "{0} sólo puede contener dígitos numérico"
+      ),
 
-      forClass<Cuit.EntityType>{
-         it["PERSON_DESCRIPTION"] = "persona física"
-         it["COMPANY_DESCRIPTION"] = "persona jurídica"
-      }
-      forClass<Cuit> {
-         it["CUIT"] = "CUIT/CUIL"
-         it["INVALID_ENTITY_CODE"] = "Código de entidad inválido"
-      }
+      Cuit.EntityType::class.qName to mutableMapOf(
+         "PERSON_DESCRIPTION"  to "persona física",
+         "COMPANY_DESCRIPTION" to "persona jurídica"
+      ),
 
-      forClass<CBU> {
-         it["BRANCH"] = "Entidad/sucursal"
-         it["ACCOUNT"] = "Número de cuenta"
-      }
+      Cuit::class.qName to mutableMapOf(
+         "CUIT"                to "CUIT/CUIL",
+         "INVALID_ENTITY_CODE" to "Código de entidad inválido"
+      ),
 
-      forClass<CardNumber> {
-         it["CARD_NUMBER"] = "Número de tarjeta"
-         it["INVALID_LENGTH"] = "{0}: longitud inválida"
-      }
+      CBU::class.qName to mutableMapOf(
+         "BRANCH"  to "Entidad/sucursal",
+         "ACCOUNT" to "Número de cuenta"
+      ),
 
-      forClass<NamePart> {
-         it["INVALID_FORMAT"] = "Los nombres sólo pueden incluir letras, apóstrofes y acentos"
-      }
+      CardNumber::class.qName to mutableMapOf(
+         "CARD_NUMBER"    to "Número de tarjeta",
+         "INVALID_LENGTH" to "{0}: longitud inválida"
+      ),
 
-      forClass<FullName> {
-         it["INVALID_FORMAT"] = "Formato valido debe ser 'Apellidos, Nombres' "
-      }
+      NamePart::class.qName to mutableMapOf(
+         "INVALID_FORMAT" to "Los nombres sólo pueden incluir letras, apóstrofes y acentos"
+      ),
 
-      forClass<CheckDigitValidator> {
-         it["INVALID_CHECK_DIGIT"] = "Dígito verificador inválido para {0}"
-      }
+      FullName::class.qName to mutableMapOf(
+         "INVALID_FORMAT" to "Formato valido debe ser 'Apellidos, Nombres'"
+      ),
 
-      forClass<Catalog> {
-         it["NO_CLASS_NAME"] = "La clase debe tener nombre"
-      }
+      CheckDigitValidator::class.qName to mutableMapOf(
+         "INVALID_CHECK_DIGIT" to "Dígito verificador inválido para {0}"
+      ),
 
-      forClass<CustomerService> {
-         it["CUSTOMER_NOT_FOUND"] = "Cliente no encontrado"
-         it["ID_CANT_BE_EMPTY"] = "Debe especificar un Customer.ID"
-         it["INVALID_CUSTOMER_ID"] = "Customer.ID inválido"
-      }
+      Catalog::class.qName to mutableMapOf(
+         "NO_CLASS_NAME" to "La clase debe tener nombre"
+      ),
 
-      forClass<Gender> {
-         it["M"] = "Masculino"
-         it["F"] = "Femenino"
-         it["X"] = "Sin definición"
-      }
+      CustomerService::class.qName to mutableMapOf(
+         "CUSTOMER_NOT_FOUND"  to "Cliente no encontrado",
+         "ID_CANT_BE_EMPTY"    to "Debe especificar un Customer.ID",
+         "INVALID_CUSTOMER_ID" to "Customer.ID inválido"
+      ),
 
-   }
+      Gender::class.qName to mutableMapOf(
+         "M" to "Masculino",
+         "F" to "Femenino",
+         "X" to "Sin definición"
+      )
+   )
 }

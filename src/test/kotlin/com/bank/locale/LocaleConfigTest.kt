@@ -1,6 +1,6 @@
 package com.bank.locale
 
-import com.bank.model.customer.Gender
+import com.swelms.domain.person.Gender
 import kotlin.test.*
 import com.swelms.domain.id.cuit.Cuit
 import com.swelms.common.locale.*
@@ -11,6 +11,17 @@ class LocaleConfigFullTest {
    @BeforeTest
    fun setup() {
       Locale.registerConfigs(LocaleConfig_ar, LocaleConfig_us, LocaleConfig_es, LocaleConfig_en)
+   }
+
+   @Test
+   fun showAll(){
+      Locale.langsMap.forEach { (lang, cfg) ->
+         println(lang)
+         cfg.textsByModule.forEach { (module, texts) ->
+            println("  $module")
+            texts.forEach { (key, value) -> println("   $key = $value") }
+         }
+      }
    }
 
    @Test

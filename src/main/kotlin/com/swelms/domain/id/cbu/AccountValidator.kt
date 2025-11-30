@@ -1,10 +1,11 @@
 package com.swelms.domain.id.cbu
 
 import com.swelms.common.locale.Locale
+import com.swelms.common.reflection.qName
 import com.swelms.domain.validator.CheckDigitValidator
 
 
-object AccountValidator : CheckDigitValidator(Locale.text(CBU::class, "ACCOUNT")) {
+object AccountValidator : CheckDigitValidator(Locale.text(CBU::class.qName, "ACCOUNT")) {
    private val weights = listOf(3, 9, 7, 1, 3, 9, 7, 1, 3, 9, 7, 1, 3)
 
    override fun compute(digits: List<Int>): Int {

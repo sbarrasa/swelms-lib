@@ -1,6 +1,6 @@
 package com.bank.database
 
-import com.bank.model.customer.Gender
+import com.swelms.domain.person.Gender
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.kotlin.datetime.date
 

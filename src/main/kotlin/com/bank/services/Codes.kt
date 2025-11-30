@@ -1,6 +1,6 @@
 package com.bank.services
 
-import com.bank.model.customer.Gender
+import com.swelms.domain.person.Gender
 import com.bank.model.products.structure.Currency
 import com.swelms.common.collections.*
 import com.swelms.common.locale.localeText

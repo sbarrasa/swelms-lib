@@ -1,5 +1,7 @@
 package com.swelms.domain.person
 
+import com.swelms.domain.name.NamePart
+import com.swelms.domain.name.NamePartSerializer
 import kotlinx.serialization.*
 import kotlinx.serialization.json.Json
 import kotlin.test.Test

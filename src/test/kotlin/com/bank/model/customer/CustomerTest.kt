@@ -1,7 +1,8 @@
 package com.bank.model.customer
 
 import com.swelms.domain.id.cuit.Cuit
-import com.swelms.domain.person.FullName
+import com.swelms.domain.name.FullName
+import com.swelms.domain.person.Gender
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.Month
 import kotlinx.serialization.json.Json
