@@ -8,5 +8,5 @@ fun configLocale() {
    val lang = System.getenv("lang")
    Locale.registerConfigs(LocaleConfig_us, LocaleConfig_ar, LocaleConfig_en, LocaleConfig_es )
    Locale.lang = lang
-   println("lang=$Locale.lang")
+   println("lang=${Locale.lang}")
 }

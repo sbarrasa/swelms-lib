@@ -1,7 +1,7 @@
 package com.bank.locale
 
-import com.bank.model.products.structure.Currency
 import com.swelms.common.locale.AbstractRegionalConfig
+import com.swelms.domain.locale.Currency
 import kotlin.collections.set
 
 object LocaleConfig_us: AbstractRegionalConfig {

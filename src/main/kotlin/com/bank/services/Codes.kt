@@ -1,7 +1,7 @@
 package com.bank.services
 
 import com.swelms.domain.person.Gender
-import com.bank.model.products.structure.Currency
+import com.bank.model.products.structure.CurrencySet
 import com.swelms.common.collections.*
 import com.swelms.common.locale.localeText
 import com.swelms.common.text.Case
@@ -16,7 +16,7 @@ object Codes: Catalog(Case.SNAKE) {
       put(ProductTypes)
       put(Gender::class.mapTo { it.description })
       put(CardBrand::class.mapTo { it.description })
-      put(Currency::class.mapTo { it.description })
+      put(CurrencySet.associate { it.name to it.localeDescription })
    }
 }
 

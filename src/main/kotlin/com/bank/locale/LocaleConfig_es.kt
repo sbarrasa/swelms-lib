@@ -12,6 +12,7 @@ import com.swelms.domain.name.FullName
 import com.swelms.domain.name.NamePart
 import com.swelms.domain.validator.CheckDigitValidator
 import com.swelms.common.reflection.qName
+import com.swelms.domain.locale.Currency
 
 object LocaleConfig_es : AbstractLangConfig {
    override val locale_id = "es"
@@ -72,6 +73,13 @@ object LocaleConfig_es : AbstractLangConfig {
          "M" to "Masculino",
          "F" to "Femenino",
          "X" to "Sin definición"
+      ),
+
+      Currency::class.qName to mutableMapOf(
+         Currency.ARS.name to "pesos argentinos",
+         Currency.USD.name to "dolares estadounidenses",
+         Currency.EUR.name to "euros",
+         Currency.BRL.name to "real brazilero"
       )
    )
 }

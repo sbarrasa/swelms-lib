@@ -1,6 +1,7 @@
 package com.bank.model.products.structure
 
 import com.swelms.domain.id.cbu.CBU
+import com.swelms.domain.locale.Currency
 import kotlinx.serialization.Serializable
 
 @Serializable

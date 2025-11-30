@@ -2,9 +2,9 @@ package com.bank.model.products
 
 import com.bank.model.products.structure.Account
 import com.bank.model.products.structure.CreditProduct
-import com.bank.model.products.structure.Currency
 import com.bank.model.products.structure.ProductDescriptor
 import com.swelms.domain.id.cbu.CBU
+import com.swelms.domain.locale.Currency
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
