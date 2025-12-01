@@ -1,4 +1,4 @@
-package com.swelms.domain.name
+package com.swelms.domain.person.name
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind

@@ -4,21 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="mejoras y simplifciacion de Locale&#10;ahora permite crwear ibjetos mas simples y cargar desde cualquier serializable">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/CurrencySet.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/locale/Currency.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Currency commo clase general con todas las monedas del mundo &#10;localeDescription para los Currency">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/LangBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/RegionalBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/lang_en.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/configLocale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/configLocale.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/CustomerProductsTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/database/CustomerProductsTable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_ar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_ar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_en.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_es.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_es.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_us.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/LocaleConfig_us.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Account.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Currency.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProductTypesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProductTypesTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Customer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/Customer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/CustomerService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/locale/Locale.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/name/FullName.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/person/name/FullName.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/name/FullNameSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/person/name/FullNameSerializer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/name/NamePart.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/person/name/NamePart.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/name/NamePartSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/person/name/NamePartSerializer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/name/Names.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/person/name/Names.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/customer/CustomerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/Lang_es.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTestHocon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/locale/LocaleTestHocon.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/FullNameSerializationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/FullNameSerializationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/FullNameTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/FullNameTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/NamePartSerializationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/NamePartSerializationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/NamePartTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/NamePartTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/NamesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/person/NamesTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/lang_es.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/lang_es.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +195,7 @@
     "Gradle.LocaleTest.testNoValue.executor": "Run",
     "Gradle.LocaleTest.testNolang.executor": "Run",
     "Gradle.LocaleTestHocon.executor": "Run",
+    "Gradle.LocaleTestHocon.testWithSlots.executor": "Run",
     "Gradle.RatingTest.average2.executor": "Run",
     "Gradle.RatingTest.executor": "Run",
     "Gradle.RatingTest.invalidRange.executor": "Run",
@@ -288,11 +298,11 @@
       <recent name="com.bank.locale.lang.pp" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.swelms.common.locale" />
       <recent name="com.swelms.domain.locale" />
       <recent name="com.swelms.common.locale.objects" />
       <recent name="com.swelms.domain.person.name" />
       <recent name="com.swelms.domain.person" />
-      <recent name="com.swelms.common.locale" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -313,7 +323,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.LocaleTestHocon">
+  <component name="RunManager" selected="Gradle.LocaleTestHocon.testWithSlots">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -350,7 +360,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'bank-kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LocaleTestHocon.testWithSlots" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -362,6 +372,8 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.swelms.common.locale.LocaleTestHocon.testWithSlots&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -424,7 +436,7 @@
       <option name="includeProvidedScope" value="false" />
       <option name="mainClass" value="com.bank.MainKt" />
       <option name="passParentEnvs" value="true" />
-      <option name="programParameters" value="" />
+      <option name="programParameters" />
       <option name="shortenCommandLine" />
       <option name="vmParameters" />
       <option name="workingDirectory" value="C:\develop\bank-kotlin" />
@@ -435,9 +447,9 @@
     <list>
       <item itemvalue="Application.BankServer" />
       <item itemvalue="Application.H2 Server" />
+      <item itemvalue="Gradle.LocaleTestHocon.testWithSlots" />
       <item itemvalue="Gradle.LocaleTestHocon" />
       <item itemvalue="Gradle.Tests in 'com.swelms.common.locale'" />
-      <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
       <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
       <item itemvalue="JUnit.All in bank-kotlin.main" />
       <item itemvalue="Kotlin.startServer" />
@@ -445,11 +457,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LocaleTestHocon.testWithSlots" />
         <item itemvalue="Gradle.LocaleTestHocon" />
         <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
         <item itemvalue="JUnit.All in bank-kotlin.main" />
         <item itemvalue="Gradle.Tests in 'com.swelms.common.locale'" />
-        <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
       </list>
     </recent_temporary>
   </component>
@@ -486,15 +498,8 @@
       <workItem from="1764468962754" duration="102000" />
       <workItem from="1764470795640" duration="654000" />
       <workItem from="1764471960777" duration="719000" />
-      <workItem from="1764519330178" duration="18448000" />
-    </task>
-    <task id="LOCAL-00005" summary="Locale framework extension funcion">
-      <option name="closed" value="true" />
-      <created>1763861989164</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1763861989164</updated>
+      <workItem from="1764519330178" duration="24071000" />
+      <workItem from="1764551889841" duration="1892000" />
     </task>
     <task id="LOCAL-00006" summary="Ktor simplificacions de modulos">
       <option name="closed" value="true" />
@@ -880,14 +885,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764533983578</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Currency commo clase general con todas las monedas del mundo &#10;localeDescription para los Currency">
+      <option name="closed" value="true" />
+      <created>1764539613720</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1764539613720</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="CustomersTable.kt mejoras" />
     <MESSAGE value="mejora de mapeos CustomerService.kt" />
     <MESSAGE value="workspace.xml" />
     <MESSAGE value="Renombre de package &#10;swelms" />
@@ -912,7 +924,8 @@
     <MESSAGE value="Locale de domain components" />
     <MESSAGE value="Tests de locale de domio" />
     <MESSAGE value="mejoras y simplifciacion de Locale&#10;ahora permite crwear ibjetos mas simples y cargar desde cualquier serializable" />
-    <option name="LAST_COMMIT_MESSAGE" value="mejoras y simplifciacion de Locale&#10;ahora permite crwear ibjetos mas simples y cargar desde cualquier serializable" />
+    <MESSAGE value="Currency commo clase general con todas las monedas del mundo &#10;localeDescription para los Currency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Currency commo clase general con todas las monedas del mundo &#10;localeDescription para los Currency" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

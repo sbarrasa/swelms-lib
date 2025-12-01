@@ -59,15 +59,15 @@ object Locale {
 
 
    @JvmStatic
-   fun textOrNull(module: String? = null, key: String): String? {
+   fun textOrNull(module: String = Locale.DEFAULT, key: String): String? {
       val text = currentLang?.textsByModule[module]?.get(key)
-      if(text == null && defaultOnMissing && module != DEFAULT) return textOrNull(DEFAULT, key)
+      if(text == null && defaultOnMissing && module != DEFAULT) return textOrNull(key = key)
       return text
    }
 
 
    @JvmStatic
-   fun text(module: String? = null,  key: String): String {
+   fun text(module: String = Locale.DEFAULT,  key: String): String {
       val text = textOrNull(module, key)
       if(text == null) {
          if (keyOnMissing || module == qName) return key

@@ -8,8 +8,8 @@ import com.swelms.common.locale.Locale
 import com.swelms.domain.id.card.CardNumber
 import com.swelms.domain.id.cbu.CBU
 import com.swelms.domain.id.cuit.Cuit
-import com.swelms.domain.name.FullName
-import com.swelms.domain.name.NamePart
+import com.swelms.domain.person.name.FullName
+import com.swelms.domain.person.name.NamePart
 import com.swelms.domain.validator.CheckDigitValidator
 import com.swelms.common.reflection.qName
 

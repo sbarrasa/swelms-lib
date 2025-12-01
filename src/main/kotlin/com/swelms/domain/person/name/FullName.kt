@@ -1,4 +1,4 @@
-package com.swelms.domain.name
+package com.swelms.domain.person.name
 
 import com.swelms.common.locale.localeText
 

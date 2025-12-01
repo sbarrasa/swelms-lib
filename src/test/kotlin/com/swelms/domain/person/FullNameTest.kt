@@ -1,9 +1,9 @@
 package com.swelms.domain.person
 
 import com.swelms.common.locale.localeText
-import com.swelms.domain.name.FullName
-import com.swelms.domain.name.FullNameFormatter
-import com.swelms.domain.name.NamePart
+import com.swelms.domain.person.name.FullName
+import com.swelms.domain.person.name.FullNameFormatter
+import com.swelms.domain.person.name.NamePart
 import kotlin.test.*
 
 class FullNameTest {

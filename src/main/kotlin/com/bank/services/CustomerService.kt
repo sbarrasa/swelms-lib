@@ -1,7 +1,7 @@
 package com.bank.database
 
 import com.bank.model.customer.Customer
-import com.swelms.domain.name.FullName
+import com.swelms.domain.person.name.FullName
 import com.swelms.domain.id.cuit.Cuit
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
