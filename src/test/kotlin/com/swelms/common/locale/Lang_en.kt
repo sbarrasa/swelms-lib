@@ -2,7 +2,7 @@ package com.swelms.common.locale
 
 import com.swelms.common.reflection.qName
 
-object Lang_en : AbstractLangConfig {
+object Lang_en : LangInterface {
    override val locale_id = "en"
 
    override val textsByModule = mapOf(

@@ -4,7 +4,7 @@ package com.swelms.common.text
 
 class StringSlots(val text: String, val slotRegex: Regex = Companion.slotRegex) {
 
-   fun replace(vararg values: Any): String {
+   fun replace(vararg values: Any?): String {
       val result = StringBuilder(text)
       for (match in slots.asReversed()) {
          val index = match.index

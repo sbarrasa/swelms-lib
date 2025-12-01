@@ -10,7 +10,7 @@ class LocaleConfigFullTest {
 
    @BeforeTest
    fun setup() {
-      Locale.registerConfigs(LocaleConfig_ar, LocaleConfig_us, LocaleConfig_es, LocaleConfig_en)
+      Locale.registerConfigs(regional_ar, regional_us, lang_es, lang_en)
    }
 
    @Test

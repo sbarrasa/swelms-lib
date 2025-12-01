@@ -1,5 +1,5 @@
 package com.swelms.common.locale
 
-interface AbstractRegionalConfig : AbstractLocaleConfig {
+interface Regionalinterface : LocaleInterface {
    val valueMap: Map<String, Any>
 }

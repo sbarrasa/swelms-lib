@@ -2,24 +2,24 @@ package com.swelms.common.locale
 
 import com.swelms.common.reflection.qName
 
-class LangBuilder(localeId: String, block: LangBuilder.() -> Unit) : AbstractLangConfig {
-   override val locale_id = localeId
-   override val textsByModule: MutableMap<String, MutableMap<String, String>> = mutableMapOf()
+open class LangBuilder(override val locale_id: String) : LangInterface {
 
-   init {
-      block()
+   constructor(locale_id: String, block: LangBuilder.() -> Unit) : this(locale_id) {
+      this.block()
    }
 
+   override val textsByModule: MutableMap<String, MutableMap<String, String>> = mutableMapOf()
+
    fun default(block: (MutableMap<String, String>) -> Unit) {
-      textsByModule.getOrPut("default") { mutableMapOf() }.also(block)
+      textsByModule["default"] = mutableMapOf<String, String>().also(block)
    }
 
    inline fun <reified T> module(block: (MutableMap<String, String>) -> Unit) {
-      textsByModule.getOrPut(T::class.qName) { mutableMapOf() }.also(block)
+      textsByModule[T::class.qName] = mutableMapOf<String, String>().also(block)
    }
 
    fun module(name: String, block: (MutableMap<String, String>) -> Unit) {
-      textsByModule.getOrPut(name) { mutableMapOf() }.also(block)
+      textsByModule[name] = mutableMapOf<String, String>().also(block)
    }
-
 }
+

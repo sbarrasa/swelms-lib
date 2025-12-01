@@ -25,8 +25,8 @@ object Locale {
          field = value
       }
 
-   val langsMap: MutableMap<String, AbstractLangConfig> = mutableMapOf()
-   val regionalsMap: MutableMap<String, AbstractRegionalConfig> = mutableMapOf()
+   val langsMap: MutableMap<String, LangInterface> = mutableMapOf()
+   val regionalsMap: MutableMap<String, Regionalinterface> = mutableMapOf()
 
    val currentLang get() =  langsMap[lang]
 
@@ -34,15 +34,15 @@ object Locale {
 
 
    @JvmStatic
-   fun registerConfigs(vararg cfgs: AbstractLocaleConfig) {
+   fun registerConfigs(vararg cfgs: LocaleInterface) {
       cfgs.forEach { registerConfig(it) }
    }
 
    @JvmStatic
-   fun registerConfig(cfg: AbstractLocaleConfig) {
+   fun registerConfig(cfg: LocaleInterface) {
       when (cfg) {
-         is AbstractLangConfig -> langsMap[cfg.locale_id] = cfg
-         is AbstractRegionalConfig -> regionalsMap[cfg.locale_id] = cfg
+         is LangInterface -> langsMap[cfg.locale_id] = cfg
+         is Regionalinterface -> regionalsMap[cfg.locale_id] = cfg
       }
    }
 
@@ -81,6 +81,6 @@ object Locale {
 
 fun Any.localeText(key: String) = Locale.text(qName, key)
 
-fun String.replaceSlots(vararg values: Any): String = StringSlots(this).replace(*values)
+fun String.replaceSlots(vararg values: Any?): String = StringSlots(this).replace(*values)
 
 

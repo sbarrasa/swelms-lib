@@ -1,6 +1,6 @@
 package com.swelms.common.locale
 
 
-interface AbstractLangConfig: AbstractLocaleConfig {
+interface LangInterface: LocaleInterface {
    val textsByModule: Map<String, MutableMap<String, String>>
 }
