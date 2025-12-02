@@ -5,7 +5,7 @@ import com.swelms.common.reflection.qName
 object Lang_es : LangInterface {
    override val locale_id = "es"
 
-   override val textsByModule = mapOf(
+   override val moduleTextMap = mapOf(
       Locale.DEFAULT to mutableMapOf(
          "GENERAL" to "Este es un mensaje general",
          "TEST"            to "Prueba",

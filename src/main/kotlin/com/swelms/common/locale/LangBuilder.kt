@@ -8,7 +8,7 @@ open class LangBuilder(override val locale_id: String) : LangInterface {
    constructor(locale_id: String, block: LangBuilder.() -> Unit) : this(locale_id) {
       this.block()
    }
-   override val textsByModule = mutableMapOf<String, MutableMap<String,String>>()
+   override val moduleTextMap = mutableMapOf<String, MutableMap<String,String>>()
 
    val MutableMap<String,String>.key get() = this
 
@@ -19,6 +19,6 @@ open class LangBuilder(override val locale_id: String) : LangInterface {
       module(T::class.qName, block)
 
    fun module(name: String, block: LangBlock) {
-      textsByModule[name] = mutableMapOf<String,String>().apply(block)
+      moduleTextMap[name] = mutableMapOf<String,String>().apply(block)
    }
 }

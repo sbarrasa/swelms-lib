@@ -17,7 +17,7 @@ class LocaleConfigFullTest {
    fun showAll(){
       Locale.langsMap.forEach { (lang, cfg) ->
          println(lang)
-         cfg.textsByModule.forEach { (module, texts) ->
+         cfg.moduleTextMap.forEach { (module, texts) ->
             println("  $module")
             texts.forEach { (key, value) -> println("   $key = $value") }
          }

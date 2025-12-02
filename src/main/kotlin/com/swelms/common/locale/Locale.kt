@@ -60,7 +60,7 @@ object Locale {
 
    @JvmStatic
    fun textOrNull(module: String = Locale.DEFAULT, key: String): String? {
-      val text = currentLang?.textsByModule[module]?.get(key)
+      val text = currentLang?.moduleTextMap[module]?.get(key)
       if(text == null && defaultOnMissing && module != DEFAULT) return textOrNull(key = key)
       return text
    }
