@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="locale DSL">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/CurrencySet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/ActiveCurrencySet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/ProductTypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/ProductTypes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/tests.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Iterable.associate.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/http/CodesApiTest.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/http/CodesApiTest.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/http/CustomerApiTest.http" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Mejoras EnumMap &#10;simplificacion de ProductTypes.kt">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_en.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_en.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_es.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_es.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditCardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditCardProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/DebitCardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/DebitCardProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/ProductDescriptor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/ProductDescriptor.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -425,15 +423,7 @@
       <workItem from="1764556192379" duration="1021000" />
       <workItem from="1764566547220" duration="4262000" />
       <workItem from="1764604622181" duration="5322000" />
-      <workItem from="1764622600317" duration="12817000" />
-    </task>
-    <task id="LOCAL-00010" summary="exposed CustomerService.kt rempaza Exposedrepository&#10;se elimina el framework Repository se  simplifica con exposed DSL">
-      <option name="closed" value="true" />
-      <created>1763941033244</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1763941033244</updated>
+      <workItem from="1764622600317" duration="13611000" />
     </task>
     <task id="LOCAL-00011" summary="clean">
       <option name="closed" value="true" />
@@ -819,14 +809,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764635336329</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Mejoras EnumMap &#10;simplificacion de ProductTypes.kt">
+      <option name="closed" value="true" />
+      <created>1764640309051</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1764640309052</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Renombre de package &#10;swelms" />
     <MESSAGE value="customer copyTo en update" />
     <MESSAGE value="FullNameSerializer.kt" />
     <MESSAGE value="FullNameSerializer.kt&#10;elimimnacion de copyTo&#10;eliminacion de SingleValue" />
@@ -851,7 +848,8 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="Locale builders" />
     <MESSAGE value="locale DSL" />
-    <option name="LAST_COMMIT_MESSAGE" value="locale DSL" />
+    <MESSAGE value="Mejoras EnumMap &#10;simplificacion de ProductTypes.kt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mejoras EnumMap &#10;simplificacion de ProductTypes.kt" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

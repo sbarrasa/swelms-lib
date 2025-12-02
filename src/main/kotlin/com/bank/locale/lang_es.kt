@@ -1,9 +1,15 @@
 package com.bank.locale
 
 import com.bank.database.CustomerService
+import com.bank.model.products.CheckingAccount
+import com.bank.model.products.CreditCardProduct
+import com.bank.model.products.DebitCardProduct
+import com.bank.model.products.SavingAccount
+import com.bank.model.products.structure.Product
 import com.swelms.domain.person.Gender
 import com.swelms.common.collections.Catalog
 import com.swelms.common.locale.LangBuilder
+import com.swelms.common.text.snakeCase
 import com.swelms.domain.id.card.CardNumber
 import com.swelms.domain.id.cbu.CBU
 import com.swelms.domain.id.cuit.Cuit
@@ -75,6 +81,13 @@ val lang_es = LangBuilder("es") {
       key[Currency.USD.name] = "dólares estadounidenses"
       key[Currency.EUR.name] = "euros"
       key[Currency.BRL.name] = "real brasileño"
+   }
+
+   module(Product.MODULE){
+      key["TD"] = "Tarjeta de débito"
+      key["TC"] = "Tarjeta de crédito"
+      key["CC"] = "Checking Account"
+      key["CA"] = "Savings Account"
    }
 }
 

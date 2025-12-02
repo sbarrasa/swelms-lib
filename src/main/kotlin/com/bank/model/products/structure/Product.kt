@@ -11,4 +11,10 @@ abstract class Product {
 
    val descriptor: ProductDescriptor?
       get() = this::class.companionObjectInstance as? ProductDescriptor
+
+   companion object {
+      const val MODULE = "products"
+   }
+
+
 }

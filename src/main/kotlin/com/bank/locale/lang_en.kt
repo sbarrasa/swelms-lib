@@ -1,5 +1,6 @@
 package com.bank.locale
 
+import com.bank.model.products.structure.Product
 import com.swelms.domain.person.Gender
 import com.swelms.common.collections.Catalog
 import com.swelms.common.locale.LangBuilder
@@ -66,5 +67,12 @@ val lang_en = LangBuilder("en") {
       key["M"] = "Male"
       key["F"] = "Female"
       key["X"] = "Undefine"
+   }
+
+   module(Product.MODULE){
+      key["TD"] = "Debit card"
+      key["TC"] = "Credit card"
+      key["CC"] = "Cuenta "
+      key["CA"] = "Saving Account"
    }
 }
