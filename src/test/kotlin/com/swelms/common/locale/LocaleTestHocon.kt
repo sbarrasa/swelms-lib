@@ -4,6 +4,7 @@ import com.swelms.common.reflection.qName
 import com.typesafe.config.ConfigFactory
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.hocon.Hocon
+import kotlinx.serialization.hocon.decodeFromConfig
 import kotlin.test.*
 
 class LocaleTestHocon {
@@ -11,13 +12,11 @@ class LocaleTestHocon {
    @OptIn(ExperimentalSerializationApi::class)
    @BeforeTest
    fun setup(){
-      val lang_es = Hocon.decodeFromConfig(
-         LangConfig.serializer(),
-         ConfigFactory.load("lang_es.conf")
-      )
+      val cfg = ConfigFactory.parseResources("lang_es.conf")
+      val lang_es = Hocon.decodeFromConfig<Lang>(cfg)
 
       val lang_en = Hocon.decodeFromConfig(
-         LangConfig.serializer(),
+         Lang.serializer(),
          ConfigFactory.parseResources("lang_en.conf")
       )
 

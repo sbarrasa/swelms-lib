@@ -11,60 +11,60 @@ import com.swelms.domain.person.name.NamePart
 import com.swelms.domain.validator.CheckDigitValidator
 
 val lang_en = LangBuilder("en") {
-   default {
-      it["NO_CLASS_NAME"] = "Class must have simple name"
-      it["TEST"] = "Test"
-      it["NOT_IMPLEMENTED"] = "Not implemented yet"
-      it["OUT_OF_RANGE"] = "The value must be between {1} and {2}"
-      it["INVALID_LENGTH"] = "{0} must have {1} numeric digits"
-      it["ONLY_DIGITS"] = "{0} can contain only numbers"
+   defaults {
+      key["NO_CLASS_NAME"] = "Class must have simple name"
+      key["TEST"] = "Test"
+      key["NOT_IMPLEMENTED"] = "Not implemented yet"
+      key["OUT_OF_RANGE"] = "The value must be between {1} and {2}"
+      key["INVALID_LENGTH"] = "{0} must have {1} numeric digits"
+      key["ONLY_DIGITS"] = "{0} can contain only numbers"
    }
 
    module<Cuit.EntityType> {
-      it["PERSON"] = "individual"
-      it["COMPANY"] = "company"
+      key["PERSON"] = "individual"
+      key["COMPANY"] = "company"
    }
 
    module<Cuit> {
-      it["CUIT"] = "CUIT/CUIL"
-      it["INVALID_ENTITY_CODE"] = "Invalid entity code"
+      key["CUIT"] = "CUIT/CUIL"
+      key["INVALID_ENTITY_CODE"] = "Invalid entity code"
    }
 
    module<CBU> {
-      it["CBU"] = "CBU"
-      it["BRANCH"] = "Branch"
-      it["ACCOUNT"] = "Account number"
+      key["CBU"] = "CBU"
+      key["BRANCH"] = "Branch"
+      key["ACCOUNT"] = "Account number"
    }
 
    module<CardNumber> {
-      it["CARD_NUMBER"] = "Card number"
+      key["CARD_NUMBER"] = "Card number"
    }
 
    module<NamePart> {
-      it["INVALID_FORMAT"] = "Names can only contain letters, apostrophes and accents"
+      key["INVALID_FORMAT"] = "Names can only contain letters, apostrophes and accents"
    }
 
    module<FullName> {
-      it["INVALID_FORMAT"] = "Valid format is: 'Last Names, First Names'"
+      key["INVALID_FORMAT"] = "Valid format is: 'Last Names, First Names'"
    }
 
    module<CheckDigitValidator> {
-      it["INVALID_CHECK_DIGIT"] = "Invalid check digit for {0}"
+      key["INVALID_CHECK_DIGIT"] = "Invalid check digit for {0}"
    }
 
    module<Catalog> {
-      it["NO_CLASS_NAME"] = "Class need a name"
+      key["NO_CLASS_NAME"] = "Class need a name"
    }
 
    module("CustomerService") {
-      it["CUSTOMER_NOT_FOUND"] = "Customer not found"
-      it["ID_CANT_BE_EMPTY"] = "Customer ID cannot be empty"
-      it["INVALID_CUSTOMER_ID"] = "Invalid customer ID"
+      key["CUSTOMER_NOT_FOUND"] = "Customer not found"
+      key["ID_CANT_BE_EMPTY"] = "Customer ID cannot be empty"
+      key["INVALID_CUSTOMER_ID"] = "Invalid customer ID"
    }
 
    module<Gender> {
-      it["M"] = "Male"
-      it["F"] = "Female"
-      it["X"] = "Undefine"
+      key["M"] = "Male"
+      key["F"] = "Female"
+      key["X"] = "Undefine"
    }
 }

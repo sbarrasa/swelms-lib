@@ -12,7 +12,7 @@ class LocaleTestJson {
    @BeforeTest
    fun setup() {
       val jsonStr = File("src/test/resources/lang_es.json").readText()
-      val lang_es = Json.decodeFromString(LangConfig.serializer(), jsonStr)
+      val lang_es = Json.decodeFromString<Lang>(jsonStr)
 
       Locale.registerConfigs(lang_es)
       Locale.lang = "es"
