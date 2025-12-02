@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Cambio de lang on line">
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Mejoras en cuit&#10;Reload de codes">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/Validator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/configRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/configRoutes.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_es.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_es.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/StringMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/StringMap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/StringSlot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/text/StringSlot.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitEntityCodes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitEntityCodes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitEntityCodes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/locale/Currency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/locale/Currency.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/CheckDigitValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/CheckDigitValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/DigitsValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/DigitsValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/LengthValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/LengthValidator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/LuhnValidator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/validator/LuhnValidator.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,129 +152,129 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build bank-kotlin.executor": "Run",
-    "Gradle.CaseConversionTest.executor": "Run",
-    "Gradle.CaseConversionTest.sampleCase.executor": "Run",
-    "Gradle.CaseTest.executor": "Run",
-    "Gradle.CopyTest.executor": "Run",
-    "Gradle.CustomerTest.cuitEntityType.executor": "Run",
-    "Gradle.CustomerTest.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.FullNameSerializationTest.executor": "Run",
-    "Gradle.FullNameTest.executor": "Run",
-    "Gradle.FullNameTest.formatters.executor": "Run",
-    "Gradle.FullNameTest.initialsTestFormat.executor": "Run",
-    "Gradle.LangTest.executor": "Run",
-    "Gradle.LangTest.testLang.executor": "Run",
-    "Gradle.LocaleConfigFullTest.executor": "Run",
-    "Gradle.LocaleConfigFullTest.showAll.executor": "Run",
-    "Gradle.LocaleConfigFullTest.testMissingRegionalKey.executor": "Run",
-    "Gradle.LocaleConfigFullTest.testNonexistentRegional.executor": "Run",
-    "Gradle.LocaleConfigFullTest.textChangeLang.executor": "Run",
-    "Gradle.LocaleFullTest.executor": "Run",
-    "Gradle.LocaleTest (1).executor": "Run",
-    "Gradle.LocaleTest.executor": "Run",
-    "Gradle.LocaleTest.invalidValueClass.executor": "Run",
-    "Gradle.LocaleTest.registerOnTheFly.executor": "Run",
-    "Gradle.LocaleTest.showAll.executor": "Run",
-    "Gradle.LocaleTest.test.executor": "Run",
-    "Gradle.LocaleTest.testFail.executor": "Debug",
-    "Gradle.LocaleTest.testLang.executor": "Run",
-    "Gradle.LocaleTest.testNoValue.executor": "Run",
-    "Gradle.LocaleTest.testNolang.executor": "Run",
-    "Gradle.LocaleTestHocon.executor": "Run",
-    "Gradle.LocaleTestHocon.testWithSlots.executor": "Run",
-    "Gradle.LocaleTestJson.executor": "Run",
-    "Gradle.RatingTest.average2.executor": "Run",
-    "Gradle.RatingTest.executor": "Run",
-    "Gradle.RatingTest.invalidRange.executor": "Run",
-    "Gradle.SingleValueSerializerTest.executor": "Run",
-    "Gradle.SingleValueTests.SingleValueType.executor": "Run",
-    "Gradle.SingleValueTests.executor": "Run",
-    "Gradle.StringSlotsTest.executor": "Run",
-    "Gradle.Tests in 'bank-kotlin.test'.executor": "Run",
-    "Gradle.Tests in 'com.bank.locale'.executor": "Run",
-    "Gradle.Tests in 'com.sbarrasa'.executor": "Run",
-    "Gradle.Tests in 'com.swelms'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common.locale'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common.reflection'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common.singlevalue'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.domain.person'.executor": "Run",
-    "Gradle.bank-kotlin [:com.bank.MainKt.main()].executor": "Run",
-    "Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor": "Run",
-    "Gradle.bank-kotlin [assemble].executor": "Run",
-    "Gradle.bank-kotlin [build].executor": "Run",
-    "Gradle.bank-kotlin [clean].executor": "Run",
-    "HTTP Request.All in CodesApiTest.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener códigos.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener géneros.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener marcas.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener monedas.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener tipos de producto.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener todos los códigos.executor": "Run",
-    "HTTP Request.ConfigApiTest | Cambiar lang a en.executor": "Run",
-    "HTTP Request.ConfigApiTest | Cambiar lang a es.executor": "Run",
-    "HTTP Request.ConfigApiTest | Cambiar lang a null.executor": "Run",
-    "HTTP Request.ConfigApiTest | Cambiar lang.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener códigos.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener géneros.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener marcas.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener monedas.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener tipos de cuit.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener todos los códigos.executor": "Run",
-    "HTTP Request.CustomerApiTest | Actualizar un customer#1.executor": "Run",
-    "HTTP Request.CustomerApiTest | Actualizar un customer#2.executor": "Run",
-    "HTTP Request.CustomerApiTest | Actualizar un customer#3.executor": "Run",
-    "HTTP Request.CustomerApiTest | Buscar.executor": "Run",
-    "HTTP Request.CustomerApiTest | Crear otra persona.executor": "Run",
-    "HTTP Request.CustomerApiTest | Crear una empresa.executor": "Run",
-    "HTTP Request.CustomerApiTest | Crear una persona.executor": "Run",
-    "HTTP Request.CustomerApiTest | Eliminar un customer.executor": "Run",
-    "HTTP Request.CustomerApiTest | Intento de actualizar un id.executor": "Run",
-    "HTTP Request.CustomerApiTest | Listar todos los customers.executor": "Run",
-    "HTTP Request.CustomerApiTest | Obtener customer con id invalido.executor": "Run",
-    "HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor": "Run",
-    "HTTP Request.CustomerApiTest | Obtener customer por id.executor": "Run",
-    "HTTP Request.CustomerApiTest | Obtener entityType de un Customer.executor": "Run",
-    "JUnit.All in bank-kotlin.main.executor": "Run",
-    "JUnit.LocaleTestHocon.executor": "Run",
-    "Ktor.MainKt.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cidr.known.project.marker": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/develop/bank-kotlin/src/test/kotlin/com/swelms/common/text",
-    "last_opened_file_path": "C:/develop/bank-kotlin/src/test/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.23723404",
-    "settings.editor.selected.configurable": "kotlinNotebook.newNotebook",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build bank-kotlin.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CaseConversionTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CaseConversionTest.sampleCase.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CaseTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CopyTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomerTest.cuitEntityType.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FullNameSerializationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FullNameTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FullNameTest.formatters.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FullNameTest.initialsTestFormat.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LangTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LangTest.testLang.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.showAll.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.testMissingRegionalKey.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.testNonexistentRegional.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.textChangeLang.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleFullTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.invalidValueClass.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.registerOnTheFly.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.showAll.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.testFail.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.LocaleTest.testLang.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.testNoValue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.testNolang.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTestHocon.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTestHocon.testWithSlots.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTestJson.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RatingTest.average2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RatingTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RatingTest.invalidRange.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SingleValueSerializerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SingleValueTests.SingleValueType.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SingleValueTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.StringSlotsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'bank-kotlin.test'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.bank.locale'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.sbarrasa'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common.locale'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common.reflection'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common.singlevalue'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.domain.person'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [:com.bank.MainKt.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [clean].executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.All in CodesApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener códigos.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener géneros.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener marcas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener monedas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener tipos de producto.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener todos los códigos.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Cambiar lang a en.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Cambiar lang a es.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Cambiar lang a null.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Cambiar lang.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener códigos.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener géneros.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener marcas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener monedas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener tipos de cuit.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener todos los códigos.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Actualizar un customer#1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Actualizar un customer#2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Actualizar un customer#3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Buscar.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Crear otra persona.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Crear una empresa.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Crear una persona.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Eliminar un customer.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Intento de actualizar un id.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Listar todos los customers.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Obtener customer con id invalido.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Obtener customer por id.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Obtener entityType de un Customer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in bank-kotlin.main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LocaleTestHocon.executor&quot;: &quot;Run&quot;,
+    &quot;Ktor.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/develop/bank-kotlin/src/test/kotlin/com/swelms/common/text&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/develop/bank-kotlin/src/test/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.23723404&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;kotlinNotebook.newNotebook&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\develop\bank-kotlin\src\test\resources" />
@@ -320,8 +325,8 @@
             <map>
               <entry key="ConfigApiTest | Cambiar lang a en" value="STOPPED" />
               <entry key="ConfigApiTest | Cambiar lang a es" value="STOPPED" />
+              <entry key="ConfigApiTest | Cambiar lang a null" value="STOPPED" />
               <entry key="ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" value="STOPPED" />
-              <entry key="ConfigApiTest | Obtener tipos de cuit" value="STOPPED" />
               <entry key="ConfigApiTest | Obtener todos los códigos" value="STOPPED" />
             </map>
           </value>
@@ -348,10 +353,10 @@
     <configuration name="ConfigApiTest | Cambiar lang a es" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Cambiar lang a es" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Obtener descripcion de los codigos de entidad de los cuits" index="10" runType="Run single request">
+    <configuration name="ConfigApiTest | Cambiar lang a null" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Cambiar lang a null" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="ConfigApiTest | Obtener tipos de cuit" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Obtener tipos de cuit" index="9" runType="Run single request">
+    <configuration name="ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Obtener descripcion de los codigos de entidad de los cuits" index="10" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="ConfigApiTest | Obtener todos los códigos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Obtener todos los códigos" index="11" runType="Run single request">
@@ -385,21 +390,21 @@
     <list>
       <item itemvalue="Application.BankServer" />
       <item itemvalue="Application.H2 Server" />
+      <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a null" />
       <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a en" />
       <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a es" />
       <item itemvalue="HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" />
-      <item itemvalue="HTTP Request.ConfigApiTest | Obtener tipos de cuit" />
       <item itemvalue="HTTP Request.ConfigApiTest | Obtener todos los códigos" />
       <item itemvalue="Kotlin.startServer" />
       <item itemvalue="Ktor.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" />
-        <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a en" />
-        <item itemvalue="HTTP Request.ConfigApiTest | Obtener tipos de cuit" />
-        <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a es" />
         <item itemvalue="HTTP Request.ConfigApiTest | Obtener todos los códigos" />
+        <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a null" />
+        <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a en" />
+        <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a es" />
+        <item itemvalue="HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" />
       </list>
     </recent_temporary>
   </component>
@@ -441,15 +446,8 @@
       <workItem from="1764556192379" duration="1021000" />
       <workItem from="1764566547220" duration="4262000" />
       <workItem from="1764604622181" duration="5322000" />
-      <workItem from="1764622600317" duration="23214000" />
-    </task>
-    <task id="LOCAL-00013" summary="locale">
-      <option name="closed" value="true" />
-      <created>1763958881004</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1763958881004</updated>
+      <workItem from="1764622600317" duration="23261000" />
+      <workItem from="1764694429671" duration="3823000" />
     </task>
     <task id="LOCAL-00014" summary="locale">
       <option name="closed" value="true" />
@@ -835,14 +833,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764642802145</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Mejoras en cuit&#10;Reload de codes">
+      <option name="closed" value="true" />
+      <created>1764650843421</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1764650843421</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FullNameSerializer.kt&#10;elimimnacion de copyTo&#10;eliminacion de SingleValue" />
     <MESSAGE value="Names framework refactor" />
     <MESSAGE value="LocaleTest" />
     <MESSAGE value="rating" />
@@ -867,7 +872,8 @@
     <MESSAGE value="Mejoras EnumMap &#10;simplificacion de ProductTypes.kt" />
     <MESSAGE value="Locale lang para nombres de productos" />
     <MESSAGE value="Cambio de lang on line" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio de lang on line" />
+    <MESSAGE value="Mejoras en cuit&#10;Reload de codes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mejoras en cuit&#10;Reload de codes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

@@ -27,7 +27,6 @@ class StringSlots(val text: String, val slotRegex: Regex = Companion.slotRegex) 
    val indexSlice = if (minIndex == 0) 0 else 1
    companion object{
       var slotRegex = "\\{(\\d+)}".toRegex()
-
    }
 
    override fun toString(): String = text

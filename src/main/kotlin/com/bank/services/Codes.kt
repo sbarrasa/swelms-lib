@@ -15,7 +15,7 @@ object Codes: Catalog(Case.SNAKE) {
 
    fun init(){
       put(Cuit.EntityType.entries.mapTo { it.description })
-      put(CuitEntityCodes)
+      put(Cuit.EntityCodes)
       put(ProductTypes)
       put(Gender.entries.mapTo { it.description })
       put(CardBrand.entries.mapTo { it.description })

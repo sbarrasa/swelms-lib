@@ -13,11 +13,19 @@ import kotlin.collections.get
 fun Application.configRoutes() {
    routing {
       route("/lang") {
+         put("/") {
+            Locale.lang = null
+            Codes.init()
+            call.respond(mapOf("lang" to Locale.lang))
+         }
+
          put("/{lang}") {
             call.parameters["lang"]?.let { Locale.lang = it }
             Codes.init()
             call.respond(mapOf("lang" to Locale.lang))
          }
+
+
       }
       route("/codes") {
          get("/all") {

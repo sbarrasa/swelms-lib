@@ -168,4 +168,5 @@ enum class Currency(
    ZWL("$", "ZW", "dollar");
 
    val localeDescription get () = Locale.textOrNull(qName, name) ?: description
+
 }

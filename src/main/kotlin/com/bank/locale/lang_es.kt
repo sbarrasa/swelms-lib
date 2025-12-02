@@ -1,19 +1,13 @@
 package com.bank.locale
 
 import com.bank.database.CustomerService
-import com.bank.model.products.CheckingAccount
-import com.bank.model.products.CreditCardProduct
-import com.bank.model.products.DebitCardProduct
-import com.bank.model.products.SavingAccount
 import com.bank.model.products.structure.Product
 import com.swelms.domain.person.Gender
 import com.swelms.common.collections.Catalog
 import com.swelms.common.locale.LangBuilder
-import com.swelms.common.text.snakeCase
 import com.swelms.domain.id.card.CardNumber
 import com.swelms.domain.id.cbu.CBU
 import com.swelms.domain.id.cuit.Cuit
-import com.swelms.domain.id.cuit.CuitEntityCodes
 import com.swelms.domain.person.name.FullName
 import com.swelms.domain.person.name.NamePart
 import com.swelms.domain.validator.CheckDigitValidator
@@ -29,24 +23,28 @@ val lang_es = LangBuilder("es") {
       key["ONLY_DIGITS"] = "{0} sólo puede contener dígitos numérico"
    }
 
+   module<Cuit> {
+      key["CUIT"] = "CUIT/CUIL"
+      key["INVALID_ENTITY_CODE"] = "Código de entidad inválido"
+   }
+
    module<Cuit.EntityType> {
       key["PERSON"] = "persona física"
       key["COMPANY"] = "persona jurídica"
    }
 
-   module<CuitEntityCodes> {
-      key["20"] = "(masculino)"
-      key["23"] = "(por duplicación)"
-      key["24"] = "(por duplicación)"
-      key["25"] = "(por duplicación)"
-      key["26"] = "(por duplicación)"
-      key["27"] = "(femenino)"
+   module<Cuit.EntityCodes> {
+      key["20"] = "persona física (hombre)"
+      key["23"] = "persona física (casos especiales / duplicados)"
+      key["24"] = "persona física (variante técnica)"
+      key["25"] = "persona física (variante técnica)"
+      key["26"] = "persona física (variante técnica)"
+      key["27"] = "persona física (mujer)"
+      key["30"] = "persona jurídica / sociedad"
+      key["33"] = "persona jurídica / entidad"
+      key["34"] = "persona jurídica / otra variante"
    }
 
-   module<Cuit> {
-      key["CUIT"] = "CUIT/CUIL"
-      key["INVALID_ENTITY_CODE"] = "Código de entidad inválido"
-   }
 
    module<CBU> {
       key["BRANCH"] = "Entidad/sucursal"

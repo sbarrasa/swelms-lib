@@ -1,5 +1,6 @@
 package com.swelms.domain.id.cuit
 
+import com.swelms.common.collections.Mappeable
 import com.swelms.common.locale.*
 import com.swelms.common.reflection.qName
 import com.swelms.domain.validator.ValidatorException
@@ -15,7 +16,7 @@ value class Cuit(val value: String) {
    val document: String get() = value.substring(2, 10)
    val check: Char get() = value.substring(10, 11)[0]
 
-   val entityType: EntityType get() = CuitEntityCodes[entityCode]!!.entityType
+   val entityType: EntityType get() = EntityCodes[entityCode]!!.entityType
 
    init {
       validateLength()
@@ -33,7 +34,7 @@ value class Cuit(val value: String) {
    }
 
    private fun validateEntityCode() {
-      if (CuitEntityCodes[entityCode] == null) throw ValidatorException(localeText("INVALID_ENTITY_CODE"))
+      if (EntityCodes[entityCode] == null) throw ValidatorException(localeText("INVALID_ENTITY_CODE"))
    }
 
    private fun validateCheckDigit() {
@@ -56,6 +57,31 @@ value class Cuit(val value: String) {
          get() = Locale.text(qName, name)
    }
 
+   object EntityCodes :
+      Mappeable<String, String>,
+      Set<EntityCodes.Info> by setOf(
+         Info("20", Cuit.EntityType.PERSON),
+         Info("23", Cuit.EntityType.PERSON),
+         Info("24", Cuit.EntityType.PERSON),
+         Info("25", Cuit.EntityType.PERSON),
+         Info("26", Cuit.EntityType.PERSON),
+         Info("27", Cuit.EntityType.PERSON),
+         Info("30", Cuit.EntityType.COMPANY),
+         Info("33", Cuit.EntityType.COMPANY),
+         Info("34", Cuit.EntityType.COMPANY)
+      ) {
+
+      class Info(val key: String, val entityType: Cuit.EntityType) {
+         val description: String
+            get() = Locale.textOrNull(EntityCodes::class.qName, key)
+               ?: "${entityType.description}".trim()
+
+         override fun toString() = description
+      }
+
+      operator fun get(key: String) = find { it.key == key }
+      override fun asMap(): Map<String, String> = associate { it.key to it.description }
+   }
 
 
 }
