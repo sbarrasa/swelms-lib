@@ -1,6 +1,6 @@
 package com.swelms.domain.validator
 
-class LuhnValidator(name: String?=null) : CheckDigitValidator(name) {
+class LuhnValidator(message: String) : CheckDigitValidator(message) {
    override fun compute(digits: List<Int>): Int {
       var sum = 0
       val size = digits.size

@@ -3,7 +3,7 @@ package com.swelms.domain.validator
 import com.swelms.common.locale.Locale
 import com.swelms.common.reflection.qName
 
-abstract class CheckDigitValidator(val msg: String?=null) {
+abstract class CheckDigitValidator(val message: String) {
 
    abstract fun compute(digits: List<Int>): Int
 
@@ -24,8 +24,7 @@ abstract class CheckDigitValidator(val msg: String?=null) {
 
    fun validate(digits: List<Int>, vd: Int) {
       val expected = compute(digits)
-      if (expected != vd) throw ValidatorException("${Locale.text(CheckDigitValidator::class.qName, "INVALID_CHECK_DIGIT")}: $msg")
+      if (expected != vd) throw ValidatorException(message)
    }
-
 
 }
