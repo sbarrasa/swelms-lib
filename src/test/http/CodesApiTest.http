@@ -7,7 +7,7 @@ GET http://localhost:8080/codes/gender
 Accept: application/json
 
 ### Obtener marcas
-GET http://localhost:8080/codes/card_branch
+GET http://localhost:8080/codes/card_brand
 Accept: application/json
 
 ### Obtener monedas

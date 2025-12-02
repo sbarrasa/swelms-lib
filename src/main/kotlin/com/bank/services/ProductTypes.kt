@@ -7,7 +7,6 @@ import com.bank.model.products.SavingAccount
 import com.bank.model.products.structure.Product
 import com.bank.model.products.structure.ProductDescriptor
 import com.swelms.common.collections.Mappeable
-import com.swelms.common.collections.associateIfNotNull
 import com.swelms.common.collections.ClassHierarchy
 import kotlin.reflect.KClass
 import kotlin.reflect.full.companionObjectInstance
@@ -30,11 +29,12 @@ object ProductTypes:
       clazz.companionObjectInstance as? ProductDescriptor
 
 
-   override fun asMap(): Map<String, String> {
-      return subClasses.associateIfNotNull {
-         clazz -> getDescriptor(clazz)?.let { it.type to it.description }
-      }
-   }
-
+   override fun asMap(): Map<String, String> =
+      subClasses.mapNotNull {
+         clazz -> getDescriptor(clazz)
+            ?.let { it.type to it.description }
+      }.toMap()
 
 }
+
+

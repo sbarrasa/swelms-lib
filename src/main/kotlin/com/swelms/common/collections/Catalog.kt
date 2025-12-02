@@ -22,5 +22,6 @@ open class Catalog(val case: Case?) : LinkedHashMap<String, StringMap>() {
 
    fun put(map: EnumMap<*,*>) = put(map.enumClass, map)
 
+
 }
 

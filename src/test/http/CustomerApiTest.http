@@ -51,7 +51,7 @@ Content-Type: application/json
 }
 
 ### Actualizar un customer
-PUT http://localhost:8080/customers/363
+PUT http://localhost:8080/customers/1
 Content-Type: application/json
 
 {
