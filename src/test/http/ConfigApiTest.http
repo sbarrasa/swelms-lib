@@ -1,3 +1,13 @@
+### Cambiar lang a en
+PUT http://localhost:8080/lang/en
+
+### Cambiar lang a es
+PUT http://localhost:8080/lang/es
+
+### Cambiar lang a null
+PUT http://localhost:8080/lang/
+
+
 ### Obtener códigos
 GET http://localhost:8080/codes/
 Accept: application/json

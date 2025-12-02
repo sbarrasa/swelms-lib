@@ -72,7 +72,7 @@ val lang_en = LangBuilder("en") {
    module(Product.MODULE){
       key["TD"] = "Debit card"
       key["TC"] = "Credit card"
-      key["CC"] = "Cuenta "
-      key["CA"] = "Saving Account"
+      key["CC"] = "Checking account"
+      key["CA"] = "Saving account"
    }
 }

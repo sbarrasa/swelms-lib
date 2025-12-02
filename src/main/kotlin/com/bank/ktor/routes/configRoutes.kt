@@ -1,14 +1,22 @@
 package com.bank.ktor.routes
 
 import com.bank.services.Codes
+import com.swelms.common.locale.Locale
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*
+import io.ktor.server.request.receive
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlin.collections.get
 
-fun Application.codesRoutes() {
+fun Application.configRoutes() {
    routing {
+      route("/lang") {
+         put("/{lang}") {
+            call.parameters["lang"]?.let { Locale.lang = it }
+            call.respond(mapOf("lang" to Locale.lang))
+         }
+      }
       route("/codes") {
          get("/all") {
             call.respond(Codes)
@@ -23,6 +31,8 @@ fun Application.codesRoutes() {
             val map = Codes[code] ?: throw NotFoundException("Code $code not found")
             call.respond(map)
          }
+
+
       }
    }
 }
