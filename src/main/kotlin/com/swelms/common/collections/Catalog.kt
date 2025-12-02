@@ -4,6 +4,7 @@ import com.swelms.common.locale.localeText
 import com.swelms.common.text.Case
 import com.swelms.common.text.toCase
 import kotlin.reflect.KClass
+
 open class Catalog(val case: Case?) : LinkedHashMap<String, StringMap>() {
 
    private fun applyCase(key: String) = case?.let { key.toCase(it) } ?: key

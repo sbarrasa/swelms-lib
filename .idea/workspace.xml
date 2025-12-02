@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Locale lang para nombres de productos">
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Cambio de lang on line">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/configModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/configModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/codesRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/configRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/FallbackStringMap.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/http/CodesApiTest.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/configRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/configRoutes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_es.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_es.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Catalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/StringMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/StringMap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitEntityCodes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/CuitEntityCodes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,9 +84,10 @@
         <option value="KotlinTest" />
         <option value="kotlin.jupyter.empty" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Class" />
         <option value="HTTP Public Environment File" />
         <option value="HTTP Private Environment File" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -207,7 +212,16 @@
     "HTTP Request.CodesApiTest | Obtener tipos de producto.executor": "Run",
     "HTTP Request.CodesApiTest | Obtener todos los códigos.executor": "Run",
     "HTTP Request.ConfigApiTest | Cambiar lang a en.executor": "Run",
+    "HTTP Request.ConfigApiTest | Cambiar lang a es.executor": "Run",
+    "HTTP Request.ConfigApiTest | Cambiar lang a null.executor": "Run",
     "HTTP Request.ConfigApiTest | Cambiar lang.executor": "Run",
+    "HTTP Request.ConfigApiTest | Obtener códigos.executor": "Run",
+    "HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor": "Run",
+    "HTTP Request.ConfigApiTest | Obtener géneros.executor": "Run",
+    "HTTP Request.ConfigApiTest | Obtener marcas.executor": "Run",
+    "HTTP Request.ConfigApiTest | Obtener monedas.executor": "Run",
+    "HTTP Request.ConfigApiTest | Obtener tipos de cuit.executor": "Run",
+    "HTTP Request.ConfigApiTest | Obtener todos los códigos.executor": "Run",
     "HTTP Request.CustomerApiTest | Actualizar un customer#1.executor": "Run",
     "HTTP Request.CustomerApiTest | Actualizar un customer#2.executor": "Run",
     "HTTP Request.CustomerApiTest | Actualizar un customer#3.executor": "Run",
@@ -224,7 +238,7 @@
     "HTTP Request.CustomerApiTest | Obtener entityType de un Customer.executor": "Run",
     "JUnit.All in bank-kotlin.main.executor": "Run",
     "JUnit.LocaleTestHocon.executor": "Run",
-    "Ktor.MainKt.executor": "Debug",
+    "Ktor.MainKt.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -304,8 +318,11 @@
         <entry key="HttpClient.HttpRequestRunConfigurationType">
           <value>
             <map>
-              <entry key="ConfigApiTest | Cambiar lang" value="STOPPED" />
               <entry key="ConfigApiTest | Cambiar lang a en" value="STOPPED" />
+              <entry key="ConfigApiTest | Cambiar lang a es" value="STOPPED" />
+              <entry key="ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" value="STOPPED" />
+              <entry key="ConfigApiTest | Obtener tipos de cuit" value="STOPPED" />
+              <entry key="ConfigApiTest | Obtener todos los códigos" value="STOPPED" />
             </map>
           </value>
         </entry>
@@ -325,16 +342,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodesApiTest | Obtener monedas" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CodesApiTest.http" executionIdentifier="Obtener monedas" index="4" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="CodesApiTest | Obtener todos los códigos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/CodesApiTest.http" executionIdentifier="Obtener todos los códigos" index="8" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="ConfigApiTest | Cambiar lang a en" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Cambiar lang a en" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="ConfigApiTest | Cambiar lang" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Cambiar lang" runType="Run single request">
+    <configuration name="ConfigApiTest | Cambiar lang a es" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Cambiar lang a es" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Obtener descripcion de los codigos de entidad de los cuits" index="10" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ConfigApiTest | Obtener tipos de cuit" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Obtener tipos de cuit" index="9" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="ConfigApiTest | Obtener todos los códigos" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/test/http/ConfigApiTest.http" executionIdentifier="Obtener todos los códigos" index="11" runType="Run single request">
@@ -368,21 +385,21 @@
     <list>
       <item itemvalue="Application.BankServer" />
       <item itemvalue="Application.H2 Server" />
-      <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang" />
       <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a en" />
+      <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a es" />
+      <item itemvalue="HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" />
+      <item itemvalue="HTTP Request.ConfigApiTest | Obtener tipos de cuit" />
       <item itemvalue="HTTP Request.ConfigApiTest | Obtener todos los códigos" />
-      <item itemvalue="HTTP Request.CodesApiTest | Obtener monedas" />
-      <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
       <item itemvalue="Kotlin.startServer" />
       <item itemvalue="Ktor.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.ConfigApiTest | Obtener todos los códigos" />
+        <item itemvalue="HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits" />
         <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a en" />
-        <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang" />
-        <item itemvalue="HTTP Request.CodesApiTest | Obtener todos los códigos" />
-        <item itemvalue="HTTP Request.CodesApiTest | Obtener monedas" />
+        <item itemvalue="HTTP Request.ConfigApiTest | Obtener tipos de cuit" />
+        <item itemvalue="HTTP Request.ConfigApiTest | Cambiar lang a es" />
+        <item itemvalue="HTTP Request.ConfigApiTest | Obtener todos los códigos" />
       </list>
     </recent_temporary>
   </component>
@@ -424,15 +441,7 @@
       <workItem from="1764556192379" duration="1021000" />
       <workItem from="1764566547220" duration="4262000" />
       <workItem from="1764604622181" duration="5322000" />
-      <workItem from="1764622600317" duration="15116000" />
-    </task>
-    <task id="LOCAL-00012" summary="clean">
-      <option name="closed" value="true" />
-      <created>1763941510461</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1763941510461</updated>
+      <workItem from="1764622600317" duration="23214000" />
     </task>
     <task id="LOCAL-00013" summary="locale">
       <option name="closed" value="true" />
@@ -818,14 +827,21 @@
       <option name="project" value="LOCAL" />
       <updated>1764641196649</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Cambio de lang on line">
+      <option name="closed" value="true" />
+      <created>1764642802145</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1764642802145</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FullNameSerializer.kt" />
     <MESSAGE value="FullNameSerializer.kt&#10;elimimnacion de copyTo&#10;eliminacion de SingleValue" />
     <MESSAGE value="Names framework refactor" />
     <MESSAGE value="LocaleTest" />
@@ -850,21 +866,8 @@
     <MESSAGE value="locale DSL" />
     <MESSAGE value="Mejoras EnumMap &#10;simplificacion de ProductTypes.kt" />
     <MESSAGE value="Locale lang para nombres de productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Locale lang para nombres de productos" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/routes/configRoutes.kt</url>
-          <line>15</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Cambio de lang on line" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambio de lang on line" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bank_kotlin$Tests_in__bank_kotlin_test_.ic" NAME="Tests in 'bank-kotlin.test' Coverage Results" MODIFIED="1763933544034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

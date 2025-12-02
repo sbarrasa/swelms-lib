@@ -33,7 +33,7 @@ GET http://localhost:8080/codes/entity_type
 Accept: application/json
 
 ### Obtener descripcion de los codigos de entidad de los cuits
-GET http://localhost:8080/codes/entity_codes
+GET http://localhost:8080/codes/cuit_entity_codes
 Accept: application/json
 
 ### Obtener todos los códigos

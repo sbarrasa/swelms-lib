@@ -6,11 +6,14 @@ import com.swelms.common.collections.*
 import com.swelms.common.text.Case
 import com.swelms.domain.id.card.CardBrand
 import com.swelms.domain.id.cuit.*
-import com.swelms.domain.locale.Currency
 
 
 object Codes: Catalog(Case.SNAKE) {
    init {
+      init()
+   }
+
+   fun init(){
       put(Cuit.EntityType.entries.mapTo { it.description })
       put(CuitEntityCodes)
       put(ProductTypes)

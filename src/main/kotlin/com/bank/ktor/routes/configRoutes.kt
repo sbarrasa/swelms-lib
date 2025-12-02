@@ -1,6 +1,7 @@
 package com.bank.ktor.routes
 
 import com.bank.services.Codes
+import com.swelms.common.collections.Catalog
 import com.swelms.common.locale.Locale
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*
@@ -14,6 +15,7 @@ fun Application.configRoutes() {
       route("/lang") {
          put("/{lang}") {
             call.parameters["lang"]?.let { Locale.lang = it }
+            Codes.init()
             call.respond(mapOf("lang" to Locale.lang))
          }
       }

@@ -33,7 +33,7 @@ value class Cuit(val value: String) {
    }
 
    private fun validateEntityCode() {
-      if (!CuitEntityCodes.contains(entityCode)) throw ValidatorException(localeText("INVALID_ENTITY_CODE"))
+      if (CuitEntityCodes[entityCode] == null) throw ValidatorException(localeText("INVALID_ENTITY_CODE"))
    }
 
    private fun validateCheckDigit() {
@@ -55,6 +55,7 @@ value class Cuit(val value: String) {
       val description: String
          get() = Locale.text(qName, name)
    }
+
 
 
 }

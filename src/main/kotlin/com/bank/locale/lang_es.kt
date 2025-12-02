@@ -13,6 +13,7 @@ import com.swelms.common.text.snakeCase
 import com.swelms.domain.id.card.CardNumber
 import com.swelms.domain.id.cbu.CBU
 import com.swelms.domain.id.cuit.Cuit
+import com.swelms.domain.id.cuit.CuitEntityCodes
 import com.swelms.domain.person.name.FullName
 import com.swelms.domain.person.name.NamePart
 import com.swelms.domain.validator.CheckDigitValidator
@@ -29,8 +30,17 @@ val lang_es = LangBuilder("es") {
    }
 
    module<Cuit.EntityType> {
-      key["PERSON_DESCRIPTION"] = "persona física"
-      key["COMPANY_DESCRIPTION"] = "persona jurídica"
+      key["PERSON"] = "persona física"
+      key["COMPANY"] = "persona jurídica"
+   }
+
+   module<CuitEntityCodes> {
+      key["20"] = "(masculino)"
+      key["23"] = "(por duplicación)"
+      key["24"] = "(por duplicación)"
+      key["25"] = "(por duplicación)"
+      key["26"] = "(por duplicación)"
+      key["27"] = "(femenino)"
    }
 
    module<Cuit> {
@@ -89,5 +99,7 @@ val lang_es = LangBuilder("es") {
       key["CC"] = "Checking Account"
       key["CA"] = "Savings Account"
    }
+
+
 }
 
