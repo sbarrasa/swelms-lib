@@ -1,12 +1,10 @@
 package com.bank.services
 
-import com.bank.locale.lang_es
 import com.bank.model.products.CheckingAccount
 import com.bank.model.products.CreditCardProduct
 import com.swelms.common.serialization.decodeFromMap
 import com.swelms.domain.locale.Currency
 import com.bank.model.products.structure.Product
-import com.swelms.common.locale.Locale
 import com.swelms.domain.id.card.CardBrand
 import com.swelms.common.serialization.polymorphic
 import com.swelms.domain.id.cbu.CBU

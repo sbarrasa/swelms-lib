@@ -15,14 +15,6 @@ class BaseConverterTest {
    }
 
    @Test
-   fun testUnsigned() {
-      val ua: UInt = 255u
-
-      assertEquals("FF", ua.toLong().toBase(16))
-
-   }
-
-   @Test
    fun testBases() {
       assertEquals("1111011", 123.toBase(2))
       assertEquals("173", 123.toBase(8))

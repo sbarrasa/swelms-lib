@@ -1,20 +1,12 @@
 package com.swelms.domain.cuit
 
-import com.swelms.domain.validator.CheckDigitValidator
 import kotlin.test.*
 import com.swelms.domain.validator.ValidatorException
-import com.swelms.common.locale.*
 import com.swelms.common.locale.localeText
-import com.swelms.common.reflection.qName
 import com.swelms.domain.id.cuit.Cuit
 
 
 class CuitTest {
-
-   fun pepe(): Unit {
-      throw Exception("Pepe")
-   }
-
 
    @Test
    fun validCuit() {
