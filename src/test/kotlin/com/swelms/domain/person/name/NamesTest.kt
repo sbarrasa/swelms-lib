@@ -1,6 +1,5 @@
-package com.swelms.domain.person
+package com.swelms.domain.person.name
 
-import com.swelms.domain.person.name.Names
 import kotlin.test.*
 
 class NamesTest {
