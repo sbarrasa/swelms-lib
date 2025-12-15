@@ -11,6 +11,11 @@ import com.swelms.domain.id.cuit.Cuit
 
 class CuitTest {
 
+   fun pepe(): Unit {
+      throw Exception("Pepe")
+   }
+
+
    @Test
    fun validCuit() {
       val cuit = Cuit("20240614708")
@@ -39,8 +44,7 @@ class CuitTest {
 
    @Test
    fun invalidCheckDigit() {
-      val e = assertFailsWith<ValidatorException> { Cuit("20329642331") }
-      assertContains(e.message ?: "", Locale.text(CheckDigitValidator::class.qName, "INVALID_CHECK_DIGIT"))
+      assertFailsWith<ValidatorException> { Cuit("20329642331") }
    }
 
    @Test

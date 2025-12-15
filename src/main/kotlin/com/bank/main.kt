@@ -6,7 +6,6 @@ import io.ktor.server.config.HoconApplicationConfig
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 
-
 fun main(args: Array<String>) {
    val env = applicationEngineEnvironment {
       config = HoconApplicationConfig(ConfigFactory.load("application.conf"))

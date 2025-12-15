@@ -1,14 +1,13 @@
 package com.bank.ktor.routes
 
 import com.bank.services.Codes
-import com.swelms.common.collections.Catalog
 import com.swelms.common.locale.Locale
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*
-import io.ktor.server.request.receive
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import kotlin.collections.get
+import io.ktor.server.routing.put
+
 
 fun Application.configRoutes() {
    routing {

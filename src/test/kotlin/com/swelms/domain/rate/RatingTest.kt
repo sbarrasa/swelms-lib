@@ -25,11 +25,9 @@ class RatingTest {
    }
 
    @Test
-   fun invalidRange(){
+   fun invalidRange() {
       val rating = Rating(range = 1..5)
       assertFailsWith<IllegalArgumentException> {  rating.add(10)}
-
-
    }
 
 

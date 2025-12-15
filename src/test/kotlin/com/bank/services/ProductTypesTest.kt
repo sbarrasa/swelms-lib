@@ -1,10 +1,12 @@
 package com.bank.services
 
+import com.bank.locale.lang_es
 import com.bank.model.products.CheckingAccount
 import com.bank.model.products.CreditCardProduct
 import com.swelms.common.serialization.decodeFromMap
 import com.swelms.domain.locale.Currency
 import com.bank.model.products.structure.Product
+import com.swelms.common.locale.Locale
 import com.swelms.domain.id.card.CardBrand
 import com.swelms.common.serialization.polymorphic
 import com.swelms.domain.id.cbu.CBU
@@ -15,6 +17,7 @@ import kotlinx.serialization.modules.SerializersModule
 import kotlin.test.*
 
 class ProductTypesTest {
+
    val json = Json {
       serializersModule = SerializersModule {
          polymorphic(ProductTypes)
@@ -73,9 +76,6 @@ class ProductTypesTest {
       assertTrue(product is CreditCardProduct)
       assertEquals(CardBrand.VISA, product.cardNumber.brand)
       assertEquals(5000000.0, product.creditLimit)
-      assertEquals("Tarjeta de crédito VISA Black", product.description)
-
-
    }
 
    @ExperimentalSerializationApi

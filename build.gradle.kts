@@ -18,6 +18,7 @@ repositories {
    mavenCentral()
 }
 
+
 dependencies {
    implementation("io.ktor:ktor-server-core:$ktorVersion")
    implementation("io.ktor:ktor-server-netty:$ktorVersion")
@@ -43,6 +44,7 @@ dependencies {
    testImplementation("io.ktor:ktor-server-test-host-jvm:${ktorVersion}")
    implementation("org.junit.jupiter:junit-jupiter:5.14.0")
    testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
+
 }
 
 kotlin {

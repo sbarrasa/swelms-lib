@@ -15,3 +15,5 @@ class EnumMap<E : Enum<E>, V> (private val map: Map<E, V>) : Map<E, V> by map {
 
 inline fun <reified E : Enum<E>, V> Iterable<E>.mapTo(mapper: (E) -> V): EnumMap<E, V> =
    EnumMap(this.associateWith(mapper))
+
+fun Catalog.put(mappeable: Mappeable<*, *>) = put(mappeable::class, mappeable.asMap())
