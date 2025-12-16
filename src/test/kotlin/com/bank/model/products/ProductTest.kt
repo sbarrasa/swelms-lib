@@ -22,7 +22,7 @@ class ProductTest {
 
    @Test
    fun listProducts() {
-      ProductTypes.descriptors.forEach {
+      ProductDescriptor.descriptors.forEach {
          with(it){
             println("$productId: $description")
          }
@@ -37,7 +37,7 @@ class ProductTest {
          "currency" to Currency.ARS,
          "creditLimit" to 1000.0
       )
-      val product = ProductTypes["CC"].type.createFromMap(map) as? CheckingAccount
+      val product = ProductDescriptor["CC"].type.createFromMap(map) as? CheckingAccount
       assertNotNull(product)
       assertEquals(Currency.ARS, product.currency)
       assertEquals(1000.0, product.creditLimit)

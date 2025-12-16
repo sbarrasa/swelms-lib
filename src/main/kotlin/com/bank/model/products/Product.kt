@@ -10,5 +10,5 @@ import kotlin.reflect.full.companionObjectInstance
 sealed interface Product {
    val description: String
 
-   val descriptor get() = ProductTypes[this::class]
+   val descriptor get() = ProductDescriptor[this::class]
 }

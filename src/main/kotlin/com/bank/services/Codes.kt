@@ -2,7 +2,7 @@ package com.bank.services
 
 import com.bank.model.products.ActiveCurrencySet
 import com.bank.model.products.Product
-import com.bank.model.products.ProductTypes
+import com.bank.model.products.ProductDescriptor
 import com.swelms.domain.person.Gender
 import com.swelms.common.collections.*
 import com.swelms.common.text.Case
@@ -19,7 +19,7 @@ object Codes: Catalog(Case.SNAKE) {
    fun init(){
       put(Cuit.EntityType.entries.associateTo { it.description })
       put(Cuit.EntityCodes.associate { it.key to it.description })
-      put(ProductTypes.descriptors.associate { it.productId to it.description })
+      put(ProductDescriptor.descriptors.associate { it.productId to it.description })
       put(Gender.entries.associateTo { it.description })
       put(CardBrand.entries.associateTo { it.description })
       put(ActiveCurrencySet.associateTo{ it.localeDescription})
