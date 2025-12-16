@@ -29,7 +29,7 @@ class ProducSerialization {
    fun getDescriptor() {
       val descriptor = CheckingAccount
 
-      assertEquals("CC", descriptor.type)
+      assertEquals("CC", descriptor.typeId)
    }
 
 
@@ -93,7 +93,7 @@ class ProducSerialization {
       val product = json.decodeFromMap<Product>(map)
 
       assertEquals(CreditCardProduct::class, product::class)
-      assertEquals(CreditCardProduct.type, product.descriptor?.type)
+      assertEquals(CreditCardProduct.typeId, product.descriptor?.typeId)
       assertEquals(CreditCardProduct.description, product.descriptor?.description)
 
    }

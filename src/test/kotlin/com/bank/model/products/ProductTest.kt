@@ -24,7 +24,7 @@ class ProductTest {
       Product.types.forEach {
          val descriptor = it.companionObjectInstance as? ProductDescriptor
          with(descriptor!!){
-            println("$type: $description")
+            println("$typeId: $description")
          }
       }
    }

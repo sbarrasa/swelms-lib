@@ -19,7 +19,7 @@ object Codes: Catalog(Case.SNAKE) {
    fun init(){
       put(Cuit.EntityType.entries.associateTo { it.description })
       put(Cuit.EntityCodes.associate { it.key to it.description })
-      put(Product.types.associate { it.descriptor.type to it.descriptor.description  })
+      put(Product.types.associate { it.descriptor.typeId to it.descriptor.description  })
       put(Gender.entries.associateTo { it.description })
       put(CardBrand.entries.associateTo { it.description })
       put(ActiveCurrencySet.associateTo{ it.localeDescription})
