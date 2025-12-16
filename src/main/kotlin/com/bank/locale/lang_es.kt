@@ -1,7 +1,7 @@
 package com.bank.locale
 
 import com.bank.database.CustomerService
-import com.bank.model.products.structure.Product
+import com.bank.model.products.Product
 import com.swelms.domain.person.Gender
 import com.swelms.common.collections.Catalog
 import com.swelms.common.locale.LangBuilder
@@ -91,7 +91,7 @@ val lang_es = LangBuilder("es") {
       key[Currency.BRL.name] = "real brasileño"
    }
 
-   module(Product.MODULE){
+   module<Product>{
       key["TD"] = "Tarjeta de débito"
       key["TC"] = "Tarjeta de crédito"
       key["CC"] = "Checking Account"

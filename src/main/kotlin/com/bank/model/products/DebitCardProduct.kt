@@ -1,8 +1,8 @@
 package com.bank.model.products
 
-import com.bank.model.products.structure.CardProduct
-import com.bank.model.products.structure.Product
-import com.bank.model.products.structure.ProductDescriptor
+import com.bank.model.products.CardProduct
+import com.bank.model.products.Product
+import com.bank.model.products.ProductDescriptor
 import com.swelms.common.locale.Locale
 import com.swelms.common.text.snakeCase
 import com.swelms.domain.id.card.CardNumber
@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
 data class DebitCardProduct(
    override val cardNumber: CardNumber,
    override val expirationDate: LocalDate
-) : CardProduct() {
+) : Product, CardProduct {
 
    companion object: ProductDescriptor {
       const val TYPE = "TD"

@@ -1,13 +1,14 @@
-package com.bank.model.products.structure
+package com.bank.model.products
 
+import com.bank.model.products.Product
 import com.swelms.domain.id.cbu.CBU
 import com.swelms.domain.locale.Currency
 import kotlinx.serialization.Serializable
 
 @Serializable
-abstract class Account: Product() {
-   abstract val cbu: CBU
-   abstract val currency: Currency
+sealed interface Account: Product {
+   val cbu: CBU
+   val currency: Currency
 
    override val description: String
       get() = "${descriptor?.description} en ${currency.description}"

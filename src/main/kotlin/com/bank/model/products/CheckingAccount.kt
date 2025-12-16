@@ -1,9 +1,9 @@
 package com.bank.model.products
 
-import com.bank.model.products.structure.Account
-import com.bank.model.products.structure.CreditProduct
-import com.bank.model.products.structure.Product
-import com.bank.model.products.structure.ProductDescriptor
+import com.bank.model.products.Account
+import com.bank.model.products.CreditProduct
+import com.bank.model.products.Product
+import com.bank.model.products.ProductDescriptor
 import com.swelms.common.locale.Locale
 import com.swelms.common.text.snakeCase
 import com.swelms.domain.id.cbu.CBU
@@ -17,7 +17,7 @@ data class CheckingAccount(
    override val cbu: CBU,
    override val currency: Currency,
    override val creditLimit: Double
-) : Account(), CreditProduct {
+) : Product, Account, CreditProduct {
    companion object: ProductDescriptor {
       const val TYPE = "CC"
       override val type get() = TYPE

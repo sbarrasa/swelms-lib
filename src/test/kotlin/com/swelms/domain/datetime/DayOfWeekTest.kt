@@ -11,6 +11,8 @@ import kotlin.test.assertTrue
 
 class DayOfWeekTest {
 
+
+
    @Test
    fun isWorkday() {
       assertTrue { DayOfWeek.WEDNESDAY.isWorkday }

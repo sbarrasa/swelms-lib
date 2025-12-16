@@ -1,11 +1,12 @@
-package com.bank.model.products.structure
+package com.bank.model.products
 
+import com.bank.model.products.ProductDescriptor
 import kotlinx.serialization.Serializable
 import kotlin.reflect.full.companionObjectInstance
 
 @Serializable
-abstract class Product {
-   abstract val description: String
+sealed interface Product {
+   val description: String
 
    val isCredit get() = this is CreditProduct
 
@@ -13,8 +14,7 @@ abstract class Product {
       get() = this::class.companionObjectInstance as? ProductDescriptor
 
    companion object {
-      const val MODULE = "products"
+      val types get() = Product::class.sealedSubclasses.filter { it.isFinal }
    }
-
 
 }

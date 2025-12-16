@@ -1,8 +1,8 @@
 package com.bank.model.products
 
-import com.bank.model.products.structure.Account
-import com.bank.model.products.structure.Product
-import com.bank.model.products.structure.ProductDescriptor
+import com.bank.model.products.Account
+import com.bank.model.products.Product
+import com.bank.model.products.ProductDescriptor
 import com.swelms.common.locale.Locale
 import com.swelms.common.text.snakeCase
 import com.swelms.domain.id.cbu.CBU
@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
 data class SavingAccount(
    override val cbu: CBU,
    override val currency: Currency
-) : Account() {
+) : Product, Account {
    companion object: ProductDescriptor {
       const val TYPE = "CA"
       override val type get() = TYPE

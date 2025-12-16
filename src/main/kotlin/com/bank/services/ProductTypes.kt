@@ -4,8 +4,8 @@ import com.bank.model.products.CheckingAccount
 import com.bank.model.products.CreditCardProduct
 import com.bank.model.products.DebitCardProduct
 import com.bank.model.products.SavingAccount
-import com.bank.model.products.structure.Product
-import com.bank.model.products.structure.ProductDescriptor
+import com.bank.model.products.Product
+import com.bank.model.products.ProductDescriptor
 import com.swelms.common.collections.Mappeable
 import com.swelms.common.collections.ClassHierarchy
 import kotlin.reflect.KClass

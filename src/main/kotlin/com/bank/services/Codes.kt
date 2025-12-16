@@ -1,6 +1,6 @@
 package com.bank.services
 
-import com.bank.model.products.structure.ActiveCurrencySet
+import com.bank.model.products.ActiveCurrencySet
 import com.swelms.domain.person.Gender
 import com.swelms.common.collections.*
 import com.swelms.common.text.Case

@@ -1,6 +1,6 @@
-package com.bank.model.products.structure
+package com.bank.model.products
 
-import com.swelms.domain.locale.*
+import com.swelms.domain.locale.Currency
 
 object ActiveCurrencySet : Set<Currency> by setOf(
    Currency.USD,
