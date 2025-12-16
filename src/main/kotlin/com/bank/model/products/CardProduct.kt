@@ -5,12 +5,11 @@ import com.swelms.domain.id.card.CardNumber
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
 
-@Serializable
-sealed interface CardProduct : Product {
+interface CardProduct : Product {
    abstract val cardNumber: CardNumber
    abstract val expirationDate: LocalDate
 
    override val description: String
-      get() =  "${this::class.descriptor.description} ${cardNumber.brand?.description}"
+      get() =  "${descriptor.description} ${cardNumber.brand?.description}"
 
 }

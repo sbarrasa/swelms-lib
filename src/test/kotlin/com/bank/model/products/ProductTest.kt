@@ -3,13 +3,14 @@ package com.bank.model.products
 import com.bank.locale.lang_en
 import com.bank.locale.lang_es
 import com.swelms.common.locale.Locale
+import com.swelms.common.reflection.*
 import com.swelms.domain.id.card.CardNumber
 import com.swelms.domain.id.cbu.CBU
 import com.swelms.domain.locale.Currency
 import kotlinx.datetime.LocalDate
-import kotlin.reflect.full.companionObjectInstance
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFails
 import kotlin.test.assertNotNull
 
 
@@ -21,10 +22,9 @@ class ProductTest {
 
    @Test
    fun listProducts() {
-      Product.types.forEach {
-         val descriptor = it.companionObjectInstance as? ProductDescriptor
-         with(descriptor!!){
-            println("$typeId: $description")
+      ProductTypes.descriptors.forEach {
+         with(it){
+            println("$productId: $description")
          }
       }
    }
@@ -37,10 +37,10 @@ class ProductTest {
          "currency" to Currency.ARS,
          "creditLimit" to 1000.0
       )
-      val checking = Product.create<CheckingAccount>(map)
-      assertNotNull(checking)
-      assertEquals(Currency.ARS, checking.currency)
-      assertEquals(1000.0, checking.creditLimit)
+      val product = ProductTypes["CC"].type.createFromMap(map) as? CheckingAccount
+      assertNotNull(product)
+      assertEquals(Currency.ARS, product.currency)
+      assertEquals(1000.0, product.creditLimit)
    }
 
    @Test
@@ -51,13 +51,22 @@ class ProductTest {
          "creditLimit" to 5000.0,
          "tier" to "Gold"
       )
-      val creditCard = Product.create<CreditCardProduct>(map)
-      assertNotNull(creditCard)
-      assertEquals("1111222233334444", creditCard.cardNumber.value)
-      assertEquals(5000.0, creditCard.creditLimit)
-      assertEquals("Gold", creditCard.tier)
+      val product = createFromMap<CreditCardProduct>(map)
+
+      assertNotNull(product)
+      assertEquals("1111222233334444", product.cardNumber.value)
+      assertEquals(5000.0, product.creditLimit)
+      assertEquals("Gold", product.tier)
    }
 
+   @Test
+   fun createCreditWithOutParams() {
+      val map = mapOf(
+         "cardNumber" to CardNumber("1111222233334444"),
+      )
+      assertFails { createFromMap<CreditCardProduct>(map)}
+   }
 
 }
+
 

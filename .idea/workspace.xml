@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="simplificacions de productos &#10;creacion dinamica">
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="simplificacions de productos">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/ProductTypes.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/reflection/createFromMap.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/serialization/serialName.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/Account.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CardProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditCardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditCardProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/DebitCardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/DebitCardProduct.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/Product.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProducSerialization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProducSerialization.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/ProductDescriptor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/ProductDescriptor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/reflection/Sealed.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/reflection/Sealed.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/products/ProductTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/products/ProductTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProducSerialization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProductSerialization.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +87,6 @@
         <option value="Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
         <option value="KotlinTest" />
         <option value="kotlin.jupyter.empty" />
         <option value="Kotlin Data Class" />
@@ -83,6 +94,7 @@
         <option value="HTTP Private Environment File" />
         <option value="Kotlin Enum" />
         <option value="Kotlin JUnit5 Test Class" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -186,8 +198,10 @@
     &quot;Gradle.LocaleTestHocon.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.LocaleTestHocon.testWithSlots.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.LocaleTestJson.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProducSerialization.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.ProductTest.createCheckingAccount.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.ProductTest.createCreditCardProduct.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTest.createCreditWithOutParams.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.ProductTest.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.ProductTest.listProducts.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.ProductTypesTest.executor&quot;: &quot;Run&quot;,
@@ -339,7 +353,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodesCatalogTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProducSerialization" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -352,7 +366,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.bank.services.CodesCatalogTest&quot;" />
+            <option value="&quot;com.bank.services.ProducSerialization&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -387,7 +401,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductTest.createCheckingAccount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductTest.createCreditWithOutParams" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -400,7 +414,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.bank.model.products.ProductTest.createCheckingAccount&quot;" />
+            <option value="&quot;com.bank.model.products.ProductTest.createCreditWithOutParams&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -411,7 +425,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductTest.createCreditCardProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductTest.listProducts" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -424,7 +438,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.bank.model.products.ProductTest.createCreditCardProduct&quot;" />
+            <option value="&quot;com.bank.model.products.ProductTest.listProducts&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -485,10 +499,10 @@
     <list>
       <item itemvalue="Application.BankServer" />
       <item itemvalue="Application.H2 Server" />
-      <item itemvalue="Gradle.CodesCatalogTest" />
+      <item itemvalue="Gradle.ProductTest.listProducts" />
+      <item itemvalue="Gradle.ProducSerialization" />
+      <item itemvalue="Gradle.ProductTest.createCreditWithOutParams" />
       <item itemvalue="Gradle.ProductTest" />
-      <item itemvalue="Gradle.ProductTest.createCheckingAccount" />
-      <item itemvalue="Gradle.ProductTest.createCreditCardProduct" />
       <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
       <item itemvalue="Kotlin.startServer" />
       <item itemvalue="Ktor.MainKt" />
@@ -496,10 +510,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
+        <item itemvalue="Gradle.ProductTest.listProducts" />
+        <item itemvalue="Gradle.ProducSerialization" />
+        <item itemvalue="Gradle.ProductTest.createCreditWithOutParams" />
         <item itemvalue="Gradle.ProductTest" />
-        <item itemvalue="Gradle.ProductTest.createCheckingAccount" />
-        <item itemvalue="Gradle.ProductTest.createCreditCardProduct" />
-        <item itemvalue="Gradle.CodesCatalogTest" />
       </list>
     </recent_temporary>
   </component>
@@ -553,15 +567,9 @@
       <workItem from="1765381601007" duration="149000" />
       <workItem from="1765824422563" duration="13484000" />
       <workItem from="1765850337955" duration="11009000" />
-      <workItem from="1765862374145" duration="847000" />
-    </task>
-    <task id="LOCAL-00022" summary="customer api tests">
-      <option name="closed" value="true" />
-      <created>1764014660955</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1764014660955</updated>
+      <workItem from="1765862374145" duration="1018000" />
+      <workItem from="1765897133935" duration="14137000" />
+      <workItem from="1765917873873" duration="10426000" />
     </task>
     <task id="LOCAL-00023" summary="error in status pages">
       <option name="closed" value="true" />
@@ -947,14 +955,21 @@
       <option name="project" value="LOCAL" />
       <updated>1765861943259</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="simplificacions de productos">
+      <option name="closed" value="true" />
+      <created>1765863246747</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1765863246747</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix Locale" />
     <MESSAGE value="optimizaciones para Locale" />
     <MESSAGE value="EnumMap.kt" />
     <MESSAGE value="Caseutils &#10;EnumMap" />
@@ -979,7 +994,8 @@
     <MESSAGE value="DayOfWeek extnsions" />
     <MESSAGE value="Reorganización de products con sealed!" />
     <MESSAGE value="simplificacions de productos &#10;creacion dinamica" />
-    <option name="LAST_COMMIT_MESSAGE" value="simplificacions de productos &#10;creacion dinamica" />
+    <MESSAGE value="simplificacions de productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="simplificacions de productos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

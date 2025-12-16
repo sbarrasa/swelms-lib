@@ -14,22 +14,14 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlin.test.*
 
-class ProducSerialization {
+class ProductSerialization {
 
    val json = Json {
       serializersModule = SerializersModule {
          polymorphic(Product::class)
       }
-      classDiscriminator = "id"
+      classDiscriminator = "type"
       ignoreUnknownKeys = true
-   }
-
-
-   @Test
-   fun getDescriptor() {
-      val descriptor = CheckingAccount
-
-      assertEquals("CC", descriptor.typeId)
    }
 
 
@@ -37,7 +29,7 @@ class ProducSerialization {
    fun createFromJsonString() {
      val jsonString = """
          {
-           "id":"CC",
+           "type":"CC",
            "cbu":"0000003100001780089447",
            "currency":"ARS", 
            "creditLimit":1000000
@@ -55,7 +47,7 @@ class ProducSerialization {
    @Test
    fun createFromMap() {
       val map = mapOf(
-         "id" to "TC",
+         "type" to "TC",
          "cardNumber" to "4111111111111111",
          "expirationDate" to "2025-12-31",
          "creditLimit" to "5000000.00",
@@ -73,7 +65,7 @@ class ProducSerialization {
    @Test
    fun createFromMapWithInvalidaData() {
       val map = mapOf(
-         "id" to "TC",
+         "type" to "TC",
       )
 
       val e = assertFailsWith<MissingFieldException> { json.decodeFromMap<Product>(map) }
@@ -83,7 +75,7 @@ class ProducSerialization {
    @Test
    fun compareDescriptor() {
       val map = mapOf(
-         "id" to "TC",
+         "type" to "TC",
          "cardNumber" to "4111111111111111",
          "expirationDate" to "2025-12-31",
          "creditLimit" to "5000000.00",
