@@ -3,8 +3,6 @@ package com.bank.model.products
 import com.bank.model.products.CardProduct
 import com.bank.model.products.Product
 import com.bank.model.products.ProductDescriptor
-import com.swelms.common.locale.Locale
-import com.swelms.common.text.snakeCase
 import com.swelms.domain.id.card.CardNumber
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.SerialName

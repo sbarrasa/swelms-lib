@@ -4,32 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="DayOfWeek extnsions">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/Account.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/ActiveCurrencySet.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CardProduct.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditProduct.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/Product.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/ProductDescriptor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/products/ProductTest.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Reorganización de products con sealed!">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/reflection/Sealed.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_en.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_en.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configSerialization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/ktor/config/configSerialization.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_es.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/locale/lang_es.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/CustomerProducts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/customer/CustomerProducts.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CheckingAccount.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditCardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/CreditCardProduct.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/DebitCardProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/DebitCardProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/Product.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/SavingAccount.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Account.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/ActiveCurrencySet.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/CardProduct.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/CreditProduct.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/Product.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/structure/ProductDescriptor.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/Codes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/ProductTypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/ProductTypes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProductTypesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProductTypesTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/datetime/DayOfWeekTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/domain/datetime/DayOfWeekTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/bank/services/ProductTypes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/ClassHierarchy.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/EnumMap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/collections/Mappeable.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/serialization/polymorphic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/serialization/polymorphic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/domain/id/cuit/Cuit.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/products/ProductTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/model/products/ProductTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/CodesCatalogTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/CodesCatalogTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProductTypesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/bank/services/ProducSerialization.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,8 +96,8 @@
         <option value="HTTP Public Environment File" />
         <option value="HTTP Private Environment File" />
         <option value="Kotlin Enum" />
-        <option value="Kotlin Class" />
         <option value="Kotlin JUnit5 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -178,6 +172,7 @@
     "Gradle.CaseConversionTest.executor": "Run",
     "Gradle.CaseConversionTest.sampleCase.executor": "Run",
     "Gradle.CaseTest.executor": "Run",
+    "Gradle.CodesCatalogTest.executor": "Run",
     "Gradle.CopyTest.executor": "Run",
     "Gradle.CustomerTest.cuitEntityType.executor": "Run",
     "Gradle.CustomerTest.executor": "Run",
@@ -210,8 +205,11 @@
     "Gradle.LocaleTestHocon.executor": "Run",
     "Gradle.LocaleTestHocon.testWithSlots.executor": "Run",
     "Gradle.LocaleTestJson.executor": "Run",
-    "Gradle.ProductTest.executor": "Debug",
+    "Gradle.ProductTest.createCheckingAccount.executor": "Run",
+    "Gradle.ProductTest.createCreditCardProduct.executor": "Run",
+    "Gradle.ProductTest.executor": "Run",
     "Gradle.ProductTest.listProducts.executor": "Run",
+    "Gradle.ProductTypesTest.executor": "Run",
     "Gradle.RatingTest.average2.executor": "Run",
     "Gradle.RatingTest.executor": "Run",
     "Gradle.RatingTest.invalidRange.executor": "Run",
@@ -360,7 +358,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DayOfWeekTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CodesCatalogTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -373,31 +371,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.domain.datetime.DayOfWeekTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="DayOfWeekTest.iterate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.swelms.domain.datetime.DayOfWeekTest.iterate&quot;" />
+            <option value="&quot;com.bank.services.CodesCatalogTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -432,7 +406,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductTest.listProducts" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProductTest.createCheckingAccount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -445,7 +419,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.bank.model.products.ProductTest.listProducts&quot;" />
+            <option value="&quot;com.bank.model.products.ProductTest.createCheckingAccount&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductTest.createCreditCardProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.bank.model.products.ProductTest.createCreditCardProduct&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -506,10 +504,10 @@
     <list>
       <item itemvalue="Application.BankServer" />
       <item itemvalue="Application.H2 Server" />
+      <item itemvalue="Gradle.CodesCatalogTest" />
       <item itemvalue="Gradle.ProductTest" />
-      <item itemvalue="Gradle.ProductTest.listProducts" />
-      <item itemvalue="Gradle.DayOfWeekTest" />
-      <item itemvalue="Gradle.DayOfWeekTest.iterate" />
+      <item itemvalue="Gradle.ProductTest.createCheckingAccount" />
+      <item itemvalue="Gradle.ProductTest.createCreditCardProduct" />
       <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
       <item itemvalue="Kotlin.startServer" />
       <item itemvalue="Ktor.MainKt" />
@@ -517,10 +515,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ProductTest" />
-        <item itemvalue="Gradle.ProductTest.listProducts" />
+        <item itemvalue="Gradle.ProductTest.createCheckingAccount" />
+        <item itemvalue="Gradle.ProductTest.createCreditCardProduct" />
         <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
-        <item itemvalue="Gradle.DayOfWeekTest" />
-        <item itemvalue="Gradle.DayOfWeekTest.iterate" />
+        <item itemvalue="Gradle.CodesCatalogTest" />
       </list>
     </recent_temporary>
   </component>
@@ -573,15 +571,7 @@
       <workItem from="1764968861197" duration="3431000" />
       <workItem from="1765381601007" duration="149000" />
       <workItem from="1765824422563" duration="13484000" />
-      <workItem from="1765850337955" duration="3650000" />
-    </task>
-    <task id="LOCAL-00019" summary="java tests">
-      <option name="closed" value="true" />
-      <created>1764014573769</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1764014573770</updated>
+      <workItem from="1765850337955" duration="10697000" />
     </task>
     <task id="LOCAL-00020" summary="configModules">
       <option name="closed" value="true" />
@@ -967,14 +957,21 @@
       <option name="project" value="LOCAL" />
       <updated>1765841246409</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Reorganización de products con sealed!">
+      <option name="closed" value="true" />
+      <created>1765854469951</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1765854469951</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Locale updates" />
     <MESSAGE value="fix Locale para que devuelva de Any o la key o fail" />
     <MESSAGE value="fix Locale" />
     <MESSAGE value="optimizaciones para Locale" />
@@ -999,19 +996,8 @@
     <MESSAGE value="generalizacion validators" />
     <MESSAGE value="optimizaciones" />
     <MESSAGE value="DayOfWeek extnsions" />
-    <option name="LAST_COMMIT_MESSAGE" value="DayOfWeek extnsions" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-field">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/bank/model/products/ProductDescriptor.kt</url>
-          <line>7</line>
-          <properties myFieldName="description" myClassName="com.bank.model.products.ProductDescriptor" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Reorganización de products con sealed!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganización de products con sealed!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

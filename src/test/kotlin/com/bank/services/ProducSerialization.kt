@@ -14,29 +14,22 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlin.test.*
 
-class ProductTypesTest {
+class ProducSerialization {
 
    val json = Json {
       serializersModule = SerializersModule {
-         polymorphic(ProductTypes)
+         polymorphic(Product::class)
       }
       classDiscriminator = "id"
       ignoreUnknownKeys = true
    }
 
-   @Test
-   fun asMap() {
-      val map = ProductTypes.asMap()
-
-      assertTrue(map.containsKey("CC"))
-      assertTrue(map.containsKey("TC"))
-   }
 
    @Test
    fun getDescriptor() {
-      val descriptor = ProductTypes.getDescriptor(CheckingAccount::class)
+      val descriptor = CheckingAccount
 
-      assertEquals("CC", descriptor?.type)
+      assertEquals("CC", descriptor.type)
    }
 
 

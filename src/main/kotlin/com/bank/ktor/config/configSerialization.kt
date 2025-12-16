@@ -1,6 +1,6 @@
 package com.bank.ktor.config
 
-import com.bank.services.ProductTypes
+import com.bank.model.products.Product
 import com.swelms.common.serialization.polymorphic
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
@@ -20,7 +20,7 @@ internal fun Application.configSerialization() {
       json(
          Json {
             serializersModule = SerializersModule {
-               polymorphic(ProductTypes)
+               polymorphic(Product::class)
             }
             classDiscriminator = "type"
             ignoreUnknownKeys = true

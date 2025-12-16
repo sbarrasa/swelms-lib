@@ -1,11 +1,14 @@
 package com.bank.services
 
 import com.bank.model.products.ActiveCurrencySet
+import com.bank.model.products.Product
+import com.bank.model.products.descriptor
 import com.swelms.domain.person.Gender
 import com.swelms.common.collections.*
 import com.swelms.common.text.Case
 import com.swelms.domain.id.card.CardBrand
 import com.swelms.domain.id.cuit.*
+import kotlin.collections.associate
 
 
 object Codes: Catalog(Case.SNAKE) {
@@ -14,12 +17,12 @@ object Codes: Catalog(Case.SNAKE) {
    }
 
    fun init(){
-      put(Cuit.EntityType.entries.mapTo { it.description })
-      put(Cuit.EntityCodes)
-      put(ProductTypes)
-      put(Gender.entries.mapTo { it.description })
-      put(CardBrand.entries.mapTo { it.description })
-      put(ActiveCurrencySet.mapTo{ it.localeDescription})
+      put(Cuit.EntityType.entries.associateTo { it.description })
+      put(Cuit.EntityCodes.associate { it.key to it.description })
+      put(Product.types.associate { it.descriptor.type to it.descriptor.description  })
+      put(Gender.entries.associateTo { it.description })
+      put(CardBrand.entries.associateTo { it.description })
+      put(ActiveCurrencySet.associateTo{ it.localeDescription})
    }
 }
 

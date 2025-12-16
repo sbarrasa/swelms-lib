@@ -1,6 +1,5 @@
 package com.swelms.domain.id.cuit
 
-import com.swelms.common.collections.Mappeable
 import com.swelms.common.locale.*
 import com.swelms.common.reflection.qName
 import com.swelms.domain.validator.ValidatorException
@@ -58,7 +57,6 @@ value class Cuit(val value: String) {
    }
 
    object EntityCodes :
-      Mappeable<String, String>,
       Set<EntityCodes.Info> by setOf(
          Info("20", Cuit.EntityType.PERSON),
          Info("23", Cuit.EntityType.PERSON),
@@ -80,7 +78,6 @@ value class Cuit(val value: String) {
       }
 
       operator fun get(key: String) = find { it.key == key }
-      override fun asMap(): Map<String, String> = associate { it.key to it.description }
    }
 
 

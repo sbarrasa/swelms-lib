@@ -94,8 +94,8 @@ val lang_es = LangBuilder("es") {
    module<Product>{
       key["TD"] = "Tarjeta de débito"
       key["TC"] = "Tarjeta de crédito"
-      key["CC"] = "Checking Account"
-      key["CA"] = "Savings Account"
+      key["CC"] = "Cuenta corriente"
+      key["CA"] = "Caja de ahorro"
    }
 
 
