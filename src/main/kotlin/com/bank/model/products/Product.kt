@@ -10,9 +10,6 @@ import kotlin.reflect.full.primaryConstructor
 sealed interface Product {
    val description: String
 
-   val descriptor: ProductDescriptor?
-      get() = this::class.descriptor
-
    companion object {
       val types get() = Product::class.finalSubclasses
 

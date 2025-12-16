@@ -93,8 +93,6 @@ class ProducSerialization {
       val product = json.decodeFromMap<Product>(map)
 
       assertEquals(CreditCardProduct::class, product::class)
-      assertEquals(CreditCardProduct.typeId, product.descriptor?.typeId)
-      assertEquals(CreditCardProduct.description, product.descriptor?.description)
 
    }
 }

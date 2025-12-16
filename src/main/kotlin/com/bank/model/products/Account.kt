@@ -11,6 +11,6 @@ sealed interface Account: Product {
    val currency: Currency
 
    override val description: String
-      get() = "${descriptor?.description} en ${currency.description}"
+      get() = "${this::class.descriptor.description} en ${currency.description}"
 
 }

@@ -11,6 +11,6 @@ sealed interface CardProduct : Product {
    abstract val expirationDate: LocalDate
 
    override val description: String
-      get() =  "${descriptor?.description} ${cardNumber.brand?.description}"
+      get() =  "${this::class.descriptor.description} ${cardNumber.brand?.description}"
 
 }
