@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="simplificacions de productos">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/error/Result.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/error/tryGet.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/error/tryRun.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/error/tryGetTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/swelms/common/error/tryRunTest.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="Result/Error framework">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/swelms/common/error/TryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/error/Result.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/error/Result.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/error/tryGet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/error/Try.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/swelms/common/error/tryRun.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/swelms/common/text/CaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ValueClassesTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +156,7 @@
     "Gradle.CaseConversionTest.executor": "Run",
     "Gradle.CaseConversionTest.sampleCase.executor": "Run",
     "Gradle.CaseTest.executor": "Run",
+    "Gradle.CaseTest.test.executor": "Run",
     "Gradle.CodesCatalogTest.executor": "Run",
     "Gradle.CopyTest.executor": "Run",
     "Gradle.CustomerTest.cuitEntityType.executor": "Run",
@@ -222,6 +225,7 @@
     "Gradle.Tests in 'com.swelms.common.reflection'.executor": "Run",
     "Gradle.Tests in 'com.swelms.common.singlevalue'.executor": "Run",
     "Gradle.Tests in 'com.swelms.domain.person'.executor": "Run",
+    "Gradle.TryTest.executor": "Run",
     "Gradle.bank-kotlin [:com.bank.MainKt.main()].executor": "Run",
     "Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor": "Run",
     "Gradle.bank-kotlin [assemble].executor": "Run",
@@ -279,7 +283,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/develop/bank-kotlin/src/test/kotlin/com/swelms/common/error",
+    "last_directory_selection": "C:/develop/bank-kotlin/src/test/java",
     "last_opened_file_path": "C:/develop/bank-kotlin/src/main/kotlin/com/swelms/common/error",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -316,6 +320,9 @@
       <recent name="com.swelms.common.error" />
       <recent name="com.sbarrasa.common.locale" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.swelms.common.text" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.swelms.common.error" />
       <recent name="com.bank.model.products" />
@@ -345,7 +352,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'bank-kotlin.test'">
+  <component name="RunManager" selected="Gradle.TryTest">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -358,7 +365,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResultTest.tryGetOrAny" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -371,7 +378,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.common.error.ResultTest.tryGetOrAny&quot;" />
+            <option value="&quot;com.swelms.common.text.CaseTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -382,7 +389,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ResultTest.tryGetOrElse" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CaseTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -395,7 +402,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.swelms.common.error.ResultTest.tryGetOrElse&quot;" />
+            <option value="&quot;com.swelms.common.text.CaseTest.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -428,6 +435,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="TryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.swelms.common.error.TryTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="tryRunTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -442,30 +473,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.swelms.common.error.tryRunTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="tryRunTest.tryRunError" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.swelms.common.error.tryRunTest.tryRunError&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -504,21 +511,21 @@
     <list>
       <item itemvalue="Application.BankServer" />
       <item itemvalue="Application.H2 Server" />
-      <item itemvalue="Gradle.ResultTest.tryGetOrAny" />
-      <item itemvalue="Gradle.ResultTest.tryGetOrElse" />
+      <item itemvalue="Gradle.CaseTest" />
+      <item itemvalue="Gradle.CaseTest.test" />
+      <item itemvalue="Gradle.TryTest" />
       <item itemvalue="Gradle.tryRunTest" />
-      <item itemvalue="Gradle.tryRunTest.tryRunError" />
       <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
       <item itemvalue="Kotlin.startServer" />
       <item itemvalue="Ktor.MainKt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TryTest" />
         <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
+        <item itemvalue="Gradle.CaseTest" />
+        <item itemvalue="Gradle.CaseTest.test" />
         <item itemvalue="Gradle.tryRunTest" />
-        <item itemvalue="Gradle.tryRunTest.tryRunError" />
-        <item itemvalue="Gradle.ResultTest.tryGetOrAny" />
-        <item itemvalue="Gradle.ResultTest.tryGetOrElse" />
       </list>
     </recent_temporary>
   </component>
@@ -577,15 +584,7 @@
       <workItem from="1765917873873" duration="12985000" />
       <workItem from="1765934183190" duration="611000" />
       <workItem from="1765938150096" duration="2564000" />
-      <workItem from="1765979896751" duration="11979000" />
-    </task>
-    <task id="LOCAL-00026" summary="CustomersTable.kt mejoras">
-      <option name="closed" value="true" />
-      <created>1764014721404</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1764014721404</updated>
+      <workItem from="1765979896751" duration="16368000" />
     </task>
     <task id="LOCAL-00027" summary="mejora de mapeos CustomerService.kt">
       <option name="closed" value="true" />
@@ -971,14 +970,21 @@
       <option name="project" value="LOCAL" />
       <updated>1765929384119</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Result/Error framework">
+      <option name="closed" value="true" />
+      <created>1765992270437</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1765992270438</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="optimizaciones para Locale" />
     <MESSAGE value="EnumMap.kt" />
     <MESSAGE value="Caseutils &#10;EnumMap" />
     <MESSAGE value="Fixes de uso de Locale.kt" />
@@ -1003,7 +1009,8 @@
     <MESSAGE value="Reorganización de products con sealed!" />
     <MESSAGE value="simplificacions de productos &#10;creacion dinamica" />
     <MESSAGE value="simplificacions de productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="simplificacions de productos" />
+    <MESSAGE value="Result/Error framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Result/Error framework" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

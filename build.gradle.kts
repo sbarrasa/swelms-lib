@@ -42,7 +42,7 @@ dependencies {
 
    testImplementation(kotlin("test"))
    testImplementation("io.ktor:ktor-server-test-host-jvm:${ktorVersion}")
-   implementation("org.junit.jupiter:junit-jupiter:5.14.0")
+   testImplementation("org.junit.jupiter:junit-jupiter:5.14.0")
    testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
 
 }
@@ -50,4 +50,8 @@ dependencies {
 kotlin {
    compilerOptions {
    }
+}
+
+tasks.test {
+   useJUnitPlatform()
 }
