@@ -19,6 +19,7 @@ dependencies {
    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.1")
    testImplementation(kotlin("test"))
    testImplementation("org.junit.jupiter:junit-jupiter:5.14.0")
+   implementation(kotlin("stdlib-jdk8"))
 }
 
 
@@ -38,3 +39,6 @@ publishing {
 }
 
 
+kotlin {
+   jvmToolchain(21)
+}

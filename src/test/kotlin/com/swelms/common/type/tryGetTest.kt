@@ -1,4 +1,4 @@
-package com.swelms.common.error
+package com.swelms.common.type
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

@@ -1,4 +1,4 @@
-package com.swelms.common.error
+package com.swelms.common.type
 
 object Try{
    @JvmStatic fun <T> get(block: () -> T) = tryGet(block)

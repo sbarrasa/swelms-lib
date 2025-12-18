@@ -1,4 +1,4 @@
-package com.swelms.common.error
+package com.swelms.common.type
 
 
 sealed class Result<T>(open val value: T?, open val error: Throwable?) {
