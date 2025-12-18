@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="separación de swelms-lib" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="clean">
+      <change afterPath="$PROJECT_DIR$/buildSrc/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/buildSrc/src/main/kotlin/GitVersion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,12 +72,12 @@
     &quot;assignee&quot;: &quot;sbarrasa&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/sbarrasa/bank-kotlin.git&quot;,
-    &quot;accountId&quot;: &quot;b859706c-9eb3-4f95-9df6-802ea3ef93c2&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sbarrasa/swelms-lib.git",
+    "accountId": "b859706c-9eb3-4f95-9df6-802ea3ef93c2"
   }
-}</component>
+}]]></component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\zaipe\.gradle\wrapper\dists\gradle-8.14-bin\38aieal9i53h9rfe7vjup95b9\gradle-8.14" javaHome="C:\Program Files\Java\temurin-21.0.8" gradleVersion="8.14">
     <option name="jvmArguments">
       <list>
@@ -319,7 +324,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TryTest">
+  <component name="RunManager" selected="Gradle.Tests in 'bank-kotlin.test'">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -487,8 +492,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TryTest" />
         <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
+        <item itemvalue="Gradle.TryTest" />
         <item itemvalue="Gradle.CaseTest" />
         <item itemvalue="Gradle.CaseTest.test" />
         <item itemvalue="Gradle.tryRunTest" />
@@ -552,15 +557,7 @@
       <workItem from="1765938150096" duration="2564000" />
       <workItem from="1765979896751" duration="17715000" />
       <workItem from="1766022911489" duration="427000" />
-      <workItem from="1766023390296" duration="735000" />
-    </task>
-    <task id="LOCAL-00029" summary="Renombre de package &#10;swelms">
-      <option name="closed" value="true" />
-      <created>1764039127668</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1764039127668</updated>
+      <workItem from="1766023390296" duration="3125000" />
     </task>
     <task id="LOCAL-00030" summary="customer copyTo en update">
       <option name="closed" value="true" />
@@ -946,7 +943,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766023749380</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="clean">
+      <option name="closed" value="true" />
+      <created>1766024210959</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1766024210959</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -964,7 +969,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixes de uso de Locale.kt" />
     <MESSAGE value="mejoras en carga de clases de confog para Locale" />
     <MESSAGE value="Carga Gender locale" />
     <MESSAGE value="StringSlot mejoras" />
@@ -989,7 +993,8 @@
     <MESSAGE value="Result/Error framework" />
     <MESSAGE value="Result/Error framework java integration" />
     <MESSAGE value="separación de swelms-lib" />
-    <option name="LAST_COMMIT_MESSAGE" value="separación de swelms-lib" />
+    <MESSAGE value="clean" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
