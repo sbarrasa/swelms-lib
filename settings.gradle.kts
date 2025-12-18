@@ -1,2 +1,2 @@
 
-rootProject.name = "bank-kotlin"
+rootProject.name = "swelms-lib"

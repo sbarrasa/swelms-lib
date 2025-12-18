@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="clean">
-      <change afterPath="$PROJECT_DIR$/buildSrc/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buildSrc/src/main/kotlin/GitVersion.kt" afterDir="false" />
+    <list default="true" id="1ad4b230-6dcb-46d0-93f7-a9e64cfb6863" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +30,18 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="bank-kotlin" type="f1a62948:ProjectNode" />
+                <item name="swelms-lib" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="swelms-lib" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="swelms-lib" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -61,7 +71,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master-bank" />
+        <entry key="$PROJECT_DIR$" value="clean-swelms" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,12 +82,19 @@
     &quot;assignee&quot;: &quot;sbarrasa&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sbarrasa/swelms-lib.git",
-    "accountId": "b859706c-9eb3-4f95-9df6-802ea3ef93c2"
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sbarrasa/swelms-lib.git&quot;,
+    &quot;accountId&quot;: &quot;b859706c-9eb3-4f95-9df6-802ea3ef93c2&quot;
   }
-}]]></component>
+}</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\zaipe\.gradle\wrapper\dists\gradle-8.14-bin\38aieal9i53h9rfe7vjup95b9\gradle-8.14" javaHome="C:\Program Files\Java\temurin-21.0.8" gradleVersion="8.14">
     <option name="jvmArguments">
       <list>
@@ -119,159 +136,161 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AsyncTranslatorTest.executor": "Run",
-    "Gradle.BaseConverterTest.executor": "Run",
-    "Gradle.BaseConverterTest.testBases.executor": "Run",
-    "Gradle.Build bank-kotlin.executor": "Run",
-    "Gradle.CaseConversionTest.executor": "Run",
-    "Gradle.CaseConversionTest.sampleCase.executor": "Run",
-    "Gradle.CaseTest.executor": "Run",
-    "Gradle.CaseTest.test.executor": "Run",
-    "Gradle.CodesCatalogTest.executor": "Run",
-    "Gradle.CopyTest.executor": "Run",
-    "Gradle.CustomerTest.cuitEntityType.executor": "Run",
-    "Gradle.CustomerTest.executor": "Run",
-    "Gradle.DayOfWeekTest.executor": "Run",
-    "Gradle.DayOfWeekTest.iterate.executor": "Run",
-    "Gradle.DayOfWeekTest.nextDay.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.EitherTest.executor": "Run",
-    "Gradle.EitherTest.tryGetTest.executor": "Run",
-    "Gradle.EitherTest.tryGetTestAny.executor": "Run",
-    "Gradle.EitherTest.tryGetTestElvis.executor": "Run",
-    "Gradle.EitherTest.tryGetTestFail.executor": "Run",
-    "Gradle.EitherTest.tryGetTestIsError.executor": "Run",
-    "Gradle.EitherTest.tryGetTestSafe.executor": "Run",
-    "Gradle.EitherTest.tryGetWithDefault.executor": "Debug",
-    "Gradle.FullNameSerializationTest.executor": "Run",
-    "Gradle.FullNameTest.executor": "Run",
-    "Gradle.FullNameTest.formatters.executor": "Run",
-    "Gradle.FullNameTest.initialsTestFormat.executor": "Run",
-    "Gradle.LangTest.executor": "Run",
-    "Gradle.LangTest.testLang.executor": "Run",
-    "Gradle.LocaleConfigFullTest.executor": "Run",
-    "Gradle.LocaleConfigFullTest.showAll.executor": "Run",
-    "Gradle.LocaleConfigFullTest.testMissingRegionalKey.executor": "Run",
-    "Gradle.LocaleConfigFullTest.testNonexistentRegional.executor": "Run",
-    "Gradle.LocaleConfigFullTest.textChangeLang.executor": "Run",
-    "Gradle.LocaleFullTest.executor": "Run",
-    "Gradle.LocaleTest (1).executor": "Run",
-    "Gradle.LocaleTest.executor": "Run",
-    "Gradle.LocaleTest.invalidValueClass.executor": "Run",
-    "Gradle.LocaleTest.registerOnTheFly.executor": "Run",
-    "Gradle.LocaleTest.showAll.executor": "Run",
-    "Gradle.LocaleTest.test.executor": "Run",
-    "Gradle.LocaleTest.testFail.executor": "Debug",
-    "Gradle.LocaleTest.testLang.executor": "Run",
-    "Gradle.LocaleTest.testNoValue.executor": "Run",
-    "Gradle.LocaleTest.testNolang.executor": "Run",
-    "Gradle.LocaleTestHocon.executor": "Run",
-    "Gradle.LocaleTestHocon.testWithSlots.executor": "Run",
-    "Gradle.LocaleTestJson.executor": "Run",
-    "Gradle.ProducSerialization.executor": "Run",
-    "Gradle.ProductTest.createCheckingAccount.executor": "Run",
-    "Gradle.ProductTest.createCreditCardProduct.executor": "Run",
-    "Gradle.ProductTest.createCreditWithOutParams.executor": "Run",
-    "Gradle.ProductTest.executor": "Run",
-    "Gradle.ProductTest.listProducts.executor": "Run",
-    "Gradle.ProductTest.result.executor": "Run",
-    "Gradle.ProductTypesTest.executor": "Run",
-    "Gradle.RatingTest.average2.executor": "Run",
-    "Gradle.RatingTest.executor": "Run",
-    "Gradle.RatingTest.invalidRange.executor": "Run",
-    "Gradle.ResultTest.tryGetOrAny.executor": "Run",
-    "Gradle.ResultTest.tryGetOrElse.executor": "Run",
-    "Gradle.SingleValueSerializerTest.executor": "Run",
-    "Gradle.SingleValueTests.SingleValueType.executor": "Run",
-    "Gradle.SingleValueTests.executor": "Run",
-    "Gradle.StringSlotsTest.executor": "Run",
-    "Gradle.Tests in 'bank-kotlin.test'.executor": "Run",
-    "Gradle.Tests in 'com.bank.locale'.executor": "Run",
-    "Gradle.Tests in 'com.sbarrasa'.executor": "Run",
-    "Gradle.Tests in 'com.swelms'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common.error'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common.locale'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common.reflection'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.common.singlevalue'.executor": "Run",
-    "Gradle.Tests in 'com.swelms.domain.person'.executor": "Run",
-    "Gradle.TryTest.executor": "Run",
-    "Gradle.bank-kotlin [:com.bank.MainKt.main()].executor": "Run",
-    "Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor": "Run",
-    "Gradle.bank-kotlin [assemble].executor": "Run",
-    "Gradle.bank-kotlin [build].executor": "Run",
-    "Gradle.bank-kotlin [clean].executor": "Run",
-    "Gradle.tryRunTest.executor": "Run",
-    "Gradle.tryRunTest.tryRunError.executor": "Run",
-    "HTTP Request.All in CodesApiTest.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener códigos.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener géneros.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener marcas.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener monedas.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener tipos de producto.executor": "Run",
-    "HTTP Request.CodesApiTest | Obtener todos los códigos.executor": "Run",
-    "HTTP Request.ConfigApiTest | Cambiar lang a en.executor": "Run",
-    "HTTP Request.ConfigApiTest | Cambiar lang a es.executor": "Run",
-    "HTTP Request.ConfigApiTest | Cambiar lang a null.executor": "Run",
-    "HTTP Request.ConfigApiTest | Cambiar lang.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener códigos.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener géneros.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener marcas.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener monedas.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener tipos de cuit.executor": "Run",
-    "HTTP Request.ConfigApiTest | Obtener todos los códigos.executor": "Run",
-    "HTTP Request.CustomerApiTest | Actualizar un customer#1.executor": "Run",
-    "HTTP Request.CustomerApiTest | Actualizar un customer#2.executor": "Run",
-    "HTTP Request.CustomerApiTest | Actualizar un customer#3.executor": "Run",
-    "HTTP Request.CustomerApiTest | Buscar.executor": "Run",
-    "HTTP Request.CustomerApiTest | Crear otra persona.executor": "Run",
-    "HTTP Request.CustomerApiTest | Crear una empresa.executor": "Run",
-    "HTTP Request.CustomerApiTest | Crear una persona.executor": "Run",
-    "HTTP Request.CustomerApiTest | Eliminar un customer.executor": "Run",
-    "HTTP Request.CustomerApiTest | Intento de actualizar un id.executor": "Run",
-    "HTTP Request.CustomerApiTest | Listar todos los customers.executor": "Run",
-    "HTTP Request.CustomerApiTest | Obtener customer con id invalido.executor": "Run",
-    "HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor": "Run",
-    "HTTP Request.CustomerApiTest | Obtener customer por id.executor": "Run",
-    "HTTP Request.CustomerApiTest | Obtener entityType de un Customer.executor": "Run",
-    "JUnit.All in bank-kotlin.main.executor": "Run",
-    "JUnit.LocaleTestHocon.executor": "Run",
-    "Ktor.MainKt.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cidr.known.project.marker": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "clean-swelms",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/develop/bank-kotlin/src/test/java",
-    "last_opened_file_path": "C:/develop/bank-kotlin/src/main/kotlin/com/swelms/common/error",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.23723404",
-    "settings.editor.selected.configurable": "swagger",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AsyncTranslatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BaseConverterTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BaseConverterTest.testBases.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build bank-kotlin.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CaseConversionTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CaseConversionTest.sampleCase.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CaseTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CaseTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CodesCatalogTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CopyTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomerTest.cuitEntityType.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DayOfWeekTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DayOfWeekTest.iterate.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DayOfWeekTest.nextDay.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EitherTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EitherTest.tryGetTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EitherTest.tryGetTestAny.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EitherTest.tryGetTestElvis.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EitherTest.tryGetTestFail.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EitherTest.tryGetTestIsError.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EitherTest.tryGetTestSafe.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EitherTest.tryGetWithDefault.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.FullNameSerializationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FullNameTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FullNameTest.formatters.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FullNameTest.initialsTestFormat.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LangTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LangTest.testLang.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.showAll.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.testMissingRegionalKey.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.testNonexistentRegional.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleConfigFullTest.textChangeLang.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleFullTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.invalidValueClass.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.registerOnTheFly.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.showAll.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.testFail.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.LocaleTest.testLang.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.testNoValue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTest.testNolang.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTestHocon.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTestHocon.testWithSlots.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LocaleTestJson.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProducSerialization.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTest.createCheckingAccount.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTest.createCreditCardProduct.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTest.createCreditWithOutParams.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTest.listProducts.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTest.result.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductTypesTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RatingTest.average2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RatingTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RatingTest.invalidRange.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ResultTest.tryGetOrAny.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ResultTest.tryGetOrElse.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SingleValueSerializerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SingleValueTests.SingleValueType.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SingleValueTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.StringSlotsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'bank-kotlin.test'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.bank.locale'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.sbarrasa'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common.error'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common.locale'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common.reflection'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.common.singlevalue'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'com.swelms.domain.person'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [:com.bank.MainKt.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [:org.h2.tools.Server.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-kotlin [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.swelms-lib [publishFullPublicationToGitHubRepository].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.swelms-lib [publishMavenKotlinPublicationToGitHubPackagesRepository].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.tryRunTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.tryRunTest.tryRunError.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.All in CodesApiTest.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener códigos.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener géneros.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener marcas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener monedas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener tipos de producto.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CodesApiTest | Obtener todos los códigos.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Cambiar lang a en.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Cambiar lang a es.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Cambiar lang a null.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Cambiar lang.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener códigos.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener descripcion de los codigos de entidad de los cuits.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener géneros.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener marcas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener monedas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener tipos de cuit.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ConfigApiTest | Obtener todos los códigos.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Actualizar un customer#1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Actualizar un customer#2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Actualizar un customer#3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Buscar.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Crear otra persona.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Crear una empresa.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Crear una persona.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Eliminar un customer.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Intento de actualizar un id.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Listar todos los customers.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Obtener customer con id invalido.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Obtener customer con id nulo.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Obtener customer por id.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.CustomerApiTest | Obtener entityType de un Customer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in bank-kotlin.main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LocaleTestHocon.executor&quot;: &quot;Run&quot;,
+    &quot;Ktor.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/develop/bank-kotlin/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/develop/bank-kotlin/src/main/kotlin/com/swelms/common/error&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.23723404&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;swagger&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\develop\bank-kotlin\src\main\kotlin\com\swelms\common\error" />
@@ -324,7 +343,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'bank-kotlin.test'">
+  <component name="RunManager" selected="Gradle.swelms-lib [publishFullPublicationToGitHubRepository]">
     <configuration name="BankServer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="temurin-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -351,30 +370,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.swelms.common.text.CaseTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CaseTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.swelms.common.text.CaseTest.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -431,7 +426,29 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="tryRunTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="swelms-lib [publishFullPublicationToGitHubRepository]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+     <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publishFullPublicationToGitHubRepository" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="swelms-lib [publishMavenKotlinPublicationToGitHubPackagesRepository]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -442,17 +459,26 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.swelms.common.error.tryRunTest&quot;" />
+            <option value="publishMavenKotlinPublicationToGitHubPackagesRepository" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="bank-kotlin" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="bank-kotlin" />
+      <option name="filePath" />
       <method v="2" />
     </configuration>
     <configuration name="MainKt" type="KtorApplicationConfigurationType" factoryName="Ktor" nameIsGenerated="true">
@@ -482,21 +508,21 @@
     </configuration>
     <list>
       <item itemvalue="Application.BankServer" />
+      <item itemvalue="Gradle.swelms-lib [publishFullPublicationToGitHubRepository]" />
+      <item itemvalue="Gradle.swelms-lib [publishMavenKotlinPublicationToGitHubPackagesRepository]" />
       <item itemvalue="Gradle.CaseTest" />
-      <item itemvalue="Gradle.CaseTest.test" />
       <item itemvalue="Gradle.TryTest" />
-      <item itemvalue="Gradle.tryRunTest" />
       <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
       <item itemvalue="Kotlin.startServer" />
       <item itemvalue="Ktor.MainKt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.swelms-lib [publishFullPublicationToGitHubRepository]" />
+        <item itemvalue="Gradle.swelms-lib [publishMavenKotlinPublicationToGitHubPackagesRepository]" />
         <item itemvalue="Gradle.Tests in 'bank-kotlin.test'" />
         <item itemvalue="Gradle.TryTest" />
         <item itemvalue="Gradle.CaseTest" />
-        <item itemvalue="Gradle.CaseTest.test" />
-        <item itemvalue="Gradle.tryRunTest" />
       </list>
     </recent_temporary>
   </component>
@@ -557,15 +583,10 @@
       <workItem from="1765938150096" duration="2564000" />
       <workItem from="1765979896751" duration="17715000" />
       <workItem from="1766022911489" duration="427000" />
-      <workItem from="1766023390296" duration="3125000" />
-    </task>
-    <task id="LOCAL-00030" summary="customer copyTo en update">
-      <option name="closed" value="true" />
-      <created>1764040004437</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1764040004437</updated>
+      <workItem from="1766023390296" duration="3471000" />
+      <workItem from="1766026953492" duration="2245000" />
+      <workItem from="1766029765651" duration="3727000" />
+      <workItem from="1766037004312" duration="1622000" />
     </task>
     <task id="LOCAL-00031" summary="FullNameSerializer.kt&#10;elimimnacion de copyTo&#10;eliminacion de SingleValue">
       <option name="closed" value="true" />
@@ -951,7 +972,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766024210959</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="GitVersion plugin">
+      <option name="closed" value="true" />
+      <created>1766026816485</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1766026816485</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -969,7 +998,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mejoras en carga de clases de confog para Locale" />
     <MESSAGE value="Carga Gender locale" />
     <MESSAGE value="StringSlot mejoras" />
     <MESSAGE value="Locale de domain components" />
@@ -994,7 +1022,8 @@
     <MESSAGE value="Result/Error framework java integration" />
     <MESSAGE value="separación de swelms-lib" />
     <MESSAGE value="clean" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean" />
+    <MESSAGE value="GitVersion plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="GitVersion plugin" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
