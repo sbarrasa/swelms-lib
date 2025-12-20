@@ -3,14 +3,13 @@ package com.swelms.common.type
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
-
 class tryRunTest {
    @Test
    fun tryRunSuccess() {
       val a = 10
       val b = 2
       val result = tryRun { a / b }
-      assertTrue(result is Result.Success)
+      assertTrue(result is ValResult.Success)
    }
 
    @Test
@@ -23,7 +22,9 @@ class tryRunTest {
       } onError {
          println(it)
       }
-      assertTrue(result is Result.Error)
+      assertTrue(result is ValResult.Error)
    }
+
+
 
 }

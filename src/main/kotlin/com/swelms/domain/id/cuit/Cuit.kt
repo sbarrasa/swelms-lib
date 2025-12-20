@@ -2,7 +2,7 @@ package com.swelms.domain.id.cuit
 
 import com.swelms.common.locale.*
 import com.swelms.common.reflection.qName
-import com.swelms.domain.validator.ValidatorException
+import com.swelms.common.validator.ValidatorException
 import com.swelms.domain.validator.DigitsValidator
 import com.swelms.domain.validator.LengthValidator
 import kotlinx.serialization.Serializable
@@ -58,26 +58,27 @@ value class Cuit(val value: String) {
 
    object EntityCodes :
       Set<EntityCodes.Info> by setOf(
-         Info("20", Cuit.EntityType.PERSON),
-         Info("23", Cuit.EntityType.PERSON),
-         Info("24", Cuit.EntityType.PERSON),
-         Info("25", Cuit.EntityType.PERSON),
-         Info("26", Cuit.EntityType.PERSON),
-         Info("27", Cuit.EntityType.PERSON),
-         Info("30", Cuit.EntityType.COMPANY),
-         Info("33", Cuit.EntityType.COMPANY),
-         Info("34", Cuit.EntityType.COMPANY)
+         Info("20", EntityType.PERSON),
+         Info("23", EntityType.PERSON),
+         Info("24", EntityType.PERSON),
+         Info("25", EntityType.PERSON),
+         Info("26", EntityType.PERSON),
+         Info("27", EntityType.PERSON),
+         Info("30", EntityType.COMPANY),
+         Info("33", EntityType.COMPANY),
+         Info("34", EntityType.COMPANY)
       ) {
 
       class Info(val key: String, val entityType: Cuit.EntityType) {
          val description: String
             get() = Locale.textOrNull(EntityCodes::class.qName, key)
-               ?: "${entityType.description}".trim()
+               ?: "$entityType.description".trim()
 
          override fun toString() = description
       }
 
       operator fun get(key: String) = find { it.key == key }
+
    }
 
 

@@ -66,7 +66,7 @@ class tryGetTest {
       val a = 10
       val b = 0
       val result= tryGet { a / b }
-      assertTrue { result is Result.Error }
+      assertTrue { result is ValResult.Error }
    }
 
    @Test
@@ -75,7 +75,7 @@ class tryGetTest {
       val b = 2
 
       val result = tryGet { a / b }
-      assertTrue { result is Result.Success }
+      assertTrue { result is ValResult.Success }
    }
 
    @Test
@@ -93,4 +93,6 @@ class tryGetTest {
       assertEquals(5, value2)
 
    }
+
+
 }

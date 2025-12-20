@@ -2,7 +2,7 @@ package com.swelms.domain.cbu
 
 import com.swelms.common.locale.localeText
 import com.swelms.domain.id.cbu.CBU
-import com.swelms.domain.validator.ValidatorException
+import com.swelms.common.validator.ValidatorException
 import kotlin.test.*
 
 class CBUTest {

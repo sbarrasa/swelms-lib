@@ -30,7 +30,7 @@ class TryTest {
     var b = 0;
 
     var result = Try.get( () -> a / b );
-    assertTrue(result instanceof Result.Error);
+    assertTrue(result instanceof ValResult.Error);
   }
 
   @Test
@@ -39,7 +39,7 @@ class TryTest {
     var b = 2;
 
     var result = Try.get( () -> a / b );
-    assertTrue(result instanceof Result.Success);
+    assertTrue(result instanceof ValResult.Success);
   }
 
 }

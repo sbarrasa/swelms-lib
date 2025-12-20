@@ -1,6 +1,6 @@
 package com.swelms.domain.validator
 
-class DigitsValidator(override val message: String): Validator<String> {
-   override val condition: (String) -> Boolean
-      get() = {value -> value.all { char -> char.isDigit() }}
-}
+import com.swelms.common.validator.Validator
+
+class DigitsValidator(override val message: String="value must be a numeric digit"):
+   Validator<String>(message, { it.all { char -> char.isDigit() }})

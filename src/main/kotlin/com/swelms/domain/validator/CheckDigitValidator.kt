@@ -1,9 +1,8 @@
 package com.swelms.domain.validator
 
-import com.swelms.common.locale.Locale
-import com.swelms.common.reflection.qName
+import com.swelms.common.validator.*
 
-abstract class CheckDigitValidator(val message: String) {
+abstract class CheckDigitValidator(val message: String) : Validable<String> {
 
    abstract fun compute(digits: List<Int>): Int
 
@@ -17,14 +16,16 @@ abstract class CheckDigitValidator(val message: String) {
       return digits to check
    }
 
-   fun validate(fullNumber: String) {
-      val (digits, vd) = splitDigits(fullNumber)
+   override fun validate(obj: String): String {
+      val (digits, vd) = splitDigits(obj)
       validate(digits, vd)
+      return obj
    }
 
-   fun validate(digits: List<Int>, vd: Int) {
+   fun validate(digits: List<Int>, vd: Int): String {
       val expected = compute(digits)
       if (expected != vd) throw ValidatorException(message)
+      return digits.joinToString("")+vd
    }
 
 }

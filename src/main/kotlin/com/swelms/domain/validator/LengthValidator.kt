@@ -1,7 +1,7 @@
 package com.swelms.domain.validator
 
-class LengthValidator(override val message: String, val size: Int): Validator<String>  {
-   override val condition: (String) -> Boolean
-      get() = {value -> (value.length == size) }
+import com.swelms.common.validator.Validator
 
-}
+
+class LengthValidator(override val message: String="invalid size", val size: Int) :
+   Validator<String>(message, { it.length == size })
