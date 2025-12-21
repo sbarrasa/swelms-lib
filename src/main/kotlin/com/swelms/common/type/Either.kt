@@ -11,3 +11,15 @@ sealed class Either<L, R> {
       }
 }
 
+fun <T> Res<T>.toEither() = when(this) {
+   is Res.Success -> Either.Right(value)
+   is Res.Error -> Either.Left(error)
+}
+
+fun <T> Either<Throwable,T>.toRes() = when(this) {
+   is Either.Left -> Res.Error(error = value)
+   is Either.Right -> Res.Success(value = value)
+}
+
+
+

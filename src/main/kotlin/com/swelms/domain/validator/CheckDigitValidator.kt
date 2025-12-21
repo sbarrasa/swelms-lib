@@ -16,10 +16,10 @@ abstract class CheckDigitValidator(val message: String) : Validable<String> {
       return digits to check
    }
 
-   override fun validate(obj: String): String {
-      val (digits, vd) = splitDigits(obj)
+   override fun validate(value: String): String {
+      val (digits, vd) = splitDigits(value)
       validate(digits, vd)
-      return obj
+      return value
    }
 
    fun validate(digits: List<Int>, vd: Int): String {

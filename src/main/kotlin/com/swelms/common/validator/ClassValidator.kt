@@ -15,18 +15,21 @@ class ClassValidator(vararg val validations: Validation<*, *>): Validable<Any> {
       }
    }
 
-   override fun validate(obj: Any): Any {
+   override fun validate(value: Any): Any {
       validations.forEach {
          @Suppress("UNCHECKED_CAST")
-         (it as Validation<Any, Any?>).validate(obj)
+         (it as Validation<Any, Any?>).validate(value)
       }
-      return obj
+      return value
    }
 
-   fun evaluate(obj: Any): List<ValResult<Any?>> =
+   fun evaluateAll(obj: Any): List<Res<Any?>> =
       validations.map {
          @Suppress("UNCHECKED_CAST")
-         tryGet { (it as Validation<Any, Any?>).validate(obj) }
+         with((it as Validation<Any, Any?>)) {
+            val value = it.property(obj)
+            it.validator.evaluate(value)
+         }
       }
 }
 
@@ -34,3 +37,4 @@ class ClassValidator(vararg val validations: Validation<*, *>): Validable<Any> {
 infix fun <T, R> (T.() -> R).mustBe(condition: (R) -> Boolean) = ClassValidator.Validation(this, Validator(condition = condition))
 
 infix fun <T, R> (T.() -> R).validatesWith(validator: Validable<R>) = ClassValidator.Validation(this, validator)
+

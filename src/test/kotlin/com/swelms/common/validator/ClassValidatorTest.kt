@@ -1,6 +1,6 @@
 package com.swelms.common.validator
 
-import com.swelms.common.type.ValResult
+import com.swelms.common.type.Res
 import kotlin.test.*
 import com.swelms.domain.person.Gender
 import com.swelms.domain.validator.DigitsValidator
@@ -48,13 +48,16 @@ class ClassValidatorTest {
 
       val user = User(Gender.M, 60, "XXX")
 
-      val results = validations.evaluate(user)
+      val results = validations.evaluateAll(user)
 
       println(results)
 
-      assertTrue {  results[0] is ValResult.Success }
-      assertTrue {  results[1] is ValResult.Error  }
-      assertTrue {  results[2] is ValResult.Error  }
+      assertTrue {  results[0] is Res.Success }
+      assertEquals(Gender.M, results[0].value)
+      assertTrue {  results[1] is Res.Error  }
+      assertEquals(60, results[1].value)
+
+      assertTrue {  results[2] is Res.Error  }
 
    }
 
