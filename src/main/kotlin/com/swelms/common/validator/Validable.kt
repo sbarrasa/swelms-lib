@@ -1,16 +1,16 @@
 package com.swelms.common.validator
 
-import com.swelms.common.type.Res
+import com.swelms.common.type.Result
 
 interface Validable<T> {
    fun validate(value: T): T
 
-   fun evaluate(value: T): Res<T>{
+   fun evaluate(value: T): Result<T>{
       try {
          validate(value)
-         return Res.Success(value)
+         return Result.Success(value)
       }catch (e: Exception){
-         return Res.Error(value = value, error = e)
+         return Result.Error(value = value, error = e)
       }
    }
 

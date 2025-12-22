@@ -9,7 +9,7 @@ class tryRunTest {
       val a = 10
       val b = 2
       val result = tryRun { a / b }
-      assertTrue(result is Res.Success)
+      assertTrue(result is Result.Success)
    }
 
    @Test
@@ -22,7 +22,7 @@ class tryRunTest {
       } onError {
          println(it)
       }
-      assertTrue(result is Res.Error)
+      assertTrue(result is Result.Error)
    }
 
 

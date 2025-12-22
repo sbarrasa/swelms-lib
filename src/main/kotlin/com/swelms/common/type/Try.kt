@@ -5,17 +5,18 @@ object Try{
    @JvmStatic fun run(block: () -> Unit) = tryRun(block)
 }
 
-fun <T> tryGet(block: () -> T): Res<T?> =
+fun <T> tryGet(block: () -> T): Result<T?> =
    try {
-      Res.Success(value = block())
+      Result.Success(value = block())
    } catch (e: Throwable) {
-      Res.Error(error = e)
+      Result.Error(error = e)
    }
 
-fun tryRun(block: () -> Unit): Res<Unit> =
+fun tryRun(block: () -> Unit): Result<Unit> =
    try {
       block()
-      Res.Success(value = Unit)
+      Result.Success(value = Unit)
    } catch (e: Throwable) {
-      Res.Error(error = e)
+      Result.Error(error = e)
    }
+

@@ -1,6 +1,6 @@
 package com.swelms.common.validator
 
-import com.swelms.common.type.Res
+import com.swelms.common.type.Result
 import kotlin.test.*
 import com.swelms.domain.person.Gender
 import com.swelms.domain.validator.DigitsValidator
@@ -52,12 +52,12 @@ class ClassValidatorTest {
 
       println(results)
 
-      assertTrue {  results[0] is Res.Success }
+      assertTrue {  results[0] is Result.Success }
       assertEquals(Gender.M, results[0].value)
-      assertTrue {  results[1] is Res.Error  }
+      assertTrue {  results[1] is Result.Error  }
       assertEquals(60, results[1].value)
 
-      assertTrue {  results[2] is Res.Error  }
+      assertTrue {  results[2] is Result.Error  }
 
    }
 

@@ -23,7 +23,7 @@ class ClassValidator(vararg val validations: Validation<*, *>): Validable<Any> {
       return value
    }
 
-   fun evaluateAll(obj: Any): List<Res<Any?>> =
+   fun evaluateAll(obj: Any): List<Result<Any?>> =
       validations.map {
          @Suppress("UNCHECKED_CAST")
          with((it as Validation<Any, Any?>)) {

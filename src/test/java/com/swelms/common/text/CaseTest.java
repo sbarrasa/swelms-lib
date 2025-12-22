@@ -7,7 +7,7 @@ class CaseTest {
 
   @Test
   void test() {
-    var value = CaseUtilsKt.snakeCase("Hola Mundo");
+    var value = CaseKt.toCase("Hola Mundo", Case.SNAKE.INSTANCE);
     assertEquals("hola_mundo", value);
   }
 }
