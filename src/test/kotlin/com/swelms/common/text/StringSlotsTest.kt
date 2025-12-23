@@ -54,4 +54,5 @@ class StringSlotsTest {
       val result = text.replaceSlots("Primero", "Segundo", "Tercero")
       assertEquals("Solo Primero Segundo Tercero", result)
    }
+
 }

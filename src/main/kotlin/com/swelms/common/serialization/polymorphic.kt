@@ -7,7 +7,6 @@ import kotlinx.serialization.modules.SerializersModuleBuilder
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.serializer
 import kotlin.reflect.KClass
-import kotlin.reflect.full.findAnnotation
 
 @OptIn(InternalSerializationApi::class)
 fun <B : Any> SerializersModuleBuilder.polymorphic(sealedClass: KClass<B>) =

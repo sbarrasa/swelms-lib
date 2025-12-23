@@ -8,7 +8,7 @@ class tryRunTest {
    fun tryRunSuccess() {
       val a = 10
       val b = 2
-      val result = tryRun { a / b }
+      val result = tryGet { a / b }
       assertTrue(result is Result.Success)
    }
 
@@ -17,7 +17,7 @@ class tryRunTest {
       val a = 10
       val b = 0
 
-      val result = tryRun {
+      val result = tryGet {
          a / b
       } onError {
          println(it)
