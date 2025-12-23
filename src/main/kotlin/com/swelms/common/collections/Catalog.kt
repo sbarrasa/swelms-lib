@@ -15,5 +15,9 @@ open class Catalog(val style: Style?) : LinkedHashMap<String, StringMap>() {
       return put(className, map.toStringMap())
    }
 
+   fun put(map: EnumMap<*,*>) = put(map.enumClass, map)
+
+   fun put(map: Map<*, *>): StringMap? = put(map::class, map)
+
 }
 
