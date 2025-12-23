@@ -7,9 +7,7 @@ import kotlin.reflect.KClass
 
 open class Catalog(val style: Style?) : LinkedHashMap<String, StringMap>() {
 
-   private fun applyCase(key: String) = style?.let { key.applyStyle(it) } ?: key
-
-   override fun put(key: String, value: StringMap) = super.put(applyCase(key), value)
+   override fun put(key: String, value: StringMap) = super.put(key.applyStyle(style), value)
 
    fun put(clazz: KClass<*>, map:Map<*, *>): StringMap? {
       val className = clazz.simpleName
