@@ -7,7 +7,7 @@ class CaseTest {
 
   @Test
   void test() {
-    var value = StyleKt.toStyle("Hola Mundo", Style.Snake.INSTANCE);
+    var value = StyleKt.toStyle("hola mundo", Style.SNAKE);
     assertEquals("hola_mundo", value);
   }
 }

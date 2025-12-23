@@ -6,7 +6,7 @@ enum class Case(val stringCase: (String) -> String, val charCase: (Char) -> Char
    LOWER({ it.lowercase() }, { it.lowercaseChar() })
 }
 
-open class Style(
+data class Style(
    val splitChar: Char = ' ',
    val joinChar: Char? = ' ',
    val capital: Case? = null,
@@ -14,16 +14,23 @@ open class Style(
    val words: Case? = null,
 ) {
 
-   object UpperCase : Style(words = Case.UPPER)
-   object LowerCase : Style(words = Case.LOWER)
-   object Title : Style(capital = Case.UPPER, joinChar = ' ')
-   object Pascal : Style(capital = Case.UPPER, capitalFirst = Case.UPPER, joinChar = null)
-   object Camel : Style(capital = Case.UPPER, capitalFirst = Case.LOWER, joinChar = null)
-   object Snake : Style(joinChar = '_')
-   object Kebab : Style(joinChar = '-')
-   object Dot : Style(joinChar = '.')
+   companion object {
+      @JvmField val UPPERCASE = Style(words = Case.UPPER)
+      @JvmField val LOWERCASE = Style(words = Case.LOWER)
+      @JvmField val TITLE = Style(capital = Case.UPPER, joinChar = ' ')
+      @JvmField val PASCAL = Style(capital = Case.UPPER, capitalFirst = Case.UPPER, joinChar = null)
+      @JvmField val CAMEL = Style(capital = Case.UPPER, capitalFirst = Case.LOWER, joinChar = null)
+      @JvmField val SNAKE = Style(joinChar = '_')
+      @JvmField val KEBAB = Style(joinChar = '-')
+      @JvmField val DOT = Style(joinChar = '.')
+      @JvmField val windowsPath = Style(joinChar = '\\')
+      @JvmField val unixPath = Style(joinChar = '/')
 
+   }
+   infix fun from(style: Style) = copy(
+      splitChar = style.joinChar?:' '
 
+   )
    fun transform(text: String): String {
       val parts = text.split(splitChar).toMutableList()
 
@@ -42,7 +49,6 @@ open class Style(
 
       return parts.joinToString(joinChar?.toString() ?: "")
    }
-
 
 }
 
