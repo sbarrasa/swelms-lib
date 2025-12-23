@@ -12,7 +12,7 @@ val DayOfWeek.isWorkday get() = this in WeekDays.WORK
 val DayOfWeek.isWeekend get() = this in WeekDays.WEEKEND
 
 operator fun DayOfWeek.plus(n: Int): DayOfWeek =
-   DayOfWeek.values()[(this.ordinal + n + DayOfWeek.values().size) % DayOfWeek.values().size]
+   DayOfWeek.entries[(this.ordinal + n + DayOfWeek.entries.size) % DayOfWeek.entries.size]
 
 operator fun DayOfWeek.minus(n: Int) = this + (-n)
 
