@@ -3,11 +3,11 @@ package com.swelms.common.text;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CaseTest {
+class StyleTest {
 
   @Test
   void test() {
-    var value = StyleKt.asStyle("hola mundo", Style.SNAKE);
+    var value = StyleKt.applyStyle("hola mundo", Style.SNAKE);
     assertEquals("hola_mundo", value);
   }
 }
