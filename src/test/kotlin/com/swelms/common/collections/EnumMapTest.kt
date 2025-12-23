@@ -24,6 +24,14 @@ class EnumMapTest {
       assertEquals(EnumTest::class, map.enumClass)
    }
 
+   @Test
+   fun enumMapCreate2(){
+      val map = EnumMap<EnumTest, String> {it.desc}
+      assertTrue { map is EnumMap }
+      assertEquals("Alpha", map[EnumTest.A])
+      assertEquals("Beta", map[EnumTest.B])
+      assertEquals(EnumTest::class, map.enumClass)
+   }
 
 
 }
