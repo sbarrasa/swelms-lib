@@ -2,12 +2,12 @@ package com.swelms.common.collections
 
 import com.swelms.common.locale.localeText
 import com.swelms.common.text.Style
-import com.swelms.common.text.toStyle
+import com.swelms.common.text.asStyle
 import kotlin.reflect.KClass
 
 open class Catalog(val style: Style?) : LinkedHashMap<String, StringMap>() {
 
-   private fun applyCase(key: String) = style?.let { key.toStyle(it) } ?: key
+   private fun applyCase(key: String) = style?.let { key.asStyle(it) } ?: key
 
    override fun put(key: String, value: StringMap) = super.put(applyCase(key), value)
 
