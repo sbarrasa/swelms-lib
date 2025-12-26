@@ -1,10 +1,8 @@
-package com.swelms.common.collections
+package com.swelms.common.enums
 
-import com.swelms.common.enums.EnumMap
-import com.swelms.common.enums.associateWith
-import com.swelms.common.enums.enumMap
-import kotlin.test.*
-
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class EnumMapTest {
    enum class MyEnum(val description: String) {
@@ -17,7 +15,7 @@ class EnumMapTest {
    @Test
    fun createFromAssociate(){
       val map = MyEnum.entries.associateWith { it.description }
-      assertTrue { map is EnumMap }
+      assertTrue(map is EnumMap)
       assertEquals(MyEnum::class, map.enumClass)
     }
 

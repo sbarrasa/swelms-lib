@@ -2,9 +2,9 @@ package com.swelms.common.enums
 
 import kotlin.enums.EnumEntries
 
-class EnumMap<E : Enum<E>, V>(
-   private val map: Map<E, V>) : Map<E, V> by map{
-   val enumClass get() = keys.first()::class
+class EnumMap<E : Enum<E>, V>(private val map: Map<E, V>) :
+      EnumContainer<E>, Map<E, V> by map {
+   override val enumClass get() = keys.first()::class
 }
 
 inline fun <E : Enum<E>, V> EnumEntries<E>.associateWith(
