@@ -1,10 +1,8 @@
 package com.swelms.common.type
 
-
 sealed class Result<T>(open val value: T?, open val error: Throwable?) {
    data class Success<T>(override val value: T) : Result<T>(value, null)
    data class Error<T>(override val error: Throwable, override val value:T? = null ) : Result<T>(value, error)
-
 }
 
 
