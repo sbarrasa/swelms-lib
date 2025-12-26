@@ -1,5 +1,6 @@
 package com.swelms.common.collections
 
+import com.swelms.common.enums.EnumMap
 import com.swelms.common.locale.localeText
 import com.swelms.common.text.Style
 import com.swelms.common.text.applyStyle
@@ -15,7 +16,7 @@ open class Catalog(val style: Style?) : LinkedHashMap<String, StringMap>() {
       return put(className, map.toStringMap())
    }
 
-   fun put(map: EnumMap<*,*>) = put(map.enumClass, map)
+   fun put(map: EnumMap<*, *>) = put(map.enumClass, map)
 
    fun put(map: Map<*, *>): StringMap? = put(map::class, map)
 
