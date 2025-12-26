@@ -1,14 +1,10 @@
 package com.swelms.common.enums
 
 
-class EnumSet<E : Enum<E>>(
-   private val set: Set<E>
-) : Set<E> by set, EnumContainer<E> {
+class EnumSet<E : Enum<E>>(private val set: Set<E>) : Set<E> by set{
 
    constructor(elements: Iterable<E>) : this(elements.toSet())
    constructor(vararg elements: E) : this(elements.toSet())
-
-   override val enumClass get() = set.first()::class
 }
 
 

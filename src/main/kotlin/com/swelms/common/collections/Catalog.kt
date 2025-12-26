@@ -1,9 +1,7 @@
 package com.swelms.common.collections
 
-import com.swelms.common.enums.EnumMap
 import com.swelms.common.locale.localeText
-import com.swelms.common.text.Style
-import com.swelms.common.text.applyStyle
+import com.swelms.common.text.*
 import kotlin.reflect.KClass
 
 open class Catalog(val style: Style?) : LinkedHashMap<String, StringMap>() {
@@ -16,7 +14,7 @@ open class Catalog(val style: Style?) : LinkedHashMap<String, StringMap>() {
       return put(className, map.toStringMap())
    }
 
-   fun put(map: Map<*, *>): StringMap? = put(map.keys.first()!!::class, map)
+   fun put(map: Map<*, *>): StringMap? = put(map.keyClass!!, map)
 
 }
 
