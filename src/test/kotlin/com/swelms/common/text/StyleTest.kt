@@ -12,7 +12,7 @@ class CaseConversionTest {
 
    @Test
    fun lower(){
-      assertEquals("sample model", "sample model".applyStyle(Style.LOWERCASE))
+      assertEquals("sample model", "sAmPle MODEL".applyStyle(Style.LOWERCASE))
    }
 
    @Test
@@ -113,8 +113,7 @@ class CaseConversionTest {
 
    @Test
    fun invertTitle(){
-      val style = !Style.TITLE
-      assertEquals("sAMPLE mODEL", "sample model".applyStyle(style))
+      assertEquals("sAMPLE mODEL", "sample model".applyStyle(!Style.TITLE))
    }
 
 }
