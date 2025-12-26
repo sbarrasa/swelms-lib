@@ -1,6 +1,6 @@
 package com.swelms.common.validator
 
-import com.swelms.common.type.Result
+import com.swelms.common.Result
 
 interface Validable<T> {
    fun validate(value: T): T

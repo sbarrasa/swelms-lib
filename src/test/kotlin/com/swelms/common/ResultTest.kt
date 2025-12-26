@@ -1,9 +1,8 @@
-package com.swelms.common.type
+package com.swelms.common
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
-
 
 class ResultTest {
    @Test

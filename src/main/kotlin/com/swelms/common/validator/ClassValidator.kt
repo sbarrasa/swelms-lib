@@ -1,6 +1,6 @@
 package com.swelms.common.validator
 
-import com.swelms.common.type.Result
+import com.swelms.common.Result
 
 class ClassValidator(vararg val validations: Validation<*, *>): Validable<Any> {
 
