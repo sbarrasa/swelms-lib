@@ -8,10 +8,11 @@ open class Catalog(val style: Style?) : LinkedHashMap<String, StringMap>() {
 
    override fun put(key: String, value: StringMap) = super.put(key.applyStyle(style), value)
 
+   fun put(key: String, map: Map<*,*>) = put(key, map.toStringMap())
    fun put(clazz: KClass<*>, map:Map<*, *>): StringMap? {
       val className = clazz.simpleName
       requireNotNull(className) { localeText("NO_CLASS_NAME") }
-      return put(className, map.toStringMap())
+      return put(className, map)
    }
 
    fun put(map: Map<*, *>): StringMap? = put(map.keyClass!!, map)
