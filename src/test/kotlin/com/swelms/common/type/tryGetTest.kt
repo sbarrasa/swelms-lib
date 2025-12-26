@@ -2,6 +2,7 @@ package com.swelms.common.type
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
@@ -70,13 +71,14 @@ class tryGetTest {
    }
 
    @Test
-   fun tryGetIsValue() {
+   fun tryGetIsSuccess() {
       val a = 10
       val b = 2
 
       val result = tryGet { a / b }
       assertTrue { result is Result.Success }
    }
+
 
    @Test
    fun tryGetWithDefault(){
@@ -94,5 +96,23 @@ class tryGetTest {
 
    }
 
+   @Test
+   fun tryGetOnError(){
+      val a = 10
+      val b = 0
+      var errorMsg: String? = null
+      tryGet { a / b } onError { errorMsg = it.message }
+      assertNotNull(errorMsg)
+   }
+
+   @Test
+   fun tryGetTimes(){
+      val a = 10
+      var b = -1
+
+      val value = tryGet(attempts = 3) { b++; a / b }
+      assertTrue(value is Result.Success)
+      assertEquals(1, b)
+   }
 
 }
