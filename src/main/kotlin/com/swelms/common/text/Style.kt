@@ -13,16 +13,16 @@ data class Style(
       val parts = text.split(splitChar).toMutableList()
 
       wordsCase?.let {
-         parts.forEachIndexed { i, part -> parts[i] = wordsCase.forString(part) }
+         parts.forEachIndexed { i, part -> parts[i] = wordsCase.byString(part) }
       }
 
       firstWordCharCase?.let {
-         parts.forEachIndexed { i, part -> parts[i] = part.replaceFirstChar(firstWordCharCase.forChar) }
+         parts.forEachIndexed { i, part -> parts[i] = part.replaceFirstChar(firstWordCharCase.byChar) }
       }
 
       firstCharCase?.let {
          if (parts.isNotEmpty())
-            parts[0] = parts[0].replaceFirstChar(firstCharCase.forChar)
+            parts[0] = parts[0].replaceFirstChar(firstCharCase.byChar)
       }
 
       return parts.joinToString(joinChar?.toString() ?: "")

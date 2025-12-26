@@ -1,6 +1,6 @@
 package com.swelms.common.text
 
-enum class Case(val forString: (String) -> String, val forChar: (Char) -> Char) {
+enum class Case(val byString: (String) -> String, val byChar: (Char) -> Char) {
    UPPER({ it.uppercase() }, { it.uppercaseChar() }),
    LOWER({ it.lowercase() }, { it.lowercaseChar() });
 
