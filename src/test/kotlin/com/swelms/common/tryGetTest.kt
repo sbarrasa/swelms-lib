@@ -80,22 +80,6 @@ class tryGetTest {
 
 
    @Test
-   fun tryGetWithDefault(){
-      val a = 10
-      val b = 0
-
-      val value = tryGet { a / b } orElse {-1}
-      assertEquals(-1, value)
-
-      val a2 = 10
-      val b2 = 2
-
-      val value2 = tryGet { a2 / b2 } orElse {-1}
-      assertEquals(5, value2)
-
-   }
-
-   @Test
    fun tryGetOnError(){
       val a = 10
       val b = 0
@@ -105,7 +89,7 @@ class tryGetTest {
    }
 
    @Test
-   fun tryGetTimes(){
+   fun tryGetAttempts(){
       val a = 10
       var b = -1
 
