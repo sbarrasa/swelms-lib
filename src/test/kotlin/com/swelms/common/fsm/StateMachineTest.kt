@@ -5,40 +5,35 @@ import kotlin.test.*
 
 class StateMachineDslTest {
    enum class OrderState { CREATED, VALIDATED, PAID, INVALID, CANCELLED }
-
    data class Account(val id: Int, var amount: Double = 100.0)
-
    data class Payment(val account: Account, val amount: Double)
    object Cancel
 
-   val sm = stateMachine(initialState = OrderState.CREATED) {
+   val sm = StateMachine(OrderState.CREATED,
+         Transition(
+            Cancel::class,
+            to = OrderState.CANCELLED
+         ),
 
-         state(GLOBAL) {
-            transition<Cancel>(OrderState.CANCELLED)
-         }
+         Transition(Account::class,
+            guard = { it.amount >= 100.0 },
+            OrderState.CREATED to OrderState.VALIDATED
+         ),
 
-         state(OrderState.CREATED) {
-            transition<Account>(
-               guard = { it.amount >= 100 },
-               target = OrderState.VALIDATED,
-            )
-            transition<Account>(
-               guard = { it.amount < 100 },
-               target = OrderState.INVALID,
-               action = { throw IllegalStateException("Invalid account") }
-            )
+         Transition(Account::class,
+            guard = { it.amount < 100.0 },
+            OrderState.CREATED to OrderState.INVALID,
+            action = { throw IllegalStateException("Invalid account") },
+         ),
 
-         }
+         Transition(Payment::class,
+            guard = { it.amount > 0 && it.amount <= it.account.amount },
+            OrderState.VALIDATED to OrderState.PAID,
+            action = { it.account.amount -= it.amount }
+           )
+      )
 
-         state(OrderState.VALIDATED) {
-            transition<Payment>(
-               target = OrderState.PAID,
-               guard = { it.amount > 0
-                     && it.amount <= it.account.amount},
-               action = { it.account.amount-= it.amount }
-               )
-         }
-   }
+
 
    @Test
    fun full_happy_path() {
@@ -100,8 +95,4 @@ class StateMachineDslTest {
    fun finalStates(){
       assertEquals(setOf(OrderState.PAID, OrderState.CANCELLED, OrderState.INVALID), sm.finalStates())
    }
-
-
-
-
 }
