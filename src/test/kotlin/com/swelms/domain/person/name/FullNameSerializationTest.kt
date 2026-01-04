@@ -15,7 +15,7 @@ class FullNameSerializationTest {
 
    @Test
    fun serializaComoStringUnico() {
-      val usuario = User(FullName("Barrasa Rabinovich", "Sebastián Gabriel"), "Admin")
+      val usuario = User(FullName(NamePart("Barrasa Rabinovich"), NamePart("Sebastián Gabriel")), "Admin")
       val json = Json.encodeToString(usuario)
        assertEquals("""{"nombres":"Barrasa Rabinovich, Sebastián Gabriel","rol":"Admin"}""".trimIndent(), json)
    }
