@@ -1,7 +1,5 @@
-package com.swelms.domain.card
+package com.swelms.domain.id.card
 
-import com.swelms.domain.id.card.BinTable
-import com.swelms.domain.id.card.CardBrand
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull

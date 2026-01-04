@@ -3,7 +3,6 @@ package com.swelms.common.collections
 import com.swelms.common.text.Style
 import kotlin.test.*
 
-
 class CatalogTest {
    enum class MyEnum { A, B, C, D }
    data class User(val id: Int)

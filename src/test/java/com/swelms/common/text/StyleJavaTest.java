@@ -3,7 +3,7 @@ package com.swelms.common.text;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class StyleTest {
+class StyleJavaTest {
 
   @Test
   void test() {

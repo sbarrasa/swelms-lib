@@ -1,6 +1,6 @@
 plugins {
-   kotlin("jvm") version "2.2.21"
-   id("org.jetbrains.kotlin.plugin.serialization") version "2.2.21"
+   kotlin("jvm") version "2.3.0"
+   id("org.jetbrains.kotlin.plugin.serialization") version "2.3.0"
    id("maven-publish")
 }
 
@@ -41,4 +41,7 @@ publishing {
 
 kotlin {
    jvmToolchain(21)
+   compilerOptions {
+      freeCompilerArgs.add("-Xjvm-expose-boxed")
+   }
 }

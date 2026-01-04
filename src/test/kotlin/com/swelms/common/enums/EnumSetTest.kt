@@ -2,7 +2,6 @@ package com.swelms.common.enums
 
 import kotlin.test.*
 
-
 class EnumSetTest {
    enum class MyEnum {A, B, C, D, E}
 
@@ -11,6 +10,8 @@ class EnumSetTest {
       val set = EnumSet(MyEnum.A, MyEnum.C, MyEnum.E)
       assertTrue(MyEnum.A in set)
       assertFalse(MyEnum.B in set)
+      assertFalse(MyEnum.D in set)
+
    }
 
    @Test

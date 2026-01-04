@@ -1,8 +1,6 @@
 package com.swelms.common.fsm
 
 import kotlin.test.*
-
-
 class StateMachineDslTest {
    enum class OrderState { CREATED, VALIDATED, PAID, INVALID, CANCELLED }
    data class Account(val id: Int, var amount: Double = 100.0)

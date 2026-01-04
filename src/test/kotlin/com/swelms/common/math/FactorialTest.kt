@@ -19,8 +19,5 @@ class FactorialTest {
    fun testOverflow(){
       assertFails { factorial(21) }
    }
-
-
-
 }
 

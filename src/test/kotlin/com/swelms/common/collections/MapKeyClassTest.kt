@@ -4,7 +4,6 @@ import com.swelms.domain.locale.Currency
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-
 class MapKeyClassTest {
 
    @Test

@@ -1,7 +1,6 @@
-package com.swelms.domain.cbu
+package com.swelms.domain.id.cbu
 
 import com.swelms.common.locale.localeText
-import com.swelms.domain.id.cbu.CBU
 import com.swelms.common.validator.ValidatorException
 import kotlin.test.*
 

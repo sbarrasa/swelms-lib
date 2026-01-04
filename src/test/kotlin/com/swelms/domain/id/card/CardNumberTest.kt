@@ -1,8 +1,6 @@
-package com.swelms.domain.card
+package com.swelms.domain.id.card
 
 import com.swelms.common.locale.localeText
-import com.swelms.domain.id.card.CardBrand
-import com.swelms.domain.id.card.CardNumber
 import com.swelms.common.validator.ValidatorException
 import kotlin.test.Test
 import kotlin.test.assertContains
