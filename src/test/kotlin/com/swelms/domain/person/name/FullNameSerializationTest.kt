@@ -9,14 +9,14 @@ class FullNameSerializationTest {
    @Serializable
    data class User(
       @Serializable(with = FullNameSerializer::class)
-      val nombres: FullName,
+      val names: FullName,
       val rol: String
    )
 
    @Test
-   fun serializaComoStringUnico() {
+   fun serializeAsString() {
       val usuario = User(FullName(NamePart("Barrasa Rabinovich"), NamePart("Sebastián Gabriel")), "Admin")
       val json = Json.encodeToString(usuario)
-       assertEquals("""{"nombres":"Barrasa Rabinovich, Sebastián Gabriel","rol":"Admin"}""".trimIndent(), json)
+       assertEquals("""{"names":"Barrasa Rabinovich, Sebastián Gabriel","rol":"Admin"}""".trimIndent(), json)
    }
 }
