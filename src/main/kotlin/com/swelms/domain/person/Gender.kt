@@ -3,7 +3,7 @@ package com.swelms.domain.person
 import com.swelms.common.locale.Locale
 import com.swelms.common.reflection.qName
 
-enum class Gender() {
+enum class Gender {
    M,
    F,
    X;
