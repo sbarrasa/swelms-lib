@@ -8,25 +8,25 @@ class CaseTest {
    @Test
    fun upperString(){
       val str = "HoLa"
-      assertEquals("HOLA", Case.UPPER.applyToString(str))
+      assertEquals("HOLA", Case.UPPER.applyTo(str))
    }
 
    @Test
    fun lowerString(){
       val str = "HoLa"
-      assertEquals("hola", Case.LOWER.applyToString(str))
+      assertEquals("hola", Case.LOWER.applyTo(str))
    }
 
    @Test
    fun upperChar(){
       val char = 'h'
-      assertEquals('H', Case.UPPER.applyToChar(char))
+      assertEquals('H', Case.UPPER.applyTo(char))
    }
 
    @Test
    fun lowerChar(){
       val char = 'h'
-      assertEquals('h', Case.LOWER.applyToChar(char))
+      assertEquals('h', Case.LOWER.applyTo(char))
    }
 
 }

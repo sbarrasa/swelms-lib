@@ -13,7 +13,7 @@ data class Style(
       val parts = text.split(splitChar).toMutableList()
 
       wordsCase?.let {
-         parts.forEachIndexed { i, part -> parts[i] = wordsCase.applyToString(part) }
+         parts.forEachIndexed { i, part -> parts[i] = wordsCase.applyTo(part) }
       }
 
       firstWordCharCase?.let {
