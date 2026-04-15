@@ -62,4 +62,4 @@ data class Style(
 }
 
 
-fun String.applyStyle(style: Style?): String = style?.transform(this) ?: this
+fun String.applyStyle(style: Style) = style.transform(this)
