@@ -63,3 +63,9 @@ data class Style(
 
 
 fun String.applyStyle(style: Style) = style.transform(this)
+
+infix fun String.match(style: Style) = this == style.transform(this)
+
+infix fun String.match(styles: Iterable<Style>) = styles.any { this match it }
+
+infix fun String.match(styles: Array<Style>) = this match styles.asIterable()

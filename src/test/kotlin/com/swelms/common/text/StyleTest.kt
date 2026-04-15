@@ -2,6 +2,7 @@ package com.swelms.common.text
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class CaseConversionTest {
 
@@ -118,6 +119,26 @@ class CaseConversionTest {
    @Test
    fun invertTitle(){
       assertEquals("sAMPLE mODEL", "sample model".applyStyle(!Style.TITLE))
+   }
+
+   @Test
+   fun match(){
+      assertTrue { "Hola Mundo" match Style.TITLE }
+   }
+
+   @Test
+   fun matchList(){
+      assertTrue { "Hola Mundo" match listOf(Style.SNAKE, Style.TITLE) }
+   }
+
+   @Test
+   fun matchSet(){
+      assertTrue { "hola-mundo" match setOf(Style.TITLE, Style.KEBAB) }
+   }
+
+   @Test
+   fun matchArray(){
+      assertTrue { "hola_mundo" match arrayOf(Style.TITLE, Style.SNAKE) }
    }
 
 }
