@@ -77,12 +77,12 @@ class CaseConversionTest {
 
    @Test
    fun dotToPath(){
-      val style = Style.unixPath from Style.DOT
+      val style = Style.DOT to Style.unixPath
       assertEquals("com/swelms/text", "com.swelms.text".applyStyle(style))
    }
 
    @Test
-   fun unixToWindowsPath(){
+   fun windowsFromUnixPath(){
       val style = Style.windowsPath from Style.unixPath
       assertEquals("com\\swelms\\text", "com/swelms/text".applyStyle(style))
    }
