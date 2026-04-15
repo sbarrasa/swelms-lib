@@ -5,9 +5,9 @@ package com.swelms.common.text
 data class Style(
    val splitChar: Char = ' ',
    val joinChar: Char? = ' ',
-   val firstWordCharCase: Case? = null,
-   val firstCharCase: Case? = null,
    val wordsCase: Case? = null,
+   val firstCharCase: Case? = null,
+   val firstWordCharCase: Case? = null,
 ) {
    fun transform(text: String): String {
       val parts = text.split(splitChar).toMutableList()
@@ -32,7 +32,7 @@ data class Style(
       @JvmField val UPPERCASE = Style(wordsCase = Case.UPPER)
       @JvmField val LOWERCASE = Style(wordsCase = Case.LOWER)
       @JvmField val TITLE = Style(firstWordCharCase = Case.UPPER, wordsCase = Case.LOWER)
-      @JvmField val PASCAL = Style(wordsCase = Case.LOWER, joinChar = null, firstWordCharCase = Case.UPPER)
+      @JvmField val PASCAL = TITLE.copy(joinChar = null)
       @JvmField val CAMEL = PASCAL.copy(firstCharCase = Case.LOWER)
       @JvmField val SNAKE = Style(joinChar = '_')
       @JvmField val KEBAB = Style(joinChar = '-')

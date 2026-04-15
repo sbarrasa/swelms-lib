@@ -22,7 +22,8 @@ class CaseConversionTest {
 
    @Test
    fun snakeUpper(){
-      assertEquals("SAMPLE_MODEL", "sample model".applyStyle(Style.SNAKE + Style.UPPERCASE))
+      val style = Style.SNAKE + Style.UPPERCASE
+      assertEquals("SAMPLE_MODEL", "sample model".applyStyle(style))
    }
 
    @Test
@@ -68,6 +69,7 @@ class CaseConversionTest {
    fun customTitleNoSpace(){
       val style = Style.TITLE.copy(joinChar = null)
       assertEquals("SampleModel", "sample model".applyStyle(style))
+      assertEquals(Style.PASCAL, style)
    }
 
    @Test
@@ -96,13 +98,15 @@ class CaseConversionTest {
 
    @Test
    fun upperFromSnake(){
-      val style = Style.UPPERCASE.copy(splitChar = '_')
+      val style = Style.UPPERCASE from Style.SNAKE
+
       assertEquals("SAMPLE MODEL", "sample_model".applyStyle(style))
    }
 
    @Test
    fun snakePlusTitle(){
-      assertEquals("Sample_Model", "sample model".applyStyle(Style.SNAKE + Style.TITLE))
+      val style = Style.SNAKE + Style.TITLE
+      assertEquals("Sample_Model", "sample model".applyStyle(style))
    }
 
    @Test
