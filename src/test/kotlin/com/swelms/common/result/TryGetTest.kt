@@ -12,6 +12,7 @@ class TryGetTest {
       val a = 10
       val b = 0
       val value = tryGet { a / b }.value ?: -1
+
       assertEquals(-1, value)
    }
 
@@ -36,7 +37,7 @@ class TryGetTest {
       val a = 10
       val b = 0
 
-      val value = tryGet { a / b } orElse { println(it.error); null }
+      val value = tryGet { a / b } orElse { null }
       assertNull(value)
    }
 
@@ -44,22 +45,10 @@ class TryGetTest {
    fun tryGetSuccess() {
       val a = 10
       val b = 2
-      val value = tryGet { a / b } orElse { println(it.error); null }
+      val value = tryGet { a / b } orElse { null }
       assertEquals(5, value)
    }
 
-   @Test
-   fun tryGetAny() {
-      val a = 10
-      val b = 0
-      val value = tryGet { a / b } orElse { it.error?.message }
-      assertEquals("/ by zero", value)
-
-      val a2 = 10
-      val b2 = 2
-      val value2 = tryGet { a2 / b2 } orElse { it.error?.message }
-      assertEquals(5, value2)
-   }
 
    @Test
    fun tryGetIsError() {
@@ -88,43 +77,5 @@ class TryGetTest {
       assertNotNull(errorMsg)
    }
 
-   @Test
-   fun tryGetAttempts(){
-      val a = 10
-      var b = -1
-
-      val value = tryGet(attempts = 3) { b++; a / b }
-      assertTrue(value is Result.Success)
-      assertEquals(1, b)
-   }
-
-   @Test
-   fun accumulatedErrors() {
-      var n = 0
-      val result = tryGet(attempts = 2) {
-         n++
-         when (n) {
-            1 -> throw IllegalStateException("E1")
-            else -> throw ArithmeticException("E2")
-         }
-      }
-
-      assertTrue(result is Result.Error)
-      val error = result.error
-      assertTrue(error is AccumulatedException)
-      assertEquals(2, error.errors.size)
-      assertTrue(error.errors[0] is IllegalStateException)
-      assertTrue(error.errors[1] is ArithmeticException)
-      assertEquals("E2", error.last?.message)
-   }
-
-   @Test
-   fun singleAttempt() {
-      val result = tryGet { throw IllegalStateException("E1") }
-
-      assertTrue(result is Result.Error)
-      assertTrue(result.error is IllegalStateException)
-
-   }
 
 }

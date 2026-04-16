@@ -1,20 +1,12 @@
 package com.swelms.common.result
 
-fun <T> tryGet(attempts: Int = 1, block: () -> T): Result<T?> {
-   require(attempts >= 1) { "attempts must be positive number" }
-   val errors = mutableListOf<Throwable>()
-   repeat(attempts) {
+fun <T> tryGet(block: () -> T): Result<T?> =
       try {
          return Result.Success(block())
       } catch (e: Exception) {
-         errors.add(e)
+         return Result.Error(e)
       }
-   }
-   return if(attempts==1)
-            Result.Error(errors.last())
-         else
-            Result.Error(AccumulatedException(errors))
-}
+
 
 inline infix fun <T, R> Result<T>.orElse(block: (Result<T>) -> R): R where T : R =
    when (this) {
