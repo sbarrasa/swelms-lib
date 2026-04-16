@@ -3,7 +3,7 @@ package com.swelms.common.text
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class CaseConversionTest {
+class StyleTest {
 
    @Test
    fun upper() {
