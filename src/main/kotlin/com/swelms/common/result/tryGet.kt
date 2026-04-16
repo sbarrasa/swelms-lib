@@ -1,7 +1,7 @@
-package com.swelms.common
+package com.swelms.common.result
 
 fun <T> tryGet(attempts: Int = 1, block: () -> T): Result<T?> {
-   require(attempts >= 1) { "times must be positive number" }
+   require(attempts >= 1) { "attempts must be positive number" }
    var lastError: Throwable? = null
    repeat(attempts) {
       try {

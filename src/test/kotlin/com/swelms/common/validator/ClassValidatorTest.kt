@@ -1,6 +1,6 @@
 package com.swelms.common.validator
 
-import com.swelms.common.Result
+import com.swelms.common.result.Result
 import kotlin.test.*
 import com.swelms.domain.person.Gender
 import com.swelms.domain.validator.DigitsValidator
