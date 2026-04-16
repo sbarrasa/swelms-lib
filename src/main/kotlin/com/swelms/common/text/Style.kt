@@ -41,7 +41,6 @@ data class Style(
       @JvmField val unixPath = Style(joinChar = '/')
 
    }
-   infix fun from(styleFrom: Style) = copy(splitChar = styleFrom.joinChar?:' ')
    infix fun to(styleTo: Style) = styleTo.copy(splitChar = joinChar?:' ')
 
    operator fun plus(other: Style) = copy(

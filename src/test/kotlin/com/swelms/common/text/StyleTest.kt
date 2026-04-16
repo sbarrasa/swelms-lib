@@ -84,21 +84,21 @@ class StyleTest {
    }
 
    @Test
-   fun windowsFromUnixPath(){
-      val style = Style.windowsPath from Style.unixPath
-      assertEquals("com\\swelms\\text", "com/swelms/text".applyStyle(style))
+   fun unixToWindowsPath(){
+      val style = Style.unixPath to Style.windowsPath
+            assertEquals("com\\swelms\\text", "com/swelms/text".applyStyle(style))
    }
 
    @Test
-   fun snakeToCamel(){
-      val style = Style.CAMEL from Style.SNAKE
+   fun camelToSnake(){
+      val style = Style.SNAKE to Style.CAMEL
       assertEquals("sampleModel", "sample_model".applyStyle(style))
    }
 
 
    @Test
-   fun upperFromSnake(){
-      val style = Style.UPPERCASE from Style.SNAKE
+   fun snakeToUpper(){
+      val style = Style.SNAKE to Style.UPPERCASE
 
       assertEquals("SAMPLE MODEL", "sample_model".applyStyle(style))
    }
