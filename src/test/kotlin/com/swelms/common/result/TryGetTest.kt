@@ -19,7 +19,7 @@ class TryGetTest {
    fun tryGetOrElse() {
       val a = 10
       val b = 0
-      val value = tryGet { a / b } orElse -1
+      val value = tryGet { a / b } orElse { -1 }
       assertEquals(-1, value)
    }
 
@@ -27,7 +27,7 @@ class TryGetTest {
    fun tryGetOrAny() {
       val a = 10
       val b = 0
-      val value = tryGet { a / b } orAny "ERROR"
+      val value = tryGet { a / b } orElse { "ERROR" }
       assertEquals("ERROR", value)
    }
 
@@ -52,12 +52,12 @@ class TryGetTest {
    fun tryGetAny() {
       val a = 10
       val b = 0
-      val value = tryGet { a / b } orAny { it.error?.message }
+      val value = tryGet { a / b } orElse { it.error?.message }
       assertEquals("/ by zero", value)
 
       val a2 = 10
       val b2 = 2
-      val value2 = tryGet { a2 / b2 } orAny { it.error?.message }
+      val value2 = tryGet { a2 / b2 } orElse { it.error?.message }
       assertEquals(5, value2)
    }
 

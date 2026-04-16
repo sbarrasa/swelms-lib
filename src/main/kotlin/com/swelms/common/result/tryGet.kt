@@ -16,11 +16,11 @@ fun <T> tryGet(attempts: Int = 1, block: () -> T): Result<T?> {
             Result.Error(AccumulatedException(errors))
 }
 
-inline infix fun <T> Result<T>.orElse(block: (Result<T>) -> T): T = value ?: block(this)
-infix fun <T> Result<T>.orElse(defaultValue: T) = orElse { defaultValue }
-
-inline infix fun <T> Result<T>.orAny(block: (Result<T>) -> Any?): Any? = value ?: block(this)
-infix fun <T> Result<T>.orAny(defaultValue: Any?) = orAny { defaultValue }
+inline infix fun <T, R> Result<T>.orElse(block: (Result<T>) -> R): R where T : R =
+   when (this) {
+      is Result.Success -> value
+      is Result.Error -> block(this)
+   }
 
 inline infix fun <T> Result<T>.onError(block: (Throwable) -> Unit): Result<T> {
    error?.let {block(it)}
