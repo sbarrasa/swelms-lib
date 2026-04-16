@@ -7,7 +7,7 @@ fun <T> tryGet(attempts: Int = 1, block: () -> T): Result<T?> {
       try {
          return Result.Success(block())
       } catch (e: Exception) {
-         errors += e
+         errors.add(e)
       }
    }
    return if(attempts==1)
