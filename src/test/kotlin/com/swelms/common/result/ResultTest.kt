@@ -50,14 +50,14 @@ class ResultTest {
 
    @Test
    fun fromKotlinSuccess() {
-      val result = runCatching { 10 }.fromKotlinResult()
+      val result = runCatching { 10 }.toSwelmsResult()
       assertTrue(result is Result.Success)
       assertEquals(10, result.value)
    }
 
    @Test
    fun fromKotlinFail() {
-      val result = runCatching<Int> { error("boom") }.fromKotlinResult()
+      val result = runCatching<Int> { error("boom") }.toSwelmsResult()
       assertTrue(result is Result.Fail)
       assertEquals("boom", result.error.message)
    }

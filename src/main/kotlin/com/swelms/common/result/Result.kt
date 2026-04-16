@@ -12,7 +12,7 @@ fun <T> Result<T>.toKotlinResult(): kotlin.Result<T> =
       is Result.Fail   -> kotlin.Result.failure(error)
    }
 
-fun <T> kotlin.Result<T>.fromKotlinResult(): Result<T> =
+fun <T> kotlin.Result<T>.toSwelmsResult(): Result<T> =
    fold(
       onSuccess = { Result.Success(value = it) },
       onFailure = { Result.Fail(error = it) }
