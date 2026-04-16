@@ -14,7 +14,3 @@ inline infix fun <T, R> Result<T>.orElse(block: (Result<T>) -> R): R where T : R
       is Result.Error -> block(this)
    }
 
-inline infix fun <T> Result<T>.onError(block: (Throwable) -> Unit): Result<T> {
-   error?.let {block(it)}
-   return this
-}

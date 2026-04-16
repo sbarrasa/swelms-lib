@@ -2,7 +2,6 @@ package com.swelms.common.result
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
@@ -49,7 +48,6 @@ class TryGetTest {
       assertTrue { result is Result.Success }
    }
 
-
    @Test
    fun tryGetError() {
       val a = 10
@@ -57,22 +55,5 @@ class TryGetTest {
       val result = tryGet { a / b }
       assertTrue { result is Result.Error }
    }
-
-
-   @Test
-   fun tryGetOnError(){
-      val a = 10
-      val b = 0
-      var errorMsg: String? = null
-
-      tryGet {
-         a / b
-      } onError {
-         errorMsg = it.message
-      }
-
-      assertNotNull(errorMsg)
-   }
-
 
 }
