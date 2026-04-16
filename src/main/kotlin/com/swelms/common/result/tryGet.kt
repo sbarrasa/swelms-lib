@@ -11,9 +11,9 @@ fun <T> tryGet(attempts: Int = 1, block: () -> T): Result<T?> {
       }
    }
    return if(attempts==1)
-      Result.Error(errors.last())
-   else
-      Result.Error(AccumulatedException(errors))
+            Result.Error(errors.last())
+         else
+            Result.Error(AccumulatedException(errors))
 }
 
 inline infix fun <T> Result<T>.orElse(block: (Result<T>) -> T): T = value ?: block(this)
