@@ -15,11 +15,11 @@ class ResultOfTest {
    }
 
    @Test
-   fun error() {
+   fun fail() {
       val a = 10
       val b = 0
       val result = resultOf { a / b }
-      assertTrue { result is Result.Error }
+      assertTrue { result is Result.Fail }
    }
    @Test
    fun elvis() {
