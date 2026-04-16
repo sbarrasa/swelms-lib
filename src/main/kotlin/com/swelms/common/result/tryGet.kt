@@ -2,15 +2,18 @@ package com.swelms.common.result
 
 fun <T> tryGet(attempts: Int = 1, block: () -> T): Result<T?> {
    require(attempts >= 1) { "attempts must be positive number" }
-   var lastError: Throwable? = null
+   val errors = mutableListOf<Throwable>()
    repeat(attempts) {
       try {
          return Result.Success(block())
-      } catch (e: Throwable) {
-         lastError = e
+      } catch (e: Exception) {
+         errors += e
       }
    }
-   return Result.Error(lastError!!)
+   return if(attempts==1)
+      Result.Error(errors.last())
+   else
+      Result.Error(AccumulatedException(errors))
 }
 
 inline infix fun <T> Result<T>.orElse(block: (Result<T>) -> T): T = value ?: block(this)

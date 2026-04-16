@@ -6,7 +6,7 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
-class tryGetTest {
+class TryGetTest {
    @Test
    fun tryGetElvis() {
       val a = 10
@@ -96,6 +96,35 @@ class tryGetTest {
       val value = tryGet(attempts = 3) { b++; a / b }
       assertTrue(value is Result.Success)
       assertEquals(1, b)
+   }
+
+   @Test
+   fun accumulatedErrors() {
+      var n = 0
+      val result = tryGet(attempts = 2) {
+         n++
+         when (n) {
+            1 -> throw IllegalStateException("E1")
+            else -> throw ArithmeticException("E2")
+         }
+      }
+
+      assertTrue(result is Result.Error)
+      val error = result.error
+      assertTrue(error is AccumulatedException)
+      assertEquals(2, error.errors.size)
+      assertTrue(error.errors[0] is IllegalStateException)
+      assertTrue(error.errors[1] is ArithmeticException)
+      assertEquals("E2", error.last?.message)
+   }
+
+   @Test
+   fun singleAttempt() {
+      val result = tryGet { throw IllegalStateException("E1") }
+
+      assertTrue(result is Result.Error)
+      assertTrue(result.error is IllegalStateException)
+
    }
 
 }
