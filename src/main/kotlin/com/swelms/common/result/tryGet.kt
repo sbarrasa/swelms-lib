@@ -3,7 +3,7 @@ package com.swelms.common.result
 fun <T> tryGet(block: () -> T): Result<T?> =
       try {
          return Result.Success(block())
-      } catch (e: Exception) {
+      } catch (e: Throwable) {
          return Result.Error(e)
       }
 

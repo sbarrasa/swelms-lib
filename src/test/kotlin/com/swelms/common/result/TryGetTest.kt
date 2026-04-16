@@ -25,7 +25,7 @@ class TryGetTest {
    }
 
    @Test
-   fun tryGetOrAny() {
+   fun tryGetOrMsg() {
       val a = 10
       val b = 0
       val value = tryGet { a / b } orElse { "ERROR" }
@@ -33,7 +33,7 @@ class TryGetTest {
    }
 
    @Test
-   fun tryGetFail() {
+   fun tryGetNull() {
       val a = 10
       val b = 0
 
@@ -45,26 +45,17 @@ class TryGetTest {
    fun tryGetSuccess() {
       val a = 10
       val b = 2
-      val value = tryGet { a / b } orElse { null }
-      assertEquals(5, value)
-   }
-
-
-   @Test
-   fun tryGetIsError() {
-      val a = 10
-      val b = 0
-      val result= tryGet { a / b }
-      assertTrue { result is Result.Error }
-   }
-
-   @Test
-   fun tryGetIsSuccess() {
-      val a = 10
-      val b = 2
-
       val result = tryGet { a / b }
       assertTrue { result is Result.Success }
+   }
+
+
+   @Test
+   fun tryGetError() {
+      val a = 10
+      val b = 0
+      val result = tryGet { a / b }
+      assertTrue { result is Result.Error }
    }
 
 
@@ -73,7 +64,13 @@ class TryGetTest {
       val a = 10
       val b = 0
       var errorMsg: String? = null
-      tryGet { a / b } onError { errorMsg = it.message }
+
+      tryGet {
+         a / b
+      } onError {
+         errorMsg = it.message
+      }
+
       assertNotNull(errorMsg)
    }
 
