@@ -1,40 +1,40 @@
 package com.swelms.common.fsm
 
 import kotlin.test.*
-class StateMachineDslTest {
-   enum class OrderState { CREATED, VALIDATED, PAID, INVALID, CANCELLED }
+class StateMachineTest {
+   enum class OrderState { CREATED, VALIDATED, PAID, INVALID, REJECTED, CANCELLED }
    data class Account(val id: Int, var amount: Double = 100.0)
    data class Payment(val account: Account, val amount: Double)
    object Cancel
 
-   val sm = StateMachine(OrderState.CREATED,
-         Transition(
-            Cancel::class,
-            to = OrderState.CANCELLED
-         ),
-
-         Transition(Account::class,
-            guard = { it.amount >= 100.0 },
-            OrderState.CREATED to OrderState.VALIDATED
-         ),
-
-         Transition(Account::class,
-            guard = { it.amount < 100.0 },
-            OrderState.CREATED to OrderState.INVALID,
-            action = { throw IllegalStateException("Invalid account") },
-         ),
-
-         Transition(Payment::class,
-            guard = { it.amount > 0 && it.amount <= it.account.amount },
-            OrderState.VALIDATED to OrderState.PAID,
-            action = { it.account.amount -= it.amount }
-           )
+   private fun stateMachine() = StateMachine(OrderState.CREATED,
+      Transition(
+         Cancel::class,
+         to = OrderState.CANCELLED
+      ),
+      Transition(Account::class,
+         guard = { it.amount >= 100.0 },
+         OrderState.CREATED to OrderState.VALIDATED
+      ),
+      Transition(Account::class,
+         guard = { it.amount < 100.0 },
+         OrderState.CREATED to OrderState.INVALID,
+         action = { throw IllegalStateException("Invalid account") },
+      ),
+      Transition(Payment::class,
+         guard = { it.amount > 0 && it.amount <= it.account.amount },
+         OrderState.VALIDATED to OrderState.PAID,
+         action = { it.account.amount -= it.amount }
+      ),
+      Transition(Payment::class,
+         guard = { it.amount > 0 && it.amount > it.account.amount },
+         map = OrderState.VALIDATED to OrderState.REJECTED
       )
-
-
+   )
 
    @Test
-   fun full_happy_path() {
+   fun happyPath() {
+      val sm = stateMachine()
       val account = Account(1, 100.0)
       sm.step(account)
       assertEquals(OrderState.VALIDATED, sm.state)
@@ -44,15 +44,17 @@ class StateMachineDslTest {
    }
 
    @Test
-   fun validation_blocks_payment() {
+   fun blockedPayment() {
+      val sm = stateMachine()
       val account = Account(1, 100.0)
       sm.step(account)
       sm.step(Payment(account, 10000.0))
-      assertEquals(OrderState.VALIDATED, sm.state)
+      assertEquals(OrderState.REJECTED, sm.state)
    }
 
    @Test
    fun invalidAccount() {
+      val sm = stateMachine()
       val account = Account(1, 0.0)
 
       val e = assertFails { sm.step(account) }
@@ -62,20 +64,23 @@ class StateMachineDslTest {
    }
 
    @Test
-   fun cancel_from_any_state() {
+   fun cancelAnyState() {
+      val sm = stateMachine()
       sm.step(Account(1))
       sm.step(Cancel)
       assertEquals(OrderState.CANCELLED, sm.state)
    }
 
    @Test
-   fun ignored_event_does_not_change_state() {
+   fun ignoredEvent() {
+      val sm = stateMachine()
       sm.step(Payment(Account(1), 50.0))
       assertEquals(OrderState.CREATED, sm.state)
    }
 
    @Test
-   fun action_is_executed() {
+   fun actionExecuted() {
+      val sm = stateMachine()
       assertEquals(OrderState.CREATED, sm.state)
 
       val account = Account(1, 1000.0)
@@ -91,6 +96,7 @@ class StateMachineDslTest {
 
    @Test
    fun finalStates(){
-      assertEquals(setOf(OrderState.PAID, OrderState.CANCELLED, OrderState.INVALID), sm.finalStates())
+      val sm = stateMachine()
+      assertEquals(setOf(OrderState.PAID, OrderState.CANCELLED, OrderState.INVALID, OrderState.REJECTED), sm.finalStates())
    }
 }

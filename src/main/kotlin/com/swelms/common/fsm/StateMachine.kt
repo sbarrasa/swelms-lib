@@ -12,15 +12,15 @@ class StateMachine<S>(
 
    @Suppress("UNCHECKED_CAST")
    fun step(event: Any): S {
-      val t = transitions.firstOrNull {
+      val transition = transitions.firstOrNull {
                (it.from == null || it.from == state)
                && it.with.isInstance(event)
                && it.guardCheck(event)
       } ?: return state
 
-      state = t.to
+      state = transition.to
 
-      (t.action as (Any) -> Unit)(event)
+      (transition.action as (Any) -> Unit)(event)
       return state
    }
 

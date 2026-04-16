@@ -13,9 +13,9 @@ data class Transition<S, E: Any>(
    constructor(
       with: KClass<E>,
       guard: (E) -> Boolean = { true },
-      trans: Pair<S?, S>,
+      map: Pair<S?, S>,
       action: (E) -> Unit = {}
-   ) : this(with, guard, trans.first, trans.second, action)
+   ) : this(with, guard, map.first, map.second, action)
 
 
    fun guardCheck(e: Any) = guard(e as E)
