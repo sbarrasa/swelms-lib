@@ -5,19 +5,19 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class ValidatorTest {
+    val validator = Validator<Int>("Value {1} too small") { it > 10 }
+
     @Test
     fun validateSuccess() {
-        val validator = Validator<Int>("Value too small") { it > 10 }
         val result = validator.validate(15)
         assertEquals(15, result)
     }
 
     @Test
     fun validateFailure() {
-        val validator = Validator<Int>("Value too small") { it > 10 }
         val exception = assertFailsWith<ValidatorException> {
             validator.validate(5)
         }
-        assertEquals("Value too small", exception.message)
+        assertEquals("Value 5 too small", exception.message)
     }
 }
