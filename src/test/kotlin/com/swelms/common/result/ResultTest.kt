@@ -13,16 +13,15 @@ class ResultTest {
    }
    @Test
    fun error() {
-      val fail = Result.Fail<Any>(RuntimeException("error"))
+      val fail = Result.Fail(RuntimeException("error"))
       assertEquals("error", fail.error.message)
    }
 
    @Test
    fun destructuringError(){
-      val fail = Result.Fail(RuntimeException("error"), 10)
+      val fail = Result.Fail(RuntimeException("error"))
 
-      val (error, value) = fail
-      assertEquals(10, value)
+      val (error) = fail
       assertTrue { error is RuntimeException }
    }
 
@@ -43,7 +42,7 @@ class ResultTest {
 
    @Test
    fun toKotlinFail() {
-      val result = Result.Fail<Int>(RuntimeException("error")).toKotlinResult()
+      val result = Result.Fail(RuntimeException("error")).toKotlinResult()
       assertTrue(result.isFailure)
       assertEquals("error", result.exceptionOrNull()?.message)
    }
@@ -57,7 +56,7 @@ class ResultTest {
 
    @Test
    fun fromKotlinFail() {
-      val result = runCatching<Int> { error("boom") }.toSwelmsResult()
+      val result = runCatching { error("boom") }.toSwelmsResult()
       assertTrue(result is Result.Fail)
       assertEquals("boom", result.error.message)
    }

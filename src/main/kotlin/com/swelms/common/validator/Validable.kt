@@ -10,7 +10,7 @@ interface Validable<T> {
          validate(value)
          return Result.Success(value)
       }catch (e: Exception){
-         return Result.Fail(value = value, error = e)
+         return Result.Fail(e)
       }
    }
 

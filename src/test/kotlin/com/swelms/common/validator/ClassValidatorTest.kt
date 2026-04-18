@@ -55,7 +55,6 @@ class ClassValidatorTest {
       assertTrue {  results[0] is Result.Success }
       assertEquals(Gender.M, results[0].value)
       assertTrue {  results[1] is Result.Fail  }
-      assertEquals(60, results[1].value)
 
       assertTrue {  results[2] is Result.Fail  }
 

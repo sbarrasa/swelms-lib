@@ -1,9 +1,11 @@
 package com.swelms.common.result
 
-sealed interface Result<T> {
+sealed interface Result<out T> {
    val value: T?
    data class Success<T>(override val value: T) : Result<T>
-   data class Fail<T>(val error: Throwable, override val value:T? = null ): Result<T>
+   data class Fail(val error: Throwable): Result<Nothing> {
+      override val value get() = null
+   }
 }
 
 
