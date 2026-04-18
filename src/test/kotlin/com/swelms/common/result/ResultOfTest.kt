@@ -34,7 +34,7 @@ class ResultOfTest {
    fun orElseValue() {
       val a = 10
       val b = 0
-      val value = resultOf { a / b }.valueOrElse { -1 }
+      val value = resultOf { a / b }.valueOr { -1 }
       assertEquals(-1, value)
    }
 
@@ -42,7 +42,7 @@ class ResultOfTest {
    fun orElseMessage() {
       val a = 10
       val b = 0
-      val value = resultOf { a / b }.valueOrElse { "ERROR" }
+      val value = resultOf { a / b }.valueOr { "ERROR" }
       assertEquals("ERROR", value)
    }
 
@@ -51,9 +51,23 @@ class ResultOfTest {
       val a = 10
       val b = 0
 
-      val value = resultOf { a / b }.valueOrElse { null }
+      val value = resultOf { a / b }.valueOr { null }
       assertNull(value)
    }
 
+   @Test
+   fun orElseErrorMessage() {
+      val a = 10
+      val b = 0
+      val value = resultOf { a / b } valueOr { it.error.message }
+      assertEquals("/ by zero", value)
+   }
 
+   @Test
+   fun orElseError() {
+      val a = 10
+      val b = 0
+      val value = resultOf { a / b } valueOr { it.error }
+      assertTrue { value is Exception }
+   }
 }

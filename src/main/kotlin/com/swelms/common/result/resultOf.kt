@@ -8,7 +8,7 @@ fun <T> resultOf(block: () -> T): Result<T?> =
       }
 
 
-inline infix fun <T, R> Result<T>.valueOrElse(block: (Result<T>) -> R): R where T : R =
+inline infix fun <T, R> Result<T>.valueOr(block: (Result.Fail<T>) -> R): R where T : R =
    when (this) {
       is Result.Success -> value
       is Result.Fail -> block(this)
