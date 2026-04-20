@@ -1,7 +1,7 @@
 package com.swelms.common.math
 
-class Integer(n: Number) : Num<Long>(
-    n.toLong(),
+class Integer<T: Number>(n: T) : Num<T>(
+    n,
     constraint = { it::class in types }
 ) {
     companion object {

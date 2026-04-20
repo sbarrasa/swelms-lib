@@ -1,7 +1,7 @@
 package com.swelms.common.math
 
-class Real(n: Number) : Num<Double>(
-    n.toDouble(),
+open class Real<T: Number>(n: T) : Num<T>(
+    n,
     constraint = { it::class in types }
 ) {
     companion object {
