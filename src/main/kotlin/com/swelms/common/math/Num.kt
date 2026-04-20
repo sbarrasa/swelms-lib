@@ -1,13 +1,11 @@
 package com.swelms.common.math
 
-import com.swelms.common.validator.Validable
-
 open class Num<T : Number> (
     n: T,
     private val constraint: (T) -> Boolean = { true }
-): Number(), Validable<T> {
+): Number() {
 
-    override fun validate(value: T): T = value.also {
+    private fun validate(value: T): T = value.also {
         if(!constraint(it)) throw ArithmeticException("$value is no valid")
         return value
     }
@@ -24,17 +22,17 @@ open class Num<T : Number> (
     operator fun inc() = plus(1)
     operator fun dec() = minus(1)
 
-    private fun op(result: Double) = Num(result.cast(), constraint)
+    private fun op(result: Double) = Num(cast(result), constraint)
 
     @Suppress("UNCHECKED_CAST")
-    private fun Double.cast(): T = when (value) {
-        is Double -> this
-        is Float -> toFloat()
-        is Long -> toLong()
-        is Int -> toInt()
-        is Short -> toInt().toShort()
-        is Byte -> toInt().toByte()
-        else -> this
+    private fun cast(n: Double): T = when (value) {
+        is Double -> n
+        is Float -> n.toFloat()
+        is Long -> n.toLong()
+        is Int -> n.toInt()
+        is Short -> n.toInt().toShort()
+        is Byte -> n.toInt().toByte()
+        else -> n
     } as T
 
     operator fun component1() = value
