@@ -13,4 +13,10 @@ class FibonacciTest {
 
     }
 
+    @Test
+    fun elementAt(){
+        assertEquals(0, fibonacci().elementAt(0))
+        assertEquals(13, fibonacci().elementAt(7))
+    }
+
 }
