@@ -1,14 +1,12 @@
 package com.swelms.common.math
 
-@JvmInline
-value class Natural(val value: Int){
-    init {
-        require(value >= 0)
-    }
-    operator fun component1() = value
+class Natural(value: Number): Num<Long>(value.toLong()) {
+
     companion object {
-        fun sequence(start: Int = 1): Sequence<Natural> =
-            generateSequence(start) { it + 1 }
+        fun sequence(start: Int = 1): Sequence<Natural> {
+            require(start in 0..1)
+            return generateSequence(start) { it + 1 }
                 .map(::Natural)
+        }
     }
 }
