@@ -1,6 +1,6 @@
 package com.swelms.common.math
 
-class BaseConverter(val base: Int) {
+class Base(val base: Int) {
 
    init { require(base in 1..36) }
 
@@ -26,4 +26,4 @@ class BaseConverter(val base: Int) {
    }
 }
 
-fun Number.toBase(base: Int): String = BaseConverter(base).convert(this)
+fun Number.toBase(base: Int): String = Base(base).convert(this)

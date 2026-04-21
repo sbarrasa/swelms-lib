@@ -3,7 +3,7 @@ package com.swelms.common.math
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class BaseConverterTest {
+class BaseTest {
 
    @Test
    fun testNegative() {
