@@ -1,7 +1,5 @@
 package com.swelms.common.text
 
-
-
 data class Style(
    val splitChar: Char = ' ',
    val joinChar: Char? = ' ',
@@ -12,18 +10,17 @@ data class Style(
    fun transform(text: String): String {
       val parts = text.split(splitChar).toMutableList()
 
-      wordsCase?.let {
+      if(wordsCase!=null)
          parts.forEachIndexed { i, part -> parts[i] = wordsCase.applyTo(part) }
-      }
 
-      firstWordCharCase?.let {
+
+      if(firstWordCharCase!=null)
          parts.forEachIndexed { i, part -> parts[i] = part.replaceFirstChar(firstWordCharCase.applyToChar) }
-      }
 
-      firstCharCase?.let {
+
+      if(firstCharCase!=null)
          if (parts.isNotEmpty())
             parts[0] = parts[0].replaceFirstChar(firstCharCase.applyToChar)
-      }
 
       return parts.joinToString(joinChar?.toString() ?: "")
    }

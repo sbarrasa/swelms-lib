@@ -5,7 +5,7 @@ import kotlinx.serialization.json.Json
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class SerializationTest {
+class DecodeFromMapTest {
     @Serializable
     data class TestData(val name: String, val age: String)
 
