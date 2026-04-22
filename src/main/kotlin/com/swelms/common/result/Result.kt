@@ -5,6 +5,7 @@ sealed interface Result<out T> {
    operator fun component1(): T? = value
    class Success<T>(override val value: T) : Result<T>
    class Fail(val error: Throwable): Result<Nothing> {
+      operator fun component2(): Throwable = error
       override val value get() = null
    }
 }
