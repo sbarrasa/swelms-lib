@@ -2,8 +2,9 @@ package com.swelms.common.result
 
 sealed interface Result<out T> {
    val value: T?
-   data class Success<T>(override val value: T) : Result<T>
-   data class Fail(val error: Throwable): Result<Nothing> {
+   operator fun component1(): T? = value
+   class Success<T>(override val value: T) : Result<T>
+   class Fail(val error: Throwable): Result<Nothing> {
       override val value get() = null
    }
 }

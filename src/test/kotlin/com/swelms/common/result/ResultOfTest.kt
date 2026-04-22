@@ -34,7 +34,7 @@ class ResultOfTest {
    fun orElseValue() {
       val a = 10
       val b = 0
-      val value = resultOf { a / b }.valueOr { -1 }
+      val value = (resultOf { a / b } orElse { -1 }).value
       assertEquals(-1, value)
    }
 
@@ -42,7 +42,7 @@ class ResultOfTest {
    fun orElseMessage() {
       val a = 10
       val b = 0
-      val value = resultOf { a / b }.valueOr { "ERROR" }
+      val value = (resultOf { a / b } orElse { "ERROR" }).value
       assertEquals("ERROR", value)
    }
 
@@ -51,7 +51,7 @@ class ResultOfTest {
       val a = 10
       val b = 0
 
-      val value = resultOf { a / b }.valueOr { null }
+      val value = (resultOf { a / b } orElse { null }).value
       assertNull(value)
    }
 
@@ -59,7 +59,8 @@ class ResultOfTest {
    fun orElseErrorMessage() {
       val a = 10
       val b = 0
-      val value = resultOf { a / b } valueOr { it.error.message }
+      val result = resultOf { a / b } orElse { it.error.message }
+      val value = result.value
       assertEquals("/ by zero", value)
    }
 
@@ -67,7 +68,35 @@ class ResultOfTest {
    fun orElseError() {
       val a = 10
       val b = 0
-      val value = resultOf { a / b } valueOr { it.error }
+      val result = resultOf { a / b } orElse { it.error }
+      val value = result.value
       assertTrue { value is Exception }
+   }
+
+   @Test
+   fun component(){
+      val a = 10
+      val b = 0
+      val (value) = resultOf { a / b } orElse { "ERROR" }
+      assertEquals("ERROR", value)
+   }
+
+   @Test
+   fun onFail() {
+      val a = 10
+      val b = 0
+      val c = -1
+      val r = resultOf { a / b } orElse { a / c }
+      assertTrue(r is Result.Success)
+   }
+
+   @Test
+   fun onFailPipeline() {
+      val r = resultOf { "hola mundo" }
+         .orElse { error("error1") }
+         .orElse { error("error2") }
+
+      assertTrue(r is Result.Success)
+      assertEquals("hola mundo", r.value)
    }
 }

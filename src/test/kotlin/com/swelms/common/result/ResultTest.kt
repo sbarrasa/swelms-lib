@@ -2,6 +2,7 @@ package com.swelms.common.result
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class ResultTest {
@@ -17,20 +18,19 @@ class ResultTest {
       assertEquals("error", fail.error.message)
    }
 
-   @Test
-   fun destructuringError(){
-      val fail = Result.Fail(RuntimeException("error"))
-
-      val (error) = fail
-      assertTrue { error is RuntimeException }
-   }
 
    @Test
-   fun destructuringSuccess(){
+   fun componentSuccess(){
       val success = Result.Success(10)
 
       val (value) = success
       assertEquals(10, value)
+   }
+   @Test
+   fun componentFail(){
+      val (value) = Result.Fail(Error("Error"))
+
+      assertNull(value)
    }
 
    @Test
