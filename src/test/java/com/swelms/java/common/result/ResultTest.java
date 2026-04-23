@@ -21,31 +21,31 @@ class ResultTest {
     @Test
     void resultOf() {
         var result1 = Result.of(() -> 10 / 2);
-        assertTrue(result1 instanceof Result.Success);
+        assertInstanceOf(Result.Success.class, result1);
 
         var result2 = Result.of(() -> 10 / 0);
-        assertTrue(result2 instanceof Result.Fail);
+        assertInstanceOf(Result.Fail.class, result2);
 
     }
 
     @Test
     void orElseSuccess() {
         var result1 = Result.<Object>of(() -> 10 / 2).orElse(r -> "Error");
-        assertTrue(result1 instanceof Result.Success);
+        assertInstanceOf(Result.Success.class, result1);
         assertEquals(5, result1.value());
     }
 
     @Test
     void orElseValue() {
         var result2 = Result.of(() -> 10 / 0).orElse(r -> 0);
-        assertTrue(result2 instanceof Result.Success);
+        assertInstanceOf(Result.Success.class, result2);
         assertEquals(0, result2.value());
     }
 
     @Test
     void orElseString() {
         var result2 = Result.<Object>of(() -> 10 / 0).orElse(r -> "Error");
-        assertTrue(result2 instanceof Result.Success);
+        assertInstanceOf(Result.Success.class, result2);
         assertEquals("Error", result2.value());
     }
     @Test
@@ -62,17 +62,16 @@ class ResultTest {
                 .orElse(r -> { throw new RuntimeException("Fail");} )
                 .orElse(r -> { throw new ArithmeticException("Result fails");});
 
-        assertTrue(result instanceof Result.Fail);
-        Result.Fail r2 = (Result.Fail) result;
-        assertTrue(r2.error() instanceof ArithmeticException);
+        if(result instanceof Result.Fail r2)
+           assertInstanceOf(ArithmeticException.class, r2.error());
     }
 
     @Test
     void allSubclasses() {
         var subtypes = Result.class.getPermittedSubclasses();
-        assertTrue(subtypes.length == 2);
-        assertTrue(subtypes[0] ==  Result.Success.class);
-        assertTrue(subtypes[1] ==  Result.Fail.class);
+        assertEquals(2, subtypes.length);
+        assertSame(Result.Success.class, subtypes[0]);
+        assertSame(Result.Fail.class, subtypes[1]);
     }
 
     @Test
