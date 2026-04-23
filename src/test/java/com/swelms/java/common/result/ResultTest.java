@@ -25,7 +25,7 @@ class ResultTest {
         assertTrue(result1 instanceof Result.Success);
 
         var result2 = Result.of(() -> 10 / 0);
-        assertTrue(result2 instanceof Result.Fail<Integer>);
+        assertTrue(result2 instanceof Result.Fail);
 
     }
 
@@ -47,7 +47,14 @@ class ResultTest {
     void orElseString() {
         var result2 = Result.<Object>of(() -> 10 / 0).orElse(_ -> "Error");
         assertTrue(result2 instanceof Result.Success);
-        assertEquals(0, result2.value());
+        assertEquals("Error", result2.value());
+    }
+    @Test
+    void orElseAndValue() {
+        var value = Result.<Object>of(() -> 10 / 0)
+                .orElse(_ -> "Error")
+                .value();
+        assertEquals("Error", value);
     }
 
     @Test
@@ -66,5 +73,25 @@ class ResultTest {
         assertTrue(subtypes.length == 2);
         assertTrue(subtypes[0] ==  Result.Success.class);
         assertTrue(subtypes[1] ==  Result.Fail.class);
+    }
+
+    @Test
+    void switchResultSuccess(){
+        var result = Result.of(() -> "Hola");
+        var message = switch (result){
+            case Result.Success r ->  r.value();
+            case Result.Fail r ->  r.error().getMessage();
+        };
+        assertEquals("Hola", message);
+    }
+
+    @Test
+    void switchResultFail(){
+        var result = Result.of(() -> {throw new RuntimeException("Error");});
+        var message = switch (result){
+            case Result.Success r ->  r.value();
+            case Result.Fail r ->  r.error().getMessage();
+        };
+        assertEquals("Error", message);
     }
 }
