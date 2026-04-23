@@ -30,28 +30,28 @@ class ResultTest {
 
     @Test
     void orElseSuccess() {
-        var result1 = Result.<Object>of(() -> 10 / 2).orElse(_ -> "Error");
+        var result1 = Result.<Object>of(() -> 10 / 2).orElse(r -> "Error");
         assertTrue(result1 instanceof Result.Success);
         assertEquals(5, result1.value());
     }
 
     @Test
     void orElseValue() {
-        var result2 = Result.of(() -> 10 / 0).orElse(_ -> 0);
+        var result2 = Result.of(() -> 10 / 0).orElse(r -> 0);
         assertTrue(result2 instanceof Result.Success);
         assertEquals(0, result2.value());
     }
 
     @Test
     void orElseString() {
-        var result2 = Result.<Object>of(() -> 10 / 0).orElse(_ -> "Error");
+        var result2 = Result.<Object>of(() -> 10 / 0).orElse(r -> "Error");
         assertTrue(result2 instanceof Result.Success);
         assertEquals("Error", result2.value());
     }
     @Test
     void orElseAndValue() {
         var value = Result.<Object>of(() -> 10 / 0)
-                .orElse(_ -> "Error")
+                .orElse(r -> "Error")
                 .value();
         assertEquals("Error", value);
     }
@@ -59,8 +59,8 @@ class ResultTest {
     @Test
     void orElseFailPipe() {
        var result = Result.of(() -> 10/0)
-                .orElse(_ -> { throw new RuntimeException("Fail");} )
-                .orElse(_ -> { throw new ArithmeticException("Result fails");});
+                .orElse(r -> { throw new RuntimeException("Fail");} )
+                .orElse(r -> { throw new ArithmeticException("Result fails");});
 
         assertTrue(result instanceof Result.Fail);
         Result.Fail r2 = (Result.Fail) result;

@@ -11,15 +11,13 @@ repositories {
    mavenCentral()
 }
 
-
 dependencies {
    implementation(kotlin("reflect"))
-   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
    implementation("org.jetbrains.kotlinx:kotlinx-serialization-hocon:1.7.3")
    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.1")
    testImplementation(kotlin("test"))
    testImplementation("org.junit.jupiter:junit-jupiter:5.14.0")
-   implementation(kotlin("stdlib-jdk8"))
 }
 
 
@@ -40,7 +38,7 @@ publishing {
 
 
 kotlin {
-   jvmToolchain(24)
+   jvmToolchain(21)
    compilerOptions {
       freeCompilerArgs.add("-Xjvm-expose-boxed")
    }

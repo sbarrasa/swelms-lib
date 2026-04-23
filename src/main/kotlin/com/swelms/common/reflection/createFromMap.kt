@@ -11,5 +11,3 @@ fun <T: Any>create(type: KClass<T>, map: Map<String, Any?>): T? {
 
 inline fun <reified T: Any> createFromMap(map: Map<String, Any?>): T? = create(T::class, map)
 
-
-fun KClass<out Any>.createFromMap(map: Map<String, Any?>) = create(this, map)
