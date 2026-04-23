@@ -5,10 +5,7 @@ import java.util.function.Supplier;
 
 public sealed interface Result<T> permits Result.Success, Result.Fail {
     T value();
-    Throwable error();
-    record Success<T>(T value) implements Result<T> {
-        public Throwable error() { return null; }
-    }
+    record Success<T>(T value) implements Result<T> {}
 
     record Fail<T>(Throwable error) implements Result<T> {
         public T value() { return null; }

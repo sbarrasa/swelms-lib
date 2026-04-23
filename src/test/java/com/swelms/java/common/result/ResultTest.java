@@ -9,7 +9,6 @@ class ResultTest {
     void success() {
         var result = new Result.Success<>(10);
         assertEquals(10, result.value());
-        assertNull(result.error());
     }
 
     @Test
@@ -59,12 +58,13 @@ class ResultTest {
 
     @Test
     void orElseFailPipe() {
-       var result3 = Result.of(() -> 10/0)
+       var result = Result.of(() -> 10/0)
                 .orElse(_ -> { throw new RuntimeException("Fail");} )
                 .orElse(_ -> { throw new ArithmeticException("Result fails");});
 
-        assertTrue(result3 instanceof Result.Fail);
-        assertTrue(result3.error() instanceof ArithmeticException);
+        assertTrue(result instanceof Result.Fail);
+        Result.Fail r2 = (Result.Fail) result;
+        assertTrue(r2.error() instanceof ArithmeticException);
     }
 
     @Test
