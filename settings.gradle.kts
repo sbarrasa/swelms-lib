@@ -1,6 +1,9 @@
 pluginManagement {
+   val kotlinVersion = "2.3.20"
+
    plugins {
-      kotlin("jvm") version "2.3.0"
+      kotlin("jvm") version kotlinVersion
+      id("org.jetbrains.kotlin.plugin.serialization") version kotlinVersion
    }
 }
 
