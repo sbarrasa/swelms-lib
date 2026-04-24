@@ -1,13 +1,13 @@
 package com.swelms.common.validator
 
 import com.swelms.common.result.Result
-import com.swelms.common.result.resultOf
 
-class AggregateValidator<T>(vararg val rules: (T) -> Unit) : Validable<T> {
+class AggregateValidator<T>(vararg val rules: Rule<T>) : Validable<T> {
    override fun validate(value: T): T {
       val errors = mutableListOf<Throwable>()
       for (rule in rules) {
-         val result = resultOf { rule(value) }
+         val validator = Validator(rule)
+         val result = validator.evaluate(value)
          if (result is Result.Fail) {
             errors += result.error
          }
@@ -20,10 +20,8 @@ class AggregateValidator<T>(vararg val rules: (T) -> Unit) : Validable<T> {
    fun evaluateAll(value: T): List<Result<T>> {
       val results = mutableListOf<Result<T>>()
       for (rule in rules) {
-         val result = resultOf {
-            rule(value)
-            value
-         }
+         val validator = Validator(rule)
+         val result = validator.evaluate(value)
          when (result) {
             is Result.Success -> results += Result.Success(value)
             is Result.Fail -> results += result

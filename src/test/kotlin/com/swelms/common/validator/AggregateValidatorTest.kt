@@ -11,8 +11,8 @@ class AggregateValidatorTest {
    @Test
    fun validateSuccess() {
       val validator = AggregateValidator<User>(
-         { if (it.name.isBlank()) throw ValidatorException("name blank") },
-         { if (it.age < 18) throw ValidatorException("age < 18") }
+         Rule("name blank") { it.name.isNotBlank() },
+         Rule("age < 18") { it.age >= 18 }
       )
 
       val user = User("Juan", 30)
@@ -22,8 +22,8 @@ class AggregateValidatorTest {
    @Test
    fun validateFail() {
       val validator = AggregateValidator<User>(
-         { if (it.name.isBlank()) throw ValidatorException("name blank") },
-         { if (it.age < 18) throw ValidatorException("age < 18") }
+         Rule("name blank") { it.name.isNotBlank() },
+         Rule("age < 18") { it.age >= 18 }
       )
 
       val ex = assertFailsWith<AggregateException> {
@@ -36,8 +36,8 @@ class AggregateValidatorTest {
    @Test
    fun evaluateFail() {
       val validator = AggregateValidator<User>(
-         { if (it.name.isBlank()) throw ValidatorException("name blank") },
-         { if (it.age < 18) throw ValidatorException("age < 18") }
+         Rule("name blank") { it.name.isNotBlank() },
+         Rule("age < 18") { it.age >= 18 }
       )
 
       val result = validator.evaluate(User("", 10))
@@ -48,8 +48,8 @@ class AggregateValidatorTest {
    @Test
    fun evaluateSuccess() {
       val validator = AggregateValidator<User>(
-         { if (it.name.isBlank()) throw ValidatorException("name blank") },
-         { if (it.age < 18) throw ValidatorException("age < 18") }
+         Rule("name blank") { it.name.isNotBlank() },
+         Rule("age < 18") { it.age >= 18 }
       )
 
       val user = User("Juan", 30)
@@ -61,8 +61,8 @@ class AggregateValidatorTest {
    @Test
    fun evaluateAllFail() {
       val validator = AggregateValidator<User>(
-         { if (it.name.isBlank()) throw ValidatorException("name blank") },
-         { if (it.age < 18) throw ValidatorException("age < 18") }
+         Rule("name blank") { it.name.isNotBlank() },
+         Rule("age < 18") { it.age >= 18 }
       )
 
       val all = validator.evaluateAll(User("", 10))
@@ -73,8 +73,8 @@ class AggregateValidatorTest {
    @Test
    fun evaluateAllSuccess() {
       val validator = AggregateValidator<User>(
-         { if (it.name.isBlank()) throw ValidatorException("name blank") },
-         { if (it.age < 18) throw ValidatorException("age < 18") }
+         Rule("name blank") { it.name.isNotBlank() },
+         Rule("age < 18") { it.age >= 18 }
       )
 
       val user = User("Juan", 30)
@@ -88,8 +88,8 @@ class AggregateValidatorTest {
    @Test
    fun evaluateAllMixed() {
       val validator = AggregateValidator<User>(
-         { if (it.name.isBlank()) throw ValidatorException("name blank") },
-         { if (it.age < 18) throw ValidatorException("age < 18") }
+         Rule("name blank") { it.name.isNotBlank() },
+         Rule("age < 18") { it.age >= 18 }
       )
 
       val user = User("Juan", 10)
@@ -105,8 +105,8 @@ class AggregateValidatorTest {
    @Test
    fun messages() {
       val validator = AggregateValidator<User>(
-         { if (it.name.isBlank()) throw ValidatorException("name blank") },
-         { if (it.age < 18) throw ValidatorException("age < 18") }
+         Rule("name blank") { it.name.isNotBlank() },
+         Rule("age < 18") { it.age >= 18 }
       )
 
       val ex = assertFailsWith<AggregateException> {
