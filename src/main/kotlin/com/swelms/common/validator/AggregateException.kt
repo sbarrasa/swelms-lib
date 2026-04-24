@@ -6,9 +6,11 @@ class AggregateException(val errors: List<Throwable>) : ValidatorException() {
 
    override val message: String
       get() = messages.joinToString("; ")
+
+   private fun Throwable.toAggregateMessage(): String {
+      if (message.isNullOrBlank()) this::class.simpleName
+      return message!!
+   }
+
 }
 
-private fun Throwable.toAggregateMessage(): String {
-   if (message.isNullOrBlank()) this::class.simpleName
-   return message!!
-}

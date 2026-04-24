@@ -58,3 +58,4 @@ class CBUTest {
       assertEquals("0", cbu.accountCheckDigit)
    }
 }
+

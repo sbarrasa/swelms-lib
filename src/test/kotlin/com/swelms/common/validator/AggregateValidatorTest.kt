@@ -8,111 +8,98 @@ import kotlin.test.assertFailsWith
 
 class AggregateValidatorTest {
    data class User(val name: String, val age: Int)
+
+   private val nameMessage = "El nombre no puede estar en blanco"
+   private val ageLowMessage = "La edad debe ser mayor o igual a 18"
+   private val ageUpMessage = "La edad no puede ser mayor que 100"
+
+   val userValidator = AggregateValidator<User>(
+      Rule(nameMessage) { it.name.isNotBlank() },
+      Rule(ageLowMessage) { it.age >= 18 },
+      Rule(ageUpMessage) { it.age <= 100 }
+   )
+
    @Test
    fun validateSuccess() {
-      val validator = AggregateValidator<User>(
-         Rule("name blank") { it.name.isNotBlank() },
-         Rule("age < 18") { it.age >= 18 }
-      )
-
       val user = User("Juan", 30)
-      assertEquals(user, validator.validate(user))
+      assertEquals(user, userValidator.validate(user))
    }
 
    @Test
    fun validateFail() {
-      val validator = AggregateValidator<User>(
-         Rule("name blank") { it.name.isNotBlank() },
-         Rule("age < 18") { it.age >= 18 }
-      )
-
       val ex = assertFailsWith<AggregateException> {
-         validator.validate(User("", 10))
+         userValidator.validate(User("", 10))
       }
 
-      assertEquals("name blank; age < 18", ex.message)
+      assertEquals("$nameMessage; $ageLowMessage", ex.message)
    }
 
    @Test
    fun evaluateFail() {
-      val validator = AggregateValidator<User>(
-         Rule("name blank") { it.name.isNotBlank() },
-         Rule("age < 18") { it.age >= 18 }
-      )
-
-      val result = validator.evaluate(User("", 10))
+      val result = userValidator.evaluate(User("", 10))
       assertTrue(result is Result.Fail)
-      assertEquals("name blank; age < 18", result.error.message)
+      assertEquals("$nameMessage; $ageLowMessage", result.error.message)
    }
 
    @Test
    fun evaluateSuccess() {
-      val validator = AggregateValidator<User>(
-         Rule("name blank") { it.name.isNotBlank() },
-         Rule("age < 18") { it.age >= 18 }
-      )
-
       val user = User("Juan", 30)
-      val result = validator.evaluate(user)
+      val result = userValidator.evaluate(user)
       assertTrue(result is Result.Success)
       assertEquals(user, result.value)
    }
 
    @Test
-   fun evaluateAllFail() {
-      val validator = AggregateValidator<User>(
-         Rule("name blank") { it.name.isNotBlank() },
-         Rule("age < 18") { it.age >= 18 }
-      )
+   fun evaluateAll() {
+      val evaluations = userValidator.evaluateAll(User("", 10))
+      assertEquals(3, evaluations.size)
+      assertTrue(evaluations[0] is Result.Fail)
+      assertTrue(evaluations[1] is Result.Fail)
+      assertTrue(evaluations[2] is Result.Success)
 
-      val all = validator.evaluateAll(User("", 10))
-      assertEquals(2, all.size)
-      assertTrue(all.all { it is Result.Fail })
    }
 
    @Test
    fun evaluateAllSuccess() {
-      val validator = AggregateValidator<User>(
-         Rule("name blank") { it.name.isNotBlank() },
-         Rule("age < 18") { it.age >= 18 }
-      )
-
       val user = User("Juan", 30)
-      val all = validator.evaluateAll(user)
+      val evaluations = userValidator.evaluateAll(user)
 
-      assertEquals(2, all.size)
-      assertTrue(all.all { it is Result.Success })
-      assertTrue(all.all { it.value == user })
+      assertEquals(3, evaluations.size)
+      assertTrue(evaluations.all { it is Result.Success })
+      assertTrue(evaluations.all { it.value == user })
    }
 
    @Test
    fun evaluateAllMixed() {
-      val validator = AggregateValidator<User>(
-         Rule("name blank") { it.name.isNotBlank() },
-         Rule("age < 18") { it.age >= 18 }
-      )
-
       val user = User("Juan", 10)
-      val all = validator.evaluateAll(user)
+      val evaluations = userValidator.evaluateAll(user)
 
-      assertEquals(2, all.size)
-      assertTrue(all[0] is Result.Success)
-      assertEquals(user, all[0].value)
-      assertTrue(all[1] is Result.Fail)
-      assertEquals("age < 18", (all[1] as Result.Fail).error.message)
+      assertEquals(3, evaluations.size)
+      assertTrue(evaluations[0] is Result.Success)
+      assertEquals(user, evaluations[0].value)
+      assertTrue(evaluations[1] is Result.Fail)
+      assertEquals(ageLowMessage, (evaluations[1] as Result.Fail).error.message)
    }
+
 
    @Test
    fun messages() {
-      val validator = AggregateValidator<User>(
-         Rule("name blank") { it.name.isNotBlank() },
-         Rule("age < 18") { it.age >= 18 }
-      )
-
       val ex = assertFailsWith<AggregateException> {
-         validator.validate(User("", 10))
+         userValidator.validate(User("", 10))
       }
+      assertEquals(listOf(nameMessage, ageLowMessage), ex.messages)
+   }
 
-      assertEquals(listOf("name blank", "age < 18"), ex.messages)
+   @Test
+   fun evaluateFullRules() {
+      val user = User("", 10)
+      val evaluations = userValidator.evaluateAll(user)
+
+      val maxFailsValidator = AggregateValidator<List<Result<User>>>(
+         Rule("el maximo de errores es 2") { it.filterIsInstance<Result.Fail>().size <2 }
+      )
+      assertFailsWith<ValidatorException> { maxFailsValidator.validate(evaluations) }
    }
 }
+
+
