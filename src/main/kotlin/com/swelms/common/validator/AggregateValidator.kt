@@ -6,8 +6,7 @@ class AggregateValidator<T>(vararg val rules: Rule<T>) : Validable<T> {
    override fun validate(value: T): T {
       val errors = mutableListOf<Throwable>()
       for (rule in rules) {
-         val validator = Validator(rule)
-         val result = validator.evaluate(value)
+         val result =  Validator(rule).evaluate(value)
          if (result is Result.Fail) {
             errors += result.error
          }
@@ -32,5 +31,5 @@ class AggregateValidator<T>(vararg val rules: Rule<T>) : Validable<T> {
 
 fun <T> validatorOf(vararg rules: Rule<T> ): Validable<T> {
    return if(rules.size == 1) Validator(rules[0])
-   else AggregateValidator(*rules)
+         else AggregateValidator(*rules)
 }
