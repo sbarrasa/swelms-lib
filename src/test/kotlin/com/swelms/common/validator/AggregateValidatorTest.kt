@@ -95,10 +95,23 @@ class AggregateValidatorTest {
       val user = User("", 10)
       val evaluations = userValidator.evaluateAll(user)
 
-      val maxFailsValidator = AggregateValidator<List<Result<User>>>(
+      val maxFailsValidator = Validator<List<*>>(
          Rule("el maximo de errores es 2") { it.filterIsInstance<Result.Fail>().size <2 }
       )
+
       assertFailsWith<ValidatorException> { maxFailsValidator.validate(evaluations) }
+   }
+
+   @Test
+   fun validatorOf(){
+      val rule1 = Rule<Int>("muy joven") { it > 18 }
+      val rule2 = Rule<Int>("muy viejo") { it > 100}
+
+      val validator1 = validatorOf(rule1)
+      val validator2 = validatorOf(rule1, rule2)
+
+      assertTrue { validator1 is Validator }
+      assertTrue { validator2 is AggregateValidator }
    }
 }
 
