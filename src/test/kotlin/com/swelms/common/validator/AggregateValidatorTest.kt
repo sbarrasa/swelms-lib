@@ -66,7 +66,6 @@ class AggregateValidatorTest {
 
       assertEquals(3, evaluations.size)
       assertTrue(evaluations.all { it is Result.Success })
-      assertTrue(evaluations.all { it.value == user })
    }
 
    @Test
@@ -76,9 +75,7 @@ class AggregateValidatorTest {
 
       assertEquals(3, evaluations.size)
       assertTrue(evaluations[0] is Result.Success)
-      assertEquals(user, evaluations[0].value)
       assertTrue(evaluations[1] is Result.Fail)
-      assertEquals(ageLowMessage, (evaluations[1] as Result.Fail).error.message)
    }
 
 

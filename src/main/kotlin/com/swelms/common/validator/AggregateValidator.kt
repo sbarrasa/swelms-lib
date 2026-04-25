@@ -17,13 +17,12 @@ class AggregateValidator<T>(vararg val rules: Rule<T>) : Validable<T> {
       return value
    }
 
-   fun evaluateAll(value: T): List<Result<T>> {
-      val results = mutableListOf<Result<T>>()
+   fun evaluateAll(value: T): List<Result<String>> {
+      val results = mutableListOf<Result<String>>()
       for (rule in rules) {
          val result = Validator(rule).evaluate(value)
          results += when (result) {
-           // TODO("definir que hacer con los casos succes")
-            is Result.Success -> Result.Success(value)
+            is Result.Success -> Result.Success(rule.message)
             is Result.Fail -> result
          }
       }
