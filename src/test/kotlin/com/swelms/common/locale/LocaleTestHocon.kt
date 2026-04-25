@@ -1,6 +1,7 @@
 package com.swelms.common.locale
 
 import com.swelms.common.reflection.qName
+import com.swelms.common.text.replaceSlots
 import com.typesafe.config.ConfigFactory
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.hocon.Hocon

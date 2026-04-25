@@ -1,6 +1,7 @@
 package com.swelms.common.locale
 
 import com.swelms.common.reflection.qName
+import com.swelms.common.text.replaceSlots
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format
 import kotlinx.datetime.format.*
@@ -44,7 +45,7 @@ class LocaleTest {
    fun testFail() {
       Locale.keyOnMissing = false
       val e = assertFailsWith<LocaleException> { Locale.text(IntRange::class.qName, "key") }
-      assertEquals("NO_TEXT_FOUND key", e.message)
+      assertEquals("NO_TEXT_FOUND", e.message)
    }
 
    @Test

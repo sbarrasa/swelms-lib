@@ -16,7 +16,7 @@ class StringSlotsTest {
    fun lessSlotsThanValues() {
       val text = "Hola {0}"
       val result = StringSlots(text).replace("Mundo", "Extra1", "Extra2")
-      assertEquals("Hola Mundo Extra1 Extra2", result)
+      assertEquals("Hola Mundo", result)
    }
 
    @Test
@@ -37,7 +37,7 @@ class StringSlotsTest {
    fun noSlots() {
       val text = "Texto sin slots"
       val result = StringSlots(text).replace("Extra")
-      assertEquals("Texto sin slots Extra", result)
+      assertEquals("Texto sin slots", result)
    }
 
 

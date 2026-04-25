@@ -6,15 +6,11 @@ class StringSlots(val text: String, val slotRegex: Regex = Companion.slotRegex) 
 
    fun replace(vararg values: Any?): String {
       val result = StringBuilder(text)
+      val slots = slots
       for (match in slots.asReversed()) {
          val index = match.index
          val value = values.getOrNull(index-indexSlice)?.toString() ?: continue
          result.replace(match.range.first, match.range.last + 1, value)
-      }
-
-      if (values.size > slots.size) {
-         val extra = values.drop(slots.size).joinToString(" ")
-         result.append(" ").append(extra)
       }
       return result.toString()
    }
@@ -33,4 +29,4 @@ class StringSlots(val text: String, val slotRegex: Regex = Companion.slotRegex) 
 
 }
 
-fun String.replaceSlots(vararg values: Any): String = StringSlots(this).replace(*values)
+fun String.replaceSlots(vararg values: Any?): String = StringSlots(this).replace(*values)

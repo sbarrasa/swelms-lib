@@ -2,8 +2,8 @@ package com.swelms.domain.id.card
 
 import com.swelms.common.locale.Locale
 import com.swelms.common.locale.localeText
-import com.swelms.common.locale.replaceSlots
 import com.swelms.common.reflection.qName
+import com.swelms.common.text.replaceSlots
 import com.swelms.domain.validator.DigitsValidator
 import com.swelms.common.validator.ValidatorException
 import com.swelms.domain.validator.LuhnValidator

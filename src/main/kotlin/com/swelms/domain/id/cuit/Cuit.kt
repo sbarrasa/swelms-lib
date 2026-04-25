@@ -2,6 +2,7 @@ package com.swelms.domain.id.cuit
 
 import com.swelms.common.locale.*
 import com.swelms.common.reflection.qName
+import com.swelms.common.text.replaceSlots
 import com.swelms.common.validator.ValidatorException
 import com.swelms.domain.validator.DigitsValidator
 import com.swelms.domain.validator.LengthValidator
@@ -69,7 +70,7 @@ value class Cuit(val value: String) {
          Info("34", EntityType.COMPANY)
       ) {
 
-      class Info(val key: String, val entityType: Cuit.EntityType) {
+      class Info(val key: String, val entityType: EntityType) {
          val description: String
             get() = Locale.textOrNull(EntityCodes::class.qName, key)
                ?: "$entityType.description".trim()

@@ -1,7 +1,7 @@
 package com.swelms.common.registry
 
 import com.swelms.common.locale.localeText
-import com.swelms.common.locale.replaceSlots
+import com.swelms.common.text.replaceSlots
 
 open class Registry<K, T>(val instances: MutableMap<K,T> = mutableMapOf()) {
 

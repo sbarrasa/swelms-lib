@@ -1,6 +1,5 @@
 package com.swelms.common.validator
 
-import com.swelms.common.text.StringSlots
 import com.swelms.common.text.replaceSlots
 
 
@@ -15,8 +14,7 @@ open class Validator<T>(
 
    override fun validate(value: T): T {
       if (!rule.condition(value)) {
-         val hasSlots = StringSlots(rule.message).slots.isNotEmpty()
-         val message = if (hasSlots) rule.message.replaceSlots(value.toString()) else rule.message
+         val message = rule.message.replaceSlots(value.toString())
          throw ValidatorException(message)
       }
       return value

@@ -1,7 +1,7 @@
 package com.swelms.common.locale
 
-import com.swelms.common.text.StringSlots
 import com.swelms.common.reflection.*
+import com.swelms.common.text.replaceSlots
 
 object Locale {
 
@@ -59,7 +59,7 @@ object Locale {
 
 
    @JvmStatic
-   fun textOrNull(module: String = Locale.DEFAULT, key: String): String? {
+   fun textOrNull(module: String = DEFAULT, key: String): String? {
       val text = currentLang?.moduleTextMap[module]?.get(key)
       if(text == null && defaultOnMissing && module != DEFAULT) return textOrNull(key = key)
       return text
@@ -67,7 +67,7 @@ object Locale {
 
 
    @JvmStatic
-   fun text(module: String = Locale.DEFAULT,  key: String): String {
+   fun text(module: String = DEFAULT,  key: String): String {
       val text = textOrNull(module, key)
       if(text == null) {
          if (keyOnMissing || module == qName) return key
@@ -80,7 +80,5 @@ object Locale {
 }
 
 fun Any.localeText(key: String) = Locale.text(qName, key)
-
-fun String.replaceSlots(vararg values: Any?): String = StringSlots(this).replace(*values)
 
 

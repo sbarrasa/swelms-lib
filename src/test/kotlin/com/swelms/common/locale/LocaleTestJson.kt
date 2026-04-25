@@ -1,6 +1,7 @@
 package com.swelms.common.locale
 
 import com.swelms.common.reflection.qName
+import com.swelms.common.text.replaceSlots
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import java.io.File

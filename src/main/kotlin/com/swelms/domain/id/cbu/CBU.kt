@@ -2,6 +2,7 @@ package com.swelms.domain.id.cbu
 
 import com.swelms.common.locale.*
 import com.swelms.common.reflection.qName
+import com.swelms.common.text.replaceSlots
 import com.swelms.domain.validator.DigitsValidator
 import com.swelms.domain.validator.LengthValidator
 import kotlinx.serialization.Serializable
