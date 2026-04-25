@@ -8,8 +8,8 @@ open class Validator<T>(
 ) : Validable<T> {
    constructor(
       message: String = "Invalid value {1}",
-      condition: (T) -> Boolean
-   ) : this(Rule(message, condition))
+      eval: (T) -> Boolean
+   ) : this(Rule(message, eval))
 
 
    override fun validate(value: T): T {

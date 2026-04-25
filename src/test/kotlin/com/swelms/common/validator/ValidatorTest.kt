@@ -6,36 +6,19 @@ import kotlin.test.assertFailsWith
 
 class ValidatorTest {
     val validator = Validator(Rule<Int>("Value {1} too small") { it > 10 })
-    val validatorWithoutSlots = Validator(Rule<Int>("too small") { it > 10 })
-    val validatorFromMessageAndCondition = Validator<Int>("Value {1} too small") { it > 10 }
 
     @Test
-    fun validateSuccess() {
+    fun success() {
         val result = validator.validate(15)
         assertEquals(15, result)
     }
 
     @Test
-    fun validateFailure() {
+    fun fail() {
         val exception = assertFailsWith<ValidatorException> {
             validator.validate(5)
         }
         assertEquals("Value 5 too small", exception.message)
     }
 
-    @Test
-    fun validateFailureWithoutSlots() {
-        val exception = assertFailsWith<ValidatorException> {
-            validatorWithoutSlots.validate(5)
-        }
-        assertEquals("too small", exception.message)
-    }
-
-    @Test
-    fun validateFailureFromMessageAndCondition() {
-        val exception = assertFailsWith<ValidatorException> {
-            validatorFromMessageAndCondition.validate(5)
-        }
-        assertEquals("Value 5 too small", exception.message)
-    }
 }

@@ -4,9 +4,6 @@ import com.swelms.common.result.resultOf
 
 interface Validable<T> {
    fun validate(value: T): T
-
-   fun evaluate(value: T) = resultOf {
-      validate(value)
-   }
+   fun evaluate(value: T) = resultOf { validate(value) }
 
 }

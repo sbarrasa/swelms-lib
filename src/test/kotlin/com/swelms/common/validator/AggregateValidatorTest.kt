@@ -110,6 +110,8 @@ class AggregateValidatorTest {
       assertTrue { validator1 is Validator }
       assertTrue { validator2 is AggregateValidator }
    }
+
+
 }
 
 
