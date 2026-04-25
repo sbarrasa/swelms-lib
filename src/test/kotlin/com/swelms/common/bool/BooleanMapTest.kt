@@ -7,13 +7,13 @@ class BooleanMapTest {
    @Test
    fun getTrue() {
        val charBool = BooleanMap('T', 'F')
-       assertEquals('T', charBool.get(true))
+       assertEquals('T', charBool[true])
    }
 
    @Test
    fun getFalse() {
        val intBool = BooleanMap(1, 0)
-       assertEquals(0, intBool.get(false))
+       assertEquals(0, intBool[false])
    }
 
    @Test
