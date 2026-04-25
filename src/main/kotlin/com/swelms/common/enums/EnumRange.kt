@@ -6,6 +6,10 @@ class EnumRange<E : Enum<E>>(
    override val endInclusive: E,
    private val values: Array<E>
 ) : ClosedRange<E>, Iterable<E> {
+   init {
+      require(start.ordinal <= endInclusive.ordinal)
+   }
+
    override fun iterator(): Iterator<E> = object : Iterator<E> {
       private var current = start.ordinal
       override fun hasNext() = current <= endInclusive.ordinal
