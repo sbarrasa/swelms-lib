@@ -21,7 +21,11 @@ class AggregateValidator<T>(vararg val rules: Rule<T>) : Validable<T> {
       val results = mutableListOf<Result<T>>()
       for (rule in rules) {
          val result = Validator(rule).evaluate(value)
-         if (result is Result.Fail) results += result
+         results += when (result) {
+           // TODO("definir que hacer con los casos succes")
+            is Result.Success -> Result.Success(value)
+            is Result.Fail -> result
+         }
       }
       return results
    }
