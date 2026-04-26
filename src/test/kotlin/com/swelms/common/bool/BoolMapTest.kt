@@ -7,26 +7,34 @@ import kotlin.test.assertTrue
 class BoolMapTest {
    @Test
    fun constructor(){
-      val values = BoolMap(1, -1)
-      assertEquals(1, values[true])
-      assertEquals(-1, values[false])
+      val boolMap = BoolMap(1, -1)
+      assertEquals(1, boolMap[true])
+      assertEquals(-1, boolMap[false])
    }
 
    @Test
    fun elementByBoolean() {
-      val values = 'T' or 'F'
-      val value = values[true]
+      val boolMap = 'T' orElse 'F'
+      val value = boolMap[true]
       assertEquals('T', value )
    }
 
    @Test
    fun differentTypeElements(){
-      val values = 1 or Exception("ERROR")
-      assertTrue { values[true] is Int }
-      assertTrue { values[false] is Exception }
-      assertEquals(1, values[true])
+      val boolMap = 1 orElse Exception("ERROR")
+      assertTrue { boolMap[true] is Int }
+      assertTrue { boolMap[false] is Exception }
+      assertEquals(1, boolMap[true])
    }
 
+   @Test
+   fun booleans(){
+      val boolMap = 'T' orElse 'F'
+      val a = 1
+      val b = 2
+      val value = boolMap {a < b}
+      assertEquals('T', value)
 
+   }
 
 }
