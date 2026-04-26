@@ -1,5 +1,5 @@
 plugins {
-   kotlin("jvm")
+   kotlin("jvm") version "2.3.20"
    id("org.jetbrains.kotlin.plugin.serialization")
    id("maven-publish")
 }
@@ -18,6 +18,7 @@ dependencies {
    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.1")
    testImplementation(kotlin("test"))
    testImplementation("org.junit.jupiter:junit-jupiter:5.14.0")
+   implementation(kotlin("stdlib-jdk8"))
 }
 
 
