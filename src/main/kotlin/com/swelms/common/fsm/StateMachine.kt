@@ -1,6 +1,5 @@
 package com.swelms.common.fsm
 
-
 class StateMachine<S>(
    initialState: S,
    private val transitions: List<Transition<S, *>>
