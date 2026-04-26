@@ -34,7 +34,15 @@ class BoolMapTest {
       val b = 2
       val value = boolMap {a < b}
       assertEquals('T', value)
-
    }
+
+   @Test
+   fun formPair(){
+      val pair = 'T' to 'F'
+      val boolMap = pair.toBoolMap()
+
+      assertEquals('T', boolMap[true])
+   }
+
 
 }

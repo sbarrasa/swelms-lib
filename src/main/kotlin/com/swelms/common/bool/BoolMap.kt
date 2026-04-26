@@ -7,3 +7,4 @@ data class BoolMap<out T>(val trueValue: T, val falseValue: T) {
 
 infix fun <T> T.orElse(falseValue: T) = BoolMap(this, falseValue)
 
+fun <T, A:T, B:T> Pair<A, B>.toBoolMap() = BoolMap(this.first, this.second)
