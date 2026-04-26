@@ -44,5 +44,11 @@ class BoolMapTest {
       assertEquals('T', boolMap[true])
    }
 
+   @Test
+   fun fromNullables(){
+      val boolMap = BoolMap(1, null)
+      assertEquals(1, boolMap[true])
+      assertEquals(null, boolMap[false])
+   }
 
 }
