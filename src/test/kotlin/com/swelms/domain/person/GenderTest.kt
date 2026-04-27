@@ -3,6 +3,7 @@ package com.swelms.domain.person
 import com.swelms.common.locale.LangInterface
 import com.swelms.common.locale.Locale
 import com.swelms.common.reflection.qName
+import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -26,6 +27,10 @@ class GenderTest {
         Locale.lang = "test"
     }
 
+   @AfterTest
+   fun shutdown(){
+      Locale.unregister(GenderLang)
+   }
     @Test
     fun genderDescription() {
         assertEquals("Masculino", Gender.M.description)

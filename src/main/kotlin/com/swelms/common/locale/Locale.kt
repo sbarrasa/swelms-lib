@@ -5,8 +5,11 @@ import com.swelms.common.text.replaceSlots
 
 object Locale {
 
+   @JvmStatic
    var defaultOnMissing = true
+   @JvmStatic
    var keyOnMissing = true
+   @JvmStatic
    var DEFAULT = "default"
 
    @JvmStatic
@@ -46,8 +49,14 @@ object Locale {
    @JvmStatic
    fun unregister(cfg: LocaleInterface) {
       when (cfg) {
-         is LangInterface -> langsMap.remove(cfg.locale_id)
-         is Regionalinterface -> regionalsMap.remove(cfg.locale_id)
+         is LangInterface -> {
+            if(lang == cfg.locale_id) lang = null
+            langsMap.remove(cfg.locale_id)
+         }
+         is Regionalinterface -> {
+            if(regional == cfg.locale_id) regional = null
+            regionalsMap.remove(cfg.locale_id)
+         }
       }
    }
 
