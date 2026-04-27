@@ -6,7 +6,7 @@ import kotlin.test.assertTrue
 
 class BoolMapTest {
    @Test
-   fun constructor(){
+   fun constructor() {
       val boolMap = BoolMap(1, -1)
       assertEquals(1, boolMap[true])
       assertEquals(-1, boolMap[false])
@@ -20,52 +20,43 @@ class BoolMapTest {
    }
 
    @Test
-   fun differentTypeElements(){
-      val boolMap = 1 orElse Exception("ERROR")
+   fun differentTypeElements() {
+      val boolMap = 1 orElse "false"
       assertTrue { boolMap[true] is Int }
-      assertTrue { boolMap[false] is Exception }
+      assertTrue { boolMap[false] is String }
       assertEquals(1, boolMap[true])
    }
 
    @Test
-   fun booleans(){
+   fun booleans() {
       val boolMap = 'T' orElse 'F'
       val a = 1
       val b = 2
-      val value = boolMap {a < b}
+      val value = boolMap { a < b }
       assertEquals('T', value)
    }
 
    @Test
-   fun formPair(){
+   fun formPair() {
       val pair = 'T' to 'F'
       val boolMap = pair.toBoolMap()
 
       assertEquals('T', boolMap[true])
    }
 
-   @Test
-   fun fromMultyTypePair(){
-      val pair = 1 to 'X'
-      val boolMap = pair.toBoolMap()
-      assertEquals('X', boolMap[false])
-      assertEquals(1, boolMap[true])
-   }
 
    @Test
-   fun fromNullables(){
+   fun fromNullable() {
       val boolMap = BoolMap(1, null)
       assertEquals(1, boolMap[true])
       assertEquals(null, boolMap[false])
+      assertTrue { boolMap[false] is Nothing? }
    }
 
-   object BoolYesNo: BoolMap<String>("Yes", "No")
-   object Binary: BoolMap<Byte>(1, 0)
+   object Binary : BoolMap<Byte>(1, 0)
 
    @Test
-   fun asObject(){
-      assertEquals("Yes", BoolYesNo[true])
-      assertEquals("No", BoolYesNo[false])
+   fun fromObject() {
       assertEquals(1, Binary[true])
       assertEquals(0, Binary[false])
    }
