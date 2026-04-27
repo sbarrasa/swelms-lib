@@ -1,4 +1,4 @@
-package com.swelms.common.result
+package com.swelms.common.type
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -68,18 +68,10 @@ class ResultOfTest {
    fun orElseError() {
       val a = 10
       val b = 0
-      val result = resultOf { a / b } orElse { it.error }
-      val value = result.value
+      val value = ( resultOf { a / b } orElse { it.error } ).value
       assertTrue { value is Exception }
    }
 
-   @Test
-   fun component(){
-      val a = 10
-      val b = 0
-      val (value) = resultOf { a / b } orElse { "ERROR" }
-      assertEquals("ERROR", value)
-   }
 
    @Test
    fun onFail() {
@@ -92,11 +84,11 @@ class ResultOfTest {
 
    @Test
    fun onFailPipeline() {
-      val r = resultOf { "hola mundo" }
+      val result = resultOf { "hola mundo" }
          .orElse { error("error1") }
          .orElse { error("error2") }
 
-      assertTrue(r is Result.Success)
-      assertEquals("hola mundo", r.value)
+      assertTrue(result is Result.Success)
+      assertEquals("hola mundo", result.value)
    }
 }

@@ -1,6 +1,6 @@
 package com.swelms.common.validator
 
-import com.swelms.common.result.Result
+import com.swelms.common.type.Result
 
 class AggregateValidator<T>(vararg val rules: Rule<T>) : Validable<T> {
    override fun validate(value: T): T {

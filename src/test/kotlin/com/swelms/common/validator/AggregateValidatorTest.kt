@@ -1,6 +1,6 @@
 package com.swelms.common.validator
 
-import com.swelms.common.result.Result
+import com.swelms.common.type.Result
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

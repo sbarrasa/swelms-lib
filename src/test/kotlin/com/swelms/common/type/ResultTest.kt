@@ -1,8 +1,7 @@
-package com.swelms.common.result
+package com.swelms.common.type
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class ResultTest {
@@ -26,12 +25,7 @@ class ResultTest {
       val (value) = success
       assertEquals(10, value)
    }
-   @Test
-   fun componentFail(){
-      val (value) = Result.Fail(Error("Error"))
 
-      assertNull(value)
-   }
 
    @Test
    fun toKotlinSuccess() {

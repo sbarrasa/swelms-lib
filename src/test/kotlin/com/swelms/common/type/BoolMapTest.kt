@@ -1,4 +1,4 @@
-package com.swelms.common.bool
+package com.swelms.common.type
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -16,7 +16,7 @@ class BoolMapTest {
    fun elementByBoolean() {
       val boolMap = 'T' orElse 'F'
       val value = boolMap[true]
-      assertEquals('T', value )
+      assertEquals('T', value)
    }
 
    @Test
@@ -45,10 +45,29 @@ class BoolMapTest {
    }
 
    @Test
+   fun fromMultyTypePair(){
+      val pair = 1 to 'X'
+      val boolMap = pair.toBoolMap()
+      assertEquals('X', boolMap[false])
+      assertEquals(1, boolMap[true])
+   }
+
+   @Test
    fun fromNullables(){
       val boolMap = BoolMap(1, null)
       assertEquals(1, boolMap[true])
       assertEquals(null, boolMap[false])
+   }
+
+   object BoolYesNo: BoolMap<String>("Yes", "No")
+   object Binary: BoolMap<Byte>(1, 0)
+
+   @Test
+   fun asObject(){
+      assertEquals("Yes", BoolYesNo[true])
+      assertEquals("No", BoolYesNo[false])
+      assertEquals(1, Binary[true])
+      assertEquals(0, Binary[false])
    }
 
 }

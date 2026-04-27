@@ -1,4 +1,4 @@
-package com.swelms.common.result
+package com.swelms.common.type
 
 fun <T> resultOf(block: () -> T): Result<T?> =
       try {
