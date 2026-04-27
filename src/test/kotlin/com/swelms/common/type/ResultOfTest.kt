@@ -34,25 +34,24 @@ class ResultOfTest {
    fun orElseValue() {
       val a = 10
       val b = 0
-      val value = (resultOf { a / b } orElse { -1 }).value
-      assertEquals(-1, value)
+      val result = resultOf { a / b } orElse { -1 }
+      assertEquals(-1, result.value)
    }
 
    @Test
    fun orElseMessage() {
       val a = 10
       val b = 0
-      val value = (resultOf { a / b } orElse { "ERROR" }).value
-      assertEquals("ERROR", value)
+      val result = resultOf { a / b } orElse { "ERROR" }
+      assertEquals("ERROR", result.value)
    }
 
    @Test
    fun orElseNull() {
       val a = 10
       val b = 0
-
-      val value = (resultOf { a / b } orElse { null }).value
-      assertNull(value)
+      val result = resultOf { a / b } orElse { null }
+      assertNull(result.value)
    }
 
    @Test
@@ -60,26 +59,24 @@ class ResultOfTest {
       val a = 10
       val b = 0
       val result = resultOf { a / b } orElse { it.error.message }
-      val value = result.value
-      assertEquals("/ by zero", value)
+      assertEquals("/ by zero", result.value)
    }
 
    @Test
    fun orElseError() {
       val a = 10
       val b = 0
-      val value = ( resultOf { a / b } orElse { it.error } ).value
-      assertTrue { value is Exception }
+      val result = resultOf { a / b } orElse { it.error }
+      assertTrue { result.value is Exception }
    }
-
 
    @Test
    fun onFail() {
       val a = 10
       val b = 0
       val c = -1
-      val r = resultOf { a / b } orElse { a / c }
-      assertTrue(r is Result.Success)
+      val result = resultOf { a / b } orElse { a / c }
+      assertTrue(result is Result.Success)
    }
 
    @Test
