@@ -1,5 +1,6 @@
 package com.swelms.common.result
 
+
 sealed interface Result<out T> {
    val value: T?
    operator fun component1(): T? = value
@@ -8,6 +9,7 @@ sealed interface Result<out T> {
       operator fun component2(): Throwable = error
       override val value get() = null
    }
+
 }
 
 

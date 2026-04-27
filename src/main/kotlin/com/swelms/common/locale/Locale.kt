@@ -34,15 +34,20 @@ object Locale {
 
 
    @JvmStatic
-   fun registerConfigs(vararg cfgs: LocaleInterface) {
-      cfgs.forEach { registerConfig(it) }
+   fun register(vararg cfgs: LocaleInterface) {
+      cfgs.forEach { cfg ->
+         when (cfg) {
+            is LangInterface -> langsMap[cfg.locale_id] = cfg
+            is Regionalinterface -> regionalsMap[cfg.locale_id] = cfg
+         }
+      }
    }
 
    @JvmStatic
-   fun registerConfig(cfg: LocaleInterface) {
+   fun unregister(cfg: LocaleInterface) {
       when (cfg) {
-         is LangInterface -> langsMap[cfg.locale_id] = cfg
-         is Regionalinterface -> regionalsMap[cfg.locale_id] = cfg
+         is LangInterface -> langsMap.remove(cfg.locale_id)
+         is Regionalinterface -> regionalsMap.remove(cfg.locale_id)
       }
    }
 

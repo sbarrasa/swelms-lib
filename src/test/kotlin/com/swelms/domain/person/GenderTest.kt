@@ -22,7 +22,7 @@ class GenderTest {
 
     @BeforeTest
     fun setup() {
-        Locale.registerConfig(GenderLang)
+        Locale.register(GenderLang)
         Locale.lang = "test"
     }
 

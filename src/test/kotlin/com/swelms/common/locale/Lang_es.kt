@@ -8,7 +8,7 @@ object Lang_es : LangInterface {
    override val moduleTextMap = mapOf(
       Locale.DEFAULT to mutableMapOf(
          "GENERAL" to "Este es un mensaje general",
-         "TEST"            to "Prueba",
+         "TEST" to "Prueba",
          "NOT_IMPLEMENTED" to "Aún no está implementado"
       ),
 

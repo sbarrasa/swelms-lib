@@ -10,7 +10,7 @@ import kotlin.test.*
 class LocaleTest {
    @BeforeTest
    fun setuo() {
-      Locale.registerConfigs(Regional_ar, Lang_es, Lang_en)
+      Locale.register(Regional_ar, Lang_es, Lang_en)
       Locale.lang = "es"
       Locale.regional = "ar"
       Locale.keyOnMissing = true

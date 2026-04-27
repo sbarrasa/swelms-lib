@@ -1,5 +1,6 @@
 package com.swelms.common.reflection
 
+import kotlin.collections.get
 import kotlin.reflect.KClass
 import kotlin.reflect.full.primaryConstructor
 

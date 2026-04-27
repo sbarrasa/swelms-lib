@@ -21,7 +21,7 @@ class LocaleTestHocon {
          ConfigFactory.parseResources("lang_en.conf")
       )
 
-      Locale.registerConfigs(lang_es, lang_en)
+      Locale.register(lang_es, lang_en)
       Locale.lang = "es"
    }
 

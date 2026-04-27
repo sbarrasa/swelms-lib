@@ -1,6 +1,5 @@
 package com.swelms.common.collections
 
-
 class Heap<T>(
     elements: Collection<T> = emptyList(),
     private val compare: (T, T) -> Int

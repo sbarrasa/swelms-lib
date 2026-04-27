@@ -7,10 +7,7 @@ import kotlin.reflect.KClass
 open class Catalog(val style: Style?) : LinkedHashMap<String, StringMap>() {
 
    fun put(key: String, value: Map<*,*>): StringMap? {
-      val efectiveKey = if (style == null)
-         key
-      else
-         key.applyStyle(style)
+      val efectiveKey = if (style == null) key else key.applyStyle(style)
 
       return super.put(efectiveKey, value.toStringMap())
    }

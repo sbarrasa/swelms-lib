@@ -15,7 +15,7 @@ class LocaleTestJson {
       val jsonStr = File("src/test/resources/lang_es.json").readText()
       val lang_es = Json.decodeFromString<Lang>(jsonStr)
 
-      Locale.registerConfigs(lang_es)
+      Locale.register(lang_es)
       Locale.lang = "es"
    }
 
