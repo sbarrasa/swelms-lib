@@ -28,7 +28,7 @@ class BoolMapTest {
    }
 
    @Test
-   fun booleans() {
+   fun boolChar() {
       val boolMap = 'T' orElse 'F'
       val a = 1
       val b = 2

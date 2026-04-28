@@ -1,4 +1,4 @@
-package com.swelms.java.common.result;
+package com.swelms.java.common.type;
 
 import java.util.function.Function;
 import java.util.function.Supplier;

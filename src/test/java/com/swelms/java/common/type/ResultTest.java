@@ -1,4 +1,4 @@
-package com.swelms.java.common.result;
+package com.swelms.java.common.type;
 
 import org.junit.jupiter.api.Test;
 
@@ -37,9 +37,9 @@ class ResultTest {
 
     @Test
     void orElseValue() {
-        var result2 = Result.of(() -> 10 / 0).orElse(r -> 0);
-        assertInstanceOf(Result.Success.class, result2);
-        assertEquals(0, result2.value());
+        var result = Result.of(() -> 10 / 0).orElse(r -> 0);
+        assertInstanceOf(Result.Success.class, result);
+        assertEquals(0, result.value());
     }
 
     @Test
@@ -62,8 +62,8 @@ class ResultTest {
                 .orElse(r -> { throw new RuntimeException("Fail");} )
                 .orElse(r -> { throw new ArithmeticException("Result fails");});
 
-        if(result instanceof Result.Fail r2)
-           assertInstanceOf(ArithmeticException.class, r2.error());
+        if(result instanceof Result.Fail(Throwable error))
+           assertInstanceOf(ArithmeticException.class, error);
     }
 
     @Test
