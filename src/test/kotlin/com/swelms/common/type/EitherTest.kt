@@ -2,20 +2,17 @@ package com.swelms.common.type
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFalse
+import kotlin.test.assertFailsWith
 import kotlin.test.assertNull
-import kotlin.test.assertTrue
 
 class EitherTest {
    @Test
    fun left() {
       val either = Either.Left("error")
 
-      assertTrue(either is Either.Left)
-      assertFalse(either is Either.Right<*>)
       assertEquals("error", either.value)
-      assertEquals("error", either.leftOrNull())
-      assertNull(either.rightOrNull())
+      assertEquals("error", either.left())
+      assertNull(either.right())
    }
 
    @Test
@@ -23,8 +20,8 @@ class EitherTest {
       val either = Either.Right(10)
 
       assertEquals(10, either.value)
-      assertNull(either.leftOrNull())
-      assertEquals(10, either.rightOrNull())
+      assertNull(either.left())
+      assertEquals(10, either.right())
    }
 
    @Test
@@ -83,17 +80,28 @@ class EitherTest {
       assertEquals(Either.Left(10), Either.Right(10).swap())
    }
 
-   @Test
-   fun getOrElseValue() {
-      assertEquals(0, Either.Left("error").getOrElse(0))
-      assertEquals(10, Either.Right(10).getOrElse(0))
+   class EitherTest {
+
+      @Test
+      fun ofLeft() {
+         val result = Either.of<String, Int>("hola")
+
+         assertEquals(Either.Left("hola"), result)
+      }
+
+      @Test
+      fun ofRight() {
+         val result = Either.of<String, Int>(123)
+
+         assertEquals(Either.Right(123), result)
+      }
+
+      @Test
+      fun ofInvalidType() {
+         assertFailsWith<IllegalStateException> {
+            Either.of<String, Int>(true)
+         }
+      }
    }
 
-   @Test
-   fun getOrElseBlock() {
-      val right: Either<String, Int> = Either.Right(10)
-
-      assertEquals(5, Either.Left("error").getOrElse { it.length })
-      assertEquals(10, right.getOrElse { it.length })
-   }
 }

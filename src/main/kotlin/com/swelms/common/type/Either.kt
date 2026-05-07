@@ -4,13 +4,13 @@ sealed interface Either<out L, out R> {
    data class Left<out L>(val value: L) : Either<L, Nothing>
    data class Right<out R>(val value: R) : Either<Nothing, R>
 
-   fun leftOrNull(): L? =
+   fun left(): L? =
       when (this) {
          is Left  -> value
          is Right -> null
       }
 
-   fun rightOrNull(): R? =
+   fun right(): R? =
       when (this) {
          is Left  -> null
          is Right -> value
@@ -46,16 +46,14 @@ sealed interface Either<out L, out R> {
          is Left  -> Right(value)
          is Right -> Left(value)
       }
+   companion object {
+      inline fun <reified L, reified R> of(value: Any): Either<L, R> =
+         when (value) {
+            is L -> Left(value)
+            is R -> Right(value)
+            else -> error("Tipo inválido: ${value::class}")
+         }
+   }
+
 }
 
-fun <L, R, T> Either<L, R>.getOrElse(default: T): T where R : T =
-   fold(
-      ifLeft = { default },
-      ifRight = { it }
-   )
-
-fun <L, R, T> Either<L, R>.getOrElse(default: (L) -> T): T where R : T =
-   fold(
-      ifLeft = default,
-      ifRight = { it }
-   )
