@@ -1,8 +1,10 @@
 package com.swelms.common.type
 
 sealed interface Either<out L, out R> {
-   data class Left<out L>(val value: L) : Either<L, Nothing>
-   data class Right<out R>(val value: R) : Either<Nothing, R>
+   val value: Any?
+
+   data class Left<out L>(override val value: L) : Either<L, Nothing>
+   data class Right<out R>(override val value: R) : Either<Nothing, R>
 
    fun left(): L? =
       when (this) {
@@ -14,12 +16,6 @@ sealed interface Either<out L, out R> {
       when (this) {
          is Left  -> null
          is Right -> value
-      }
-
-   fun <T> fold(ifLeft: (L) -> T, ifRight: (R) -> T): T =
-      when (this) {
-         is Left  -> ifLeft(value)
-         is Right -> ifRight(value)
       }
 
    fun <T> map(transform: (R) -> T): Either<L, T> =

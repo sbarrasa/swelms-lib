@@ -20,29 +20,10 @@ class EitherTest {
       val either = Either.Right(10)
 
       assertEquals(10, either.value)
-      assertNull(either.left())
       assertEquals(10, either.right())
+      assertNull(either.left())
    }
 
-   @Test
-   fun foldLeft() {
-      val value = Either.Left("error").fold(
-         ifLeft = { "left: $it" },
-         ifRight = { "right: $it" }
-      )
-
-      assertEquals("left: error", value)
-   }
-
-   @Test
-   fun foldRight() {
-      val value = Either.Right(10).fold(
-         ifLeft = { "left: $it" },
-         ifRight = { "right: $it" }
-      )
-
-      assertEquals("right: 10", value)
-   }
 
    @Test
    fun mapRight() {
@@ -80,28 +61,27 @@ class EitherTest {
       assertEquals(Either.Left(10), Either.Right(10).swap())
    }
 
-   class EitherTest {
+   @Test
+   fun of() {
+      val result1 = Either.of<String, Int>("hola")
+      val result2 = Either.of<String, Int>(10)
 
-      @Test
-      fun ofLeft() {
-         val result = Either.of<String, Int>("hola")
+      assertEquals("hola", result1.value)
+      assertEquals(10, result2.value)
 
-         assertEquals(Either.Left("hola"), result)
-      }
-
-      @Test
-      fun ofRight() {
-         val result = Either.of<String, Int>(123)
-
-         assertEquals(Either.Right(123), result)
-      }
-
-      @Test
-      fun ofInvalidType() {
-         assertFailsWith<IllegalStateException> {
-            Either.of<String, Int>(true)
-         }
-      }
    }
 
+   @Test
+   fun ofRight() {
+      val result = Either.of<String, Int>(123)
+
+      assertEquals(Either.Right(123), result)
+   }
+
+   @Test
+   fun ofInvalidType() {
+      assertFailsWith<IllegalStateException> {
+         Either.of<String, Int>(true)
+      }
+   }
 }
