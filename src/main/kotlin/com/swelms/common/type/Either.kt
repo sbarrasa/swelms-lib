@@ -30,13 +30,6 @@ sealed interface Either<out L, out R> {
          is Right -> this
       }
 
-   fun <A, B> bimap(ifLeft: (L) -> A, ifRight: (R) -> B): Either<A, B> =
-      when (this) {
-         is Left  -> Left(ifLeft(value))
-         is Right -> Right(ifRight(value))
-      }
-
-
    fun swap(): Either<R, L> =
       when (this) {
          is Left  -> Right(value)

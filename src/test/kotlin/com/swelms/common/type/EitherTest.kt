@@ -47,15 +47,6 @@ class EitherTest {
    }
 
    @Test
-   fun bimap() {
-      val left = Either.Left("error").bimap(String::uppercase) { it: Int -> it * 2 }
-      val right = Either.Right(10).bimap(String::uppercase) { it * 2 }
-
-      assertEquals(Either.Left("ERROR"), left)
-      assertEquals(Either.Right(20), right)
-   }
-
-   @Test
    fun swap() {
       assertEquals(Either.Right("error"), Either.Left("error").swap())
       assertEquals(Either.Left(10), Either.Right(10).swap())
