@@ -4,6 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import kotlin.test.assertNull
+import kotlin.test.assertTrue
 
 class EitherTest {
    @Test
@@ -74,5 +75,14 @@ class EitherTest {
       assertFailsWith<IllegalStateException> {
          Either.of<String, Int>(true)
       }
+   }
+
+   @Test
+   fun ofAmbiguousType() {
+      val a = Either.of<Number, Int>(10)
+      assertTrue { a is Either.Right }
+      assertTrue { a.value is Int }
+      assertTrue { a.left() == null }
+      assertTrue { a.left() is Number? }
    }
 }

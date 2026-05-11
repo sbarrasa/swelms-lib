@@ -38,8 +38,8 @@ sealed interface Either<out L, out R> {
    companion object {
       inline fun <reified L, reified R> of(value: Any): Either<L, R> =
          when (value) {
-            is L -> Left(value)
             is R -> Right(value)
+            is L -> Left(value)
             else -> error("Tipo inválido: ${value::class}")
          }
    }
