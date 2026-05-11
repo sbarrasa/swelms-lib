@@ -54,4 +54,17 @@ class ResultTest {
       assertTrue(result is Result.Fail)
       assertEquals("boom", result.error.message)
    }
+
+   @Test
+   fun invokeSuccess() {
+      val result = Result(10)
+      assertTrue { result is Result.Success}
+   }
+
+   @Test
+   fun invokeFail() {
+      val result = Result(RuntimeException())
+      assertTrue { result is Result.Fail}
+   }
+
 }

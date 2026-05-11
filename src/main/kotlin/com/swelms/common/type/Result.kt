@@ -8,6 +8,11 @@ sealed interface Result<out T> {
       override val value get() = null
    }
 
+   companion object {
+      operator fun invoke(error: Throwable): Result<Nothing> = Fail(error)
+      operator fun <T> invoke(value: T): Result<T> = Success(value)
+   }
+
 }
 
 
