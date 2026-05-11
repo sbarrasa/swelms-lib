@@ -1,10 +1,12 @@
 package com.swelms.common.math
 
 fun factorial(value: Int): Long {
-      if (value < 0) throw ArithmeticException("Factorial no está definido para números negativos ($value)")
-      if (value > 20) throw ArithmeticException("Desbordamiento $value supera los 64 bits")
+   if (value < 0) throw ArithmeticException("$value must be positive")
+   if (value > 20) throw ArithmeticException("factorial of $value exceeds 64 bits")
 
-      return (2..value)
-            .fold(1L) { acc, v -> acc * v }
+   if (value == 0 || value == 1) return 1L
 
-   }
+   return (2..value)
+            .fold(1L) { acc, value -> acc * value }
+
+}

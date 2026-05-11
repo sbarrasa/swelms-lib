@@ -1,5 +1,6 @@
 package com.swelms.common.math
 
+import kotlin.sequences.*
 fun fibonacci() = generateSequence(seed = 0L to 1L) {
-    (a, b) -> b to (a + b)
+      (a, b) -> b to (a + b)
     }.map { it.first }
