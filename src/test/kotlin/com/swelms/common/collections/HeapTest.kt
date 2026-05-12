@@ -8,7 +8,7 @@ class HeapTest {
 
     @Test
     fun pushPop() {
-        val h = Heap<Char>{ a, b -> a.compareTo(b) }
+        val h = naturalHeap<Char>()
 
         with(h) {
             push('d')
@@ -24,7 +24,7 @@ class HeapTest {
 
     @Test
     fun heapify() {
-        val h = Heap(listOf('d', 'a', 'c', 'b')){ a, b -> a.compareTo(b) }
+        val h = naturalHeap(listOf('d', 'a', 'c', 'b'))
 
         assertEquals('a', h.pop())
         assertEquals('b', h.pop())
@@ -34,7 +34,7 @@ class HeapTest {
 
     @Test
     fun peek() {
-        val h = Heap<Char>{ a, b -> a.compareTo(b) }
+        val h = naturalHeap<Char>()
 
         with(h) {
             push('c')
@@ -48,7 +48,7 @@ class HeapTest {
 
     @Test
     fun empty() {
-        val h = Heap<Char>{ a, b -> a.compareTo(b) }
+        val h = naturalHeap<Char>()
 
         assertEquals(null, h.pop())
         assertTrue(h.isEmpty())
@@ -56,7 +56,7 @@ class HeapTest {
 
     @Test
     fun mix() {
-        val h = Heap<Char>{ a, b -> a.compareTo(b) }
+        val h = naturalHeap<Char>()
 
         with(h) {
             push('c')
@@ -74,4 +74,21 @@ class HeapTest {
         assertEquals('c', h.pop())
         assertEquals('d', h.pop())
     }
+
+   @Test
+   fun heapOfData(){
+      data class Person(val name: String, val age: Int)
+      val person1 = Person("John", 32)
+      val person2 = Person("Maria",40)
+      val person3 = Person("Pepe",18)
+
+      val heap = Heap(listOf(person1, person2, person3)) { a, b ->
+         a.age.compareTo(b.age)
+      }
+
+      assertEquals(person3, heap.pop())
+      assertEquals(person1, heap.pop())
+
+   }
+
 }

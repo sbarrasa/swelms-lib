@@ -63,6 +63,8 @@ class Heap<T>(
     private fun right(i: Int) = 2 * i + 2
 }
 
-fun <T : Comparable<T>> naturalHeap(
-    elements: Collection<T> = emptyList()
-): Heap<T> = Heap(elements){ a, b -> a.compareTo(b) }
+fun <T : Comparable<T>> naturalHeap(elements: Collection<T> = emptyList()): Heap<T> {
+   return Heap(elements) { a, b -> a.compareTo(b) }
+}
+
+
