@@ -10,3 +10,6 @@ fun factorial(value: Int): Long {
             .fold(1L) { acc, value -> acc * value }
 
 }
+
+
+val Int.factorial get() = factorial(this)

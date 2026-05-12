@@ -19,5 +19,10 @@ class FactorialTest {
    fun testOverflow(){
       assertFails { factorial(21) }
    }
+
+   @Test
+   fun testAsProperty(){
+      assertEquals(6, 3.factorial)
+   }
 }
 
