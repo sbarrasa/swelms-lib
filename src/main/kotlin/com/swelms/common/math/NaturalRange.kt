@@ -12,4 +12,7 @@ class NaturalRange(
 
    fun toIntRange(): IntRange =
       start.value..endInclusive.value
+
+   override fun contains(value: Natural) =
+      value.value in start.value..endInclusive.value
 }

@@ -1,9 +1,10 @@
 package com.swelms.common.math
 
-import com.swelms.common.type.Restricted
-
-class Natural(value: Int): Restricted<Int>(value, { it > 0}),
-   Comparable<Natural> {
+@JvmInline
+value class Natural(val value: Int): Comparable<Natural> {
+   init {
+      if (value < 1) throw ArithmeticException("$value of naturals must be positive")
+   }
 
    override operator fun compareTo(other: Natural): Int =
       value.compareTo(other.value)

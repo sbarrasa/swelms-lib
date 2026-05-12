@@ -84,7 +84,6 @@ class NaturalTest {
    @Test
    fun intn(){
       val a = 1.n
-
       assertTrue { a is Natural}
       assertEquals(Natural(1), a)
    }
