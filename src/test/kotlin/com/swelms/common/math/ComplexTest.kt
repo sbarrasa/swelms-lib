@@ -36,7 +36,7 @@ class ComplexTest {
    @Test
    fun testSqrtInt() {
       assertEquals(Complex(0.0, 1.0), Complex.sqrt(-1))
-      assertEquals(2, Complex.sqrt(4).toInt())
+      assertEquals(2.0, Complex.sqrt(4).toDouble())
    }
 
    @Test

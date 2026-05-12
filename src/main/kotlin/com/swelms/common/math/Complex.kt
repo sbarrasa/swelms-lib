@@ -12,12 +12,16 @@ data class Complex(val real: Double, val imag: Double=0.0) {
    }
 
    fun toDouble() = real
-   fun toInt() = real.toInt()
 
    companion object{
-      val i = sqrt(-1.0)
-      fun sqrt(x: Int) = if (x < 0) Complex(0.0, kotlin.math.sqrt(-x.toDouble())) else Complex(kotlin.math.sqrt(x.toDouble()), 0.0)
-      fun sqrt(x: Double) = if (x < 0) Complex(0.0, kotlin.math.sqrt(-x)) else Complex(kotlin.math.sqrt(x), 0.0)
+      val i = Complex(0.0, 1.0)
+      fun sqrt(x: Double) =
+         if (x < 0)
+            Complex(0.0, kotlin.math.sqrt(kotlin.math.abs(x)))
+         else
+            Complex(kotlin.math.sqrt(x), 0.0)
+
+      fun sqrt(x: Int) = sqrt(x.toDouble())
    }
 }
 
