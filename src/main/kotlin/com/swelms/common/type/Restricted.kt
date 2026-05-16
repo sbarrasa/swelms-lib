@@ -1,9 +1,13 @@
 package com.swelms.common.type
 
-open class Restricted<T> (val value: T, condition: (T) -> Boolean) {
+open class Restricted<T> (val value: T,
+                          condition: (T) -> Boolean
+) {
    init {
-      require(condition(value)) { "value $value is invalid" }
+      if(!condition(value)) throw exception(value)
    }
+
+   open fun exception(value: T): RuntimeException = IllegalArgumentException("value $value is invalid")
 
    override fun equals(other: Any?): Boolean =
       when (other) {
