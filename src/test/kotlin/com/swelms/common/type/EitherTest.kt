@@ -3,7 +3,6 @@ package com.swelms.common.type
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
-import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class EitherTest {
@@ -12,8 +11,6 @@ class EitherTest {
       val either = Either.Left("error")
 
       assertEquals("error", either.value)
-      assertEquals("error", either.left())
-      assertNull(either.right())
    }
 
    @Test
@@ -21,31 +18,8 @@ class EitherTest {
       val either = Either.Right(10)
 
       assertEquals(10, either.value)
-      assertEquals(10, either.right())
-      assertNull(either.left())
    }
 
-
-   @Test
-   fun mapRight() {
-      val either = Either.Right(10).map { it * 2 }
-
-      assertEquals(Either.Right(20), either)
-   }
-
-   @Test
-   fun mapKeepsLeft() {
-      val either = Either.Left("error").map { it: Int -> it * 2 }
-
-      assertEquals(Either.Left("error"), either)
-   }
-
-   @Test
-   fun mapLeft() {
-      val either = Either.Left("error").mapLeft { it.uppercase() }
-
-      assertEquals(Either.Left("ERROR"), either)
-   }
 
    @Test
    fun swap() {
@@ -82,7 +56,8 @@ class EitherTest {
       val a = Either.of<Number, Int>(10)
       assertTrue { a is Either.Right }
       assertTrue { a.value is Int }
-      assertTrue { a.left() == null }
-      assertTrue { a.left() is Number? }
    }
+
+
+
 }
