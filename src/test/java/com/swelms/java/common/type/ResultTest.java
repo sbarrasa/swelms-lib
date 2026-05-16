@@ -93,4 +93,16 @@ class ResultTest {
         };
         assertEquals("Error", message);
     }
+
+    @Test
+    void swithOf(){
+        var result = Result.of(() -> 10 / 0);
+        var value = switch (result){
+            case Result.Success s -> s.value();
+            case Result.Fail f -> f.error().getMessage();
+        };
+
+        assertEquals("/ by 0", value);
+
+    }
 }

@@ -13,7 +13,8 @@ public sealed interface Result<T> permits Result.Success, Result.Fail {
 
     static <T> Result<T> of(Supplier<T> block) {
         try {
-            return new Success<>(block.get());
+            var value = block.get();
+            return new Success<>(value);
         } catch (Throwable e) {
             return new Fail<>(e);
         }
