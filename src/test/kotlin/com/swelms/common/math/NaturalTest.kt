@@ -3,16 +3,20 @@ package com.swelms.common.math
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
+import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class NaturalTest {
 
    @Test
    fun create() {
-      assertFails { Natural(-1) }
       assertEquals(10, Natural(10).value)
    }
 
+   @Test
+   fun createFails(){
+      assertFailsWith<ArithmeticException> { Natural(-1) }
+   }
 
    @Test
    fun compareTo() {
