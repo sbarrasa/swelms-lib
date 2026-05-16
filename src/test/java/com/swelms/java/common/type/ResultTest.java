@@ -102,7 +102,7 @@ class ResultTest {
             case Result.Fail f -> f.error().getMessage();
         };
 
-        assertEquals("/ by 0", value);
+        assertEquals("/ by zero", value);
 
     }
 }
