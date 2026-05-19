@@ -1,11 +1,12 @@
 package com.swelms.common.type
 
 fun <T> resultOf(block: () -> T): Result<T?> =
-      try {
-         return Result.Success(block())
-      } catch (e: Throwable) {
-         return Result.Fail(e)
-      }
+   try {
+      Result.Success(block())
+   } catch (e: Throwable) {
+      Result.Fail(e)
+   }
+
 
 
 infix fun <T> Result<T>.orElse(block: (Result.Fail) -> T): Result<T?> =
