@@ -16,6 +16,8 @@ object GitVersion {
       val patch =
          exec("git", "rev-list", "$tag..HEAD", "--count")
 
-      return "$tag.$patch"
+      val version = "Version = $tag.$patch"
+      println(version)
+      return version
    }
 }
