@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.swelms"
-version = GitVersion.getVersion()
+version = com.swelms.plugins.Git.version
 
 repositories {
    mavenCentral()

@@ -1,4 +1,6 @@
-object GitVersion {
+package com.swelms.plugins
+
+object Git {
 
    private fun exec(vararg command: String): String =
       ProcessBuilder(*command)
@@ -9,15 +11,18 @@ object GitVersion {
          .readText()
          .trim()
 
-   fun getVersion(): String {
+   private fun getVer(): String {
       val tag = exec("git", "describe", "--tags", "--abbrev=0")
          .removePrefix("v")
 
       val patch =
          exec("git", "rev-list", "$tag..HEAD", "--count")
 
-      val version = "Version = $tag.$patch"
-      println(version)
+      val version = "$tag.$patch"
+      println("Version = $version")
       return version
    }
+
+   val version by lazy { getVer() }
+
 }
