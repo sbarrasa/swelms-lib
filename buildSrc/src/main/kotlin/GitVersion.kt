@@ -9,7 +9,7 @@ object GitVersion {
          .readText()
          .trim()
 
-   fun version(): String {
+   fun getVersion(): String {
       val tag = exec("git", "describe", "--tags", "--abbrev=0")
          .removePrefix("v")
 
