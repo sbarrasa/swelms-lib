@@ -1,4 +1,4 @@
-package com.swelms.common.reflection
+package com.swelms.common.mapper
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -21,7 +21,7 @@ class CreateFromMapTest {
    @Test
    fun createFromMapClass() {
       val map = mapOf("name" to "Alice", "age" to 25)
-      val person = createFromMap(Person::class, map)
+      val person = createFromMap(map, Person::class)
 
       assertNotNull(person)
       assertEquals("Alice", person.name)
