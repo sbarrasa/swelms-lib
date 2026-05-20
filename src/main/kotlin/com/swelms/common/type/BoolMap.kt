@@ -7,8 +7,8 @@ interface BoolMap<out T> {
    operator fun get(value: Boolean): T = if (value) trueValue else falseValue
    operator fun invoke(block: () -> Boolean): T = get(block())
 
-   operator fun not(): BoolMap<T>
-
+   operator fun not(): BoolMap<T> =
+      BoolMap(falseValue, trueValue)
    companion object {
       operator fun <T> invoke(trueValue: T, falseValue: T) = EagerBoolMap(trueValue, falseValue)
    }
