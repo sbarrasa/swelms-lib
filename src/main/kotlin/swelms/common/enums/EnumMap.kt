@@ -1,0 +1,16 @@
+package swelms.common.enums
+
+import kotlin.enums.EnumEntries
+
+class EnumMap<E : Enum<E>, V>(private val map: Map<E, V>) : Map<E, V> by map
+
+inline fun <E : Enum<E>, V> EnumEntries<E>.associateWith(
+   mapper: (E) -> V
+): EnumMap<E, V> =
+   EnumMap((this as Iterable<E>).associateWith(mapper))
+
+
+inline fun <reified E : Enum<E>, V> enumMap(
+   crossinline mapper: (E) -> V
+): EnumMap<E, V> =
+   EnumMap(enumValues<E>().associateWith(mapper))

@@ -1,0 +1,55 @@
+package swelms.domain.id.cbu
+
+import swelms.common.locale.*
+import swelms.common.reflection.qName
+import swelms.common.text.replaceSlots
+import swelms.domain.validator.DigitsValidator
+import swelms.domain.validator.LengthValidator
+import kotlinx.serialization.Serializable
+
+@Serializable
+@JvmInline
+value class CBU(val value: String) {
+
+   val bankCode get() = value.substring(0, 3)
+   val branchCode get() = value.substring(3, 7)
+   val accountNumber get() = value.substring(7, 21)
+   val branchCheckDigit get() = value.substring(7, 8)
+   val accountCheckDigit get() = value.substring(21, 22)
+
+
+   init {
+      validateLength()
+      validateDigits()
+      validateEntityBranchDigit()
+      validateAccountDigit()
+   }
+
+   private fun validateLength() {
+      LengthValidator(localeText("INVALID_LENGTH").replaceSlots(LOCALE_CLASS_NAME, SIZE), SIZE).validate(value)
+   }
+
+   private fun validateDigits() {
+      DigitsValidator(localeText("ONLY_DIGITS").replaceSlots(LOCALE_CLASS_NAME)).validate(value)
+   }
+
+   private fun validateEntityBranchDigit() {
+      val digits = value.substring(0, 7).map { it.digitToInt() }
+      val vd = value[7].digitToInt()
+      BranchValidator.validate(digits, vd)
+   }
+
+   private fun validateAccountDigit() {
+      val digits = value.substring(8, 21).map { it.digitToInt() }
+      val vd = value[21].digitToInt()
+      AccountValidator.validate(digits, vd)
+   }
+
+   companion object {
+      var SIZE = 22
+      val LOCALE_CLASS_NAME = Locale.text(CBU::class.qName, "CBU")
+   }
+
+   override fun toString(): String = value
+}
+

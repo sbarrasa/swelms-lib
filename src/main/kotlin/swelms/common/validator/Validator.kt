@@ -1,0 +1,23 @@
+package swelms.common.validator
+
+import swelms.common.text.replaceSlots
+
+
+open class Validator<T>(
+   val rule: Rule<T>
+) : Validable<T> {
+   constructor(
+      message: String = "Invalid value {1}",
+      eval: (T) -> Boolean
+   ) : this(Rule(message, eval))
+
+
+   override fun validate(value: T): T {
+      if (!rule.condition(value)) {
+         val message = rule.message.replaceSlots(value.toString())
+         throw ValidatorException(message)
+      }
+      return value
+   }
+}
+

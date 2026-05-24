@@ -1,0 +1,59 @@
+package swelms.domain.id.cuit
+
+import kotlin.test.*
+import swelms.common.validator.ValidatorException
+import swelms.common.locale.localeText
+
+
+class CuitTest {
+
+   @Test
+   fun validCuit() {
+      val cuit = Cuit("20240614708")
+      assertEquals("20", cuit.entityCode)
+      assertEquals("24061470", cuit.document)
+      assertEquals('8', cuit.check)
+   }
+
+   @Test
+   fun invalidLength() {
+      val e = assertFailsWith<ValidatorException> { Cuit("2032964233") }
+      assertContains(e.message ?: "", Cuit.localeText("INVALID_LENGTH"))
+   }
+
+   @Test
+   fun nonDigitCharacters() {
+      val e = assertFailsWith<ValidatorException> { Cuit("20329642A30") }
+      assertContains(e.message ?: "", Cuit.localeText("ONLY_DIGITS"))
+   }
+
+   @Test
+   fun invalidEntityCode() {
+      val e = assertFailsWith<ValidatorException> { Cuit("99329642330") }
+      assertContains(e.message ?: "", Cuit.localeText("INVALID_ENTITY_CODE"))
+   }
+
+   @Test
+   fun invalidCheckDigit() {
+      assertFailsWith<ValidatorException> { Cuit("20329642331") }
+   }
+
+   @Test
+   fun validEntityTypeProperty() {
+      val cuit = Cuit("20329642330")
+      assertNotNull(cuit.entityType)
+   }
+
+   @Test
+   fun toStringTest() {
+      val cuit = Cuit("20240614708")
+      assertEquals("20240614708", "$cuit")
+   }
+
+   @Test
+   fun formated() {
+      val cuit = Cuit("20240614708")
+      assertEquals("20-24061470-8", cuit.formated())
+   }
+
+}

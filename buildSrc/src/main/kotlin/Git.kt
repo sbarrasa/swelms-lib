@@ -1,4 +1,4 @@
-package com.swelms.plugins
+package swelms.plugins
 
 object Git {
 
