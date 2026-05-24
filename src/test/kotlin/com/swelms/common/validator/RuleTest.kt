@@ -12,4 +12,11 @@ class RuleTest {
         assertFalse { rule.condition(-1) }
     }
 
+   @Test
+   fun basicCondition(){
+      val rule = Rule<Int> { it > 0 }
+      assertTrue { rule.condition(1) }
+      assertFalse { rule.condition(-1) }
+   }
+
 }
