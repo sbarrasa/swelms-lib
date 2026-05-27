@@ -1,20 +1,17 @@
 package swelms.common.locale
 
-import swelms.common.reflection.qName
+var lang_en = Lang(locale_id = "en"){
 
-object Lang_en : LangInterface {
-   override val locale_id = "en"
-
-   override val moduleTextMap = mapOf(
-      Locale.DEFAULT to mutableMapOf(
-         "GENERAL" to "This is a general message",
-         "TEST"            to "Test",
-         "NOT_IMPLEMENTED" to "Not implemented yet"
-      ),
+      defaults {
+         it["GENERAL"] = "This is a general message"
+         it["TEST"] = "Test"
+         it["NOT_IMPLEMENTED"] = "Not implemented yet"
+      }
 
 
-      IntRange::class.qName to mutableMapOf(
-         "OUT_OF_RANGE" to "Value must be between {1} and {2}"
-      )
-   )
-}
+      module<IntRange> {
+         it["OUT_OF_RANGE"] = "Value must be between {1} and {2}"
+      }
+
+   }
+

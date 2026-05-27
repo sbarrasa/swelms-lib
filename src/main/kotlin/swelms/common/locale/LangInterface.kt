@@ -1,6 +1,6 @@
 package swelms.common.locale
 
 
-interface LangInterface: LocaleInterface {
+interface LangInterface: LocaleDataInterface {
    val moduleTextMap: Map<String, MutableMap<String, String>>
 }

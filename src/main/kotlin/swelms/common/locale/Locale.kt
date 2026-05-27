@@ -5,12 +5,7 @@ import swelms.common.text.replaceSlots
 
 object Locale {
 
-   @JvmStatic
-   var defaultOnMissing = true
-   @JvmStatic
-   var keyOnMissing = true
-   @JvmStatic
-   var DEFAULT = "default"
+   const val DEFAULTS = "defaults"
 
    @JvmStatic
    var lang: String? = null
@@ -29,7 +24,7 @@ object Locale {
       }
 
    val langsMap: MutableMap<String, LangInterface> = mutableMapOf()
-   val regionalsMap: MutableMap<String, Regionalinterface> = mutableMapOf()
+   val regionalsMap: MutableMap<String, RegionalInterface> = mutableMapOf()
 
    val currentLang get() =  langsMap[lang]
 
@@ -37,23 +32,23 @@ object Locale {
 
 
    @JvmStatic
-   fun register(vararg cfgs: LocaleInterface) {
+   fun register(vararg cfgs: LocaleDataInterface) {
       cfgs.forEach { cfg ->
          when (cfg) {
             is LangInterface -> langsMap[cfg.locale_id] = cfg
-            is Regionalinterface -> regionalsMap[cfg.locale_id] = cfg
+            is RegionalInterface -> regionalsMap[cfg.locale_id] = cfg
          }
       }
    }
 
    @JvmStatic
-   fun unregister(cfg: LocaleInterface) {
+   fun unregister(cfg: LocaleDataInterface) {
       when (cfg) {
          is LangInterface -> {
             if(lang == cfg.locale_id) lang = null
             langsMap.remove(cfg.locale_id)
          }
-         is Regionalinterface -> {
+         is RegionalInterface -> {
             if(regional == cfg.locale_id) regional = null
             regionalsMap.remove(cfg.locale_id)
          }
@@ -72,24 +67,19 @@ object Locale {
       currentRegional?.valueMap[key]?.let { it as? T }
 
 
-   @JvmStatic
-   fun textOrNull(module: String = DEFAULT, key: String): String? {
-      val text = currentLang?.moduleTextMap[module]?.get(key)
-      if(text == null && defaultOnMissing && module != DEFAULT) return textOrNull(key = key)
-      return text
-   }
+    @JvmStatic
+    fun textOrNull(module: String= DEFAULTS, key: String): String? =
+       currentLang
+          ?.moduleTextMap[module]?.get(key)
 
 
    @JvmStatic
-   fun text(module: String = DEFAULT,  key: String): String {
-      val text = textOrNull(module, key)
-      if(text == null) {
-         if (keyOnMissing || module == qName) return key
-         else throw LocaleException(text(qName, "NO_TEXT_FOUND").replaceSlots(key))
-      }
-      return text
-   }
-
+   fun text(module: String = DEFAULTS, key: String): String =
+      textOrNull(module, key)
+         ?: if(module == DEFAULTS)
+               key
+            else
+               text(DEFAULTS, key)
 
 }
 

@@ -1,10 +1,8 @@
 package swelms.common.locale
 
-object Regional_ar : Regionalinterface {
-   override val locale_id = "ar"
+import swelms.domain.locale.Currency
 
-   override val valueMap = mapOf(
-      "CURRENCY"    to "ARS",
-      "DATE_FORMAT" to "dd/MM/yyyy"
-   )
+val regional_ar = Regional(locale_id = "ar"){
+   it["CURRENCY"] = Currency.ARS
+   it["DATE_FORMAT"] = "dd/MM/yyyy"
 }

@@ -1,19 +1,17 @@
 package swelms.common.locale
 
-import swelms.common.reflection.qName
+val lang_es = Lang(locale_id = "es"){
+     defaults {
+        it["GENERAL"] = "Este es un mensaje general"
+        it["TEST"] = "Prueba"
+        it["NOT_IMPLEMENTED"] = "Aún no está implementado"
+     }
 
-object Lang_es : LangInterface {
-   override val locale_id = "es"
+      module<IntRange> {
+         it["OUT_OF_RANGE"] = "El valor debe estar entre {1} y {2}"
+      }
 
-   override val moduleTextMap = mapOf(
-      Locale.DEFAULT to mutableMapOf(
-         "GENERAL" to "Este es un mensaje general",
-         "TEST" to "Prueba",
-         "NOT_IMPLEMENTED" to "Aún no está implementado"
-      ),
-
-      IntRange::class.qName to mutableMapOf(
-         "OUT_OF_RANGE" to "El valor debe estar entre {1} y {2}"
-      )
-   )
-}
+      module("stock") {
+         it["NO_ITEMS"] = "No hay artículos en stock"
+      }
+   }

@@ -5,21 +5,36 @@ import swelms.common.text.replaceSlots
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format
 import kotlinx.datetime.format.*
+import swelms.domain.locale.Currency
 import kotlin.test.*
 
 class LocaleTest {
    @BeforeTest
-   fun setuo() {
-      Locale.register(Regional_ar, Lang_es, Lang_en)
+   fun setup() {
+      Locale.langsMap.clear()
+      Locale.regionalsMap.clear()
+
+      Locale.register(regional_ar, lang_es, lang_en)
       Locale.lang = "es"
       Locale.regional = "ar"
-      Locale.keyOnMissing = true
-      Locale.defaultOnMissing = true
+   }
+
+   @AfterTest
+   fun teardown() {
+      Locale.lang = null
+      Locale.regional = null
+      Locale.langsMap.clear()
+      Locale.regionalsMap.clear()
    }
 
    @Test
    fun testLangText() {
-      assertEquals("Prueba", localeText("TEST"))
+      val result = localeText("TEST")
+      println("DEBUG: Locale.lang = '${Locale.lang}'")
+      println("DEBUG: Locale.regional = '${Locale.regional}'")
+      println("DEBUG: Locale.currentLang = ${Locale.currentLang}")
+      println("DEBUG: localeText('TEST') = '$result'")
+      assertEquals("Prueba", result)
    }
 
    @Test
@@ -29,24 +44,25 @@ class LocaleTest {
 
    @OptIn(FormatStringsInDatetimeFormats::class)
    @Test
-   fun testValueValue() {
-      val dateFormat = Locale.value<String>("DATE_FORMAT")
+   fun testValueString() {
+      val dateFormat: String = Locale.value("DATE_FORMAT")
       val formatter = LocalDate.Format { byUnicodePattern(dateFormat)}
       val date = LocalDate(2025, 11, 25)
       assertEquals("25/11/2025", date.format(formatter))
    }
 
    @Test
+   fun testValueEnum() {
+      val currency: Currency= Locale.value("CURRENCY")
+      assertEquals(Currency.ARS, currency)
+   }
+
+
+   @Test
    fun testNoValue() {
       assertEquals("NO_VALUE", Locale.text(IntRange::class.qName, "NO_VALUE"))
    }
 
-   @Test
-   fun testFail() {
-      Locale.keyOnMissing = false
-      val e = assertFailsWith<LocaleException> { Locale.text(IntRange::class.qName, "key") }
-      assertEquals("NO_TEXT_FOUND", e.message)
-   }
 
    @Test
    fun testNolang() {
@@ -76,4 +92,3 @@ class LocaleTest {
       assertFailsWith<LocaleException>{ Locale.lang = "xx" }
    }
 }
-
