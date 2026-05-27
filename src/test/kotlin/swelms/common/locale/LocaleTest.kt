@@ -15,14 +15,14 @@ class LocaleTest {
       Locale.regionalsMap.clear()
 
       Locale.register(regional_ar, lang_es, lang_en)
-      Locale.lang = "es"
-      Locale.regional = "ar"
+      Locale.curLangId = "es"
+      Locale.curRegionalId = "ar"
    }
 
    @AfterTest
    fun teardown() {
-      Locale.lang = null
-      Locale.regional = null
+      Locale.curLangId = null
+      Locale.curRegionalId = null
       Locale.langsMap.clear()
       Locale.regionalsMap.clear()
    }
@@ -30,9 +30,9 @@ class LocaleTest {
    @Test
    fun testLangText() {
       val result = localeText("TEST")
-      println("DEBUG: Locale.lang = '${Locale.lang}'")
-      println("DEBUG: Locale.regional = '${Locale.regional}'")
-      println("DEBUG: Locale.currentLang = ${Locale.currentLang}")
+      println("DEBUG: Locale.lang = '${Locale.curLangId}'")
+      println("DEBUG: Locale.regional = '${Locale.curRegionalId}'")
+      println("DEBUG: Locale.currentLang = ${Locale.curLang}")
       println("DEBUG: localeText('TEST') = '$result'")
       assertEquals("Prueba", result)
    }
@@ -66,7 +66,7 @@ class LocaleTest {
 
    @Test
    fun testNolang() {
-      Locale.lang = null
+      Locale.curLangId = null
 
       assertEquals("TEST", localeText("TEST"))
 
@@ -74,9 +74,9 @@ class LocaleTest {
 
    @Test
    fun changeLang() {
-      Locale.lang = "en"
+      Locale.curLangId = "en"
       assertEquals("Test", localeText("TEST"))
-      Locale.lang = "es"
+      Locale.curLangId = "es"
       assertEquals("Prueba", localeText("TEST"))
    }
 
@@ -89,7 +89,7 @@ class LocaleTest {
 
    @Test
    fun invalidLang(){
-      assertFailsWith<LocaleException>{ Locale.lang = "xx" }
+      assertFailsWith<LocaleException>{ Locale.curLangId = "xx" }
    }
 
    @Test

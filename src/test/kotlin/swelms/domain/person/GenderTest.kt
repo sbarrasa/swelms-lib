@@ -20,7 +20,7 @@ class GenderTest {
     @BeforeTest
     fun setup() {
         Locale.register(lang_test)
-        Locale.lang = "test"
+        Locale.curLangId = "test"
     }
 
    @AfterTest

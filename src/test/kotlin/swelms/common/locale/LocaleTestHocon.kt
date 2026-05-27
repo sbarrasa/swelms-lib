@@ -22,7 +22,7 @@ class LocaleTestHocon {
       )
 
       Locale.register(lang_es, lang_en)
-      Locale.lang = "es"
+      Locale.curLangId = "es"
    }
 
    @Test
@@ -38,7 +38,7 @@ class LocaleTestHocon {
 
    @Test
    fun testWithSlots(){
-      Locale.lang = "es"
+      Locale.curLangId = "es"
       assertEquals("El producto alcohol está por vencer en 10 días",
          Locale.text("stock", "NEAR_EXPIRATION").replaceSlots("alcohol", 10))
 
