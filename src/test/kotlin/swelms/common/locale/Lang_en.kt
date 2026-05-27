@@ -9,7 +9,7 @@ var lang_en = Lang(locale_id = "en"){
       }
 
 
-      module<IntRange> {
+      component<IntRange> {
          it["OUT_OF_RANGE"] = "Value must be between {1} and {2}"
       }
 

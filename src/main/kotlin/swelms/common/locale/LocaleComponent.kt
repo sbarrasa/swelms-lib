@@ -1,5 +1,5 @@
 package swelms.common.locale
 
-sealed interface LocaleDataInterface {
+sealed interface LocaleComponent {
    val locale_id: String
 }

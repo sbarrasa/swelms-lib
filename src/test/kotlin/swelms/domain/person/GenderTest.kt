@@ -1,8 +1,7 @@
 package swelms.domain.person
 
-import swelms.common.locale.LangInterface
+import swelms.common.locale.Lang
 import swelms.common.locale.Locale
-import swelms.common.reflection.qName
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -10,26 +9,23 @@ import kotlin.test.assertEquals
 
 class GenderTest {
 
-    object GenderLang : LangInterface {
-        override val locale_id = "test"
-        override val moduleTextMap = mapOf(
-            Gender::class.qName to mutableMapOf(
-                "M" to "Masculino",
-                "F" to "Femenino",
-                "X" to "No binario"
-            )
-        )
+    val lang_test = Lang(locale_id = "test") {
+       component<Gender> {
+          it["M"] = "Masculino"
+          it["F"] = "Femenino"
+          it["X"] = "No binario"
+       }
     }
 
     @BeforeTest
     fun setup() {
-        Locale.register(GenderLang)
+        Locale.register(lang_test)
         Locale.lang = "test"
     }
 
    @AfterTest
    fun shutdown(){
-      Locale.unregister(GenderLang)
+      Locale.unregister(lang_test)
    }
     @Test
     fun genderDescription() {

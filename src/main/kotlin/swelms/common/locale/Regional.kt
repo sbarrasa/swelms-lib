@@ -5,8 +5,8 @@ typealias RegionalBlock = (MutableMap<String, Any>) -> Unit
 
 data class Regional(
    override val locale_id: String,
-   override val valueMap: MutableMap<String, Any> = mutableMapOf()
-) : RegionalInterface {
+   val valueMap: MutableMap<String, Any> = mutableMapOf()
+) : LocaleComponent {
    constructor(
       locale_id: String,
       block: RegionalBlock

@@ -166,7 +166,6 @@ enum class Currency(
    ZAR("R", "ZA", "rand"),
    ZMW("ZK", "ZM", "kwacha"),
    ZWL("$", "ZW", "dollar");
-
-   val localeDescription get () = Locale.textOrNull(qName, name) ?: description
-
 }
+
+val Currency.localeDescription get() = Locale.textOrNull(qName, name) ?: description

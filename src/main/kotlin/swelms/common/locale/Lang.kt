@@ -7,19 +7,19 @@ typealias LangBlock = (MutableMap<String,String>) -> Unit
 
 @Serializable
 data class Lang(override val locale_id: String,
-                override val moduleTextMap: MutableMap<String, MutableMap<String, String>> = mutableMapOf()
-) : LangInterface {
+                val moduleTextMap: MutableMap<String, MutableMap<String, String>> = mutableMapOf()
+) : LocaleComponent {
    constructor(locale_id: String, block: Lang.() -> Unit) : this(locale_id) {
       this.block()
    }
 
    fun defaults(block: LangBlock) =
-      module(Locale.DEFAULTS, block)
+      component(Locale.DEFAULTS, block)
 
-   inline fun <reified T> module(noinline block: LangBlock) =
-      module(T::class.qName, block)
+   inline fun <reified T> component(noinline block: LangBlock) =
+      component(T::class.qName, block)
 
-   fun module(name: String, block: LangBlock) {
+   fun component(name: String, block: LangBlock) {
       moduleTextMap[name] = mutableMapOf<String,String>().also(block)
    }
 }

@@ -91,4 +91,9 @@ class LocaleTest {
    fun invalidLang(){
       assertFailsWith<LocaleException>{ Locale.lang = "xx" }
    }
+
+   @Test
+   fun componentNamed(){
+      assertEquals("No hay artículos en stock", Locale.text("stock", "NO_ITEMS"))
+   }
 }

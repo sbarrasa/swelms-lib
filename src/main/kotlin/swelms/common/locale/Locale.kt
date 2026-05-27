@@ -23,8 +23,8 @@ object Locale {
          field = value
       }
 
-   val langsMap: MutableMap<String, LangInterface> = mutableMapOf()
-   val regionalsMap: MutableMap<String, RegionalInterface> = mutableMapOf()
+   val langsMap: MutableMap<String, Lang> = mutableMapOf()
+   val regionalsMap: MutableMap<String, Regional> = mutableMapOf()
 
    val currentLang get() =  langsMap[lang]
 
@@ -32,23 +32,23 @@ object Locale {
 
 
    @JvmStatic
-   fun register(vararg cfgs: LocaleDataInterface) {
+   fun register(vararg cfgs: LocaleComponent) {
       cfgs.forEach { cfg ->
          when (cfg) {
-            is LangInterface -> langsMap[cfg.locale_id] = cfg
-            is RegionalInterface -> regionalsMap[cfg.locale_id] = cfg
+            is Lang -> langsMap[cfg.locale_id] = cfg
+            is Regional -> regionalsMap[cfg.locale_id] = cfg
          }
       }
    }
 
    @JvmStatic
-   fun unregister(cfg: LocaleDataInterface) {
+   fun unregister(cfg: LocaleComponent) {
       when (cfg) {
-         is LangInterface -> {
+         is Lang -> {
             if(lang == cfg.locale_id) lang = null
             langsMap.remove(cfg.locale_id)
          }
-         is RegionalInterface -> {
+         is Regional -> {
             if(regional == cfg.locale_id) regional = null
             regionalsMap.remove(cfg.locale_id)
          }
@@ -84,5 +84,3 @@ object Locale {
 }
 
 fun Any.localeText(key: String) = Locale.text(qName, key)
-
-

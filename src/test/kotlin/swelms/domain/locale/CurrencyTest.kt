@@ -1,8 +1,6 @@
 package swelms.domain.locale
 
-import swelms.common.locale.LangInterface
-import swelms.common.locale.Locale
-import swelms.common.reflection.qName
+import swelms.common.locale.*
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -10,24 +8,21 @@ import kotlin.test.assertEquals
 
 class CurrencyTest {
 
-   object CurrencyLang : LangInterface {
-      override val locale_id = "test"
-      override val moduleTextMap = mapOf(
-         Currency::class.qName to mutableMapOf(
-            "ARS" to "Peso Argentino"
-         )
-      )
+   val lang_test = Lang(locale_id = "test"){
+         component<Currency> {
+            it["ARS"] = "Peso Argentino"
+         }
    }
 
    @BeforeTest
    fun setup() {
-      Locale.register(CurrencyLang)
+      Locale.register(lang_test)
       Locale.lang = "test"
    }
 
    @AfterTest
    fun shutdown() {
-      Locale.unregister(CurrencyLang)
+      Locale.unregister(lang_test)
    }
 
    @Test
