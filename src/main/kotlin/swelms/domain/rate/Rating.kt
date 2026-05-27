@@ -1,7 +1,6 @@
 package swelms.domain.rate
 
-import swelms.common.locale.*
-import swelms.common.text.replaceSlots
+import swelms.common.locale.*import swelms.common.text.replaceSlots
 import kotlin.math.round
 
 class Rating(

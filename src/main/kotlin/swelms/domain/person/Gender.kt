@@ -1,6 +1,6 @@
 package swelms.domain.person
 
-import swelms.common.locale.Locale
+import swelms.common.locale.*
 import swelms.common.reflection.qName
 
 enum class Gender {
@@ -9,5 +9,5 @@ enum class Gender {
    X;
 
    val description: String
-      get() = Locale.text(qName, name)
+      get() = LocaleContext.default.text(qName, name)
 }

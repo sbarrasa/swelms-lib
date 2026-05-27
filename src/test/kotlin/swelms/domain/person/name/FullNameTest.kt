@@ -1,7 +1,6 @@
 package swelms.domain.person.name
 
-import swelms.common.locale.localeText
-import kotlin.test.*
+import swelms.common.locale.*import kotlin.test.*
 
 class FullNameTest {
 

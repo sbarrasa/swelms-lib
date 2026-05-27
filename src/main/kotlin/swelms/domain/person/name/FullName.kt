@@ -1,7 +1,6 @@
 package swelms.domain.person.name
 
-import swelms.common.locale.localeText
-
+import swelms.common.locale.*
 
 typealias FullNameFormatter = ((FullName) -> String)
 

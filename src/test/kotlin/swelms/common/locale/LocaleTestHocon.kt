@@ -21,8 +21,8 @@ class LocaleTestHocon {
          ConfigFactory.parseResources("lang_en.conf")
       )
 
-      Locale.register(lang_es, lang_en)
-      Locale.curLangId = "es"
+      LocaleRegistry.register(lang_es, lang_en)
+      LocaleContext.default.langId = "es"
    }
 
    @Test
@@ -32,15 +32,15 @@ class LocaleTestHocon {
 
    @Test
    fun testByClass(){
-      val text = Locale.text(IntRange::class.qName, "OUT_OF_RANGE").replaceSlots(5,10)
+      val text = LocaleContext.default.text(IntRange::class.qName, "OUT_OF_RANGE").replaceSlots(5,10)
       assertEquals("El valor debe estar entre 5 y 10", text)
    }
 
    @Test
    fun testWithSlots(){
-      Locale.curLangId = "es"
+      LocaleContext.default.langId = "es"
       assertEquals("El producto alcohol está por vencer en 10 días",
-         Locale.text("stock", "NEAR_EXPIRATION").replaceSlots("alcohol", 10))
+         LocaleContext.default.text("stock", "NEAR_EXPIRATION").replaceSlots("alcohol", 10))
 
    }
 

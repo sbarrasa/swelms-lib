@@ -15,8 +15,8 @@ class LocaleTestJson {
       val jsonStr = File("src/test/resources/lang_es.json").readText()
       val lang_es = Json.decodeFromString<Lang>(jsonStr)
 
-      Locale.register(lang_es)
-      Locale.curLangId = "es"
+      LocaleRegistry.register(lang_es)
+      LocaleContext.default.langId = "es"
    }
 
    @Test
@@ -26,7 +26,7 @@ class LocaleTestJson {
 
    @Test
    fun testByClass() {
-      val text = Locale.text(IntRange::class.qName, "OUT_OF_RANGE").replaceSlots(5,10)
+      val text = LocaleContext.default.text(IntRange::class.qName, "OUT_OF_RANGE").replaceSlots(5,10)
       assertEquals("El valor debe estar entre 5 y 10", text)
    }
 }

@@ -11,41 +11,41 @@ import kotlin.test.*
 class LocaleTest {
    @BeforeTest
    fun setup() {
-      Locale.langsMap.clear()
-      Locale.regionalsMap.clear()
+      LocaleRegistry.langsMap.clear()
+      LocaleRegistry.regionalsMap.clear()
 
-      Locale.register(regional_ar, lang_es, lang_en)
-      Locale.curLangId = "es"
-      Locale.curRegionalId = "ar"
+      LocaleRegistry.register(regional_ar, lang_es, lang_en)
+      LocaleContext.default.langId = "es"
+      LocaleContext.default.regionalId = "ar"
    }
 
    @AfterTest
    fun teardown() {
-      Locale.curLangId = null
-      Locale.curRegionalId = null
-      Locale.langsMap.clear()
-      Locale.regionalsMap.clear()
+      LocaleContext.default.langId = null
+      LocaleContext.default.regionalId = null
+      LocaleRegistry.langsMap.clear()
+      LocaleRegistry.regionalsMap.clear()
    }
 
    @Test
    fun testLangText() {
       val result = localeText("TEST")
-      println("DEBUG: Locale.lang = '${Locale.curLangId}'")
-      println("DEBUG: Locale.regional = '${Locale.curRegionalId}'")
-      println("DEBUG: Locale.currentLang = ${Locale.curLang}")
+      println("DEBUG: LocaleContext.default.lang = '${LocaleContext.default.langId}'")
+      println("DEBUG: LocaleContext.default.regional = '${LocaleContext.default.regionalId}'")
+      println("DEBUG: LocaleContext.default.currentLang = ${LocaleContext.default.lang}")
       println("DEBUG: localeText('TEST') = '$result'")
       assertEquals("Prueba", result)
    }
 
    @Test
    fun testLangTextWithParams() {
-      assertEquals("El valor debe estar entre 1 y 10", Locale.text(IntRange::class.qName, "OUT_OF_RANGE").replaceSlots(1, 10))
+      assertEquals("El valor debe estar entre 1 y 10", LocaleContext.default.text(IntRange::class.qName, "OUT_OF_RANGE").replaceSlots(1, 10))
    }
 
    @OptIn(FormatStringsInDatetimeFormats::class)
    @Test
    fun testValueString() {
-      val dateFormat: String = Locale.value("DATE_FORMAT")
+      val dateFormat: String = LocaleContext.default.value("DATE_FORMAT")
       val formatter = LocalDate.Format { byUnicodePattern(dateFormat)}
       val date = LocalDate(2025, 11, 25)
       assertEquals("25/11/2025", date.format(formatter))
@@ -53,20 +53,20 @@ class LocaleTest {
 
    @Test
    fun testValueEnum() {
-      val currency: Currency= Locale.value("CURRENCY")
+      val currency: Currency= LocaleContext.default.value("CURRENCY")
       assertEquals(Currency.ARS, currency)
    }
 
 
    @Test
    fun testNoValue() {
-      assertEquals("NO_VALUE", Locale.text(IntRange::class.qName, "NO_VALUE"))
+      assertEquals("NO_VALUE", LocaleContext.default.text(IntRange::class.qName, "NO_VALUE"))
    }
 
 
    @Test
    fun testNolang() {
-      Locale.curLangId = null
+      LocaleContext.default.langId = null
 
       assertEquals("TEST", localeText("TEST"))
 
@@ -74,26 +74,26 @@ class LocaleTest {
 
    @Test
    fun changeLang() {
-      Locale.curLangId = "en"
+      LocaleContext.default.langId = "en"
       assertEquals("Test", localeText("TEST"))
-      Locale.curLangId = "es"
+      LocaleContext.default.langId = "es"
       assertEquals("Prueba", localeText("TEST"))
    }
 
    @Test
    fun invalidValueClass(){
       assertFailsWith<ClassCastException>{
-         Locale.value<Int>("CURRENCY").toString()
+         LocaleContext.default.value<Int>("CURRENCY").toString()
       }
    }
 
    @Test
    fun invalidLang(){
-      assertFailsWith<LocaleException>{ Locale.curLangId = "xx" }
+      assertFailsWith<LocaleException>{ LocaleContext.default.langId = "xx" }
    }
 
    @Test
    fun componentNamed(){
-      assertEquals("No hay artículos en stock", Locale.text("stock", "NO_ITEMS"))
+      assertEquals("No hay artículos en stock", LocaleContext.default.text("stock", "NO_ITEMS"))
    }
 }

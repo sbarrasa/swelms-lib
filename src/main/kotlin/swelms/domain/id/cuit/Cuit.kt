@@ -1,7 +1,6 @@
 package swelms.domain.id.cuit
 
-import swelms.common.locale.*
-import swelms.common.reflection.qName
+import swelms.common.locale.*import swelms.common.reflection.qName
 import swelms.common.text.replaceSlots
 import swelms.common.validator.ValidatorException
 import swelms.domain.validator.DigitsValidator
@@ -43,7 +42,7 @@ value class Cuit(val value: String) {
 
    companion object {
       const val SIZE = 11
-      val LOCALE_CLASS_NAME = Locale.text(Cuit::class.qName, "CUIT")
+      val LOCALE_CLASS_NAME = LocaleContext.default.text(Cuit::class.qName, "CUIT")
    }
 
    fun formated() = "$entityCode-$document-$check"
@@ -54,7 +53,7 @@ value class Cuit(val value: String) {
       COMPANY;
 
       val description: String
-         get() = Locale.text(qName, name)
+         get() = LocaleContext.default.text(qName, name)
    }
 
    object EntityCodes :
@@ -72,7 +71,7 @@ value class Cuit(val value: String) {
 
       class Info(val key: String, val entityType: EntityType) {
          val description: String
-            get() = Locale.textOrNull(EntityCodes::class.qName, key)
+            get() = LocaleContext.default.textOrNull(EntityCodes::class.qName, key)
                ?: "$entityType.description".trim()
 
          override fun toString() = description

@@ -1,7 +1,6 @@
 package swelms.domain.id.cbu
 
-import swelms.common.locale.*
-import swelms.common.reflection.qName
+import swelms.common.locale.*import swelms.common.reflection.qName
 import swelms.common.text.replaceSlots
 import swelms.domain.validator.DigitsValidator
 import swelms.domain.validator.LengthValidator
@@ -47,7 +46,7 @@ value class CBU(val value: String) {
 
    companion object {
       var SIZE = 22
-      val LOCALE_CLASS_NAME = Locale.text(CBU::class.qName, "CBU")
+      val LOCALE_CLASS_NAME = LocaleContext.default.text(CBU::class.qName, "CBU")
    }
 
    override fun toString(): String = value

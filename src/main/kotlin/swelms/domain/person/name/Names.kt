@@ -1,7 +1,6 @@
 package swelms.domain.person.name
 
-import swelms.common.locale.localeText
-
+import swelms.common.locale.*
 interface Names  {
    val text: String
    val list: List<String> get() = split(text)

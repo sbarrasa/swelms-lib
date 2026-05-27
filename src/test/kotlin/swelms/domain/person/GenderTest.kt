@@ -1,7 +1,6 @@
 package swelms.domain.person
 
-import swelms.common.locale.Lang
-import swelms.common.locale.Locale
+import swelms.common.locale.*
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -19,13 +18,13 @@ class GenderTest {
 
     @BeforeTest
     fun setup() {
-        Locale.register(lang_test)
-        Locale.curLangId = "test"
+        LocaleRegistry.register(lang_test)
+        LocaleContext.default.langId = "test"
     }
 
    @AfterTest
    fun shutdown(){
-      Locale.unregister(lang_test)
+      LocaleRegistry.unregister(lang_test)
    }
     @Test
     fun genderDescription() {

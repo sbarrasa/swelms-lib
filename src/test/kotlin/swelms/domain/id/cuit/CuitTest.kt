@@ -2,8 +2,7 @@ package swelms.domain.id.cuit
 
 import kotlin.test.*
 import swelms.common.validator.ValidatorException
-import swelms.common.locale.localeText
-
+import swelms.common.locale.*
 
 class CuitTest {
 

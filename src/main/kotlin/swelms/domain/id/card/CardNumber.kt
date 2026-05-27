@@ -32,7 +32,7 @@ value class CardNumber(val value: String) {
    }
 
    companion object{
-val LOCALE_CLASS_NAME = Locale.text(CardNumber::class.qName, "CARD_NUMBER")
+val LOCALE_CLASS_NAME = LocaleContext.default.text(CardNumber::class.qName, "CARD_NUMBER")
       fun from(cardNumber: String) = CardNumber(cardNumber.filter { it.isDigit() })
    }
    override fun toString(): String = value

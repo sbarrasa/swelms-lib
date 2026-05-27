@@ -13,8 +13,13 @@ data class Lang(override val locale_id: String,
       this.block()
    }
 
+   companion object {
+      const val DEFAULTS = "defaults"
+   }
+
+
    fun defaults(block: LangBlock) =
-      component(Locale.DEFAULTS, block)
+      component(DEFAULTS, block)
 
    inline fun <reified T> component(noinline block: LangBlock) =
       component(T::class.qName, block)

@@ -1,7 +1,6 @@
 package swelms.domain.id.card
 
-import swelms.common.locale.localeText
-import swelms.common.validator.ValidatorException
+import swelms.common.locale.*import swelms.common.validator.ValidatorException
 import kotlin.test.Test
 import kotlin.test.assertContains
 import kotlin.test.assertEquals
