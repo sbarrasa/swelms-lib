@@ -1,11 +1,12 @@
 package swelms.domain.id.cuit
 
-import swelms.common.locale.*import swelms.common.reflection.qName
+import swelms.common.locale.*
 import swelms.common.text.replaceSlots
 import swelms.common.validator.ValidatorException
 import swelms.domain.validator.DigitsValidator
 import swelms.domain.validator.LengthValidator
 import kotlinx.serialization.Serializable
+import swelms.domain.id.componentName
 
 @Serializable
 @JvmInline
@@ -25,11 +26,11 @@ value class Cuit(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(localeText("INVALID_LENGTH").replaceSlots(LOCALE_CLASS_NAME, SIZE), SIZE).validate(value)
+      LengthValidator(localeText("INVALID_LENGTH").replaceSlots("CUIT", SIZE), SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(localeText("ONLY_DIGITS").replaceSlots(LOCALE_CLASS_NAME)).validate(value)
+      DigitsValidator(localeText("ONLY_DIGITS").replaceSlots("CUIT")).validate(value)
    }
 
    private fun validateEntityCode() {
@@ -42,7 +43,6 @@ value class Cuit(val value: String) {
 
    companion object {
       const val SIZE = 11
-      val LOCALE_CLASS_NAME = LocaleContext.default.text(Cuit::class.qName, "CUIT")
    }
 
    fun formated() = "$entityCode-$document-$check"
@@ -53,7 +53,7 @@ value class Cuit(val value: String) {
       COMPANY;
 
       val description: String
-         get() = LocaleContext.default.text(qName, name)
+         get() = LocaleContext.current.text(componentName, name)
    }
 
    object EntityCodes :
@@ -71,7 +71,7 @@ value class Cuit(val value: String) {
 
       class Info(val key: String, val entityType: EntityType) {
          val description: String
-            get() = LocaleContext.default.textOrNull(EntityCodes::class.qName, key)
+            get() = LocaleContext.current.textOrNull(componentName, key)
                ?: "$entityType.description".trim()
 
          override fun toString() = description

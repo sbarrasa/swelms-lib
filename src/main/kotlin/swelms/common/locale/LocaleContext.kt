@@ -1,6 +1,5 @@
 package swelms.common.locale
 
-import swelms.common.reflection.*
 import swelms.common.text.replaceSlots
 
 
@@ -9,14 +8,14 @@ class LocaleContext {
    var langId: String? = null
       set(value) {
          if(value != null)
-            LocaleRegistry.langsMap[value]?: throw LocaleException(text(qName, "LANG_NOT_FOUND").replaceSlots(value))
+            LocaleRegistry.langsMap[value]?: throw LocaleException(text(componentName, "LANG_NOT_FOUND").replaceSlots(value))
          field = value
       }
 
    var regionalId: String? = null
       set(value) {
          if(value != null)
-            LocaleRegistry.regionalsMap[value] ?: throw LocaleException(text(qName, "REGIONAL_NOT_FOUND").replaceSlots(value))
+            LocaleRegistry.regionalsMap[value] ?: throw LocaleException(text(componentName, "REGIONAL_NOT_FOUND").replaceSlots(value))
          field = value
       }
 
@@ -28,7 +27,7 @@ class LocaleContext {
 
    fun <T> value(key: String): T {
       return valueOrNull(key)
-         ?: throw LocaleException(text(qName, "NO_VALUE_FOUND").replaceSlots(key))
+         ?: throw LocaleException(text(componentName, "NO_VALUE_FOUND").replaceSlots(key))
    }
 
    @Suppress("UNCHECKED_CAST")
@@ -51,8 +50,11 @@ class LocaleContext {
 
    companion object {
       val default = LocaleContext()
+      var contextProvider: LocaleContextProvider? = null
+      val current = contextProvider?.current?: default
    }
 
 }
 
-fun Any.localeText(key: String) = LocaleContext.default.text(qName, key)
+fun Any.localeText(key: String) = LocaleContext.current.text(this::class.qualifiedName!!, key)
+fun Any.localeTextOrNull(key: String) = LocaleContext.current.textOrNull(this::class.qualifiedName!!, key)

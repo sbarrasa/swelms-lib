@@ -1,6 +1,5 @@
 package swelms.common.locale
 
-import swelms.common.reflection.qName
 import swelms.common.text.replaceSlots
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format
@@ -39,7 +38,7 @@ class LocaleTest {
 
    @Test
    fun testLangTextWithParams() {
-      assertEquals("El valor debe estar entre 1 y 10", LocaleContext.default.text(IntRange::class.qName, "OUT_OF_RANGE").replaceSlots(1, 10))
+      assertEquals("El valor debe estar entre 1 y 10", LocaleContext.default.text(IntRange::class.qualifiedName!!, "OUT_OF_RANGE").replaceSlots(1, 10))
    }
 
    @OptIn(FormatStringsInDatetimeFormats::class)
@@ -60,7 +59,7 @@ class LocaleTest {
 
    @Test
    fun testNoValue() {
-      assertEquals("NO_VALUE", LocaleContext.default.text(IntRange::class.qName, "NO_VALUE"))
+      assertEquals("NO_VALUE", LocaleContext.default.text(IntRange::class.qualifiedName!!, "NO_VALUE"))
    }
 
 

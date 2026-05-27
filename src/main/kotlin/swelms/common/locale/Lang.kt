@@ -1,7 +1,6 @@
 package swelms.common.locale
 
 import kotlinx.serialization.Serializable
-import swelms.common.reflection.qName
 
 typealias LangBlock = (MutableMap<String,String>) -> Unit
 
@@ -22,7 +21,7 @@ data class Lang(override val locale_id: String,
       component(DEFAULTS, block)
 
    inline fun <reified T> component(noinline block: LangBlock) =
-      component(T::class.qName, block)
+      component(T::class.qualifiedName!!, block)
 
    fun component(name: String, block: LangBlock) {
       moduleTextMap[name] = mutableMapOf<String,String>().also(block)
