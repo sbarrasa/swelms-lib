@@ -2,15 +2,15 @@ package swelms.common.locale
 
 object LocaleRegistry {
 
-   val langsMap: MutableMap<String, Lang> = mutableMapOf()
-   val regionalsMap: MutableMap<String, Regional> = mutableMapOf()
+   val langMap: MutableMap<String, Lang> = mutableMapOf()
+   val regionalMap: MutableMap<String, Regional> = mutableMapOf()
 
    @JvmStatic
    fun register(vararg cfgs: LocaleComponent) {
       cfgs.forEach { cfg ->
          when (cfg) {
-            is Lang -> langsMap[cfg.locale_id] = cfg
-            is Regional -> regionalsMap[cfg.locale_id] = cfg
+            is Lang -> langMap[cfg.locale_id] = cfg
+            is Regional -> regionalMap[cfg.locale_id] = cfg
          }
       }
    }
@@ -18,8 +18,8 @@ object LocaleRegistry {
    @JvmStatic
    fun unregister(cfg: LocaleComponent) {
       when (cfg) {
-         is Lang -> langsMap.remove(cfg.locale_id)
-         is Regional -> regionalsMap.remove(cfg.locale_id)
+         is Lang -> langMap.remove(cfg.locale_id)
+         is Regional -> regionalMap.remove(cfg.locale_id)
       }
    }
 

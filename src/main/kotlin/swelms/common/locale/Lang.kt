@@ -11,4 +11,5 @@ data class Lang(override val locale_id: String,
    constructor(locale_id: String, vararg pairs: Pair<String, String>)
          : this(locale_id, mutableMapOf(*pairs))
 
+   //TODO: mejorar builder con {} para los elementos
 }

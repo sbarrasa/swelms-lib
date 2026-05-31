@@ -4,7 +4,7 @@ import swelms.common.locale.*
 import swelms.domain.validator.CheckDigitValidator
 
 
-object AccountValidator : CheckDigitValidator(LocaleContext.current.text("ACCOUNT")) {
+object AccountValidator : CheckDigitValidator(Locale.text("ACCOUNT")) {
    private val weights = listOf(3, 9, 7, 1, 3, 9, 7, 1, 3, 9, 7, 1, 3)
 
    override fun compute(digits: List<Int>): Int {

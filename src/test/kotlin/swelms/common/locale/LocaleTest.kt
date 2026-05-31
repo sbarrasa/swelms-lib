@@ -1,99 +1,105 @@
 package swelms.common.locale
 
-import swelms.common.text.replaceSlots
-import kotlinx.datetime.LocalDate
-import kotlinx.datetime.format
-import kotlinx.datetime.format.*
-import swelms.common.reflection.component
-import swelms.domain.locale.Currency
-import kotlin.test.*
+import kotlin.test.BeforeTest
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNull
 
 class LocaleTest {
+
+   private class TestContext : LocaleContext() {
+      override var langId: String? = null
+      override var regionalId: String? = null
+   }
+
    @BeforeTest
    fun setup() {
-      LocaleRegistry.langsMap.clear()
-      LocaleRegistry.regionalsMap.clear()
-
-      LocaleRegistry.register(regional_ar, lang_es, lang_en)
-      LocaleContext.langId = "es"
-      LocaleContext.regionalId = "ar"
-   }
-
-   @AfterTest
-   fun teardown() {
-      LocaleContext.langId = null
-      LocaleContext.regionalId = null
-      LocaleRegistry.langsMap.clear()
-      LocaleRegistry.regionalsMap.clear()
+      Locale.contextProvider = null
    }
 
    @Test
-   fun testLangText() {
-      val result = LocaleContext.text("TEST")
-      println("DEBUG: LocaleContext.lang = '${LocaleContext.langId}'")
-      println("DEBUG: LocaleContext.regional = '${LocaleContext.regionalId}'")
-      println("DEBUG: LocaleContext.currentLang = ${LocaleContext.lang}")
-      println("DEBUG: LocaleContext.text('TEST') = '$result'")
-      assertEquals("Prueba", result)
+   fun defaultContext() {
+      Locale.langId = "es"
+      Locale.regionalId = "ar"
+
+      assertEquals("es", Locale.langId)
+      assertEquals("ar", Locale.regionalId)
    }
 
    @Test
-   fun testLangTextWithParams() {
-      assertEquals("El valor debe estar entre 1 y 10", LocaleContext.text(component<LocaleContext>("OUT_OF_RANGE").replaceSlots(1, 10)))
-   }
+   fun providerContext() {
+      val ctx = TestContext()
 
-   @OptIn(FormatStringsInDatetimeFormats::class)
-   @Test
-   fun testValueString() {
-      val dateFormat: String = LocaleContext.value("DATE_FORMAT")
-      val formatter = LocalDate.Format { byUnicodePattern(dateFormat)}
-      val date = LocalDate(2025, 11, 25)
-      assertEquals("25/11/2025", date.format(formatter))
-   }
+      Locale.contextProvider = { ctx }
 
-   @Test
-   fun testValueEnum() {
-      val currency: Currency= LocaleContext.value("CURRENCY")
-      assertEquals(Currency.ARS, currency)
-   }
+      Locale.langId = "es"
+      Locale.regionalId = "ar"
 
-
-   @Test
-   fun testNoValue() {
-      assertEquals("NO_VALUE", LocaleContext.text("NO_VALUE"))
-   }
-
-
-   @Test
-   fun testNolang() {
-      LocaleContext.langId = null
-
-      assertEquals("TEST", LocaleContext.text("TEST"))
-
+      assertEquals("es", ctx.langId)
+      assertEquals("ar", ctx.regionalId)
    }
 
    @Test
-   fun changeLang() {
-      LocaleContext.langId = "en"
-      assertEquals("Test", LocaleContext.text("TEST"))
-      LocaleContext.langId = "es"
-      assertEquals("Prueba", LocaleContext.text("TEST"))
-   }
-
-   @Test
-   fun invalidValueClass(){
-      assertFailsWith<ClassCastException>{
-         LocaleContext.value<Int>("CURRENCY").toString()
+   fun providerRead() {
+      val ctx = TestContext().apply {
+         langId = "en"
+         regionalId = "us"
       }
+
+      Locale.contextProvider = { ctx }
+
+      assertEquals("en", Locale.langId)
+      assertEquals("us", Locale.regionalId)
    }
 
    @Test
-   fun invalidLang(){
-      assertFailsWith<LocaleException>{ LocaleContext.langId = "xx" }
+   fun providerSwitchWrite() {
+      val a = TestContext()
+      val b = TestContext()
+
+      Locale.contextProvider = { a }
+      Locale.langId = "es"
+
+      Locale.contextProvider = { b }
+      Locale.langId = "en"
+
+      assertEquals("es", a.langId)
+      assertEquals("en", b.langId)
    }
 
    @Test
-   fun componentNamed(){
-      assertEquals("No hay artículos en stock", LocaleContext.text("NO_ITEMS"))
+   fun providerSwitchRead() {
+      val a = TestContext().apply { langId = "es" }
+      val b = TestContext().apply { langId = "en" }
+
+      Locale.contextProvider = { a }
+      assertEquals("es", Locale.langId)
+
+      Locale.contextProvider = { b }
+      assertEquals("en", Locale.langId)
+   }
+
+   @Test
+   fun fallbackToDefault() {
+      Locale.langId = "es"
+
+      val ctx = TestContext()
+      Locale.contextProvider = { ctx }
+
+      Locale.langId = "en"
+
+      Locale.contextProvider = null
+
+      assertEquals("es", Locale.langId)
+      assertEquals("en", ctx.langId)
+   }
+
+   @Test
+   fun transientProvider() {
+      Locale.contextProvider = { TestContext() }
+
+      Locale.langId = "es"
+
+      assertNull(Locale.langId)
    }
 }

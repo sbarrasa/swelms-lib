@@ -1,13 +1,10 @@
 {
   "locale_id": "es",
-  "moduleTextMap": {
-    "defaults": {
+  "textMap": {
       "GENERAL": "Este es un mensaje general",
       "TEST": "Prueba",
-      "NOT_IMPLEMENTED": "Aún no está implementado"
-    },
-    "kotlin.ranges.IntRange": {
+      "NOT_IMPLEMENTED": "Aún no está implementado",
       "OUT_OF_RANGE": "El valor debe estar entre {1} y {2}"
-    }
   }
 }
+

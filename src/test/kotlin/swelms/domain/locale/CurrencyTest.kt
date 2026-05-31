@@ -14,7 +14,7 @@ class CurrencyTest {
    @BeforeTest
    fun setup() {
       LocaleRegistry.register(lang_test)
-      LocaleContext.langId = "test"
+      Locale.langId = "test"
    }
 
    @AfterTest

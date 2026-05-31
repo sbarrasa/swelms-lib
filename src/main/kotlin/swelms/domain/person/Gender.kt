@@ -8,5 +8,5 @@ enum class Gender {
    X;
 
    val description: String
-      get() = LocaleContext.textOrNull(name) ?: name
+      get() = Locale.textOrNull(name) ?: name
 }

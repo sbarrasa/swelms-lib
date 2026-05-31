@@ -18,7 +18,7 @@ class FullNameTest {
       val error = assertFailsWith<IllegalArgumentException> {
          FullName("SoloNombre")
       }
-      assertContains(error.message ?: "", LocaleContext.text("INVALID_FORMAT"))
+      assertContains(error.message ?: "", Locale.text("INVALID_FORMAT"))
    }
 
    @Test

@@ -32,7 +32,7 @@ data class FullName(val lastNames: NamePart, val givenNames: NamePart): Names {
    companion object {
       private fun split(fullNameText: String): List<NamePart> {
          val parts = fullNameText.split(",")
-         require(parts.size == 2) {"${LocaleContext.text("INVALID_FORMAT")}: $fullNameText"}
+         require(parts.size == 2) {"${Locale.text("INVALID_FORMAT")}: $fullNameText"}
          return parts.map { NamePart(it.trim()) }
       }
    }

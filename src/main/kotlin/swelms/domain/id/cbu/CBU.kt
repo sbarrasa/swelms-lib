@@ -25,11 +25,11 @@ value class CBU(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(LocaleContext.text("INVALID_LENGTH").replaceSlots(LOCALE_CLASS_NAME, SIZE), SIZE).validate(value)
+      LengthValidator(Locale.text("INVALID_LENGTH").replaceSlots(LOCALE_CLASS_NAME, SIZE), SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(LocaleContext.text("ONLY_DIGITS").replaceSlots(LOCALE_CLASS_NAME)).validate(value)
+      DigitsValidator(Locale.text("ONLY_DIGITS").replaceSlots(LOCALE_CLASS_NAME)).validate(value)
    }
 
    private fun validateEntityBranchDigit() {
@@ -46,7 +46,7 @@ value class CBU(val value: String) {
 
    companion object {
       var SIZE = 22
-      private val LOCALE_CLASS_NAME = LocaleContext.current.text("CBU")
+      private val LOCALE_CLASS_NAME = Locale.text("CBU")
    }
 
    override fun toString(): String = value

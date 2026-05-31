@@ -9,7 +9,7 @@ class Rating(
    private val range: IntRange = 1..10
 ) {
    fun add(value: Int) {
-      require(value in range) { LocaleContext.text("OUT_OF_RANGE").replaceSlots(range.first, range.last) }
+      require(value in range) { Locale.text("OUT_OF_RANGE").replaceSlots(range.first, range.last) }
       sum += value
       count++
    }

@@ -19,11 +19,11 @@ value class CardNumber(val value: String) {
 
    private fun validateLength() {
       if (value.length !in BinTable.lengthRange())
-         throw ValidatorException(LocaleContext.text("INVALID_LENGTH").replaceSlots(LOCALE_Context_CLASS_NAME))
+         throw ValidatorException(Locale.text("INVALID_LENGTH").replaceSlots(LOCALE_Context_CLASS_NAME))
    }
 
    private fun validateDigits() {
-      DigitsValidator(LocaleContext.text("ONLY_DIGITS").replaceSlots(LOCALE_Context_CLASS_NAME)).validate(value)
+      DigitsValidator(Locale.text("ONLY_DIGITS").replaceSlots(LOCALE_Context_CLASS_NAME)).validate(value)
    }
 
    private fun validateCheckDigit() {
@@ -31,7 +31,7 @@ value class CardNumber(val value: String) {
    }
 
    companion object{
-      private val LOCALE_Context_CLASS_NAME = LocaleContext.current.text("CARD_NUMBER")
+      private val LOCALE_Context_CLASS_NAME = Locale.text("CARD_NUMBER")
       fun from(cardNumber: String) = CardNumber(cardNumber.filter { it.isDigit() })
    }
    override fun toString(): String = value

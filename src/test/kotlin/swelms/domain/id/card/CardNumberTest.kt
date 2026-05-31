@@ -36,7 +36,7 @@ class CardNumberTest {
    @Test
    fun invalidLength() {
       val e = assertFailsWith<ValidatorException> { CardNumber("123") }
-      assertContains( e.message ?: "", LocaleContext.text("INVALID_LENGTH"))
+      assertContains( e.message ?: "", Locale.text("INVALID_LENGTH"))
    }
 
    @Test
