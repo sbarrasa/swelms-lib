@@ -5,7 +5,6 @@ import swelms.common.text.replaceSlots
 import swelms.domain.validator.DigitsValidator
 import swelms.domain.validator.LengthValidator
 import kotlinx.serialization.Serializable
-import swelms.domain.id.componentName
 
 @Serializable
 @JvmInline
@@ -26,11 +25,11 @@ value class CBU(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(localeText("INVALID_LENGTH").replaceSlots(LOCALE_CLASS_NAME, SIZE), SIZE).validate(value)
+      LengthValidator(LocaleContext.text("INVALID_LENGTH").replaceSlots(LOCALE_CLASS_NAME, SIZE), SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(localeText("ONLY_DIGITS").replaceSlots(LOCALE_CLASS_NAME)).validate(value)
+      DigitsValidator(LocaleContext.text("ONLY_DIGITS").replaceSlots(LOCALE_CLASS_NAME)).validate(value)
    }
 
    private fun validateEntityBranchDigit() {
@@ -47,7 +46,7 @@ value class CBU(val value: String) {
 
    companion object {
       var SIZE = 22
-      private val LOCALE_CLASS_NAME = LocaleContext.current.text(componentName, "CBU")
+      private val LOCALE_CLASS_NAME = LocaleContext.current.text("CBU")
    }
 
    override fun toString(): String = value

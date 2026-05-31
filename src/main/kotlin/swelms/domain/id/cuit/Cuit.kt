@@ -6,7 +6,6 @@ import swelms.common.validator.ValidatorException
 import swelms.domain.validator.DigitsValidator
 import swelms.domain.validator.LengthValidator
 import kotlinx.serialization.Serializable
-import swelms.domain.id.componentName
 
 @Serializable
 @JvmInline
@@ -26,15 +25,15 @@ value class Cuit(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(localeText("INVALID_LENGTH").replaceSlots("CUIT", SIZE), SIZE).validate(value)
+      LengthValidator(LocaleContext.text("INVALID_LENGTH").replaceSlots("CUIT", SIZE), SIZE).validate(value)
    }
 
    private fun validateDigits() {
-      DigitsValidator(localeText("ONLY_DIGITS").replaceSlots("CUIT")).validate(value)
+      DigitsValidator(LocaleContext.text("ONLY_DIGITS").replaceSlots("CUIT")).validate(value)
    }
 
    private fun validateEntityCode() {
-      if (EntityCodes[entityCode] == null) throw ValidatorException(localeText("INVALID_ENTITY_CODE"))
+      if (EntityCodes[entityCode] == null) throw ValidatorException(LocaleContext.text("INVALID_ENTITY_CODE"))
    }
 
    private fun validateCheckDigit() {
@@ -53,7 +52,7 @@ value class Cuit(val value: String) {
       COMPANY;
 
       val description: String
-         get() = LocaleContext.current.text(componentName, name)
+         get() = LocaleContext.current.text(name)
    }
 
    object EntityCodes :
@@ -71,7 +70,7 @@ value class Cuit(val value: String) {
 
       class Info(val key: String, val entityType: EntityType) {
          val description: String
-            get() = LocaleContext.current.textOrNull(componentName, key)
+            get() = LocaleContext.current.textOrNull(key)
                ?: "$entityType.description".trim()
 
          override fun toString() = description

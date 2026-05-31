@@ -1,6 +1,6 @@
 package swelms.common.registry
 
-import swelms.common.locale.localeText
+import swelms.common.locale.LocaleContext
 import swelms.common.text.replaceSlots
 
 open class Registry<K, T>(val instances: MutableMap<K,T> = mutableMapOf()) {
@@ -14,6 +14,6 @@ open class Registry<K, T>(val instances: MutableMap<K,T> = mutableMapOf()) {
    }
 
    open operator fun get(key: K): T = instances[key]
-      ?: throw RegistryException(localeText("NO_ELEMENT_REGISTERED").replaceSlots(key))
+      ?: throw RegistryException(LocaleContext.text("NO_ELEMENT_REGISTERED").replaceSlots(key))
 
 }

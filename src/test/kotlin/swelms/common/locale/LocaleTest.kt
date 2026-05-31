@@ -4,6 +4,7 @@ import swelms.common.text.replaceSlots
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format
 import kotlinx.datetime.format.*
+import swelms.common.reflection.component
 import swelms.domain.locale.Currency
 import kotlin.test.*
 
@@ -14,37 +15,37 @@ class LocaleTest {
       LocaleRegistry.regionalsMap.clear()
 
       LocaleRegistry.register(regional_ar, lang_es, lang_en)
-      LocaleContext.default.langId = "es"
-      LocaleContext.default.regionalId = "ar"
+      LocaleContext.langId = "es"
+      LocaleContext.regionalId = "ar"
    }
 
    @AfterTest
    fun teardown() {
-      LocaleContext.default.langId = null
-      LocaleContext.default.regionalId = null
+      LocaleContext.langId = null
+      LocaleContext.regionalId = null
       LocaleRegistry.langsMap.clear()
       LocaleRegistry.regionalsMap.clear()
    }
 
    @Test
    fun testLangText() {
-      val result = localeText("TEST")
-      println("DEBUG: LocaleContext.default.lang = '${LocaleContext.default.langId}'")
-      println("DEBUG: LocaleContext.default.regional = '${LocaleContext.default.regionalId}'")
-      println("DEBUG: LocaleContext.default.currentLang = ${LocaleContext.default.lang}")
-      println("DEBUG: localeText('TEST') = '$result'")
+      val result = LocaleContext.text("TEST")
+      println("DEBUG: LocaleContext.lang = '${LocaleContext.langId}'")
+      println("DEBUG: LocaleContext.regional = '${LocaleContext.regionalId}'")
+      println("DEBUG: LocaleContext.currentLang = ${LocaleContext.lang}")
+      println("DEBUG: LocaleContext.text('TEST') = '$result'")
       assertEquals("Prueba", result)
    }
 
    @Test
    fun testLangTextWithParams() {
-      assertEquals("El valor debe estar entre 1 y 10", LocaleContext.default.text(IntRange::class.qualifiedName!!, "OUT_OF_RANGE").replaceSlots(1, 10))
+      assertEquals("El valor debe estar entre 1 y 10", LocaleContext.text(component<LocaleContext>("OUT_OF_RANGE").replaceSlots(1, 10)))
    }
 
    @OptIn(FormatStringsInDatetimeFormats::class)
    @Test
    fun testValueString() {
-      val dateFormat: String = LocaleContext.default.value("DATE_FORMAT")
+      val dateFormat: String = LocaleContext.value("DATE_FORMAT")
       val formatter = LocalDate.Format { byUnicodePattern(dateFormat)}
       val date = LocalDate(2025, 11, 25)
       assertEquals("25/11/2025", date.format(formatter))
@@ -52,47 +53,47 @@ class LocaleTest {
 
    @Test
    fun testValueEnum() {
-      val currency: Currency= LocaleContext.default.value("CURRENCY")
+      val currency: Currency= LocaleContext.value("CURRENCY")
       assertEquals(Currency.ARS, currency)
    }
 
 
    @Test
    fun testNoValue() {
-      assertEquals("NO_VALUE", LocaleContext.default.text(IntRange::class.qualifiedName!!, "NO_VALUE"))
+      assertEquals("NO_VALUE", LocaleContext.text("NO_VALUE"))
    }
 
 
    @Test
    fun testNolang() {
-      LocaleContext.default.langId = null
+      LocaleContext.langId = null
 
-      assertEquals("TEST", localeText("TEST"))
+      assertEquals("TEST", LocaleContext.text("TEST"))
 
    }
 
    @Test
    fun changeLang() {
-      LocaleContext.default.langId = "en"
-      assertEquals("Test", localeText("TEST"))
-      LocaleContext.default.langId = "es"
-      assertEquals("Prueba", localeText("TEST"))
+      LocaleContext.langId = "en"
+      assertEquals("Test", LocaleContext.text("TEST"))
+      LocaleContext.langId = "es"
+      assertEquals("Prueba", LocaleContext.text("TEST"))
    }
 
    @Test
    fun invalidValueClass(){
       assertFailsWith<ClassCastException>{
-         LocaleContext.default.value<Int>("CURRENCY").toString()
+         LocaleContext.value<Int>("CURRENCY").toString()
       }
    }
 
    @Test
    fun invalidLang(){
-      assertFailsWith<LocaleException>{ LocaleContext.default.langId = "xx" }
+      assertFailsWith<LocaleException>{ LocaleContext.langId = "xx" }
    }
 
    @Test
    fun componentNamed(){
-      assertEquals("No hay artículos en stock", LocaleContext.default.text("stock", "NO_ITEMS"))
+      assertEquals("No hay artículos en stock", LocaleContext.text("NO_ITEMS"))
    }
 }

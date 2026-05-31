@@ -21,25 +21,25 @@ class LocaleTestHocon {
       )
 
       LocaleRegistry.register(lang_es, lang_en)
-      LocaleContext.default.langId = "es"
+      LocaleContext.langId = "es"
    }
 
    @Test
    fun testDefault() {
-      assertEquals("Prueba", localeText("TEST"))
+      assertEquals("Prueba", LocaleContext.text("TEST"))
    }
 
    @Test
    fun testByClass(){
-      val text = LocaleContext.default.text(IntRange::class.qualifiedName!!, "OUT_OF_RANGE").replaceSlots(5,10)
+      val text = LocaleContext.text("OUT_OF_RANGE").replaceSlots(5,10)
       assertEquals("El valor debe estar entre 5 y 10", text)
    }
 
    @Test
    fun testWithSlots(){
-      LocaleContext.default.langId = "es"
+      LocaleContext.langId = "es"
       assertEquals("El producto alcohol está por vencer en 10 días",
-         LocaleContext.default.text("stock", "NEAR_EXPIRATION").replaceSlots("alcohol", 10))
+         LocaleContext.text("NEAR_EXPIRATION").replaceSlots("alcohol", 10))
 
    }
 

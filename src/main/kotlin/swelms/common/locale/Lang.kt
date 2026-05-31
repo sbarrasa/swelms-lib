@@ -1,29 +1,14 @@
 package swelms.common.locale
 
 import kotlinx.serialization.Serializable
+import swelms.common.collections.StringMap
 
-typealias LangBlock = (MutableMap<String,String>) -> Unit
 
 @Serializable
 data class Lang(override val locale_id: String,
-                val moduleTextMap: MutableMap<String, MutableMap<String, String>> = mutableMapOf()
+                val textMap: StringMap = mutableMapOf()
 ) : LocaleComponent {
-   constructor(locale_id: String, block: Lang.() -> Unit) : this(locale_id) {
-      this.block()
-   }
+   constructor(locale_id: String, vararg pairs: Pair<String, String>)
+         : this(locale_id, mutableMapOf(*pairs))
 
-   companion object {
-      const val DEFAULTS = "defaults"
-   }
-
-
-   fun defaults(block: LangBlock) =
-      component(DEFAULTS, block)
-
-   inline fun <reified T> component(noinline block: LangBlock) =
-      component(T::class.qualifiedName!!, block)
-
-   fun component(name: String, block: LangBlock) {
-      moduleTextMap[name] = mutableMapOf<String,String>().also(block)
-   }
 }

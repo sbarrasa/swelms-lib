@@ -22,7 +22,7 @@ interface Names  {
       }
 
       fun validate(text: String){
-         require(isValid(text)) { localeText("INVALID_FORMAT") }
+         require(isValid(text)) { LocaleContext.text("INVALID_FORMAT") }
       }
 
       fun isValid(text: String): Boolean {

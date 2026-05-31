@@ -17,19 +17,19 @@ class CuitTest {
    @Test
    fun invalidLength() {
       val e = assertFailsWith<ValidatorException> { Cuit("2032964233") }
-      assertContains(e.message ?: "", Cuit.localeText("INVALID_LENGTH"))
+      assertContains(e.message ?: "", LocaleContext.text("INVALID_LENGTH"))
    }
 
    @Test
    fun nonDigitCharacters() {
       val e = assertFailsWith<ValidatorException> { Cuit("20329642A30") }
-      assertContains(e.message ?: "", Cuit.localeText("ONLY_DIGITS"))
+      assertContains(e.message ?: "", LocaleContext.text("ONLY_DIGITS"))
    }
 
    @Test
    fun invalidEntityCode() {
       val e = assertFailsWith<ValidatorException> { Cuit("99329642330") }
-      assertContains(e.message ?: "", Cuit.localeText("INVALID_ENTITY_CODE"))
+      assertContains(e.message ?: "", LocaleContext.text("INVALID_ENTITY_CODE"))
    }
 
    @Test

@@ -8,18 +8,17 @@ import kotlin.test.assertEquals
 
 class GenderTest {
 
-    val lang_test = Lang(locale_id = "test") {
-       component<Gender> {
-          it["M"] = "Masculino"
-          it["F"] = "Femenino"
-          it["X"] = "No binario"
-       }
-    }
+    val lang_test = Lang(locale_id = "test",
+          "M" to "Masculino",
+          "F" to "Femenino",
+          "X" to "No binario"
+       )
+
 
     @BeforeTest
     fun setup() {
         LocaleRegistry.register(lang_test)
-        LocaleContext.default.langId = "test"
+        LocaleContext.langId = "test"
     }
 
    @AfterTest

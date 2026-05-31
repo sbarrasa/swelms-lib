@@ -7,16 +7,14 @@ import kotlin.test.assertEquals
 
 class CurrencyTest {
 
-   val lang_test = Lang(locale_id = "test"){
-         component<Currency> {
-            it["ARS"] = "Peso Argentino"
-         }
-   }
+   val lang_test = Lang(locale_id = "test",
+         "ARS" to "Peso Argentino"
+   )
 
    @BeforeTest
    fun setup() {
       LocaleRegistry.register(lang_test)
-      LocaleContext.default.langId = "test"
+      LocaleContext.langId = "test"
    }
 
    @AfterTest
