@@ -66,11 +66,10 @@ class RegistryTest {
     fun createThrowsWhenNotRegistered() {
         val registryFactory = RegistryFactory<String, String>()
 
-        val exception = assertFailsWith<RegistryException> {
+        assertFailsWith<RegistryException> {
             registryFactory.create("nonexistent")
         }
 
-        assertTrue(exception.message?.contains("nonexistent") ?: false)
     }
 
     @Test

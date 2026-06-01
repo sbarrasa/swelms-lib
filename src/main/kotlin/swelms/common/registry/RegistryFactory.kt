@@ -1,5 +1,8 @@
 package swelms.common.registry
 
+import swelms.common.locale.Locale
+import swelms.common.locale.LocaleContext
+import swelms.common.reflection.qProperty
 import swelms.common.text.replaceSlots
 
 open class RegistryFactory<K, T>(instances: MutableMap<K,T> = mutableMapOf(),
@@ -19,7 +22,7 @@ open class RegistryFactory<K, T>(instances: MutableMap<K,T> = mutableMapOf(),
    fun create(key: K): T {
       return constructors[key]
          ?.invoke()
-         ?: throw RegistryException("{0} non registered".replaceSlots(key))
+         ?: throw RegistryException(Locale.text(qProperty("NOT_REGISTERED")).replaceSlots(key))
    }
 
    override operator fun get(key: K): T {
