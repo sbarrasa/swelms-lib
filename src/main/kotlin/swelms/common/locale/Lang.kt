@@ -1,15 +1,17 @@
 package swelms.common.locale
 
 import kotlinx.serialization.Serializable
-import swelms.common.collections.StringMap
-
 
 @Serializable
-data class Lang(override val locale_id: String,
-                val textMap: StringMap = mutableMapOf()
+data class Lang(
+   override val locale_id: String,
+   val textMap: MutableMap<String, String> = mutableMapOf()
 ) : LocaleComponent {
-   constructor(locale_id: String, vararg pairs: Pair<String, String>)
-         : this(locale_id, mutableMapOf(*pairs))
 
-   //TODO: mejorar builder con {} para los elementos
+   constructor(
+      locale_id: String,
+      block: (MutableMap<String, String>) -> Unit
+   ) : this(locale_id) {
+      block(textMap)
+   }
 }

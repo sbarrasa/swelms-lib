@@ -6,7 +6,7 @@ enum class Gender {
    M,
    F,
    X;
-
-   val description: String
-      get() = Locale.textOrNull(name) ?: name
 }
+
+val Gender.localeDescription: String
+      get() = Locale.textOrNull("Gender.${name}.description") ?: name

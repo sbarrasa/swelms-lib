@@ -7,12 +7,11 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class GenderTest {
-
-    val lang_test = Lang(locale_id = "test",
-          "M" to "Masculino",
-          "F" to "Femenino",
-          "X" to "No binario"
-       )
+    val lang_test = Lang(locale_id = "test") {
+       it["Gender.M.description"] = "Masculino"
+       it["Gender.F.description"] = "Femenino"
+       it["Gender.X.description"] = "No binario"
+    }
 
 
     @BeforeTest
@@ -27,8 +26,8 @@ class GenderTest {
    }
     @Test
     fun genderDescription() {
-        assertEquals("Masculino", Gender.M.description)
-        assertEquals("Femenino", Gender.F.description)
-        assertEquals("No binario", Gender.X.description)
+        assertEquals("Masculino", Gender.M.localeDescription)
+        assertEquals("Femenino", Gender.F.localeDescription)
+        assertEquals("No binario", Gender.X.localeDescription)
     }
 }

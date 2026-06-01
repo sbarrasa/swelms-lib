@@ -7,9 +7,9 @@ import kotlin.test.assertEquals
 
 class CurrencyTest {
 
-   val lang_test = Lang(locale_id = "test",
-         "ARS" to "Peso Argentino"
-   )
+   val lang_test = Lang(locale_id = "test"){
+         it["Currency.ARS.description"] = "Peso Argentino"
+   }
 
    @BeforeTest
    fun setup() {
@@ -27,7 +27,7 @@ class CurrencyTest {
       val ars = Currency.ARS
       assertEquals("$", ars.symbol)
       assertEquals("AR", ars.code)
-      assertEquals("peso", ars.description)
+      assertEquals("peso", ars.defaultDescription)
    }
 
    @Test

@@ -5,7 +5,7 @@ import swelms.common.locale.*
 enum class Currency(
    val symbol: String,
    val code: String,
-   val description: String
+   val defaultDescription: String
 ) {
    AED("د.إ", "AE", "dirham"),
    AFN("؋", "AF", "afghani"),
@@ -167,4 +167,4 @@ enum class Currency(
    ZWL("$", "ZW", "dollar");
 }
 
-val Currency.localeDescription get() = Locale.textOrNull(name) ?: description
+val Currency.localeDescription get() = Locale.textOrNull("Currency.${name}.description") ?: defaultDescription

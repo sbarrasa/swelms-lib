@@ -1,7 +1,5 @@
 package swelms.common.locale
 
-import swelms.common.text.replaceSlots
-
 abstract class LocaleContext {
 
    abstract var langId: String?
@@ -14,7 +12,7 @@ abstract class LocaleContext {
 
 
    @Suppress("UNCHECKED_CAST")
-   fun <T> regional(key: String): T? = regional?.valueMap[key]?.let { it as? T }
+   fun <T> value(key: String): T? = regional?.valueMap[key]?.let { it as? T }
 
    fun textOrNull(key: String): String? = lang?.textMap[key]
 
