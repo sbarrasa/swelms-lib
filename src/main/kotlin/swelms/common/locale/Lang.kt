@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 data class Lang(
    override val locale_id: String,
    val textMap: MutableMap<String, String> = mutableMapOf()
-) : LocaleComponent {
+) : LocaleConfig {
 
    constructor(
       locale_id: String,

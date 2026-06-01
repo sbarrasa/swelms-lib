@@ -1,5 +1,5 @@
 {
-  "locale_id": "es",
+  "locale_id": "es_test",
   "textMap": {
       "GENERAL": "Este es un mensaje general",
       "TEST": "Prueba",

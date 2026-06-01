@@ -1,8 +1,8 @@
 package swelms.common.locale
 
-object Locale: LocaleContext() {
+object Locale: AbstractLocaleContext() {
    var contextProvider: ContextProvider? = null
-   private val current: LocaleContext get() = contextProvider?.invoke() ?: default
+   private val current: AbstractLocaleContext get() = contextProvider?.invoke() ?: default
 
    override var langId: String?
       get() = current.langId
@@ -11,10 +11,5 @@ object Locale: LocaleContext() {
    override var regionalId: String?
       get() = current.regionalId
       set(value) { current.regionalId = value }
-   private val default by lazy {
-      object : LocaleContext() {
-         override var langId: String? = null
-         override var regionalId: String? = null
-      }
-   }
+   private val default by lazy { LocaleContext() }
 }
