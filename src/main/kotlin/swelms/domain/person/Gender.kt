@@ -1,6 +1,7 @@
 package swelms.domain.person
 
 import swelms.common.locale.*
+import swelms.common.reflection.qProperty
 
 enum class Gender {
    M,
@@ -9,4 +10,4 @@ enum class Gender {
 }
 
 val Gender.localeDescription: String
-      get() = Locale.textOrNull("Gender.${name}.description") ?: name
+      get() = Locale.textOrNull(qProperty) ?: name

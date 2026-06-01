@@ -1,6 +1,8 @@
 package swelms.domain.locale
 
-import swelms.common.locale.*import kotlin.test.AfterTest
+import swelms.common.locale.*
+import swelms.common.reflection.*
+import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -8,7 +10,7 @@ import kotlin.test.assertEquals
 class CurrencyTest {
 
    val lang_test = Lang(locale_id = "test"){
-         it["Currency.ARS.description"] = "Peso Argentino"
+         it[Currency.ARS.qProperty] = "Peso Argentino"
    }
 
    @BeforeTest

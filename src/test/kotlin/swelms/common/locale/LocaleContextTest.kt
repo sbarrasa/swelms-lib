@@ -1,20 +1,22 @@
 package swelms.common.locale
 
+import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
-class LocaleTest {
-
-   private class TestContext : LocaleContext() {
-      override var langId: String? = null
-      override var regionalId: String? = null
-   }
+class LocaleContextTest {
+   val currentContextProvider = Locale.contextProvider
 
    @BeforeTest
    fun setup() {
       Locale.contextProvider = null
+   }
+
+   @AfterTest
+   fun teardown() {
+      Locale.contextProvider = currentContextProvider
    }
 
    @Test
@@ -28,7 +30,7 @@ class LocaleTest {
 
    @Test
    fun providerContext() {
-      val ctx = TestContext()
+      val ctx = LocaleContext()
 
       Locale.contextProvider = { ctx }
 
@@ -41,10 +43,9 @@ class LocaleTest {
 
    @Test
    fun providerRead() {
-      val ctx = TestContext().apply {
-         langId = "en"
-         regionalId = "us"
-      }
+      val ctx = LocaleContext()
+      ctx.langId = "en"
+      ctx.regionalId = "us"
 
       Locale.contextProvider = { ctx }
 
@@ -54,8 +55,8 @@ class LocaleTest {
 
    @Test
    fun providerSwitchWrite() {
-      val a = TestContext()
-      val b = TestContext()
+      val a = LocaleContext()
+      val b = LocaleContext()
 
       Locale.contextProvider = { a }
       Locale.langId = "es"
@@ -69,8 +70,8 @@ class LocaleTest {
 
    @Test
    fun providerSwitchRead() {
-      val a = TestContext().apply { langId = "es" }
-      val b = TestContext().apply { langId = "en" }
+      val a = LocaleContext().apply { langId = "es" }
+      val b = LocaleContext().apply { langId = "en" }
 
       Locale.contextProvider = { a }
       assertEquals("es", Locale.langId)
@@ -83,7 +84,7 @@ class LocaleTest {
    fun fallbackToDefault() {
       Locale.langId = "es"
 
-      val ctx = TestContext()
+      val ctx = LocaleContext()
       Locale.contextProvider = { ctx }
 
       Locale.langId = "en"
@@ -96,10 +97,12 @@ class LocaleTest {
 
    @Test
    fun transientProvider() {
-      Locale.contextProvider = { TestContext() }
+      Locale.contextProvider = { LocaleContext() }
 
       Locale.langId = "es"
 
       assertNull(Locale.langId)
    }
+
+
 }

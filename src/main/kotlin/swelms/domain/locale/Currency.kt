@@ -1,6 +1,7 @@
 package swelms.domain.locale
 
 import swelms.common.locale.*
+import swelms.common.reflection.qProperty
 
 enum class Currency(
    val symbol: String,
@@ -167,4 +168,4 @@ enum class Currency(
    ZWL("$", "ZW", "dollar");
 }
 
-val Currency.localeDescription get() = Locale.textOrNull("Currency.${name}.description") ?: defaultDescription
+val Currency.localeDescription get() = Locale.textOrNull(qProperty) ?: defaultDescription

@@ -15,7 +15,7 @@ class LocaleTestJson {
       val lang_es = Json.decodeFromString<Lang>(jsonStr)
 
       LocaleRegistry.register(lang_es)
-      Locale.langId = "es"
+      Locale.langId = "es_test"
    }
 
    @Test

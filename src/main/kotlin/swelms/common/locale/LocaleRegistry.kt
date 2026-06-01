@@ -6,7 +6,7 @@ object LocaleRegistry {
    val regionalMap: MutableMap<String, Regional> = mutableMapOf()
 
    @JvmStatic
-   fun register(vararg cfgs: LocaleComponent) {
+   fun register(vararg cfgs: LocaleConfig) {
       cfgs.forEach { cfg ->
          when (cfg) {
             is Lang -> langMap[cfg.locale_id] = cfg
@@ -16,11 +16,12 @@ object LocaleRegistry {
    }
 
    @JvmStatic
-   fun unregister(cfg: LocaleComponent) {
-      when (cfg) {
-         is Lang -> langMap.remove(cfg.locale_id)
-         is Regional -> regionalMap.remove(cfg.locale_id)
+   fun unregister(vararg cfgs: LocaleConfig) {
+      cfgs.forEach { cfg ->
+         when (cfg) {
+            is Lang -> langMap.remove(cfg.locale_id)
+            is Regional -> regionalMap.remove(cfg.locale_id)
+         }
       }
    }
-
 }

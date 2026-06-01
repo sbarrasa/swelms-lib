@@ -1,6 +1,7 @@
 package swelms.domain.person
 
 import swelms.common.locale.*
+import swelms.common.reflection.qProperty
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -8,11 +9,10 @@ import kotlin.test.assertEquals
 
 class GenderTest {
     val lang_test = Lang(locale_id = "test") {
-       it["Gender.M.description"] = "Masculino"
-       it["Gender.F.description"] = "Femenino"
-       it["Gender.X.description"] = "No binario"
+       it[Gender.M.qProperty] = "Masculino"
+       it[Gender.F.qProperty] = "Femenino"
+       it[Gender.X.qProperty] = "No binario"
     }
-
 
     @BeforeTest
     fun setup() {
@@ -30,4 +30,6 @@ class GenderTest {
         assertEquals("Femenino", Gender.F.localeDescription)
         assertEquals("No binario", Gender.X.localeDescription)
     }
+
+
 }
