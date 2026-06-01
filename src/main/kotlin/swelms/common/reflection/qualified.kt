@@ -5,20 +5,15 @@ import kotlin.reflect.KClass
 
 val KClass<*>.packageName
    get() = java.packageName
+
 val Any.packageName
    get() = this::class.packageName
 
-val Any.qProperty get() = qProperty(toString())
-fun Any.qProperty(name: String) =
-   "${this.qName}.$name"
+val Enum<*>.qProperty
+   get() = qProperty(name)
+fun Any.qProperty(propertyName: String) = "$qName.$propertyName"
 
-fun Any.qPackageProperty(name: String) =
-   "$packageName.$name"
-
-fun KClass<*>.qProperty(name: String) =
-   "$qName.$name"
-
-fun KClass<*>.qPackageProperty(name: String) =
-   "$packageName.$name"
+fun Any.qPackageProperty(propertyName: String) =
+   "$packageName.$propertyName"
 
 val Any.qName get() = this::class.qualifiedName?.removeSuffix("COMPANION")
