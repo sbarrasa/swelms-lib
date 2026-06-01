@@ -7,47 +7,47 @@ import kotlin.test.assertTrue
 class BoolMapTest {
    @Test
    fun constructor() {
-      val map = BoolMap(1, -1)
-      assertEquals(1, map[true])
-      assertEquals(-1, map[false])
+      val boolMap = BoolMap(1, -1)
+      assertEquals(1, boolMap[true])
+      assertEquals(-1, boolMap[false])
    }
 
    @Test
    fun elementByBoolean() {
-      val map = 'T' orElse 'F'
-      val value = map[true]
+      val boolMap = 'T' orElse 'F'
+      val value = boolMap[true]
       assertEquals('T', value)
    }
 
    @Test
    fun differentTypeElements() {
-      val map = 1 orElse "false"
-      assertTrue { map[true] is Int }
-      assertTrue { map[false] is String }
-      assertEquals(1, map[true])
+      val boolMap = 1 orElse "false"
+      assertTrue { boolMap[true] is Int }
+      assertTrue { boolMap[false] is String }
+      assertEquals(1, boolMap[true])
    }
 
    @Test
    fun boolCondition() {
-      val map = 'T' orElse 'F'
+      val boolMap = 'T' orElse 'F'
       val a = 1
       val b = 2
-      val value = map { a < b }
+      val value = boolMap { a < b }
       assertEquals('T', value)
    }
 
    @Test
    fun formPair() {
       val pair = 'T' to 'F'
-      val map = pair.toBoolMap()
+      val boolMap = pair.toBoolMap()
 
-      assertEquals('T', map[true])
+      assertEquals('T', boolMap[true])
    }
 
    @Test
    fun toPair(){
-      val map = 'T' orElse 'F'
-      val pair = map.toPair()
+      val boolMap = 'T' orElse 'F'
+      val pair = boolMap.toPair()
       assertEquals('T', pair.first)
       assertEquals('F', pair.second)
    }
@@ -55,10 +55,10 @@ class BoolMapTest {
 
    @Test
    fun fromNullable() {
-      val map = BoolMap(1, null)
-      assertEquals(1, map[true])
-      assertEquals(null, map[false])
-      assertTrue { map[false] is Nothing? }
+      val boolMap = BoolMap(1, null)
+      assertEquals(1, boolMap[true])
+      assertEquals(null, boolMap[false])
+      assertTrue { boolMap[false] is Nothing? }
    }
 
    @Test
