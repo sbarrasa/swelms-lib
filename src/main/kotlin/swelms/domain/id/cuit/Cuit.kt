@@ -25,7 +25,7 @@ value class Cuit(val value: String) {
    }
 
    private fun validateLength() {
-      LengthValidator(Locale.text("INVALID_LENGTH").replaceSlots("CUIT", SIZE), SIZE).validate(value)
+      LengthValidator(size = SIZE).validate(value)
    }
 
    private fun validateDigits() {

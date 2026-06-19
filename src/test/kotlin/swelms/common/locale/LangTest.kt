@@ -40,23 +40,30 @@ class LangTest {
    }
 
    @Test
-   fun text(){
+   fun stringLocale() {
 
       LocaleRegistry.register(lang_es, lang_en)
       Locale.langId = "en_test"
-      assertEquals("This is a general message", Locale.text("GENERAL"))
+      assertEquals("This is a general message", "GENERAL".locale)
+
+      Locale.langId = "es_test"
+      assertEquals("Este es un mensaje general", "GENERAL".locale)
+      assertEquals("El producto está cerca de vencer", "com.acme.stock.NEAR_EXPIRATION".locale)
+      LocaleRegistry.unregister(lang_es, lang_en)
+
+   }
+
+   @Test
+   fun propertyLocale() {
+
+      LocaleRegistry.register(lang_es, lang_en)
+      Locale.langId = "en_test"
+
       assertEquals("Value must be between 10 and 20",
                   Locale.text(IntRange.qProperty("OUT_OF_RANGE")).replaceSlots(10, 20)
       )
-
-
-      Locale.langId = "es_test"
-      assertEquals("Este es un mensaje general", Locale.text("GENERAL"))
-      assertEquals("El valor debe estar entre 10 y 20",
-         Locale.text(IntRange.qProperty("OUT_OF_RANGE")).replaceSlots(10, 20)
-      )
-      assertEquals("El producto está cerca de vencer", Locale.text("com.acme.stock.NEAR_EXPIRATION"))
       LocaleRegistry.unregister(lang_es, lang_en)
+
 
    }
 

@@ -1,5 +1,7 @@
 package swelms.common.locale
 
+import swelms.common.reflection.qProperty
+
 object Locale: AbstractLocaleContext() {
    var contextProvider: ContextProvider? = null
    private val current: AbstractLocaleContext get() = contextProvider?.invoke() ?: default
@@ -13,3 +15,6 @@ object Locale: AbstractLocaleContext() {
       set(value) { current.regionalId = value }
    private val default by lazy { LocaleContext() }
 }
+
+val String.locale get() = Locale.text(this)
+
