@@ -13,6 +13,6 @@ class LengthValidator(message: String=defaultMessage, val size: Int) :
    )
 {
    companion object {
-      val defaultMessage = localeText("INVALID_SIZE")
+      val defaultMessage = "INVALID_SIZE".locale
    }
 }

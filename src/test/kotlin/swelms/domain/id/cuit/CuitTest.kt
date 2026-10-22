@@ -17,7 +17,7 @@ class CuitTest {
    @Test
    fun invalidLength() {
       val e = assertFailsWith<ValidatorException> { Cuit("2032964233") }
-      assertContains(e.message ?: "", Locale.text("INVALID_LENGTH"))
+      assertContains(e.message ?: "", Locale.text("INVALID_SIZE"))
    }
 
    @Test

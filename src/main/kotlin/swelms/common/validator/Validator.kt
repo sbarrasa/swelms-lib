@@ -1,9 +1,7 @@
 package swelms.common.validator
 
-import swelms.common.locale.Locale
-import swelms.common.reflection.qProperty
 import swelms.common.text.replaceSlots
-import swelms.common.locale.localeText
+import swelms.common.locale.*
 
 open class Validator<T>(
    val rule: Rule<T>
@@ -22,7 +20,7 @@ open class Validator<T>(
    }
 
    companion object{
-      val defaultMessage: String = localeText("INVALID_VALUE")
+      val defaultMessage: String = Locale.text("INVALID_VALUE")
    }
 
 }
